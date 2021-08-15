@@ -11,6 +11,10 @@
 <jsp:include page="../home/header.jsp" />
 	<c:forEach var="pro" items="${list }">
 		<h1>${pro.proId }/${pro.proName }</h1>
+		<form action="proDetail.do">
+			<input type="text" name="proId"value="${pro.proId }">
+			<button type="submit">Go</button>
+		</form>
 		<hr>
 	</c:forEach>
 <jsp:include page="../home/footer.jsp" />

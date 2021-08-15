@@ -8,6 +8,7 @@
 </head>
 <body>
 	<h1>Welcome!</h1>
+	<h1>PTH</h1>
 	<a href="proTest.do">program</a>
 	<a href="salTest.do">sales</a>
 	<a href="timTest.do">timetable</a>

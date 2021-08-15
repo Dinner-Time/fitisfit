@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h1>Welcome!</h1>
-	<h2>PTH</h2>
+	<h2>박태훈</h2>
 	<a href="proTest.do">program</a>
 	<a href="salTest.do">sales</a>
 	<a href="timTest.do">timetable</a>

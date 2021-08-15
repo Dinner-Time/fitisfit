@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="../home/header.jsp" />
 	업체 정보 수정폼
+<jsp:include page="../home/footer.jsp" />
 </body>
 </html>

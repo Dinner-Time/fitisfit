@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="../home/header.jsp" />
 	관리자 권한 파트너 한 건 조회 페이지
+<jsp:include page="../home/footer.jsp" />
 </body>
 </html>

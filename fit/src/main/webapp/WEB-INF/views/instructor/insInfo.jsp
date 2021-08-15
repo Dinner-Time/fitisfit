@@ -7,6 +7,7 @@
 <title>유저가 보는 강사페이지</title>
 </head>
 <body>
-
+<jsp:include page="../home/header.jsp" />
+<jsp:include page="../home/footer.jsp" />
 </body>
 </html>

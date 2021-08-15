@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.leaf.fit.program.service.ProgramMapper">
+
+	<select id="proSelectList" resultType="ProgramVO">
+		select * from fit_program
+	</select>
+	
+	<select id="proSelect" resultType="ProgramVO">
+		select * from fit_program where pro_id = #{proId}
+	</select>
+	
+	<insert id="proInsert" parameterType="ProgramVO">
+		insert into fit_program values
+				(FIT_PRO_SEQ.nextval, 
+				#{proParId}, 
+				#{proCatId}, 
+				#{proPhoto}, 
+				#{proDesc}, 
+				#{proSince}, 
+				#{proPeriod}, 
+				#{proPrice}, 
+				#{proSales2}, 
+				#{proSales3}, 
+				#{proMaxPeople}, 
+				#{proPeople}, 
+				#{proInsId}, 
+				#{proState})
+	</insert>
+	
+	<update id="proUpdate" parameterType="ProgramVO">
+	
+	</update>
+	
+	<delete id="proDelete" parameterType="ProgramVO">
+		delete from fit_program where pro_id = #{proId}
+	</delete>
+
+</mapper>

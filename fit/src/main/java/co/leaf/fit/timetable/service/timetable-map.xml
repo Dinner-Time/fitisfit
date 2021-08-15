@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.leaf.fit.timetable.service.TimetableMapper">
+
+	<select id="timSelectList" resultType="TimetableVO">
+		select * from fit_timetable
+	</select>
+	
+	<select id="timSelect" resultType="TimetableVO">
+		select * from fit_timetable where tim_proid = #{timProId}
+	</select>
+	
+	<insert id="timInsert" parameterType="TimetableVO">
+		insert into fit_timetable values
+				(#{timMon},
+				#{timTue},
+				#{timWen},
+				#{timThu},
+				#{timFri},
+				#{timSat},
+				#{timSun},
+				#{timProId})
+	</insert>
+	
+	<update id="timUpdate" parameterType="TimetableVO">
+		update fit_timetable 
+			set tim_mon = #{timMon},
+				tim_tue = #{timTue},
+				tim_wen = #{timWen},
+				tim_thu = #{timThu},
+				tim_fri = #{timFri},
+				tim_sat = #{timSat},
+				tim_sun = #{timSun}
+			where tim_proid = #{timProId}
+	</update>
+	
+	<delete id="timDelete" parameterType="TimetableVO">
+		delete fit_timetable where tim_proid = #{timProId}
+	</delete>
+
+</mapper>

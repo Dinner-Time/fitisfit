@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="co.leaf.fit.instructor.service.InstructorMapper">
+
+	<select id="insSelectList" resultType="InstructorVO">
+		select * from
+		fit_instructor
+	</select>
+
+	<select id="insSelect" resultType="InstructorVO">
+		select * from fit_instructor where ins_num = #{insNum}
+	</select>
+
+	<insert id="insInsert" parameterType="InstructorVO">
+		insert into fit_instructor
+		(ins_num, ins_photo, ins_name, ins_phone, ins_gender, ins_insta, ins_kakao,
+		ins_history, ins_parid)
+		values (FIT_INS_SEQ.nextval, #{insPhoto}, #{insName}, #{insPhone},
+		#{insGender}, #{insInsta}, #{insKakao}, #{insHistory}, #{insParId})
+	</insert>
+
+	<update id="insUpdate" parameterType="InstructorVO">
+		update fit_instructor set
+		ins_photo = #{insPhoto},
+		ins_name = #{insName},
+		ins_phone = #{insPhone},
+		ins_insta = #{insInsta},
+		ins_kakao = #{insKakao},
+		ins_history = #{insHistory}
+		where ins_num = #{insNum}
+	</update>
+
+	<delete id="insDelete" parameterType="InstructorVO">
+		delete from fit_instructor where ins_num = #{insNum}
+	</delete>
+</mapper>

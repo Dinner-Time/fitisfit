@@ -10,5 +10,6 @@ public interface ProgramMapper {
 	
 	int proInsert(ProgramVO vo);
 	int proUpdate(ProgramVO vo);
+	int proMemberEnroll(ProgramVO vo);
 	int proDelete(ProgramVO vo);
 }

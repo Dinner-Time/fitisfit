@@ -22,6 +22,7 @@
 
 	<select id="proSelect" resultType="ProgramVO">
 		select pr.pro_name,
+			pr.pro_id,
 			pr.pro_photo,
 			pr.pro_desc,
 			pr.pro_since,
@@ -44,14 +45,14 @@
 		on pr.pro_parid = pa.par_id
 		inner join fit_instructor i
 		on i.ins_id = pr.pro_insid
-		inner join fit_review r
+		left outer join fit_review r
 		on r.rev_proid = pr.pro_id
 		inner join fit_category c
 		on c.cat_id = pr.pro_catid
 		inner join (select pt.par_id, re.reg_name
-		from fit_region re
-		inner join fit_partner pt
-		on re.reg_id = pt.par_regid) reg
+					from fit_region re
+					inner join fit_partner pt
+					on re.reg_id = pt.par_regid) reg
 		on reg.par_id = pr.pro_parid
 		where pr.pro_id = #{proId}
 	</select>
@@ -72,11 +73,19 @@
 		#{proMaxPeople},
 		#{proPeople},
 		#{proInsId},
-		#{proState})
+		'E')
 	</insert>
 
 	<update id="proUpdate" parameterType="ProgramVO">
 
+	</update>
+	
+	<update id="proMemberEnroll" parameterType="ProgramVO">
+		<if test="proPeople lt proMaxPeople">
+			update fit_program
+			set pro_people = pro_people + 1
+			where pro_id = #{proId}
+		</if>
 	</update>
 
 	<delete id="proDelete" parameterType="ProgramVO">

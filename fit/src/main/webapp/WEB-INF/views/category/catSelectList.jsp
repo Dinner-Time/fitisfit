@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>카테고리 전체 조회</title>
 </head>
 <body>
-
+	카테고리 전체 조회
 </body>
 </html>

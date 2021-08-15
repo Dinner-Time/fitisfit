@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.leaf.fit.wishlist.service.WishlistMapper">
+
+	<select id="wisSelectList" resultType="WishlistVO">
+		select * from fit_wishlist
+		order by wis_id
+	</select>
+
+	<insert id="wisInsert" parameterType="WishlistVO">
+		insert into fit_wishlist
+		(wis_id, wis_proid, wis_mememail)
+		values (FIT_WIS_SEQ.nextval, #{wisProId}, #{wisMemEmail})
+	</insert>
+
+	<delete id="wisDelete" parameterType="WishlistVO">
+		delete from fit_wishlist where wis_id = #{wisId}
+	</delete>
+</mapper>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="co.leaf.fit.member.service.MemberMapper">
+
+	<select id="memSelectList" resultType="MemberVO">
+		select * from fit_member where mem_state = 'Y' order by mem_subdate desc
+	</select>
+
+	<select id="memSelect" resultType="MemberVO">
+		select * from fit_member where mem_email = #{memEmail}
+	</select>
+
+	<insert id="memInsert" parameterType="MemberVO">
+		insert into fit_member (mem_email, mem_password, mem_name, mem_birth,
+		mem_phone, mem_address, mem_gender, mem_subdate, mem_photo)
+		values (#{memEmail}, #{memPassword}, #{memName}, #{memBirth}, #{memPhone},
+		#{memAddress}, #{memGender}, #{memSubDate}, #{memPhoto})
+	</insert>
+
+	<update id="memUpdatePassword" parameterType="MemberVO">
+		update fit_member
+		set mem_password = #{memPassword} where mem_email = #{memEmail}
+	</update>
+
+	<update id="memUpdatePhone" parameterType="MemberVO">
+		update fit_member set
+		mem_phone = #{memPhone} where mem_email = #{memEmail}
+	</update>
+
+	<delete id="memDelete" parameterType="MemberVO">
+		delete from fit_member where mem_email = #{memEmail}
+	</delete>
+
+</mapper>

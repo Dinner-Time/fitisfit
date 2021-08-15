@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="co.leaf.fit.history.service.HistoryMapper">
+
+	<select id="hisSelectList" resultType="HistoryVO">
+		select * from fit_history
+		order by his_id desc
+	</select>
+
+	<select id="hisSelect" resultType="HistoryVO">
+		select * from fit_history
+		where his_d = #{hisId}
+	</select>
+
+	<insert id="hisInsert" parameterType="HistoryVO">
+		insert into fit_history
+		(his_mememail, his_proid, his_since, his_period,
+		his_paid, his_regid, his_catid, his_date, his_id)
+		values (#{hisMemEmail},
+		#{hisProId}, #{hisSince}, #{hisPeriod},
+		#{hisPaid}, #{hisRegId},
+		#{hisCatId}, #{hisDate}, #{hisId})
+	</insert>
+
+	<delete id="hisDelete" parameterType="HistoryVO">
+		delete from fit_history
+		where his_id = #{hisId}
+	</delete>
+
+</mapper>

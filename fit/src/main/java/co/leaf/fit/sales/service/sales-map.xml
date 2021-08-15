@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.leaf.fit.sales.service.SalesMapper">
+
+	<select id="salSelectList" resultType="SalesVO">
+		select * from fit_sales
+	</select>
+
+	<select id="salSelect" resultType="SalesVO">
+		select * from fit_sales where
+		sal_date = #{salDate} and sal_parid = #{salParId}
+	</select>
+
+	<insert id="salInsert" parameterType="SalesVO">
+		insert into fit_sales
+		values
+		(#{salDate},
+		#{salParId},
+		#{salIncome},
+		#{salFee})
+	</insert>
+
+	<update id="salUpdate" parameterType="SalesVO">
+		update fit_sales set
+		sal_income = #{salIncome}, sal_fee = #{salFee} where sal_date =
+		#{salDate} and sal_parid = #{salParId}
+	</update>
+
+</mapper>

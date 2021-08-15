@@ -8,6 +8,7 @@
 <title>Review Test</title>
 </head>
 <body>
+<jsp:include page="../home/header.jsp" />
 	<div>
 		<table border="1" rules="all">
 			<tr>
@@ -28,5 +29,6 @@
 			</c:forEach>
 		</table>
 	</div>
+<jsp:include page="../home/footer.jsp" />
 </body>
 </html>

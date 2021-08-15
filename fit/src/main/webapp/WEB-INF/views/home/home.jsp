@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<jsp:include page="header.jsp" />
 	<h1>Welcome!</h1>
-	<h2>박태훈</h2>
 	<a href="proTest.do">program</a>
 	<a href="salTest.do">sales</a>
 	<a href="timTest.do">timetable</a>
@@ -20,5 +20,6 @@
 	<a href="revTest.do">review</a>
 	<a href="wisTest.do">wishlist</a>
 	<a href="hisTest.do">history</a>
+	<jsp:include page="footer.jsp" />
 </body>
 </html>

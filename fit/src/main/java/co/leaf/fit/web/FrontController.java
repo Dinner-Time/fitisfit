@@ -14,7 +14,11 @@ import javax.servlet.http.HttpServletResponse;
 import co.leaf.fit.category.command.CatTest;
 import co.leaf.fit.common.Command;
 import co.leaf.fit.history.command.HisTest;
-import co.leaf.fit.instructor.command.InsTest;
+import co.leaf.fit.instructor.command.InsSelectList;
+import co.leaf.fit.instructor.command.InsInfo;
+import co.leaf.fit.instructor.command.InsInsert;
+import co.leaf.fit.instructor.command.InsInsertForm;
+import co.leaf.fit.instructor.command.InsSelect;
 import co.leaf.fit.main.command.Home;
 import co.leaf.fit.member.command.MemTest;
 import co.leaf.fit.partner.command.ParTest;
@@ -46,7 +50,11 @@ public class FrontController extends HttpServlet {
 		map.put("/hisTest.do", new HisTest());
 		
 		// instructor page
-		map.put("/insTest.do", new InsTest());
+		map.put("/insSelectList.do", new InsSelectList());
+		map.put("/insSelect.do", new InsSelect());
+		map.put("/insInsertForm.do", new InsInsertForm());
+		map.put("/insInsert.do", new InsInsert());
+		//map.put("/insInfo.do", new InsInfo());
 		
 		// member page
 		map.put("/memTest.do", new MemTest());

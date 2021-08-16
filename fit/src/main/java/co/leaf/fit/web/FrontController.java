@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import co.leaf.fit.category.command.CatSelect;
+import co.leaf.fit.category.command.CatSelectList;
 import co.leaf.fit.category.command.CatTest;
 import co.leaf.fit.common.Command;
 import co.leaf.fit.history.command.HisTest;
@@ -20,6 +22,8 @@ import co.leaf.fit.member.command.MemTest;
 import co.leaf.fit.partner.command.ParTest;
 import co.leaf.fit.program.command.ProDetail;
 import co.leaf.fit.program.command.ProTest;
+import co.leaf.fit.region.command.RegSelect;
+import co.leaf.fit.region.command.RegSelectList;
 import co.leaf.fit.region.command.RegTest;
 import co.leaf.fit.review.command.RevTest;
 import co.leaf.fit.sales.command.SalTest;
@@ -72,6 +76,15 @@ public class FrontController extends HttpServlet {
 		
 		// wishlist page
 		map.put("/wisTest.do", new WisTest());
+		
+		// category jsp
+		map.put("/catSelect.do", new CatSelect());
+		map.put("/catSelectList.do", new CatSelectList());
+		
+		map.put("/regSelect.do", new RegSelect());
+		map.put("/regSelectList.do", new RegSelectList());
+		
+		
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

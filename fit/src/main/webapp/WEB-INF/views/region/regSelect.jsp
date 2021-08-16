@@ -8,7 +8,8 @@
 </head>
 <body>
 <jsp:include page="../home/header.jsp" />
-	지역 한 건 조회
+	
+	
 <jsp:include page="../home/footer.jsp" />
 </body>
 </html>

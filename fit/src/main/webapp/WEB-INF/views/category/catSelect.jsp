@@ -8,7 +8,7 @@
 </head>
 <body>
 <jsp:include page="../home/header.jsp" />
-	카테고리 한 건 조회
+	카테고리 한 건 조회 (필요없나?)
 <jsp:include page="../home/footer.jsp" />
 </body>
 </html>

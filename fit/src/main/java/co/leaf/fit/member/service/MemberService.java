@@ -42,4 +42,9 @@ public class MemberService implements MemberMapper{
 		return map.memDelete(vo);
 	}
 
+	@Override
+	public MemberVO memLogin(MemberVO vo) {
+		return map.memLogin(vo);
+	}
+
 }

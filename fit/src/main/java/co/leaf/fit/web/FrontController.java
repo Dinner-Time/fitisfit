@@ -12,7 +12,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.leaf.fit.category.command.CatTest;
+import co.leaf.fit.review.command.RevSelectByAdm;
+import co.leaf.fit.review.command.RevSelectList;
 import co.leaf.fit.common.Command;
+import co.leaf.fit.history.command.HisInsert;
+import co.leaf.fit.history.command.HisInsertForm;
 import co.leaf.fit.history.command.HisTest;
 import co.leaf.fit.instructor.command.InsTest;
 import co.leaf.fit.main.command.Home;
@@ -21,6 +25,8 @@ import co.leaf.fit.partner.command.ParTest;
 import co.leaf.fit.program.command.ProDetail;
 import co.leaf.fit.program.command.ProTest;
 import co.leaf.fit.region.command.RegTest;
+import co.leaf.fit.review.command.RevSelectListByAdm;
+import co.leaf.fit.review.command.RevSelectListByPar;
 import co.leaf.fit.review.command.RevTest;
 import co.leaf.fit.sales.command.SalTest;
 import co.leaf.fit.timetable.command.TimTest;
@@ -44,6 +50,8 @@ public class FrontController extends HttpServlet {
 		
 		// history page
 		map.put("/hisTest.do", new HisTest());
+		map.put("/hisInsertForm.do", new HisInsertForm());
+		map.put("/hisInsert.do", new HisInsert());
 		
 		// instructor page
 		map.put("/insTest.do", new InsTest());
@@ -62,7 +70,10 @@ public class FrontController extends HttpServlet {
 		map.put("/regTest.do", new RegTest());
 		
 		// review page
-		map.put("/revTest.do", new RevTest());
+		map.put("/revSelectList.do", new RevSelectList());
+		map.put("/revSelectListByAdm.do", new RevSelectListByAdm());
+		map.put("/revSelectByAdm.do", new RevSelectByAdm());
+		map.put("/revSelectListByPar.do", new RevSelectListByPar());
 		
 		// sales page 
 		map.put("/salTest.do", new SalTest());

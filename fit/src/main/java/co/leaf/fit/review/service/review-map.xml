@@ -3,14 +3,32 @@
 
 <mapper namespace="co.leaf.fit.review.service.ReviewMapper">
 
-	<select id="revSelectList" resultType="ReviewVO">
-		select * from fit_review
-		order by rev_id desc
+	<resultMap type="ReviewVO" id="ReviewMap">
+		<id property="revProName" column="pro_name" />
+		<id property="revId" column="rev_id" />
+		<id property="revProId" column="rev_proid" />
+		<id property="revScore" column="rev_score" />
+		<id property="revContent" column="rev_content" />
+		<id property="revWriter" column="rev_writer" />
+		<id property="revDate" column="rev_date" />
+	</resultMap>
+
+	<select id="revSelectList" resultMap="ReviewMap">
+		SELECT
+		a.pro_name, b.*
+		FROM
+		fit_program a
+		JOIN fit_review b ON a.pro_id = b.rev_proid
+		ORDER BY
+		rev_id desc
 	</select>
 
-	<select id="revSelect" resultType="ReviewVO">
-		select * from fit_review where
-		rev_id = #{revId}
+	<select id="revSelect" resultMap="ReviewMap">
+		SELECT
+		a.pro_name, b.*
+		FROM fit_program a
+		JOIN fit_review b ON a.pro_id = b.rev_proid
+		WHERE rev_id = #{revId}
 	</select>
 
 	<insert id="revInsert" parameterType="ReviewVO">

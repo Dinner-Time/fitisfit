@@ -9,6 +9,6 @@ public interface SalesMapper {
 	List<SalesVO> salAdminDetail();
 	List<SalesVO> salPatnerList(SalesVO vo);
 	
-	int salInsert(SalesVO vo);
-	int salUpdate(SalesVO vo);
+	int salPartnerInsert(SalesVO vo);
+	int salPartnerUpdate(SalesVO vo);
 }

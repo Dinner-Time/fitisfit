@@ -6,7 +6,7 @@ public class SalesVO {
 	private Date salDate;
 	private int salParId;
 	private int salIncome;
-	private int salFee;
+	private double salFee;
 	private String parName;
 	private String salRegName;
 	public Date getSalDate() {
@@ -27,10 +27,10 @@ public class SalesVO {
 	public void setSalIncome(int salIncome) {
 		this.salIncome = salIncome;
 	}
-	public int getSalFee() {
+	public double getSalFee() {
 		return salFee;
 	}
-	public void setSalFee(int salFee) {
+	public void setSalFee(double salFee) {
 		this.salFee = salFee;
 	}
 	public String getParName() {

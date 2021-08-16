@@ -25,6 +25,8 @@ import co.leaf.fit.region.command.RegTest;
 import co.leaf.fit.review.command.RevTest;
 import co.leaf.fit.sales.command.SalAdminDetail;
 import co.leaf.fit.sales.command.SalAdminList;
+import co.leaf.fit.sales.command.SalPartnerInsert;
+import co.leaf.fit.sales.command.SalPartnerUpdate;
 import co.leaf.fit.sales.command.SalPatnerList;
 import co.leaf.fit.sales.command.SalTest;
 import co.leaf.fit.wishlist.command.WisTest;
@@ -70,9 +72,11 @@ public class FrontController extends HttpServlet {
 		
 		// sales page 
 		map.put("/salTest.do", new SalTest());
-		map.put("/salAdminList.do", new SalAdminList());
-		map.put("/salAdminDetail.do", new SalAdminDetail());
-		map.put("/salPatnerList.do", new SalPatnerList());
+		map.put("/salAdminList.do", new SalAdminList()); // 관리자 화면에서 수익 관리
+		map.put("/salAdminDetail.do", new SalAdminDetail()); // 관리자 화면에서 수익 자세히보기
+		map.put("/salPatnerList.do", new SalPatnerList()); // 파트너 사에서 자기 수익 보기
+		map.put("/salPartnerInsert.do", new SalPartnerInsert()); // 파트너 사에서 오늘 수익 정산
+		map.put("/salPartnerUpdate.do", new SalPartnerUpdate()); // 파트너 사에서 정산 금액 수정
 		
 		// timetable page
 		

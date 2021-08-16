@@ -9,7 +9,7 @@ import co.leaf.fit.vo.SalesVO;
 
 public class SalesService implements SalesMapper{
 	
-	private SqlSession sqlSession = DataSource.getInstance().openSession();
+	private SqlSession sqlSession = DataSource.getInstance().openSession(true);
 	private SalesMapper map = sqlSession.getMapper(SalesMapper.class);
 	
 	@Override
@@ -28,14 +28,14 @@ public class SalesService implements SalesMapper{
 		return map.salPatnerList(vo);
 	}
 	@Override
-	public int salInsert(SalesVO vo) {
+	public int salPartnerInsert(SalesVO vo) {
 		// TODO Auto-generated method stub
-		return map.salInsert(vo);
+		return map.salPartnerInsert(vo);
 	}
 	@Override
-	public int salUpdate(SalesVO vo) {
+	public int salPartnerUpdate(SalesVO vo) {
 		// TODO Auto-generated method stub
-		return map.salUpdate(vo);
+		return map.salPartnerUpdate(vo);
 	}
 	
 	}

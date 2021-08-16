@@ -15,6 +15,7 @@
 		pr.pro_catid,
 		pr.pro_people,
 		pr.pro_maxpeople,
+		pr.pro_sale3,
 		pa.par_regid
 		from fit_program pr
 		inner join fit_partner pa

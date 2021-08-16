@@ -8,11 +8,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:include page="../home/header.jsp" />
-	<c:forEach var="region" items="${list }">
-		<h1>${region.regName }</h1>
-		<hr>
+	<h1>${detailList[0].proName }</h1>
+	<h1>${detailList[0].catName }</h1>
+	<h1>${detailList[0].insName }</h1>
+	<h1>${detailList[0].regName }</h1>
+	<hr>
+	<c:forEach var="detail" items="${detailList }">
+		<h2>${detail.revContent }</h2>
+		<h2>${detail.revWriter }</h2>
 	</c:forEach>
-<jsp:include page="../home/footer.jsp" />
 </body>
 </html>

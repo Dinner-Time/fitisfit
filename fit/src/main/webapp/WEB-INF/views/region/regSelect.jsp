@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>지역 한 건 조회</title>
 </head>
 <body>
-
+<jsp:include page="../home/header.jsp" />
+	지역 한 건 조회
+<jsp:include page="../home/footer.jsp" />
 </body>
 </html>

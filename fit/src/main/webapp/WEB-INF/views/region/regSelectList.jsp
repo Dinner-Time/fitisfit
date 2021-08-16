@@ -4,10 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>업체가 강사 관리하는 페이지 (강사한건보기)</title>
+<title>지역 전체 조회</title>
 </head>
 <body>
 <jsp:include page="../home/header.jsp" />
+	지역 전체 조회
 <jsp:include page="../home/footer.jsp" />
 </body>
 </html>

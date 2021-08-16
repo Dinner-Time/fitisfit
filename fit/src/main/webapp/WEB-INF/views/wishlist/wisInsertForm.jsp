@@ -7,6 +7,7 @@
 <title>위시리스트 등록</title>
 </head>
 <body>
-
+<jsp:include page="../home/header.jsp" />
+<jsp:include page="../home/footer.jsp" />
 </body>
 </html>

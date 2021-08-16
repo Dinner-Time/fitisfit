@@ -4,10 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>업체가 강사 관리하는 페이지 (강사한건보기)</title>
+<title>Insert title here</title>
 </head>
 <body>
 <jsp:include page="../home/header.jsp" />
+	관리자 권한 파트너 전체 조회 페이지
 <jsp:include page="../home/footer.jsp" />
 </body>
 </html>

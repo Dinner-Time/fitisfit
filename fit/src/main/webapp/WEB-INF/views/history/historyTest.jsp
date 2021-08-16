@@ -8,6 +8,7 @@
 <title>History Test</title>
 </head>
 <body>
+<jsp:include page="../home/header.jsp" />
 	<div>
 		<table border="1" rules="all">
 			<tr>
@@ -27,5 +28,6 @@
 		</table>
 
 	</div>
+<jsp:include page="../home/footer.jsp" />
 </body>
 </html>

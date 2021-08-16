@@ -9,7 +9,7 @@ import co.leaf.fit.vo.SalesVO;
 
 public class SalesService implements SalesMapper{
 	
-	private SqlSession sqlSession = DataSource.getInstance().openSession();
+	private SqlSession sqlSession = DataSource.getInstance().openSession(true);
 	private SalesMapper map = sqlSession.getMapper(SalesMapper.class);
 	
 	@Override

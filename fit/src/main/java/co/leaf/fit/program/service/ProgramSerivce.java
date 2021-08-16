@@ -9,7 +9,7 @@ import co.leaf.fit.vo.ProgramVO;
 
 public class ProgramSerivce implements ProgramMapper{
 	
-	private SqlSession sqlSession = DataSource.getInstance().openSession();
+	private SqlSession sqlSession = DataSource.getInstance().openSession(true);
 	private ProgramMapper map = sqlSession.getMapper(ProgramMapper.class);
 
 	@Override

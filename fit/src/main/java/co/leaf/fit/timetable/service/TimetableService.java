@@ -9,7 +9,7 @@ import co.leaf.fit.vo.TimetableVO;
 
 public class TimetableService implements TimetableMapper{
 	
-	private SqlSession sqlSession = DataSource.getInstance().openSession();
+	private SqlSession sqlSession = DataSource.getInstance().openSession(true);
 	private TimetableMapper map = sqlSession.getMapper(TimetableMapper.class);
 
 	@Override

@@ -8,7 +8,7 @@ import co.leaf.fit.common.DataSource;
 import co.leaf.fit.vo.CategoryVO;
 
 public class CategoryService implements CategoryMapper {
-	private SqlSession sqlSession = DataSource.getInstance().openSession();
+	private SqlSession sqlSession = DataSource.getInstance().openSession(true);
 	private CategoryMapper map = sqlSession.getMapper(CategoryMapper.class);
 
 	@Override

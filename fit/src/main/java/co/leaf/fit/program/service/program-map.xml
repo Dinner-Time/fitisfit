@@ -13,50 +13,91 @@
 		pr.pro_period,
 		pr.pro_price,
 		pr.pro_catid,
+		pr.pro_people,
+		pr.pro_maxpeople,
+		pr.pro_sale3,
 		pa.par_regid
 		from fit_program pr
 		inner join fit_partner pa
 		on pr.pro_parid =
 		pa.par_id
+		where pr.pro_state = 'Y'
 	</select>
 
 	<select id="proSelect" resultType="ProgramVO">
 		select pr.pro_name,
-			pr.pro_photo,
-			pr.pro_desc,
-			pr.pro_since,
-			pr.pro_period,
-			pr.pro_price,
-			pr.pro_sale2,
-			pr.pro_sale3,
-			pr.pro_people,
-			pr.pro_maxpeople,
-			c.cat_name,
-			reg.reg_name,
-			pa.par_name,
-			i.ins_name,
-			r.rev_score,
-			r.rev_content,
-			r.rev_writer,
-			r.rev_date
+		pr.pro_id,
+		pr.pro_photo,
+		pr.pro_desc,
+		pr.pro_since,
+		pr.pro_period,
+		pr.pro_price,
+		pr.pro_sale2,
+		pr.pro_sale3,
+		pr.pro_people,
+		pr.pro_maxpeople,
+		c.cat_name,
+		reg.reg_name,
+		pa.par_name,
+		i.ins_name,
+		r.rev_score,
+		r.rev_content,
+		r.rev_writer,
+		r.rev_date
 		from fit_program pr
 		inner join fit_partner pa
-		on pr.pro_parid = pa.par_id
+		on pr.pro_parid =
+		pa.par_id
 		inner join fit_instructor i
 		on i.ins_id = pr.pro_insid
-		inner join fit_review r
+		left
+		outer join fit_review r
 		on r.rev_proid = pr.pro_id
-		inner join fit_category c
+		inner join
+		fit_category c
 		on c.cat_id = pr.pro_catid
-		inner join (select pt.par_id, re.reg_name
+		inner join (select pt.par_id,
+		re.reg_name
 		from fit_region re
 		inner join fit_partner pt
 		on re.reg_id = pt.par_regid) reg
 		on reg.par_id = pr.pro_parid
-		where pr.pro_id = #{proId}
+		where
+		pr.pro_state = 'Y' and pr.pro_id = #{proId}
 	</select>
+	
+	<delete id="proReqProcess">
+		delete from fit_program 
+		where pro_id = #{proOriId}
+	</delete>
+	
+	<update id="proReqDone" parameterType="ProgramVO">
+		update fit_program 
+		set pro_id = #{pro_oriid}, pro_state = 'Y', pro_oriid = null where pro_id = #{pro_id}
+	</update>
 
-	<insert id="proInsert" parameterType="ProgramVO">
+	<insert id="proInsertReq" parameterType="ProgramVO">
+		insert into fit_program
+		values
+		(FIT_PRO_SEQ.nextval,
+		#{proParId},
+		#{proCatId},
+		#{proPhoto},
+		#{proDesc},
+		#{proSince},
+		#{proPeriod},
+		#{proPrice},
+		#{proSales2},
+		#{proSales3},
+		#{proMaxPeople},
+		0,
+		#{proInsId},
+		'E',
+		#{proName},
+		#{proOriId})
+	</insert>
+	
+	<insert id="proUpdateReq" parameterType="ProgramVO">
 		insert into fit_program
 		values
 		(FIT_PRO_SEQ.nextval,
@@ -72,11 +113,16 @@
 		#{proMaxPeople},
 		#{proPeople},
 		#{proInsId},
-		#{proState})
+		'M')
 	</insert>
 
-	<update id="proUpdate" parameterType="ProgramVO">
-
+	<update id="proMemberEnroll" parameterType="ProgramVO">
+		<if test="proPeople lt proMaxPeople">
+			update fit_program
+			set pro_people = pro_people + 1
+			where
+			pro_id = #{proId}
+		</if>
 	</update>
 
 	<delete id="proDelete" parameterType="ProgramVO">

@@ -1,7 +1,5 @@
 package co.leaf.fit.timetable.service;
 
-import java.util.List;
-
 import org.apache.ibatis.session.SqlSession;
 
 import co.leaf.fit.common.DataSource;
@@ -11,11 +9,6 @@ public class TimetableService implements TimetableMapper{
 	
 	private SqlSession sqlSession = DataSource.getInstance().openSession(true);
 	private TimetableMapper map = sqlSession.getMapper(TimetableMapper.class);
-
-	@Override
-	public List<TimetableVO> timSelectList() {
-		return map.timSelectList();
-	}
 
 	@Override
 	public TimetableVO timSelect(TimetableVO vo) {

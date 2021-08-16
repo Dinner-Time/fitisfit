@@ -37,4 +37,9 @@ public class ProgramSerivce implements ProgramMapper{
 		return map.proDelete(vo);
 	}
 
+	@Override
+	public int proMemberEnroll(ProgramVO vo) {
+		return map.proMemberEnroll(vo);	
+	}
+
 }

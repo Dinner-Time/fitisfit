@@ -9,13 +9,11 @@
 </head>
 <body>
 <jsp:include page="../home/header.jsp" />
-	<c:forEach var="pro" items="${list }">
-		<h1>${pro.proId }/${pro.proName }</h1>
-		<form action="proDetail.do">
-			<input type="text" name="proId"value="${pro.proId }">
-			<button type="submit">Go</button>
-		</form>
-		<hr>
+	<c:forEach var="row" items="${list }">
+		<h1>업체 아이디: ${row.salParId}</h1>
+		<h1>수익: ${row.salIncome}</h1>
+		<h1>얻은 수수료: ${row.salFee}</h1>
+		<h1>날짜: ${row.salDate}</h1>
 	</c:forEach>
 <jsp:include page="../home/footer.jsp" />
 </body>

@@ -5,9 +5,10 @@ import java.util.List;
 import co.leaf.fit.vo.SalesVO;
 
 public interface SalesMapper {
-	List<SalesVO> salSelectList();
-	SalesVO salSelect(SalesVO vo);
+	List<SalesVO> salAdminList();
+	List<SalesVO> salAdminDetail();
+	List<SalesVO> salPatnerList(SalesVO vo);
 	
-	int salInsert(SalesVO vo);
-	int salUpdate(SalesVO vo);
+	int salPartnerInsert(SalesVO vo);
+	int salPartnerUpdate(SalesVO vo);
 }

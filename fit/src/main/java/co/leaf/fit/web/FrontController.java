@@ -32,14 +32,21 @@ import co.leaf.fit.member.command.MemberSelect;
 import co.leaf.fit.partner.command.ParInsert;
 import co.leaf.fit.partner.command.ParInsertForm;
 import co.leaf.fit.partner.command.ParTest;
+import co.leaf.fit.program.command.MemberEnroll;
 import co.leaf.fit.program.command.ProDetail;
-import co.leaf.fit.program.command.ProTest;
+import co.leaf.fit.program.command.ProList;
+import co.leaf.fit.program.command.ProgramAdd;
+import co.leaf.fit.program.command.ProgramAddForm;
 import co.leaf.fit.region.command.RegTest;
 import co.leaf.fit.review.command.RevSelectListByAdm;
 import co.leaf.fit.review.command.RevSelectListByPar;
 import co.leaf.fit.review.command.RevTest;
+import co.leaf.fit.sales.command.SalAdminDetail;
+import co.leaf.fit.sales.command.SalAdminList;
+import co.leaf.fit.sales.command.SalPartnerInsert;
+import co.leaf.fit.sales.command.SalPartnerUpdate;
+import co.leaf.fit.sales.command.SalPatnerList;
 import co.leaf.fit.sales.command.SalTest;
-import co.leaf.fit.timetable.command.TimTest;
 import co.leaf.fit.wishlist.command.WisTest;
 
 @WebServlet("*.do")
@@ -83,8 +90,11 @@ public class FrontController extends HttpServlet {
 		map.put("/parInsert.do", new ParInsert());
 		
 		// program page
-		map.put("/proTest.do", new ProTest());
-		map.put("/proDetail.do", new ProDetail());
+		map.put("/proList.do", new ProList()); // 프로그램 전체 리스트
+		map.put("/proDetail.do", new ProDetail()); // 프로그램 상세보기 
+		map.put("/memberEnroll.do", new MemberEnroll()); // 결제 완료 이후 등록
+		map.put("/programAddForm.do", new ProgramAddForm()); // 프로그램 추가 페이지
+		map.put("/programAdd.do", new ProgramAdd()); // 프로그램 추가 기능
 		
 		// region page
 		map.put("/regTest.do", new RegTest());
@@ -97,9 +107,13 @@ public class FrontController extends HttpServlet {
 		
 		// sales page 
 		map.put("/salTest.do", new SalTest());
+		map.put("/salAdminList.do", new SalAdminList()); // 관리자 화면에서 수익 관리
+		map.put("/salAdminDetail.do", new SalAdminDetail()); // 관리자 화면에서 수익 자세히보기
+		map.put("/salPatnerList.do", new SalPatnerList()); // 파트너 사에서 자기 수익 보기
+		map.put("/salPartnerInsert.do", new SalPartnerInsert()); // 파트너 사에서 오늘 수익 정산
+		map.put("/salPartnerUpdate.do", new SalPartnerUpdate()); // 파트너 사에서 정산 금액 수정
 		
 		// timetable page
-		map.put("/timTest.do", new TimTest());
 		
 		// wishlist page
 		map.put("/wisTest.do", new WisTest());

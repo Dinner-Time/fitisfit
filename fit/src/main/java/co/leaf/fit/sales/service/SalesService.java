@@ -18,9 +18,9 @@ public class SalesService implements SalesMapper{
 		return map.salAdminList();
 	}
 	@Override
-	public List<SalesVO> salAdminDetail(SalesVO vo) {
+	public List<SalesVO> salAdminDetail() {
 		// TODO Auto-generated method stub
-		return map.salAdminDetail(vo);
+		return map.salAdminDetail();
 	}
 	@Override
 	public List<SalesVO> salPatnerList(SalesVO vo) {

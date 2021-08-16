@@ -23,6 +23,9 @@ import co.leaf.fit.program.command.ProDetail;
 import co.leaf.fit.program.command.ProList;
 import co.leaf.fit.region.command.RegTest;
 import co.leaf.fit.review.command.RevTest;
+import co.leaf.fit.sales.command.SalAdminDetail;
+import co.leaf.fit.sales.command.SalAdminList;
+import co.leaf.fit.sales.command.SalPatnerList;
 import co.leaf.fit.sales.command.SalTest;
 import co.leaf.fit.wishlist.command.WisTest;
 
@@ -67,6 +70,9 @@ public class FrontController extends HttpServlet {
 		
 		// sales page 
 		map.put("/salTest.do", new SalTest());
+		map.put("/salAdminList.do", new SalAdminList());
+		map.put("/salAdminDetail.do", new SalAdminDetail());
+		map.put("/salPatnerList.do", new SalPatnerList());
 		
 		// timetable page
 		

@@ -6,7 +6,7 @@ import co.leaf.fit.vo.SalesVO;
 
 public interface SalesMapper {
 	List<SalesVO> salAdminList();
-	List<SalesVO> salAdminDetail(SalesVO vo);
+	List<SalesVO> salAdminDetail();
 	List<SalesVO> salPatnerList(SalesVO vo);
 	
 	int salInsert(SalesVO vo);

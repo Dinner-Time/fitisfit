@@ -9,12 +9,13 @@
 </head>
 <body>
 <jsp:include page="../home/header.jsp" />
-	<h1><a href="salAdminList.do">admin 전체보기</a></h1>
-	<h1><a href="salAdminDetail.do">admin 상세보기</a></h1>
-	<form action="salPatnerList.do" method="post">
-		<input type="text" name="parId" placeholder="업체 전체보기">
-		<button type="submit">GO</button>
-	</form>
+	<c:forEach var="row" items="${list }">
+		<h1>지역 이름: ${row.salRegName}</h1>
+		<h1>업체 이름: ${row.parName}</h1>
+		<h1>수익: ${row.salIncome}</h1>
+		<h1>얻은 수수료: ${row.salFee}</h1>
+		<h1>날짜: ${row.salDate}</h1>
+	</c:forEach>
 <jsp:include page="../home/footer.jsp" />
 </body>
 </html>

@@ -18,6 +18,7 @@ import co.leaf.fit.instructor.command.InsTest;
 import co.leaf.fit.main.command.Home;
 import co.leaf.fit.member.command.MemTest;
 import co.leaf.fit.partner.command.ParTest;
+import co.leaf.fit.program.command.ProDetail;
 import co.leaf.fit.program.command.ProTest;
 import co.leaf.fit.region.command.RegTest;
 import co.leaf.fit.review.command.RevTest;
@@ -55,6 +56,7 @@ public class FrontController extends HttpServlet {
 		
 		// program page
 		map.put("/proTest.do", new ProTest());
+		map.put("/proDetail.do", new ProDetail());
 		
 		// region page
 		map.put("/regTest.do", new RegTest());

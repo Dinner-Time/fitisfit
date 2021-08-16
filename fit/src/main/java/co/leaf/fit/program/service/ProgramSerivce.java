@@ -18,7 +18,7 @@ public class ProgramSerivce implements ProgramMapper{
 	}
 
 	@Override
-	public ProgramVO proSelect(ProgramVO vo) {
+	public List<ProgramVO> proSelect(ProgramVO vo) {
 		return map.proSelect(vo);
 	}
 

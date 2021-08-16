@@ -5,37 +5,83 @@
 <mapper namespace="co.leaf.fit.program.service.ProgramMapper">
 
 	<select id="proSelectList" resultType="ProgramVO">
-		select * from fit_program
+		select pr.pro_name,
+		pr.pro_id,
+		pr.pro_photo,
+		pr.pro_desc,
+		pr.pro_since,
+		pr.pro_period,
+		pr.pro_price,
+		pr.pro_catid,
+		pa.par_regid
+		from fit_program pr
+		inner join fit_partner pa
+		on pr.pro_parid =
+		pa.par_id
 	</select>
-	
+
 	<select id="proSelect" resultType="ProgramVO">
-		select * from fit_program where pro_id = #{proId}
+		select pr.pro_name,
+			pr.pro_photo,
+			pr.pro_desc,
+			pr.pro_since,
+			pr.pro_period,
+			pr.pro_price,
+			pr.pro_sale2,
+			pr.pro_sale3,
+			pr.pro_people,
+			pr.pro_maxpeople,
+			c.cat_name,
+			reg.reg_name,
+			pa.par_name,
+			i.ins_name,
+			r.rev_score,
+			r.rev_content,
+			r.rev_writer,
+			r.rev_date
+		from fit_program pr
+		inner join fit_partner pa
+		on pr.pro_parid = pa.par_id
+		inner join fit_instructor i
+		on i.ins_id = pr.pro_insid
+		inner join fit_review r
+		on r.rev_proid = pr.pro_id
+		inner join fit_category c
+		on c.cat_id = pr.pro_catid
+		inner join (select pt.par_id, re.reg_name
+		from fit_region re
+		inner join fit_partner pt
+		on re.reg_id = pt.par_regid) reg
+		on reg.par_id = pr.pro_parid
+		where pr.pro_id = #{proId}
 	</select>
-	
+
 	<insert id="proInsert" parameterType="ProgramVO">
-		insert into fit_program values
-				(FIT_PRO_SEQ.nextval, 
-				#{proParId}, 
-				#{proCatId}, 
-				#{proPhoto}, 
-				#{proDesc}, 
-				#{proSince}, 
-				#{proPeriod}, 
-				#{proPrice}, 
-				#{proSales2}, 
-				#{proSales3}, 
-				#{proMaxPeople}, 
-				#{proPeople}, 
-				#{proInsId}, 
-				#{proState})
+		insert into fit_program
+		values
+		(FIT_PRO_SEQ.nextval,
+		#{proParId},
+		#{proCatId},
+		#{proPhoto},
+		#{proDesc},
+		#{proSince},
+		#{proPeriod},
+		#{proPrice},
+		#{proSales2},
+		#{proSales3},
+		#{proMaxPeople},
+		#{proPeople},
+		#{proInsId},
+		#{proState})
 	</insert>
-	
+
 	<update id="proUpdate" parameterType="ProgramVO">
-	
+
 	</update>
-	
+
 	<delete id="proDelete" parameterType="ProgramVO">
-		delete from fit_program where pro_id = #{proId}
+		delete from fit_program
+		where pro_id = #{proId}
 	</delete>
 
 </mapper>

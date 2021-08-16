@@ -4,11 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>업체가 강사 관리하는 페이지 (강사목록보기)</title>
 </head>
 <body>
 <jsp:include page="../home/header.jsp" />
-	마이페이지 - 회원정보
 <jsp:include page="../home/footer.jsp" />
 </body>
 </html>

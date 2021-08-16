@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="../home/header.jsp" />
 <div align="center">
 	<div><h1>강사목록</h1></div>
 	<div>
@@ -24,5 +25,6 @@
 		</c:forEach>
 	</div>
 </div>
+<jsp:include page="../home/footer.jsp" />
 </body>
 </html>

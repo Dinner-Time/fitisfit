@@ -6,7 +6,7 @@ import co.leaf.fit.vo.ProgramVO;
 
 public interface ProgramMapper {
 	List<ProgramVO> proSelectList();
-	ProgramVO proSelect(ProgramVO vo);
+	List<ProgramVO> proSelect(ProgramVO vo);
 	
 	int proInsert(ProgramVO vo);
 	int proUpdate(ProgramVO vo);

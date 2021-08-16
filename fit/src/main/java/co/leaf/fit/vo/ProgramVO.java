@@ -18,6 +18,13 @@ public class ProgramVO {
 	private int proInsId;
 	private String proState;
 	private String proName;
+	private String catName;
+	private String regName;
+	private String insName;
+	private int revScore;
+	private String revContent;
+	private String revWriter;
+	private Date revDate;
 	
 	public int getProId() {
 		return proId;
@@ -108,6 +115,48 @@ public class ProgramVO {
 	}
 	public void setProName(String proName) {
 		this.proName = proName;
+	}
+	public String getCatName() {
+		return catName;
+	}
+	public void setCatName(String catName) {
+		this.catName = catName;
+	}
+	public String getRegName() {
+		return regName;
+	}
+	public void setRegName(String regName) {
+		this.regName = regName;
+	}
+	public String getInsName() {
+		return insName;
+	}
+	public void setInsName(String insName) {
+		this.insName = insName;
+	}
+	public int getRevScore() {
+		return revScore;
+	}
+	public void setRevScore(int revScore) {
+		this.revScore = revScore;
+	}
+	public String getRevContent() {
+		return revContent;
+	}
+	public void setRevContent(String revContent) {
+		this.revContent = revContent;
+	}
+	public String getRevWriter() {
+		return revWriter;
+	}
+	public void setRevWriter(String revWriter) {
+		this.revWriter = revWriter;
+	}
+	public Date getRevDate() {
+		return revDate;
+	}
+	public void setRevDate(Date revDate) {
+		this.revDate = revDate;
 	}
 	
 	

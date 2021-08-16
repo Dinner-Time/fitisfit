@@ -13,23 +13,29 @@ public class SalesService implements SalesMapper{
 	private SalesMapper map = sqlSession.getMapper(SalesMapper.class);
 	
 	@Override
-	public List<SalesVO> salSelectList() {
-		return map.salSelectList();
+	public List<SalesVO> salAdminList() {
+		// TODO Auto-generated method stub
+		return map.salAdminList();
 	}
-
 	@Override
-	public SalesVO salSelect(SalesVO vo) {
-		return map.salSelect(vo);
+	public List<SalesVO> salAdminDetail(SalesVO vo) {
+		// TODO Auto-generated method stub
+		return map.salAdminDetail(vo);
 	}
-
+	@Override
+	public List<SalesVO> salPatnerList(SalesVO vo) {
+		// TODO Auto-generated method stub
+		return map.salPatnerList(vo);
+	}
 	@Override
 	public int salInsert(SalesVO vo) {
+		// TODO Auto-generated method stub
 		return map.salInsert(vo);
 	}
-
 	@Override
 	public int salUpdate(SalesVO vo) {
+		// TODO Auto-generated method stub
 		return map.salUpdate(vo);
 	}
-
-}
+	
+	}

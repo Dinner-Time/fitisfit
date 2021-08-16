@@ -39,7 +39,7 @@ public class ProgramSerivce implements ProgramMapper{
 
 	@Override
 	public int proMemberEnroll(ProgramVO vo) {
-		return map.proMemberEnroll(vo);
+		return map.proMemberEnroll(vo);	
 	}
 
 }

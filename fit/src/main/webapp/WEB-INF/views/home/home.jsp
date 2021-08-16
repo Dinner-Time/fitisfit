@@ -9,7 +9,7 @@
 <body>
 	<jsp:include page="header.jsp" />
 	<h1>Welcome!</h1>
-	<a href="proTest.do">program</a>
+	<a href="proList.do">program</a>
 	<a href="salTest.do">sales</a>
 	<a href="timTest.do">timetable</a>
 	<a href="catTest.do">category</a>

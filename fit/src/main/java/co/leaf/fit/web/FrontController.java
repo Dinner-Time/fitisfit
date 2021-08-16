@@ -20,11 +20,10 @@ import co.leaf.fit.member.command.MemTest;
 import co.leaf.fit.partner.command.ParTest;
 import co.leaf.fit.program.command.MemberEnroll;
 import co.leaf.fit.program.command.ProDetail;
-import co.leaf.fit.program.command.ProTest;
+import co.leaf.fit.program.command.ProList;
 import co.leaf.fit.region.command.RegTest;
 import co.leaf.fit.review.command.RevTest;
 import co.leaf.fit.sales.command.SalTest;
-import co.leaf.fit.timetable.command.TimTest;
 import co.leaf.fit.wishlist.command.WisTest;
 
 @WebServlet("*.do")
@@ -56,9 +55,9 @@ public class FrontController extends HttpServlet {
 		map.put("/parTest.do", new ParTest());
 		
 		// program page
-		map.put("/proTest.do", new ProTest());
-		map.put("/proDetail.do", new ProDetail());
-		map.put("/memberEnroll.do", new MemberEnroll());
+		map.put("/proList.do", new ProList()); // 프로그램 전체 리스트
+		map.put("/proDetail.do", new ProDetail()); // 프로그램 상세보기 
+		map.put("/memberEnroll.do", new MemberEnroll()); // 결제 완료 이후 등록
 		
 		// region page
 		map.put("/regTest.do", new RegTest());
@@ -70,7 +69,6 @@ public class FrontController extends HttpServlet {
 		map.put("/salTest.do", new SalTest());
 		
 		// timetable page
-		map.put("/timTest.do", new TimTest());
 		
 		// wishlist page
 		map.put("/wisTest.do", new WisTest());

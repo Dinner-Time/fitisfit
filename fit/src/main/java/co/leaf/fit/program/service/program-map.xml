@@ -13,6 +13,8 @@
 		pr.pro_period,
 		pr.pro_price,
 		pr.pro_catid,
+		pr.pro_people,
+		pr.pro_maxpeople,
 		pa.par_regid
 		from fit_program pr
 		inner join fit_partner pa

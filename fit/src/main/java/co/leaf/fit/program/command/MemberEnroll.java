@@ -20,7 +20,7 @@ public class MemberEnroll implements Command {
 			System.out.println(dao.proMemberEnroll(vo));
 		} catch(Exception e) {
 //			e.printStackTrace();
-			return "proTest.do";
+			return "proList.do";
 		}
 		request.setAttribute("proId", vo.getProId());
 		return "proDetail.do";

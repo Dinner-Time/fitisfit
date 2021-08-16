@@ -4,16 +4,28 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="co.leaf.fit.sales.service.SalesMapper">
 
-	<select id="salSelectList" resultType="SalesVO">
-		select * from fit_sales
+	<select id="salAdminList" resultType="SalesVO">
+		select * from
+		fit_sales
 	</select>
 
-	<select id="salSelect" resultType="SalesVO">
-		select * from fit_sales where
-		sal_date = #{salDate} and sal_parid = #{salParId}
+	<select id="salAdminDetail" resultType="SalesVO">
+		select s.sal_date,
+			s.sal_income,
+			s.sal_fee,
+			SUBSTR(p.par_address,1,2) sal_parname,
+			p.par_name
+		from fit_sales s
+		inner join fit_partner p
+		on s.sal_parid = p.par_id;
+	</select>
+	
+	<select id="salPatnerList" resultType="SalesVO">
+		select * from
+		fit_sales where sal_parid = #{salParId}
 	</select>
 
-	<insert id="salInsert" parameterType="SalesVO">
+	<insert id="salPartnerInsert" parameterType="SalesVO">
 		insert into fit_sales
 		values
 		(#{salDate},
@@ -22,7 +34,7 @@
 		#{salFee})
 	</insert>
 
-	<update id="salUpdate" parameterType="SalesVO">
+	<update id="salPartnerUpdate" parameterType="SalesVO">
 		update fit_sales set
 		sal_income = #{salIncome}, sal_fee = #{salFee} where sal_date =
 		#{salDate} and sal_parid = #{salParId}

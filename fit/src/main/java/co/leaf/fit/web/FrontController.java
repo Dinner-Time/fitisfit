@@ -21,6 +21,8 @@ import co.leaf.fit.partner.command.ParTest;
 import co.leaf.fit.program.command.MemberEnroll;
 import co.leaf.fit.program.command.ProDetail;
 import co.leaf.fit.program.command.ProList;
+import co.leaf.fit.program.command.ProgramAdd;
+import co.leaf.fit.program.command.ProgramAddForm;
 import co.leaf.fit.region.command.RegTest;
 import co.leaf.fit.review.command.RevTest;
 import co.leaf.fit.sales.command.SalAdminDetail;
@@ -63,6 +65,8 @@ public class FrontController extends HttpServlet {
 		map.put("/proList.do", new ProList()); // 프로그램 전체 리스트
 		map.put("/proDetail.do", new ProDetail()); // 프로그램 상세보기 
 		map.put("/memberEnroll.do", new MemberEnroll()); // 결제 완료 이후 등록
+		map.put("/programAddForm.do", new ProgramAddForm()); // 프로그램 추가 페이지
+		map.put("/programAdd.do", new ProgramAdd()); // 프로그램 추가 기능
 		
 		// region page
 		map.put("/regTest.do", new RegTest());

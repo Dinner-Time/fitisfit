@@ -26,6 +26,7 @@ public class ProgramVO {
 	private String revWriter;
 	private Date revDate;
 	private String parName;
+	private int proOriId;
 	
 	public int getProId() {
 		return proId;
@@ -164,6 +165,12 @@ public class ProgramVO {
 	}
 	public void setParName(String parName) {
 		this.parName = parName;
+	}
+	public int getProOriId() {
+		return proOriId;
+	}
+	public void setProOriId(int proOriId) {
+		this.proOriId = proOriId;
 	}
 	
 	

@@ -38,6 +38,7 @@
 			</div>
 		</form>
 	</c:forEach>
+	<a href="programAddForm.do">추가하러 ㄱㄱ</a>
 	<jsp:include page="../home/footer.jsp" />
 
 	<!-- 부트스트랩 CDN -->

@@ -13,7 +13,7 @@
 	<a href="salTest.do">sales</a>
 	<a href="timTest.do">timetable</a>
 	<a href="catTest.do">category</a>
-	<a href="insTest.do">instructor</a>
+	<a href="insSelectList.do">instructor</a>
 	<a href="memTest.do">member</a>
 	<a href="parTest.do">partner</a>
 	<a href="regTest.do">region</a>

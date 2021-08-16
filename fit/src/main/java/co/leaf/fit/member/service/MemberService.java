@@ -9,7 +9,7 @@ import co.leaf.fit.vo.MemberVO;
 
 public class MemberService implements MemberMapper{
 	
-	private SqlSession sqlSession = DataSource.getInstance().openSession();
+	private SqlSession sqlSession = DataSource.getInstance().openSession(true);
     private MemberMapper map = sqlSession.getMapper(MemberMapper.class);
 
 	@Override
@@ -40,6 +40,11 @@ public class MemberService implements MemberMapper{
 	@Override
 	public int memDelete(MemberVO vo) {
 		return map.memDelete(vo);
+	}
+
+	@Override
+	public MemberVO memLogin(MemberVO vo) {
+		return map.memLogin(vo);
 	}
 
 }

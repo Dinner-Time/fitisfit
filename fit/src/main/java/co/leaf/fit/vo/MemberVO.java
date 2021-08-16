@@ -7,13 +7,13 @@ public class MemberVO {
 	private String memEmail;
 	private String memPassword;
 	private String memName;
-	private String memBirth;
+	private Date memBirth;
 	private String memPhone;
 	private String memAddress;
 	private String memGender;
 	private String memState;
 	private Date memSubDate;
-	private String mem;
+	private String memPhoto;
 	
 	public MemberVO () {}
 
@@ -41,11 +41,11 @@ public class MemberVO {
 		this.memName = memName;
 	}
 
-	public String getMemBirth() {
+	public Date getMemBirth() {
 		return memBirth;
 	}
 
-	public void setMemBirth(String memBirth) {
+	public void setMemBirth(Date memBirth) {
 		this.memBirth = memBirth;
 	}
 
@@ -89,12 +89,12 @@ public class MemberVO {
 		this.memSubDate = memSubDate;
 	}
 
-	public String getMem() {
-		return mem;
+	public String getMemPhoto() {
+		return memPhoto;
 	}
 
-	public void setMem(String mem) {
-		this.mem = mem;
+	public void setMemPhoto(String memPhoto) {
+		this.memPhoto = memPhoto;
 	}
 	
 }

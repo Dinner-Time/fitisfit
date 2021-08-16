@@ -8,7 +8,7 @@ import co.leaf.fit.common.DataSource;
 import co.leaf.fit.vo.RegionVO;
 
 public class RegionService implements RegionMapper {
-	private SqlSession sqlSession = DataSource.getInstance().openSession();
+	private SqlSession sqlSession = DataSource.getInstance().openSession(true);
 	private RegionMapper map = sqlSession.getMapper(RegionMapper.class);
 	
 	

@@ -20,7 +20,13 @@ import co.leaf.fit.history.command.HisInsertForm;
 import co.leaf.fit.history.command.HisTest;
 import co.leaf.fit.instructor.command.InsTest;
 import co.leaf.fit.main.command.Home;
+import co.leaf.fit.member.command.MemLogin;
+import co.leaf.fit.member.command.MemLoginForm;
+import co.leaf.fit.member.command.MemInsert;
 import co.leaf.fit.member.command.MemTest;
+import co.leaf.fit.member.command.MemberSelect;
+import co.leaf.fit.partner.command.ParInsert;
+import co.leaf.fit.partner.command.ParInsertForm;
 import co.leaf.fit.partner.command.ParTest;
 import co.leaf.fit.program.command.ProDetail;
 import co.leaf.fit.program.command.ProTest;
@@ -58,9 +64,15 @@ public class FrontController extends HttpServlet {
 		
 		// member page
 		map.put("/memTest.do", new MemTest());
+		map.put("/loginForm.do", new MemLoginForm());
+		map.put("/login.do", new MemLogin());
+		map.put("/memInsert.do", new MemInsert());
+		map.put("/memSelect.do", new MemberSelect());
 		
 		// partner page
 		map.put("/parTest.do", new ParTest());
+		map.put("/parInsertForm.do", new ParInsertForm());
+		map.put("/parInsert.do", new ParInsert());
 		
 		// program page
 		map.put("/proTest.do", new ProTest());

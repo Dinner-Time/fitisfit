@@ -12,6 +12,7 @@
 	<c:forEach var="partner" items="${list }">
 		${partner.parEmail } / ${partner.parName } / ${partner.parIntro } <br>
 	</c:forEach>
+	<h3><a href="parInsertForm.do">업체 등록</a></h3>
 <jsp:include page="../home/footer.jsp" />
 </body>
 </html>

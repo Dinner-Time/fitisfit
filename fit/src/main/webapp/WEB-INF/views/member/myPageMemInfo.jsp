@@ -8,7 +8,14 @@
 </head>
 <body>
 <jsp:include page="../home/header.jsp" />
-	마이페이지 - 회원정보
+	마이페이지 - 회원정보<br>
+	${member.memName }<br>
+	${member.memEmail }<br>
+	${member.memPassword }<br>
+	${member.memBirth }<br>
+	${member.memGender }<br>
+	${member.memPhone }<br>
+	${member.memSubDate }<br>
 <jsp:include page="../home/footer.jsp" />
 </body>
 </html>

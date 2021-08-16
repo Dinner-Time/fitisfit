@@ -12,5 +12,6 @@ public interface MemberMapper {
 	int memUpdatePassword(MemberVO vo);
 	int memUpdatePhone(MemberVO vo);
 	int memDelete(MemberVO vo);
+	MemberVO memLogin(MemberVO vo);
 	
 }

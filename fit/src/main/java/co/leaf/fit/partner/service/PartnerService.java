@@ -9,7 +9,7 @@ import co.leaf.fit.vo.PartnerVO;
 
 public class PartnerService implements PartnerMapper {
 
-	private SqlSession sqlSession = DataSource.getInstance().openSession();
+	private SqlSession sqlSession = DataSource.getInstance().openSession(true);
     private PartnerMapper map = sqlSession.getMapper(PartnerMapper.class);
 	
 	@Override

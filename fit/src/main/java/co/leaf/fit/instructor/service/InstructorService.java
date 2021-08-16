@@ -9,7 +9,7 @@ import co.leaf.fit.vo.InstructorVO;
 
 public class InstructorService implements InstructorMapper {
 	
-	private SqlSession sqlSession = DataSource.getInstance().openSession();
+	private SqlSession sqlSession = DataSource.getInstance().openSession(true);
     private InstructorMapper map = sqlSession.getMapper(InstructorMapper.class);
 	
 	@Override

@@ -9,7 +9,7 @@ import co.leaf.fit.vo.WishlistVO;
 
 public class WishlistService implements WishlistMapper {
 
-	private SqlSession sqlSession = DataSource.getInstance().openSession();
+	private SqlSession sqlSession = DataSource.getInstance().openSession(true);
     private WishlistMapper map = sqlSession.getMapper(WishlistMapper.class);
 	
 	@Override

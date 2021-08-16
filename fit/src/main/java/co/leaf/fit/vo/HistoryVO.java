@@ -6,13 +6,14 @@ public class HistoryVO {
 	
 	private String hisMemEmail;
 	private int hisProId;
-	private Date hisSince;
 	private int hisPeriod;
 	private int hisPaid;
 	private int hisRegId;
 	private int hisCatId;
 	private Date hisDate;
 	private int hisId;
+	
+	private String hisProName;
 	
 	
 	public HistoryVO() {}
@@ -32,14 +33,6 @@ public class HistoryVO {
 
 	public void setHisProId(int hisProId) {
 		this.hisProId = hisProId;
-	}
-
-	public Date getHisSince() {
-		return hisSince;
-	}
-
-	public void setHisSince(Date hisSince) {
-		this.hisSince = hisSince;
 	}
 
 	public int getHisPeriod() {
@@ -89,7 +82,13 @@ public class HistoryVO {
 	public void setHisId(int hisId) {
 		this.hisId = hisId;
 	}
-	
-	
+
+	public String getHisProName() {
+		return hisProName;
+	}
+
+	public void setHisProName(String hisProName) {
+		this.hisProName = hisProName;
+	}
 	
 }

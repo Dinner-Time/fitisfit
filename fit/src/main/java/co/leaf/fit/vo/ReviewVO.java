@@ -6,10 +6,12 @@ public class ReviewVO {
 	
 	private int revId;
 	private int revProId;
-	private int revScore;
+	private Double revScore;
 	private String revContent;
 	private String revWriter;
 	private Date revDate;
+	
+	private String revProName;
 	
 	
 	public ReviewVO() {	}
@@ -26,10 +28,10 @@ public class ReviewVO {
 	public void setRevProId(int revProId) {
 		this.revProId = revProId;
 	}
-	public int getRevScore() {
+	public Double getRevScore() {
 		return revScore;
 	}
-	public void setRevScore(int revScore) {
+	public void setRevScore(Double revScore) {
 		this.revScore = revScore;
 	}
 	public String getRevContent() {
@@ -50,7 +52,11 @@ public class ReviewVO {
 	public void setRevDate(Date revDate) {
 		this.revDate = revDate;
 	}
-	
-	
+	public String getRevProName() {
+		return revProName;
+	}
+	public void setRevProName(String revProName) {
+		this.revProName = revProName;
+	}
 	
 }

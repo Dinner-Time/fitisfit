@@ -26,7 +26,7 @@
 				</tr>
 			</c:forEach>
 		</table>
-
+		<a href="hisInsertForm.do">hisInsertForm</a>
 	</div>
 <jsp:include page="../home/footer.jsp" />
 </body>

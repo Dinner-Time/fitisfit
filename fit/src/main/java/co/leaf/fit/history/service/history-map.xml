@@ -3,6 +3,18 @@
 
 <mapper namespace="co.leaf.fit.history.service.HistoryMapper">
 
+	<resultMap type="HistoryVO" id="HistoryMap">
+		<id property="hisMemEmail" column="his_mememail" />
+		<id property="hisProId" column="his_proid" />
+		<id property="hisPeriod" column="his_period" />
+		<id property="hisPaid" column="his_paid" />
+		<id property="hisRegId" column="his_regid" />
+		<id property="hisCatId" column="his_catid" />
+		<id property="hisDate" column="his_date" />
+		<id property="hisId" column="his_id" />
+		<id property="hisProName" column="pro_id" />
+	</resultMap>
+
 	<select id="hisSelectList" resultType="HistoryVO">
 		select * from fit_history
 		order by his_id desc
@@ -15,12 +27,10 @@
 
 	<insert id="hisInsert" parameterType="HistoryVO">
 		insert into fit_history
-		(his_mememail, his_proid, his_since, his_period,
-		his_paid, his_regid, his_catid, his_date, his_id)
-		values (#{hisMemEmail},
-		#{hisProId}, #{hisSince}, #{hisPeriod},
-		#{hisPaid}, #{hisRegId},
-		#{hisCatId}, #{hisDate}, #{hisId})
+			(his_mememail, his_proid, his_period,
+			his_paid, his_date, his_id)
+		values (#{hisMemEmail}, #{hisProId}, #{hisPeriod},
+			#{hisPaid}, #{hisDate}, FIT_HIS_SEQ.nextval)
 	</insert>
 
 	<delete id="hisDelete" parameterType="HistoryVO">

@@ -9,7 +9,7 @@ import co.leaf.fit.vo.HistoryVO;
 
 public class HistoryService implements HistoryMapper {
 
-	private SqlSession sqlSession = DataSource.getInstance().openSession();
+	private SqlSession sqlSession = DataSource.getInstance().openSession(true);
 	private HistoryMapper map = sqlSession.getMapper(HistoryMapper.class);
 	
 	@Override

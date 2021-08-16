@@ -14,20 +14,41 @@ import javax.servlet.http.HttpServletResponse;
 import co.leaf.fit.category.command.CatSelect;
 import co.leaf.fit.category.command.CatSelectList;
 import co.leaf.fit.category.command.CatTest;
+import co.leaf.fit.review.command.RevSelectByAdm;
+import co.leaf.fit.review.command.RevSelectList;
 import co.leaf.fit.common.Command;
+import co.leaf.fit.history.command.HisInsert;
+import co.leaf.fit.history.command.HisInsertForm;
 import co.leaf.fit.history.command.HisTest;
-import co.leaf.fit.instructor.command.InsTest;
+import co.leaf.fit.instructor.command.InsSelectList;
+import co.leaf.fit.instructor.command.InsInfo;
+import co.leaf.fit.instructor.command.InsInsert;
+import co.leaf.fit.instructor.command.InsInsertForm;
+import co.leaf.fit.instructor.command.InsSelect;
 import co.leaf.fit.main.command.Home;
+import co.leaf.fit.member.command.MemLogin;
+import co.leaf.fit.member.command.MemLoginForm;
+import co.leaf.fit.member.command.MemInsert;
 import co.leaf.fit.member.command.MemTest;
+import co.leaf.fit.member.command.MemberSelect;
+import co.leaf.fit.partner.command.ParInsert;
+import co.leaf.fit.partner.command.ParInsertForm;
 import co.leaf.fit.partner.command.ParTest;
+import co.leaf.fit.program.command.MemberEnroll;
 import co.leaf.fit.program.command.ProDetail;
-import co.leaf.fit.program.command.ProTest;
-import co.leaf.fit.region.command.RegSelect;
-import co.leaf.fit.region.command.RegSelectList;
+import co.leaf.fit.program.command.ProList;
+import co.leaf.fit.program.command.ProgramAdd;
+import co.leaf.fit.program.command.ProgramAddForm;
 import co.leaf.fit.region.command.RegTest;
+import co.leaf.fit.review.command.RevSelectListByAdm;
+import co.leaf.fit.review.command.RevSelectListByPar;
 import co.leaf.fit.review.command.RevTest;
+import co.leaf.fit.sales.command.SalAdminDetail;
+import co.leaf.fit.sales.command.SalAdminList;
+import co.leaf.fit.sales.command.SalPartnerInsert;
+import co.leaf.fit.sales.command.SalPartnerUpdate;
+import co.leaf.fit.sales.command.SalPatnerList;
 import co.leaf.fit.sales.command.SalTest;
-import co.leaf.fit.timetable.command.TimTest;
 import co.leaf.fit.wishlist.command.WisTest;
 
 @WebServlet("*.do")
@@ -48,31 +69,53 @@ public class FrontController extends HttpServlet {
 		
 		// history page
 		map.put("/hisTest.do", new HisTest());
+		map.put("/hisInsertForm.do", new HisInsertForm());
+		map.put("/hisInsert.do", new HisInsert());
 		
 		// instructor page
-		map.put("/insTest.do", new InsTest());
+		map.put("/insSelectList.do", new InsSelectList());
+		map.put("/insSelect.do", new InsSelect());
+		map.put("/insInsertForm.do", new InsInsertForm());
+		map.put("/insInsert.do", new InsInsert());
+		//map.put("/insInfo.do", new InsInfo());
 		
 		// member page
 		map.put("/memTest.do", new MemTest());
+		map.put("/loginForm.do", new MemLoginForm());
+		map.put("/login.do", new MemLogin());
+		map.put("/memInsert.do", new MemInsert());
+		map.put("/memSelect.do", new MemberSelect());
 		
 		// partner page
 		map.put("/parTest.do", new ParTest());
+		map.put("/parInsertForm.do", new ParInsertForm());
+		map.put("/parInsert.do", new ParInsert());
 		
 		// program page
-		map.put("/proTest.do", new ProTest());
-		map.put("/proDetail.do", new ProDetail());
+		map.put("/proList.do", new ProList()); // 프로그램 전체 리스트
+		map.put("/proDetail.do", new ProDetail()); // 프로그램 상세보기 
+		map.put("/memberEnroll.do", new MemberEnroll()); // 결제 완료 이후 등록
+		map.put("/programAddForm.do", new ProgramAddForm()); // 프로그램 추가 페이지
+		map.put("/programAdd.do", new ProgramAdd()); // 프로그램 추가 기능
 		
 		// region page
 		map.put("/regTest.do", new RegTest());
 		
 		// review page
-		map.put("/revTest.do", new RevTest());
+		map.put("/revSelectList.do", new RevSelectList());
+		map.put("/revSelectListByAdm.do", new RevSelectListByAdm());
+		map.put("/revSelectByAdm.do", new RevSelectByAdm());
+		map.put("/revSelectListByPar.do", new RevSelectListByPar());
 		
 		// sales page 
 		map.put("/salTest.do", new SalTest());
+		map.put("/salAdminList.do", new SalAdminList()); // 관리자 화면에서 수익 관리
+		map.put("/salAdminDetail.do", new SalAdminDetail()); // 관리자 화면에서 수익 자세히보기
+		map.put("/salPatnerList.do", new SalPatnerList()); // 파트너 사에서 자기 수익 보기
+		map.put("/salPartnerInsert.do", new SalPartnerInsert()); // 파트너 사에서 오늘 수익 정산
+		map.put("/salPartnerUpdate.do", new SalPartnerUpdate()); // 파트너 사에서 정산 금액 수정
 		
 		// timetable page
-		map.put("/timTest.do", new TimTest());
 		
 		// wishlist page
 		map.put("/wisTest.do", new WisTest());

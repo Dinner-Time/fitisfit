@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Review Select By Partner</title>
+<title>Insert title here</title>
 </head>
 <body>
-파트너 측에서 회원의 후기를 볼 수 있는 페이지
+	<form action="programAdd.do">
+		
+	</form>
 </body>
 </html>

@@ -11,6 +11,16 @@ public class InstructorVO {
 	private String insHistory;
 	private int insParId;
 	
+	private ProgramVO programVO;
+	
+	public ProgramVO getProgramVO() {
+		return programVO;
+	}
+
+	public void setProgramVO(ProgramVO programVO) {
+		this.programVO = programVO;
+	}
+
 	public InstructorVO() {
 		// TODO Auto-generated constructor stub
 	}

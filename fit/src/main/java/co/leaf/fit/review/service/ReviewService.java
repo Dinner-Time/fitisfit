@@ -9,7 +9,7 @@ import co.leaf.fit.vo.ReviewVO;
 
 public class ReviewService implements ReviewMapper {
 
-	private SqlSession sqlSession = DataSource.getInstance().openSession();
+	private SqlSession sqlSession = DataSource.getInstance().openSession(true);
 	private ReviewMapper map = sqlSession.getMapper(ReviewMapper.class);
 	
 	@Override

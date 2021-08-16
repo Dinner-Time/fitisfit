@@ -9,7 +9,7 @@ import co.leaf.fit.vo.ProgramVO;
 
 public class ProgramSerivce implements ProgramMapper{
 	
-	private SqlSession sqlSession = DataSource.getInstance().openSession();
+	private SqlSession sqlSession = DataSource.getInstance().openSession(true);
 	private ProgramMapper map = sqlSession.getMapper(ProgramMapper.class);
 
 	@Override
@@ -35,6 +35,11 @@ public class ProgramSerivce implements ProgramMapper{
 	@Override
 	public int proDelete(ProgramVO vo) {
 		return map.proDelete(vo);
+	}
+
+	@Override
+	public int proMemberEnroll(ProgramVO vo) {
+		return map.proMemberEnroll(vo);	
 	}
 
 }

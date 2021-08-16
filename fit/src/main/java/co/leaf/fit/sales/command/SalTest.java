@@ -11,7 +11,7 @@ public class SalTest implements Command {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		SalesService dao = new SalesService();
-		request.setAttribute("list", dao.salSelectList());
+		request.setAttribute("list", dao.salAdminList());
 		return "sales/test";
 	}
 

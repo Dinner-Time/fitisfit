@@ -3,20 +3,38 @@
 <mapper
 	namespace="co.leaf.fit.instructor.service.InstructorMapper">
 
-	<select id="insSelectList" resultType="InstructorVO">
-		select * from
-		fit_instructor
+	<resultMap type="ProgramVO" id="ProgramVO">
+		<result column="pro_name" property="proName" />
+	</resultMap>
+
+	<resultMap type="InstructorVO" id="InstructorVO">
+		<result column="ins_id" property="insId" />
+		<result column="ins_name" property="insName" />
+		<result column="ins_phone" property="insPhone" />
+		<result column="ins_photo" property="insPhoto" />
+		<result column="ins_history" property="insHistory" />
+		<result column="ins_kakao" property="insKakao" />
+		<result column="ins_insta" property="insInsta" />
+		<collection property="programVO" resultMap="ProgramVO" />
+	</resultMap>
+
+	<select id="insSelectList" parameterType="InstructorVO"
+		resultMap="InstructorVO">
+		select fit_instructor.ins_id, fit_instructor.ins_name,
+		fit_program.pro_name, fit_instructor.ins_phone
+		from fit_instructor inner join fit_program
+		on fit_instructor.ins_id = fit_program.pro_insid
 	</select>
 
 	<select id="insSelect" resultType="InstructorVO">
-		select * from fit_instructor where ins_num = #{insNum}
+		select ins_photo, ins_name, ins_phone, ins_gender, ins_insta, ins_kakao, ins_history from fit_instructor where ins_id = #{insId}
 	</select>
 
 	<insert id="insInsert" parameterType="InstructorVO">
 		insert into fit_instructor
-		(ins_num, ins_photo, ins_name, ins_phone, ins_gender, ins_insta, ins_kakao,
+		(ins_id, ins_photo, ins_name, ins_phone, ins_gender, ins_insta, ins_kakao,
 		ins_history, ins_parid)
-		values (FIT_INS_SEQ.nextval, #{insPhoto}, #{insName}, #{insPhone},
+		values (FIT_INS_SEQ.nextval, #{insPhoto}, #{insId}, #{insPhone},
 		#{insGender}, #{insInsta}, #{insKakao}, #{insHistory}, #{insParId})
 	</insert>
 
@@ -28,10 +46,11 @@
 		ins_insta = #{insInsta},
 		ins_kakao = #{insKakao},
 		ins_history = #{insHistory}
-		where ins_num = #{insNum}
+		where ins_id = #{insId}
 	</update>
 
 	<delete id="insDelete" parameterType="InstructorVO">
-		delete from fit_instructor where ins_num = #{insNum}
+		delete from fit_instructor where ins_id = #{insId}
 	</delete>
+	
 </mapper>

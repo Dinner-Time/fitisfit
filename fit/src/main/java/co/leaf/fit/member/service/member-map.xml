@@ -13,9 +13,9 @@
 
 	<insert id="memInsert" parameterType="MemberVO">
 		insert into fit_member (mem_email, mem_password, mem_name, mem_birth,
-		mem_phone, mem_address, mem_gender, mem_subdate, mem_photo)
+		mem_phone, mem_address, mem_gender, mem_subdate)
 		values (#{memEmail}, #{memPassword}, #{memName}, #{memBirth}, #{memPhone},
-		#{memAddress}, #{memGender}, #{memSubDate}, #{memPhoto})
+		#{memAddress}, #{memGender}, #{memSubDate})
 	</insert>
 
 	<update id="memUpdatePassword" parameterType="MemberVO">
@@ -31,5 +31,9 @@
 	<delete id="memDelete" parameterType="MemberVO">
 		delete from fit_member where mem_email = #{memEmail}
 	</delete>
+	
+	<select id="memLogin" resultType="MemberVO">
+		select * from fit_member where mem_email = #{memEmail} and mem_password = #{memPassword}
+	</select>
 
 </mapper>

@@ -9,27 +9,33 @@ import co.leaf.fit.vo.SalesVO;
 
 public class SalesService implements SalesMapper{
 	
-	private SqlSession sqlSession = DataSource.getInstance().openSession();
+	private SqlSession sqlSession = DataSource.getInstance().openSession(true);
 	private SalesMapper map = sqlSession.getMapper(SalesMapper.class);
 	
 	@Override
-	public List<SalesVO> salSelectList() {
-		return map.salSelectList();
+	public List<SalesVO> salAdminList() {
+		// TODO Auto-generated method stub
+		return map.salAdminList();
 	}
-
 	@Override
-	public SalesVO salSelect(SalesVO vo) {
-		return map.salSelect(vo);
+	public List<SalesVO> salAdminDetail() {
+		// TODO Auto-generated method stub
+		return map.salAdminDetail();
 	}
-
 	@Override
-	public int salInsert(SalesVO vo) {
-		return map.salInsert(vo);
+	public List<SalesVO> salPatnerList(SalesVO vo) {
+		// TODO Auto-generated method stub
+		return map.salPatnerList(vo);
 	}
-
 	@Override
-	public int salUpdate(SalesVO vo) {
-		return map.salUpdate(vo);
+	public int salPartnerInsert(SalesVO vo) {
+		// TODO Auto-generated method stub
+		return map.salPartnerInsert(vo);
 	}
-
-}
+	@Override
+	public int salPartnerUpdate(SalesVO vo) {
+		// TODO Auto-generated method stub
+		return map.salPartnerUpdate(vo);
+	}
+	
+	}

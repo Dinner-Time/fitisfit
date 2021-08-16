@@ -11,8 +11,8 @@ public class ProgramVO {
 	private Date proSince;
 	private int proPeriod;
 	private int proPrice;
-	private int proSales2;
-	private int proSales3;
+	private int proSale2;
+	private int proSale3;
 	private int proMaxPeople;
 	private int proPeople;
 	private int proInsId;
@@ -25,6 +25,8 @@ public class ProgramVO {
 	private String revContent;
 	private String revWriter;
 	private Date revDate;
+	private String parName;
+	private int proOriId;
 	
 	public int getProId() {
 		return proId;
@@ -74,17 +76,17 @@ public class ProgramVO {
 	public void setProPrice(int proPrice) {
 		this.proPrice = proPrice;
 	}
-	public int getProSales2() {
-		return proSales2;
+	public int getProSale2() {
+		return proSale2;
 	}
-	public void setProSales2(int proSales2) {
-		this.proSales2 = proSales2;
+	public void setProSale2(int proSale2) {
+		this.proSale2 = proSale2;
 	}
-	public int getProSales3() {
-		return proSales3;
+	public int getProSale3() {
+		return proSale3;
 	}
-	public void setProSales3(int proSales3) {
-		this.proSales3 = proSales3;
+	public void setProSale3(int proSale3) {
+		this.proSale3 = proSale3;
 	}
 	public int getProMaxPeople() {
 		return proMaxPeople;
@@ -157,6 +159,18 @@ public class ProgramVO {
 	}
 	public void setRevDate(Date revDate) {
 		this.revDate = revDate;
+	}
+	public String getParName() {
+		return parName;
+	}
+	public void setParName(String parName) {
+		this.parName = parName;
+	}
+	public int getProOriId() {
+		return proOriId;
+	}
+	public void setProOriId(int proOriId) {
+		this.proOriId = proOriId;
 	}
 	
 	

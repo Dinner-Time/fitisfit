@@ -23,21 +23,21 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body id="body" style="background-color: gray;">
+<body id="body">
 	<jsp:include page="header.jsp" />
 	<div style="height: 150vh;"class="d-flex justify-content-between align-items-center">
-		<a style="color: white;"href="proList.do">program</a>
-		<a style="color: white;" href="salTest.do">sales</a>
-		<a style="color: white;" href="timTest.do">timetable</a>
-		<a style="color: white;" href="catSelectList.do">category</a>
-		<a style="color: white;" href="regSelectList.do">region</a>
-		<a style="color: white;" href="insSelectList.do">instructor</a>
-		<a style="color: white;" href="memTest.do">member</a>
-		<a style="color: white;" href="parTest.do">partner</a>
-		<a style="color: white;" href="revSelectList.do">reviewSelectList</a>
-		<a style="color: white;" href="revSelectListByAdm.do">revSelectListByAdm</a>
-		<a style="color: white;" href="wisTest.do">wishlist</a>
-		<a style="color: white;" href="hisInsertForm.do">history</a>
+		<a style="color: #000;"href="proList.do">program</a>
+		<a style="color: #000;" href="salTest.do">sales</a>
+		<a style="color: #000;" href="timTest.do">timetable</a>
+		<a style="color: #000;" href="catSelectList.do">category</a>
+		<a style="color: #000;" href="regSelectList.do">region</a>
+		<a style="color: #000;" href="insSelectList.do">instructor</a>
+		<a style="color: #000;" href="memTest.do">member</a>
+		<a style="color: #000;" href="parTest.do">partner</a>
+		<a style="color: #000;" href="revSelectList.do">reviewSelectList</a>
+		<a style="color: #000;" href="revSelectListByAdm.do">revSelectListByAdm</a>
+		<a style="color: #000;" href="wisTest.do">wishlist</a>
+		<a style="color: #000;" href="hisInsertForm.do">history</a>
 	</div>
 	<jsp:include page="footer.jsp" />
 

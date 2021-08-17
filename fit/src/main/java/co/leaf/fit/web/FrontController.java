@@ -124,8 +124,8 @@ public class FrontController extends HttpServlet {
 		map.put("/catSelect.do", new CatSelect());
 		map.put("/catSelectList.do", new CatSelectList());
 		
-		map.put("/regSelect.do", new RegSelect());
-		map.put("/regSelectList.do", new RegSelectList());
+//		map.put("/regSelect.do", new RegSelect());
+//		map.put("/regSelectList.do", new RegSelectList());
 		
 		
 	}

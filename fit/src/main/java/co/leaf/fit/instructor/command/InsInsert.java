@@ -15,7 +15,7 @@ public class InsInsert implements Command {
 		InstructorVO vo = new InstructorVO();
 		vo.setInsPhoto(request.getParameter("insPhoto"));
 		vo.setInsName(request.getParameter("insName"));
-		vo.setInsPhone(request.getParameter("insPhone"));
+		vo .setInsPhone(request.getParameter("insPhone"));
 		vo.setInsGender(request.getParameter("insGender"));
 		vo.setInsInsta(request.getParameter("insInsta"));
 		vo.setInsKakao(request.getParameter("insKakao"));

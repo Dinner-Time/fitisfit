@@ -41,6 +41,34 @@
 <!-- Main Stylesheet -->
 <link rel="stylesheet" href="css/style.css?after">
 
+
+<style type="text/css">
+.custom-header {
+	background-size: cover;
+	padding: 70px 0 70px;
+	text-align: center;
+	color: $light;
+	position: relative; &: before { background : rgba( 0, 0, 0, 0.5);
+	position: absolute;
+	content: '';
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+}
+
+.custom-btn {
+	background: #4343FE;
+	border: 1px solid #4343FE;
+	color: #fff;
+	display: inline-block;
+	font-size: 14px;
+	letter-spacing: 1px;
+	padding: 12px 40px;
+	text-transform: uppercase;
+	border-radius: 40px;
+}
+</style>
 </head>
 
 <body id="body">
@@ -69,9 +97,11 @@ Fixed Navigation
 			<!-- main nav -->
 			<nav class="navbar navbar-expand-lg navbar-light">
 				<!-- logo -->
-				<a class="navbar-brand logo" href="index.html"> <img  style="width:118px;height: 82px;"
-					class="logo-default" src="images/logo.png" alt="logo" /> <img  style="width:118px;height: 82px;"
-					class="logo-white" src="images/logo.png" alt="logo" />
+				<a class="navbar-brand logo" href="index.html"> <img
+					style="width: 118px; height: 82px;" class="logo-default"
+					src="images/logo.png" alt="logo" /> <img
+					style="width: 118px; height: 82px;" class="logo-white"
+					src="images/logo.png" alt="logo" />
 				</a>
 				<!-- /logo -->
 				<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -123,18 +153,8 @@ Fixed Navigation
 End Fixed Navigation
 ==================================== -->
 
-	<section class="single-page-header">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<h2>Portfolio</h2>
-					<ol class="breadcrumb header-bradcrumb">
-						<li><a href="index.html">Home</a></li>
-						<li class="active">Portfolio</li>
-					</ol>
-				</div>
-			</div>
-		</div>
+	<section class="custom-header">
+		<div class="container"></div>
 	</section>
 
 	<!-- Start Portfolio Section
@@ -144,22 +164,26 @@ End Fixed Navigation
 		<div class="container-fluid">
 			<div class="row ">
 				<div class="col-lg-12">
-
 					<!-- section title -->
 					<div class="title text-center">
-						<div class="border" style="width:1200px;"></div>
+						<div class="border"
+							style="width: 1200px; background-color: lightgray;"></div>
 						<h1>헬스</h1>
-						
-						<div class="border" style="width:1200px;"></div>
+						<div class="border"
+							style="width: 1200px; background-color: lightgray;"></div>
 					</div>
 					<!-- /section title -->
 
 					<div class="portfolio-filter">
-						<button type="button" data-filter="all"  style="width:200px; height:50px;">서울</button>
-						<button type="button" data-filter="photography"  style="width:200px; height:50px;">경기</button>
-						<button type="button" data-filter="ios"  style="width:200px; height:50px;">대전</button>
-						<button type="button" data-filter="development"  style="width:200px; height:50px;">부산</button>
-						<button type="button" data-filter="design"  style="width:200px; height:50px;">대구</button>
+						<div class="row" style="margin-left: 200px; margin-right: 200px;">
+							<c:forEach var="region" items="${list }">
+								<div class="col-2"
+									style="margin-bottom: 5px; margin-left: 10px; margin-right: 10px;">
+									<button type="button" data-filter="all"
+										style="width: 200px; height: 50px; border-radius: 10px">${region.regName }</button>
+								</div>
+							</c:forEach>
+						</div>
 					</div>
 
 
@@ -167,47 +191,11 @@ End Fixed Navigation
 
 					<div class="container">
 						<div class="row">
+							<button type="button" class="prevArrow slick-arrow"
+								style="display: block;"></button>
 							<!-- /section title -->
 							<!-- single blog post -->
-							<article class="col-md-4 col-sm-6 col-xs-12 clearfix ">
-								<div class="post-item">
-									<div class="media-wrapper">
-										<img src="images/blog/post-1.jpg"
-											alt="amazing caves coverimage" class="img-fluid">
-									</div>
-
-									<div class="content">
-										<h3>
-											<a href="single-post.html">프로그램1</a>
-										</h3>
-										
-										<a class="btn btn-main" href="single-post.html">Read more</a>
-									</div>
-								</div>
-							</article>
-							<!-- /single blog post -->
-
-							<!-- single blog post -->
-							<article class="col-md-4 col-sm-6 col-xs-12 ">
-								<div class="post-item">
-									<div class="media-wrapper">
-										<img src="images/blog/post-2.jpg"
-											alt="amazing caves coverimage" class="img-fluid">
-									</div>
-
-									<div class="content">
-										<h3>
-											<a href="single-post.html">프로그램2</a>
-										</h3>
-										
-										<a class="btn btn-main" href="single-post.html">Read more</a>
-									</div>
-								</div>
-							</article>
-							<!-- end single blog post -->
-
-							<!-- single blog post -->
-							<article class="col-md-4 col-sm-6 col-xs-12 ">
+							<article class="col-md-3 col-sm-6 col-xs-12 ">
 								<div class="post-item">
 									<div class="media-wrapper">
 										<img src="images/blog/post-3.jpg"
@@ -216,13 +204,74 @@ End Fixed Navigation
 
 									<div class="content">
 										<h3>
-											<a href="single-post.html">프로그램3</a>
+											<a href="single-post.html">필라테스</a>
 										</h3>
-										
-										<a class="btn btn-main" href="single-post.html">Read more</a>
+										<p>간략 설명</p>
+										<p>2021-08-17 - 2022-08-16</p>
+										<a class="custom-btn" href="single-post.html">가격</a>
 									</div>
 								</div>
 							</article>
+							<!-- /single blog post -->
+
+							<!-- single blog post -->
+							<article class="col-md-3 col-sm-6 col-xs-12 ">
+								<div class="post-item">
+									<div class="media-wrapper">
+										<img src="images/blog/post-3.jpg"
+											alt="amazing caves coverimage" class="img-fluid">
+									</div>
+
+									<div class="content">
+										<h3>
+											<a href="single-post.html">필라테스</a>
+										</h3>
+										<p>간략 설명</p>
+										<p>2021-08-17 - 2022-08-16</p>
+										<a class="custom-btn" href="single-post.html">가격</a>
+									</div>
+								</div>
+							</article>
+							<!-- end single blog post -->
+
+							<!-- single blog post -->
+							<article class="col-md-3 col-sm-6 col-xs-12 ">
+								<div class="post-item">
+									<div class="media-wrapper">
+										<img src="images/blog/post-3.jpg"
+											alt="amazing caves coverimage" class="img-fluid">
+									</div>
+
+									<div class="content">
+										<h3>
+											<a href="single-post.html">필라테스</a>
+										</h3>
+										<p>간략 설명</p>
+										<p>2021-08-17 - 2022-08-16</p>
+										<a class="custom-btn" href="single-post.html">가격</a>
+									</div>
+								</div>
+							</article>
+
+
+							<article class="col-md-3 col-sm-6 col-xs-12 ">
+								<div class="post-item">
+									<div class="media-wrapper">
+										<img src="images/blog/post-3.jpg"
+											alt="amazing caves coverimage" class="img-fluid">
+									</div>
+									<div class="content">
+										<h3>
+											<a href="single-post.html">필라테스</a>
+										</h3>
+										<p>간략 설명</p>
+										<p>2021-08-17 - 2022-08-16</p>
+										<a class="custom-btn" href="single-post.html">가격</a>
+									</div>
+								</div>
+							</article>
+							<button type="button" class="nextArrow slick-arrow"
+								style="display: block;"></button>
 							<!-- /section title -->
 							<!-- single blog post -->
 						</div>
@@ -251,14 +300,7 @@ End Fixed Navigation
 						<div class="item text-center">
 							<i class="tf-ion-chatbubbles"></i>
 							<!-- client info -->
-							<div class="client-details">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-									Eum nulla, soluta dolorum. Eos earum, magni asperiores, unde
-									corporis labore, enim, voluptatum officiis voluptates alias
-									natus. Lorem ipsum dolor sit amet, consectetur adipisicing
-									elit. Quia, officia. Lorem ipsum dolor sit amet, consectetur
-									adipisicing elit. Quod, quia?</p>
-							</div>
+							
 							<!-- /client info -->
 							<!-- client photo -->
 							<div class="client-thumb">
@@ -277,14 +319,7 @@ End Fixed Navigation
 						<div class="item text-center">
 							<i class="tf-ion-chatbubbles"></i>
 							<!-- client info -->
-							<div class="client-details">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-									Eum nulla, soluta dolorum. Eos earum, magni asperiores, unde
-									corporis labore, enim, voluptatum officiis voluptates alias
-									natus. Lorem ipsum dolor sit amet, consectetur adipisicing
-									elit. Quia, officia. Lorem ipsum dolor sit amet, consectetur
-									adipisicing elit. Quod, quia?</p>
-							</div>
+							
 							<!-- /client info -->
 							<!-- client photo -->
 							<div class="client-thumb">
@@ -303,14 +338,7 @@ End Fixed Navigation
 						<div class="item text-center">
 							<i class="tf-ion-chatbubbles"></i>
 							<!-- client info -->
-							<div class="client-details">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-									Eum nulla, soluta dolorum. Eos earum, magni asperiores, unde
-									corporis labore, enim, voluptatum officiis voluptates alias
-									natus. Lorem ipsum dolor sit amet, consectetur adipisicing
-									elit. Quia, officia. Lorem ipsum dolor sit amet, consectetur
-									adipisicing elit. Quod, quia?</p>
-							</div>
+							
 							<!-- /client info -->
 							<!-- client photo -->
 							<div class="client-thumb">

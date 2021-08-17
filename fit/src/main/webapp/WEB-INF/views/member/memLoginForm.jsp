@@ -26,35 +26,90 @@
 
 <body id="body">
     <jsp:include page="../home/header.jsp" />
-    <section class="d-flex justify-content-between align-items-center mx-5" style="height: 150vh;">
-        <form action="login.do" method="post">
-            <div class="form-group">
-                <label for="email">이메일</label>
-                <input type="email" class="form-control" id="email" name="email" required>
+    <div style="height: 120px;"></div>
+    <section class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+        <div class="container card-group">
+            <div class="card">
+                <form action="login.do" method="post">
+                    <div class="card-header bg-primary text-white">
+                        <h1 class="mt-2">로그인</h1>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="email">이메일</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">비밀번호</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <div class="form-group form-check">
+                            <span class="m-3">
+                                <input class="form-check-input" type="radio" name="memberSort" id="general"
+                                    value="general" checked>
+                                <label class="form-check-label" for="general">일반회원</label>
+                            </span>
+                            <span class="m-3">
+                                <input class="form-check-input" type="radio" name="memberSort" id="partner"
+                                    value="partner">
+                                <label class="form-check-label" for="partner">파트너회원</label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary" type="submit">로그인</button>
+                        <button class="btn btn-primary" type="reset">취소</button>
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="password">비밀번호</label>
-                <input type="password" class="form-control" id="password" name="password" required>
+            <div class="card">
+                <form action="memInsert.do" method="post">
+                    <div class="card-header bg-primary text-white">
+                        <h1 class="mt-2">회원 가입</h1>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="email">이메일</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">비밀번호</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">이름</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="form-group form-check">
+                            <span class="m-3">
+                                <input class="form-check-input" type="radio" name="gender" id="male" value="남" checked>
+                                <label class="form-check-label" for="male">남</label>
+                            </span>
+                            <span class="m-3">
+                                <input class="form-check-input" type="radio" name="gender" id="female" value="여">
+                                <label class="form-check-label" for="female">여</label>
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="birth">생일</label>
+                            <input type="date" class="form-control" id="birth" name="birth" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">전화번호</label>
+                            <input type="text" class="form-control" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">주소</label>
+                            <input type="text" class="form-control" id="address" name="address" required>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary" type="submit">회원가입</button>
+                        <button class="btn btn-primary" type="reset">취소</button>
+                    </div>
+                </form>
             </div>
-            <div class="form-group form-check">
-                <input class="form-check-input" type="radio" name="memberSort" id="general" value="general" checked>
-                <label class="form-check-label" for="general">일반회원</label>
-                <input class="form-check-input" type="radio" name="memberSort" id="partner" value="partner">
-                <label class="form-check-label" for="partner">파트너회원</label>
-            </div>
-            <button type="submit">로그인</button> <button type="reset">취소</button>
-        </form>
-        <form action="memInsert.do" method="post">
-            ID (Email) : <input type="text" id="memEmail" name="memEmail"><br>
-            비밀번호 : <input type="password" id="memPassword" name="memPassword"><br>
-            이름 : <input type="text" id="memName" name="memName"><br>
-            성별 : <input type="radio" id="memGender" name="memGender" value="남">남 <input type="radio" id="memGender"
-                name="memGender" value="여">여<br>
-            생일 : <input type="date" id="memBirth" name="memBirth"><br>
-            전화번호 : <input type="text" id="memPhone" name="memPhone"><br>
-            주소 : <input type="text" id="memAddress" name="memAddress"><br> <!-- 추후 api 적용 -->
-            <button type="submit">회원가입</button> <button type="reset">취소</button>
-        </form>
+        </div>
     </section>
     <jsp:include page="../home/footer.jsp" />
 

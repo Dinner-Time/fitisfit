@@ -19,9 +19,9 @@
       <div class="collapse navbar-collapse" id="navigation">
         <ul class="navbar-nav ml-auto text-center">
           <c:if test="${session.author != 'A' and session.author != 'P'}">
-	          <li class="nav-item ">
-	            <a class="nav-link" href="loginForm.do">파트너 등록</a>
-	          </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="loginForm.do">파트너 등록</a>
+            </li>
           </c:if>
           <c:if test="${session == null }">
             <li class="nav-item ">
@@ -36,7 +36,15 @@
                   }})()">로그아웃</a>
             </li>
             <li class="nav-item ">
-              <a class="nav-link" href="memSelect.do">마이페이지</a>
+            	<c:if test="${session.author == 'M' }">
+              <a class="nav-link" href="memSelect.do">마이 페이지</a>
+            	</c:if>
+            	<c:if test="${session.author == 'A' }">
+              <a class="nav-link" href="memSelect.do">관리자 페이지</a>
+            	</c:if>
+            	<c:if test="${session.author == 'P' }">
+              <a class="nav-link" href="memSelect.do">파트너 페이지</a>
+            	</c:if>
             </li>
           </c:if>
         </ul>
@@ -45,4 +53,4 @@
     <!-- /main nav -->
   </div>
 </header>
-<div style="height: 120px;"></div>
+<div style="height: 200px;"></div>

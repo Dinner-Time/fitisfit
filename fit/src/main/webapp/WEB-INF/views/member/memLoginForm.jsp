@@ -32,7 +32,7 @@
             <div class="card">
                 <form action="login.do" method="post">
                     <div class="card-header bg-primary text-white">
-                        <h1 class="mt-2">로그인</h1>
+                        <h1 class="mt-2 font-weight-normal">로그인</h1>
                     </div>
                     <div class="card-body">
                         <div class="form-group">
@@ -65,7 +65,7 @@
             <div class="card">
                 <form action="memInsert.do" method="post">
                     <div class="card-header bg-primary text-white">
-                        <h1 class="mt-2">회원 가입</h1>
+                        <h1 class="mt-2 font-weight-normal">회원 가입</h1>
                     </div>
                     <div class="card-body">
                         <div class="form-group">
@@ -91,7 +91,7 @@
                             </span>
                         </div>
                         <div class="form-group">
-                            <label for="birth">생일</label>
+                            <label for="birth">생년월일</label>
                             <input type="date" class="form-control" id="birth" name="birth" required>
                         </div>
                         <div class="form-group">

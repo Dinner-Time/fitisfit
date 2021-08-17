@@ -26,9 +26,14 @@ public class MemInsert implements Command {
 		vo.setMemAddress(request.getParameter("address"));
 		vo.setMemGender(request.getParameter("gender"));
 		vo.setMemSubDate(Date.valueOf(LocalDate.now()));
-		dao.memInsert(vo);
 		
-		return "member/insertTest";
+		try {
+			dao.memInsert(vo);
+		} catch(Exception e) {
+			
+		}
+		
+		return "member/congratulation";
 	}
 
 }

@@ -26,7 +26,7 @@
 
 <body id="body">
     <jsp:include page="../home/header.jsp" />
-    <div style="height: 120px;"></div>
+
     <section class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
         <div class="container card-group">
             <div class="card">

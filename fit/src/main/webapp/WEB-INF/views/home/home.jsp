@@ -1,28 +1,65 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>피트다 피트!!</title>
+<!-- Mobile Specific Meta ================================================== -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- CSS ================================================== -->
+<!-- Themefisher Icon font -->
+<link rel="stylesheet" href="plugins/themefisher-font/style.css">
+<!-- bootstrap.min css -->
+<link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+<!-- Lightbox.min css -->
+<link rel="stylesheet" href="plugins/lightbox2/dist/css/lightbox.min.css">
+<!-- animation css -->
+<link rel="stylesheet" href="plugins/animate/animate.css">
+<!-- Slick Carousel -->
+<link rel="stylesheet" href="plugins/slick/slick.css">
+<!-- Main Stylesheet -->
+<link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+
+<body id="body" style="background-color: gray;">
 	<jsp:include page="header.jsp" />
-	<h1>Welcome!</h1>
-	<a href="proList.do">program</a>
-	<a href="salTest.do">sales</a>
-	<a href="timTest.do">timetable</a>
-
-	<a href="catSelectList.do">category</a>
-	<a href="regSelectList.do">region</a>
-	<a href="insSelectList.do">instructor</a>
-	<a href="memTest.do">member</a>
-	<a href="parTest.do">partner</a>
-	<a href="revSelectList.do">reviewSelectList</a>
-	<a href="revSelectListByAdm.do">revSelectListByAdm</a>
-	<a href="wisTest.do">wishlist</a>
-	<a href="hisInsertForm.do">history</a>
-
+	<div style="height: 150vh;"class="d-flex justify-content-between align-items-center">
+		<a style="color: white;"href="proList.do">program</a>
+		<a style="color: white;" href="salTest.do">sales</a>
+		<a style="color: white;" href="timTest.do">timetable</a>
+		<a style="color: white;" href="catSelectList.do">category</a>
+		<a style="color: white;" href="regSelectList.do">region</a>
+		<a style="color: white;" href="insSelectList.do">instructor</a>
+		<a style="color: white;" href="memTest.do">member</a>
+		<a style="color: white;" href="parTest.do">partner</a>
+		<a style="color: white;" href="revSelectList.do">reviewSelectList</a>
+		<a style="color: white;" href="revSelectListByAdm.do">revSelectListByAdm</a>
+		<a style="color: white;" href="wisTest.do">wishlist</a>
+		<a style="color: white;" href="hisInsertForm.do">history</a>
+	</div>
 	<jsp:include page="footer.jsp" />
+
+	<!-- 자바 스크립트 -->
+    <!-- Main jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- Form Validation -->
+    <script src="plugins/form-validation/jquery.form.js"></script> 
+    <script src="plugins/form-validation/jquery.validate.min.js"></script> 
+    <!-- Bootstrap4 -->
+    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Parallax -->
+    <script src="plugins/parallax/jquery.parallax-1.1.3.js"></script>
+    <!-- lightbox -->
+    <script src="plugins/lightbox2/dist/js/lightbox.min.js"></script>
+    <!-- Owl Carousel -->
+    <script src="plugins/slick/slick.min.js"></script>
+    <!-- filter -->
+    <script src="plugins/filterizr/jquery.filterizr.min.js"></script>
+    <!-- Smooth Scroll js -->
+    <script src="plugins/smooth-scroll/smooth-scroll.min.js"></script>    
+    <!-- Custom js -->
+    <script src="js/script.js"></script>
 </body>
 </html>

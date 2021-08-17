@@ -414,6 +414,7 @@ a:focus, a:hover {
 ==================================================================*/
 .navigation {
   transition: .3s all;
+  background-color: #4343fe;
 }
 
 .navigation .logo-default {
@@ -2030,7 +2031,7 @@ a:focus, a:hover {
 
 .footer-bottom {
   text-align: center;
-  background-color: #1b1b1b;
+  background-color: #4343fe;
   border-top: 1px solid #2c2c2c;
   padding: 30px 0;
 }
@@ -2038,7 +2039,7 @@ a:focus, a:hover {
 .footer-bottom h5 {
   font-size: 12px;
   line-height: 1;
-  color: #888888;
+  color: #f5f5f5;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -2049,7 +2050,7 @@ a:focus, a:hover {
 .footer-bottom h6 {
   font-size: 11px;
   line-height: 15px;
-  color: #888888;
+  color: #f5f5f5;
   font-weight: 400;
   text-transform: capitalize;
   letter-spacing: 2px;

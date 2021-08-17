@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -42,116 +41,30 @@
 <link rel="stylesheet" href="css/style.css">
 
 <style type="text/css">
-.custom-btn {
-	background: #4343FE;
-	border: 1px solid #4343FE;
-	color: #fff;
-	display: inline-block;
-	font-size: 14px;
-	letter-spacing: 1px;
-	padding: 12px 40px;
-	text-transform: uppercase;
-	border-radius: 40px;
+.custom-btn {  
+  background: #4343FE;
+  border: 1px solid #4343FE;
+  color: #fff;
+  display: inline-block;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 12px 40px;
+  text-transform: uppercase;
+  border-radius: 40px;
 }
-
 .custom-border {
-	height: 2px;
-	margin: 20px auto 20px;
-	position: relative;
-	width: 200px;
-	background: #4343FE;
-}
-
-.custom-nav {
-	border: 1px solid #4343FE;
-	border-radius: 20px;
-	position: relative;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-}
-
-.custom-ul {
-	margin-top: 40px;
-	position: relative;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-}
-
-.custom-dropdown {
-	z-index: 9999;
-}
-
-li {
-	font-size: 20px;
-	margin-left: 10px;
-	margin-right: 10px;
+  height: 2px;
+  margin: 20px auto 20px;
+  position: relative;
+  width: 1200px;
+  background: #4343FE;
 }
 </style>
 </head>
 
 <body id="body">
-	<jsp:include page="../home/header.jsp" />
-	<br>
-	<br>
-	<br>
-	<br>
+
 	<section class="blog" id="blog">
-		<br>
-		<br>
-		<div class="container col-11">
-			<!-- main nav -->
-			<nav class="navbar navbar-expand-lg navbar-light custom-nav"
-				style="z-index: 999;">
-				<div class="collapse navbar-collapse" id="navigation">
-					<ul class="navbar-nav text-center custom-ul">
-						<li class="nav-item dropdown active"><a
-							class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-							role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false"> 지역별 </a>
-							<div class="dropdown-menu custom-dropdown"
-								aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="#">서울</a> <a
-									class="dropdown-item" href="#">인천</a> <a class="dropdown-item"
-									href="#">대전</a> <a class="dropdown-item" href="#">대구</a>
-							</div></li>
-						<li class="nav-item dropdown active"><a
-							class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-							role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false"> 카테고리 </a>
-							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="#">헬스</a> <a
-									class="dropdown-item" href="#">요가</a> <a class="dropdown-item"
-									href="#">필라테스</a> <a class="dropdown-item" href="#">기타</a>
-							</div></li>
-						<li class="nav-item dropdown active"><a
-							class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-							role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false"> 센터 </a>
-							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="#">파워짐</a> <a
-									class="dropdown-item" href="#">샨띠요가센터</a>
-							</div></li>
-						<li class="nav-item dropdown active"><a
-							class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-							role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false"> 프로그램 </a>
-							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="#">파워짐 상설 헬스 프로그램</a> <a
-									class="dropdown-item" href="#">샨티요가센터 상반기 그룹요가</a>
-							</div></li>
-						<li>
-							<button type="button" class="btn btn-outline-primary">검색</button>
-						</li>
-						<li>
-							<button type="button" class="btn btn-primary">내 주변 찾기</button>
-						</li>
-					</ul>
-				</div>
-			</nav>
-			<!-- /main nav -->
-		</div>
 		<div class="container">
 			<div class="row">
 
@@ -167,24 +80,23 @@ li {
 				</div>
 				<!-- /section title -->
 				<!-- single blog post -->
-				<c:forEach var="pro" items="${list }">
-					<article class="col-md-3 col-sm-6 col-xs-12 clearfix ">
-						<div class="post-item">
-							<div class="media-wrapper">
-								<img src="${pro.proPhoto}" alt="Program Photo" class="img-fluid">
-							</div>
-
-							<div class="content">
-								<h3>
-									<a href="#">${pro.proName }</a>
-								</h3>
-								<p>${pro.proDesc}</p>
-								<p>${pro.proSince}~ ${pro.proPeriod}개월</p>
-								<a class="custom-btn" href="single-post.html">${pro.proPrice*(100 - pro.proSale3)*0.01}&#8361부터</a>
-							</div>
+				<article class="col-md-3 col-sm-6 col-xs-12 clearfix ">
+					<div class="post-item">
+						<div class="media-wrapper">
+							<img src="images/blog/post-1.jpg" alt="amazing caves coverimage"
+								class="img-fluid">
 						</div>
-					</article>
-				</c:forEach>
+
+						<div class="content">
+							<h3>
+								<a href="#">헬스</a>
+							</h3>
+							<p>간략 설명</p>
+							<p>2021-08-17 - 2022-08-16</p>
+							<a class="custom-btn" href="single-post.html">가격</a>
+						</div>
+					</div>
+				</article>
 				<!-- /single blog post -->
 
 				<!-- single blog post -->
@@ -218,6 +130,23 @@ li {
 						<div class="content">
 							<h3>
 								<a href="single-post.html">필라테스</a>
+							</h3>
+							<p>간략 설명</p>
+							<p>2021-08-17 - 2022-08-16</p>
+							<a class="custom-btn" href="single-post.html">가격</a>
+						</div>
+					</div>
+				</article>
+				<article class="col-md-3 col-sm-6 col-xs-12 ">
+					<div class="post-item">
+						<div class="media-wrapper">
+							<img src="images/blog/post-3.jpg" alt="amazing caves coverimage"
+								class="img-fluid">
+						</div>
+
+						<div class="content">
+							<h3>
+								<a href="single-post.html">수영</a>
 							</h3>
 							<p>간략 설명</p>
 							<p>2021-08-17 - 2022-08-16</p>

@@ -34,7 +34,7 @@ public class MemLogin implements Command {
 				session.setAttribute("session", vo);
 				session.setAttribute("author", "general");
 				
-				page = "member/loginTest";
+				page = "home.do";
 			} else {
 				page = "loginForm.do";
 			}
@@ -52,7 +52,7 @@ public class MemLogin implements Command {
 				session.setAttribute("session", vo);
 				session.setAttribute("author", "partner");
 				
-				page = "member/loginTest";
+				page = "home.do";
 			} else {
 				page = "loginForm.do";
 			}

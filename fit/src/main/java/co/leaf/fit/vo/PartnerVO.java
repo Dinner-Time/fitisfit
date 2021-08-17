@@ -15,6 +15,8 @@ public class PartnerVO {
 	private String parPhoto;
 	private Date parSubDate;
 	private String parState;
+	private String author;
+	
 
 	public PartnerVO () {}
 
@@ -104,6 +106,14 @@ public class PartnerVO {
 
 	public void setParState(String parState) {
 		this.parState = parState;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
 	}
 	
 }

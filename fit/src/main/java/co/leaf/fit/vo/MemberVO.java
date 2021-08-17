@@ -14,6 +14,7 @@ public class MemberVO {
 	private String memState;
 	private Date memSubDate;
 	private String memPhoto;
+	private String author;
 	
 	public MemberVO () {}
 
@@ -95,6 +96,14 @@ public class MemberVO {
 
 	public void setMemPhoto(String memPhoto) {
 		this.memPhoto = memPhoto;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
 	}
 	
 }

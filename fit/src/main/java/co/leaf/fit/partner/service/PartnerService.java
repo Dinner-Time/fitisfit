@@ -47,4 +47,9 @@ public class PartnerService implements PartnerMapper {
 		return map.parDelete(vo);
 	}
 
+	@Override
+	public PartnerVO parLogin(PartnerVO vo) {
+		return map.parLogin(vo);
+	}
+
 }

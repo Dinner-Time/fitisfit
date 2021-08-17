@@ -113,7 +113,9 @@
 		#{proMaxPeople},
 		#{proPeople},
 		#{proInsId},
-		'M')
+		'M',
+		#{proName},
+		#{proOriId})
 	</insert>
 
 	<update id="proMemberEnroll" parameterType="ProgramVO">

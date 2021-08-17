@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-${login.memName }
+${author }
 <h3><a href="memSelect.do">회원 정보</a></h3>
 </body>
 </html>

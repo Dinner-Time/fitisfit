@@ -8,6 +8,7 @@ public interface PartnerMapper {
 	
 	List<PartnerVO> parSelectList();
 	PartnerVO parSelect(PartnerVO vo);
+	PartnerVO parLogin(PartnerVO vo);
 	int parInsert(PartnerVO vo);
 	int parUpdateBefore(PartnerVO vo);
 	int parUpdateAfter(PartnerVO vo);

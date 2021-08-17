@@ -34,5 +34,9 @@
     <delete id="parDelete" parameterType="PartnerVO">
         delete from fit_partner where par_email = #{parEmail}
     </delete>
+    
+    <select id="parLogin" resultType="PartnerVO">
+		select * from fit_partner where par_email = #{parEmail} and par_password = #{parPassword}
+	</select>
 
 </mapper>

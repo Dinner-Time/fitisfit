@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +10,7 @@
 <meta name="author" content="Themefisher.com">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Review Select List</title>
+<title>History Insert Message</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
@@ -23,30 +22,13 @@
 <link rel="stylesheet" href="plugins/slick/slick.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body id="body">
+<body>
 	<jsp:include page="../home/header.jsp" />
-	<!-- 권한이 없어도 프로그램 상세보기에서 후기를 보여주는 부분. 
-	프로그램 상세보기 페이지에 합치면 됨..
-	그러려면 프로그램 id 받아와서 해당 프로그램에 대한 후기만 보여줘야 됨 -->
-	<div class="col-12" align="center">
-	<h3>프로그램 페이지와 합칠 부분!! (독자적인 페이지 아님~)</h3>
-		<div class="col-8">
-			<div class="card" align="left" style="width: 50rem;">
-			  <ul class="list-group list-group-flush">
-			  <c:forEach var="review" items="${list}">
-			    <li class="list-group-item">
-			    <!-- 별 모양은 자바스크립트로 구현.. -->
-			    	<h5 class="card-title">${review.revScore}</h5>
-			    	<h6 class="card-subtitle mb-2 text-muted">${review.revDate} · ${review.revWriter}</h6>
-			    	<hr>
-					${review.revContent}<br>
-			    </li>
-			  </c:forEach>
-			  </ul>
-			</div>
+	<!-- 수강내역 입력이 성공적으로 되었는지 메세지를 띄워주는 페이지 (나중에 모달창으로 바꾸는게 나을듯..) -->
+		<div align="center">
+			<h3>${message}</h3>
+			<h5><a href="home.do">홈으로</a></h5>
 		</div>
-	</div>
-	<br><br>
 	<jsp:include page="../home/footer.jsp" />
 </body>
 </html>

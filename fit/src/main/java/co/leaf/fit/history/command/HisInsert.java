@@ -34,7 +34,7 @@ public class HisInsert implements Command {
 		
 		request.setAttribute("message", message);
 		
-		return "history/historyInsert";
+		return "history/hisInsert";
 	}
 
 }

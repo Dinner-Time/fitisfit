@@ -63,7 +63,7 @@
                 </form>
             </div>
             <div class="card">
-                <form action="memInsert.do" method="post">
+                <form id="signUp" action="memInsert.do" method="post">
                     <div class="card-header bg-primary text-white">
                         <h1 class="mt-2 font-weight-normal">회원 가입</h1>
                     </div>
@@ -92,7 +92,7 @@
                         </div>
                         <div class="form-group">
                             <label for="birth">생년월일</label>
-                            <input type="date" class="form-control" id="birth" name="birth" required>
+                            <input type="date" class="form-control" id="birth" name="birth" value="2000-01-01" required>
                         </div>
                         <div class="form-group">
                             <label for="phone">전화번호</label>
@@ -100,11 +100,17 @@
                         </div>
                         <div class="form-group">
                             <label for="address">주소</label>
-                            <input type="text" class="form-control" id="address" name="address" required>
+                            <div class="d-flex justify-content-end">
+                                <input type="text" class="form-control" id="roadFullAddr" name="roadFullAddr" required readonly>
+                                <input type="button" class="btn btn-primary ml-2" onClick="goPopup();" value="검색"/>
+                            </div>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary" type="submit">회원가입</button>
+                        <button class="btn btn-primary" type="button" onclick='(function(){
+                        	alert("환영합니다!!");
+                        	$("#signUp").submit();
+                        })()'>회원가입</button>
                         <button class="btn btn-primary" type="reset">취소</button>
                     </div>
                 </form>
@@ -133,6 +139,16 @@
     <script src="plugins/smooth-scroll/smooth-scroll.min.js"></script>
     <!-- Custom js -->
     <script src="js/script.js"></script>
+
+    <script type='text/javascript'>
+    function goPopup(){
+    	// 호출된 페이지(jusoPopup.do)에서 실제 주소검색URL(https://www.juso.go.kr/addrlink/addrLinkUrl.do)를 호출하게 됩니다.
+    	var pop = window.open("jusoPopup.do","pop","width=570,height=420, scrollbars=yes, resizable=yes"); 
+    }
+    function jusoCallBack(roadFullAddr){
+    	$('#roadFullAddr').val(roadFullAddr);
+    }
+    </script>
 </body>
 
 </html>

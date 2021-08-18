@@ -23,7 +23,7 @@ public class MemInsert implements Command {
 		vo.setMemName(request.getParameter("name"));
 		vo.setMemBirth(Date.valueOf(request.getParameter("birth")));
 		vo.setMemPhone(request.getParameter("phone"));
-		vo.setMemAddress(request.getParameter("address"));
+		vo.setMemAddress(request.getParameter("roadFullAddr"));
 		vo.setMemGender(request.getParameter("gender"));
 		vo.setMemSubDate(Date.valueOf(LocalDate.now()));
 		
@@ -33,7 +33,7 @@ public class MemInsert implements Command {
 			
 		}
 		
-		return "member/congratulation";
+		return "loginForm.do";
 	}
 
 }

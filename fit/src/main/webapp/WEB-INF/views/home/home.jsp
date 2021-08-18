@@ -25,6 +25,7 @@
 
 <body id="body">
 	<jsp:include page="header.jsp" />
+	
 	<div style="height: 100vh;"class="d-flex justify-content-between align-items-center">
 		<a style="color: #000;"href="proList.do">program</a>
 		<a style="color: #000;" href="salTest.do">sales</a>
@@ -38,6 +39,7 @@
 		<a style="color: #000;" href="revSelectListByAdm.do">revSelectListByAdm</a>
 		<a style="color: #000;" href="wisTest.do">wishlist</a>
 		<a style="color: #000;" href="hisInsertForm.do">history</a>
+		<a style="color: #000;" href="NaverMap.do">naverMap</a>
 	</div>
 	<jsp:include page="footer.jsp" />
 

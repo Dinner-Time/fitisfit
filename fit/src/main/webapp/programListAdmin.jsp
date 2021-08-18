@@ -39,8 +39,7 @@
 
 <script>
 	function getRecord(n) {
-		frm.insId.value = n;
-		frm.submit();
+		
 	}
 </script>
 
@@ -77,24 +76,26 @@
 			
 </section>-->
 <section class="about" id="about">
-	<div align="center"><h2>강사관리</h2></div><br/>
+	<div align="center"><h2>프로그램관리</h2></div><br/>
 <div class="container">
   <table class="table table-hover" >
     <thead align="center">
 			<tr>
 				<th>식별번호</th>
-				<th>이름</th>
-				<th>프로그램명</th>
-				<th>연락처</th>
+				<th>프로그램</th>
+				<th>강사</th>
+				<th>인원</th>
+				<th>기간</th>
 			</tr>
     </thead>
     <tbody align="center">
-      <c:forEach var="ins" items="${list }">
-				<tr onclick="getRecord('${ins.insId}')">
-					<td>${ins.insId }</td>
-					<td>${ins.insName}</td>
-					<td>${ins.programVO.proName}</td>
-					<td>${ins.insPhone}</td>
+      <c:forEach var="ins" items="">
+				<tr onclick="getRecord('')">
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
 				</tr>
 			</c:forEach>
     </tbody>
@@ -105,11 +106,10 @@
 			</form>
 		</div>
 		<div align="right">
-		 <a class="btn btn-main" href="insInsertForm.do" style="background-color:#4343fe; border:none">강사추가</a>
+		 <a class="btn btn-main" href="" style="background-color:#4343fe; border:none">프로그램 추가</a>
 		
 		</div>
-		
-		<a href="insInfo.do">유저가 보는 강사 화면</a>
+
 </div>
 </section>
 

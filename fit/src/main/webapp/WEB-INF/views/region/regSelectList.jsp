@@ -42,20 +42,24 @@
 <!-- Main Stylesheet -->
 <link rel="stylesheet" href="css/style.css?after">
 
+<!-- 폰트 시작 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap"
+	rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap"
+	rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+<!-- 폰트 끝 -->
+
+
 <style type="text/css">
-.custom-header {
-	background-size: cover;
-	padding: 70px 0 70px;
-	text-align: center;
-	color: $light;
-	position: relative; &: before { background : rgba( 0, 0, 0, 0.5);
-	position: absolute;
-	content: '';
-	top: 0;
-	right: 0;
-	left: 0;
-	bottom: 0;
-}
 
 .custom-btn {  
   background: #4343FE;
@@ -68,115 +72,53 @@
   text-transform: uppercase;
   border-radius: 40px; 
 }
-
+.custom-border {
+	height: 2px;
+	margin: 20px auto 20px;
+	position: relative;
+	width: 200px;
+	background: #4343FE;
+}
+h1 {
+	font-family: 'Gowun Dodum', sans-serif;
+	color:white;
+	text-shadow:5px 5px 5px black;
+	
+}
+.region{
+	margin:auto;
+	border: 1px solid #191970;
+	border-right:none;
+	border-left:none;
+	text-align:center;
+	background-image:url('images/region/Seoul.jpg');
+	background-size:1250px;
+}
+td{
+  width:1250px;
+  height:300px;
+}
 </style>
 
 </head>
 
 <body id="body">
-
-	<!--
-  Start Preloader
-  ==================================== -->
-	<div id="preloader">
-		<div class='preloader'>
-			<span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span>
-		</div>
-	</div>
-	<!--
-  End Preloader
-  ==================================== -->
-
-
-
-
-	<!--
-Fixed Navigation
-==================================== -->
-	<header class="navigation fixed-top">
-		<div class="container">
-			<!-- main nav -->
-			<nav class="navbar navbar-expand-lg navbar-light">
-				<!-- logo -->
-				<a class="navbar-brand logo" href="index.html"> <img
-					style="width: 118px; height: 82px;" class="logo-default"
-					src="images/logo.png" alt="logo" /> <img
-					style="width: 118px; height: 82px;" class="logo-white"
-					src="images/logo.png" alt="logo" />
-				</a>
-				<!-- /logo -->
-				<button class="navbar-toggler" type="button" data-toggle="collapse"
-					data-target="#navigation" aria-controls="navigation"
-					aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-
-				<div class="collapse navbar-collapse" id="navigation">
-					<ul class="navbar-nav ml-auto text-center">
-						<li class="nav-item dropdown "><a
-							class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-							role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false"> Homepage </a>
-							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="index.html">Homepage</a> <a
-									class="dropdown-item" href="onepage-slider.html">Onepage</a> <a
-									class="dropdown-item" href="onepage-text.html">Onepage 2</a>
-							</div></li>
-						<li class="nav-item "><a class="nav-link" href="about.html">About
-								Us</a></li>
-						<li class="nav-item "><a class="nav-link" href="service.html">Services</a>
-						</li>
-						<li class="nav-item  active "><a class="nav-link"
-							href="portfolio.html">Portfolio</a></li>
-						<li class="nav-item "><a class="nav-link" href="team.html">Team</a>
-						</li>
-						<li class="nav-item "><a class="nav-link" href="pricing.html">Pricing</a>
-						</li>
-						<li class="nav-item "><a class="nav-link" href="contact.html">Contact</a>
-						</li>
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-							role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false"> Pages </a>
-							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="404.html">404 Page</a> <a
-									class="dropdown-item" href="blog.html">Blog Page</a> <a
-									class="dropdown-item" href="single-post.html">Blog Single
-									Page</a>
-							</div></li>
-					</ul>
-				</div>
-			</nav>
-			<!-- /main nav -->
-		</div>
-	</header>
-	<!--
-End Fixed Navigation
-==================================== -->
-
-	<section class="custom-header">
-		<div class="container"></div>
-	</section>
+<jsp:include page="../home/header.jsp" />
 
 	<!-- Start Portfolio Section
 		=========================================== -->
-
 	<section class="portfolio section-sm" id="portfolio">
 		<div class="container-fluid">
 			<div class="row ">
 				<div class="col-lg-12">
 					<!-- section title -->
-					<div class="title text-center">
-						<div class="border"
-							style="width: 1200px; background-color: lightgray;"></div>
-						<h1>대구</h1>
-						<div class="border"
-							style="width: 1200px; background-color: lightgray;"></div>
-					</div>
+					<table class="region">
+					<tr><td><h1>Seoul</h1></td></tr>
+					</table>
+					<br><br><br><br><br>
 					<!-- /section title -->
 					<div class="portfolio-filter">
-						<div class="row" style="margin-left: 200px; margin-right: 200px;">
+						<div class="row" style="margin-left: 500px; margin-right: 200px;">
 							<c:forEach var="category" items="${list }">
 								<div class="col-3" style="margin-bottom: 5px;">
 									<button type="button" data-filter="all"
@@ -192,14 +134,11 @@ End Fixed Navigation
 						<div class="row">
 							<!-- /section title -->
 							<!-- single blog post -->
-							<button type="button" class="prevArrow slick-arrow"
-								style="display: block;"></button>
-
 
 							<article class="col-md-3 col-sm-6 col-xs-12 ">
 								<div class="post-item">
 									<div class="media-wrapper">
-										<img src="images/blog/post-3.jpg"
+										<img src="images/category/Pilates.jpg" style="width:300px; height:200px;"
 											alt="amazing caves coverimage" class="img-fluid">
 									</div>
 									<div class="content">
@@ -218,12 +157,12 @@ End Fixed Navigation
 							<article class="col-md-3 col-sm-6 col-xs-12 ">
 								<div class="post-item">
 									<div class="media-wrapper">
-										<img src="images/blog/post-3.jpg"
+										<img src="images/category/Swimming.jpg" style="width:300px; height:200px;"
 											alt="amazing caves coverimage" class="img-fluid">
 									</div>
 									<div class="content">
 										<h3>
-											<a href="single-post.html">필라테스</a>
+											<a href="single-post.html">수영</a>
 										</h3>
 										<p>간략 설명</p>
 										<p>2021-08-17 - 2022-08-16</p>
@@ -238,12 +177,12 @@ End Fixed Navigation
 							<article class="col-md-3 col-sm-6 col-xs-12 ">
 								<div class="post-item">
 									<div class="media-wrapper">
-										<img src="images/blog/post-3.jpg"
+										<img src="images/category/Yoga.jpg" style="width:300px; height:200px;"
 											alt="amazing caves coverimage" class="img-fluid">
 									</div>
 									<div class="content">
 										<h3>
-											<a href="single-post.html">필라테스</a>
+											<a href="single-post.html">요가</a>
 										</h3>
 										<p>간략 설명</p>
 										<p>2021-08-17 - 2022-08-16</p>
@@ -255,12 +194,12 @@ End Fixed Navigation
 							<article class="col-md-3 col-sm-6 col-xs-12 ">
 								<div class="post-item">
 									<div class="media-wrapper">
-										<img src="images/blog/post-3.jpg"
+										<img src="images/category/Gym.jpg" style="width:300px; height:200px;"
 											alt="amazing caves coverimage" class="img-fluid">
 									</div>
 									<div class="content">
 										<h3>
-											<a href="single-post.html">필라테스</a>
+											<a href="single-post.html">헬스</a>
 										</h3>
 										<p>간략 설명</p>
 										<p>2021-08-17 - 2022-08-16</p>
@@ -268,9 +207,6 @@ End Fixed Navigation
 									</div>
 								</div>
 							</article>
-
-							<button type="button" class="nextArrow slick-arrow"
-								style="display: block;"></button>
 
 
 							<!-- /section title -->
@@ -287,148 +223,18 @@ End Fixed Navigation
 	</section>
 	<!-- End section -->
 
-
 	<!-- Start Testimonial
 =========================================== -->
 
-	<section class="testimonial section" id="testimonial">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<!-- testimonial wrapper -->
-					<div class="testimonial-slider">
-						<!-- testimonial single -->
-						<div class="item text-center">
-							<i class="tf-ion-chatbubbles"></i>
-							<!-- client info -->
-							
-							<!-- /client info -->
-							<!-- client photo -->
-							<div class="client-thumb">
-								<img src="images/client-logo/clients-1.jpg" class="img-fluid"
-									alt="">
-							</div>
-							<div class="client-meta">
-								<h3>William Martin</h3>
-								<span>CEO , Company Name</span>
-							</div>
-							<!-- /client photo -->
-						</div>
-						<!-- /testimonial single -->
-
-						<!-- testimonial single -->
-						<div class="item text-center">
-							<i class="tf-ion-chatbubbles"></i>
-							<!-- client info -->
-							
-							<!-- /client info -->
-							<!-- client photo -->
-							<div class="client-thumb">
-								<img src="images/client-logo/clients-2.jpg" class="img-fluid"
-									alt="">
-							</div>
-							<div class="client-meta">
-								<h3>Emma Harrison</h3>
-								<span>CEO , Company Name</span>
-							</div>
-							<!-- /client photo -->
-						</div>
-						<!-- /testimonial single -->
-
-						<!-- testimonial single -->
-						<div class="item text-center">
-							<i class="tf-ion-chatbubbles"></i>
-							<!-- client info -->
-							
-							<!-- /client info -->
-							<!-- client photo -->
-							<div class="client-thumb">
-								<img src="images/client-logo/clients-3.jpg" class="img-fluid"
-									alt="">
-							</div>
-							<div class="client-meta">
-								<h3>Alexander Lucas</h3>
-								<span>CEO , Company Name</span>
-							</div>
-							<!-- /client photo -->
-						</div>
-						<!-- /testimonial single -->
-					</div>
-				</div>
-				<!-- end col lg 12 -->
-			</div>
-			<!-- End row -->
-		</div>
-		<!-- End container -->
-	</section>
-	<!-- End Section -->
+	
+				
 
 
 
-
-	<footer id="footer" class="bg-one">
-		<div class="top-footer">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-3 col-md-3 col-lg-3">
-						<h3>about</h3>
-						<p>Integer posuere erat a ante venenati dapibus posuere velit
-							aliquet. Fusce dapibus, tellus cursus commodo, tortor mauris sed
-							posuere.</p>
-					</div>
-					<!-- End of .col-sm-3 -->
-
-					<div class="col-sm-3 col-md-3 col-lg-3">
-						<ul>
-							<li><h3>Our Services</h3></li>
-							<li><a href="#">Graphic Design</a></li>
-							<li><a href="#">Web Design</a></li>
-							<li><a href="#">Web Development</a></li>
-						</ul>
-					</div>
-					<!-- End of .col-sm-3 -->
-
-					<div class="col-sm-3 col-md-3 col-lg-3">
-						<ul>
-							<li><h3>Quick Links</h3></li>
-							<li><a href="#">Partners</a></li>
-							<li><a href="#">About</a></li>
-							<li><a href="#">FAQ’s</a></li>
-							<li><a href="#">Badges</a></li>
-						</ul>
-					</div>
-					<!-- End of .col-sm-3 -->
-
-					<div class="col-sm-3 col-md-3 col-lg-3">
-						<ul>
-							<li><h3>Connect with us Socially</h3></li>
-							<li><a href="#">Facebook</a></li>
-							<li><a href="#">Twitter</a></li>
-							<li><a href="#">Youtube</a></li>
-							<li><a href="#">Pinterest</a></li>
-						</ul>
-					</div>
-					<!-- End of .col-sm-3 -->
-
-				</div>
-			</div>
-			<!-- end container -->
-		</div>
-		<div class="footer-bottom">
-			<h5>Copyright 2016. All rights reserved.</h5>
-			<h6>
-				Design and Developed by <a href="">Themefisher</a>
-			</h6>
-			<h6>
-				Distributed by <a href="https://themewagon.com/">Themewagon</a>
-			</h6>
-		</div>
-	</footer>
+	<jsp:include page="/WEB-INF/views/home/footer.jsp" />
+			
+		
 	<!-- end footer -->
-
-
-	<!-- end Footer Area
-    ========================================== -->
 
 
 

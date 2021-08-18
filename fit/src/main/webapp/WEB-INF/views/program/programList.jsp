@@ -16,7 +16,7 @@
 
 <meta name="author" content="Themefisher.com">
 
-<title>Bingo | Responsive Multipurpose Parallax HTML5 Template</title>
+<title>피트다 피트 | 프로그램 리스트</title>
 
 <!-- Mobile Specific Meta
   ================================================== -->
@@ -24,7 +24,6 @@
 
 <!-- Favicon -->
 <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
-
 <!-- CSS
   ================================================== -->
 <!-- Themefisher Icon font -->
@@ -40,6 +39,21 @@
 <link rel="stylesheet" href="plugins/slick/slick.css">
 <!-- Main Stylesheet -->
 <link rel="stylesheet" href="css/style.css">
+<!-- 폰트 시작 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap"
+	rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap"
+	rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+<!-- 폰트 끝 -->
 
 <style type="text/css">
 .custom-btn {
@@ -72,37 +86,29 @@
 }
 
 .custom-ul {
-	margin-top: 40px;
+	margin-top: 50px;
 	position: relative;
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
 }
 
-.custom-dropdown {
-	z-index: 9999;
-}
-
 li {
-	font-size: 20px;
+	font-family: 'Do Hyeon', sans-serif;
+	font-size: 25px;
 	margin-left: 10px;
 	margin-right: 10px;
 }
+
 </style>
 </head>
 
 <body id="body">
-	<jsp:include page="../home/header.jsp" />
-	<br>
-	<br>
-	<br>
-	<br>
+	<jsp:include page="/WEB-INF/views/home/header.jsp" />
 	<section class="blog" id="blog">
-		<br>
-		<br>
 		<div class="container col-11">
 			<!-- main nav -->
-			<nav class="navbar navbar-expand-lg navbar-light custom-nav"
+			<nav class="navbar navbar-inverse navbar-expand-lg navbar-light custom-nav"
 				style="z-index: 999;">
 				<div class="collapse navbar-collapse" id="navigation">
 					<ul class="navbar-nav text-center custom-ul">
@@ -154,7 +160,6 @@ li {
 		</div>
 		<div class="container">
 			<div class="row">
-
 				<!-- section title -->
 				<div class="col-12">
 					<div class="title text-center ">

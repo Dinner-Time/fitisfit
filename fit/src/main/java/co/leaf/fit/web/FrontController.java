@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import co.leaf.fit.api.command.JusoPopup;
 import co.leaf.fit.category.command.CatSelect;
 import co.leaf.fit.category.command.CatSelectList;
 import co.leaf.fit.category.command.CatTest;
@@ -64,6 +65,7 @@ public class FrontController extends HttpServlet {
     }
 
 	public void init(ServletConfig config) throws ServletException {
+		map.put("/NaverMap.do", new NaverMap());	
 		// home page
 		map.put("/home.do", new Home());
 		
@@ -88,6 +90,7 @@ public class FrontController extends HttpServlet {
 		map.put("/login.do", new MemLogin());
 		map.put("/logout.do", new MemLogout());
 		map.put("/memInsert.do", new MemInsert());
+		map.put("/jusoPopup.do", new JusoPopup());
 		map.put("/memSelect.do", new MemberSelect());
 		
 		// partner page

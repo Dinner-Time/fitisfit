@@ -9,7 +9,9 @@
 	content="Bingo One page parallax responsive HTML Template ">
 <meta name="author" content="Themefisher.com">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>메인</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
 <link rel="stylesheet" href="plugins/themefisher-font/style.css">
@@ -27,12 +29,10 @@
 	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap"
 	rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link
 	href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap"
 	rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 <!-- 폰트 끝 -->
 
@@ -125,7 +125,7 @@ h2 {
 	<jsp:include page="/WEB-INF/views/home/header.jsp" />
 	<br><br><br><br><br><br><br><br>
 <div class="container">
-    <!-- main nav -->
+    <!-- 검색바 시작 -->
     <nav class="navbar navbar-expand-lg navbar-light custom-nav" style="z-index: 999;">
       <div class="collapse navbar-collapse" id="navigation">
         <ul class="navbar-nav ml-auto text-center">
@@ -182,8 +182,10 @@ h2 {
         </ul>
       </div>
     </nav>
-    <!-- /main nav -->
+    <!-- 검색바 끝 -->
   </div>
+  
+  <!-- 지역별 메뉴 시작 -->
 	<section class="service-2 section">
 		<div class="container">
 			<div class="row">
@@ -239,9 +241,11 @@ h2 {
 					</div>
 				</div>
 			</div>
+			<!-- 지역별 메뉴 끝 -->
 			<br> <br>
 			<hr>
 			<br> <br>
+			<!-- 카테고리별 메뉴 시작 -->
 			<div class="row">
 				<div class="col-12">
 					<!-- section title -->
@@ -291,12 +295,13 @@ h2 {
 					</div>
 				</div>
 			</div>
-			<!-- End row -->
+			<!-- 카테고리별 메뉴 끝 -->
 		</div>
 		<!-- End container -->
 	</section>
 	<!-- End section -->
 
+	<!-- 인기 프로그램 시작 -->
 	<section class="testimonial section" id="testimonial">
 		<div class="container">
 			<div class="row">
@@ -350,7 +355,7 @@ h2 {
 		</div>
 		<!-- End container -->
 	</section>
-	<!-- End Section -->
+	<!-- 인기 프로그램 끝 -->
 
 	<jsp:include page="/WEB-INF/views/home/footer.jsp" />
 

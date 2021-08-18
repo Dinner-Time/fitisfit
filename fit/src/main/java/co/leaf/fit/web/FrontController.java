@@ -40,6 +40,8 @@ import co.leaf.fit.program.command.ProgramAddForm;
 import co.leaf.fit.region.command.RegSelect;
 import co.leaf.fit.region.command.RegSelectList;
 import co.leaf.fit.region.command.RegTest;
+import co.leaf.fit.review.command.RevInsert;
+import co.leaf.fit.review.command.RevInsertForm;
 import co.leaf.fit.review.command.RevSelectByAdm;
 import co.leaf.fit.review.command.RevSelectList;
 import co.leaf.fit.review.command.RevSelectListByAdm;
@@ -108,6 +110,8 @@ public class FrontController extends HttpServlet {
 		map.put("/revSelectListByAdm.do", new RevSelectListByAdm());
 		map.put("/revSelectByAdm.do", new RevSelectByAdm());
 		map.put("/revSelectListByPar.do", new RevSelectListByPar());
+		map.put("/revInsertForm.do", new RevInsertForm());
+		map.put("/revInsert.do", new RevInsert());
 		
 		// sales page 
 		map.put("/salTest.do", new SalTest());

@@ -14,8 +14,9 @@
 	<div>
 		<c:forEach var="wis" items="${list }">
 			프로그램아이디 : ${wis.wisProId } ,  <br/>
-			회원이메일 : ${wis.wisMemEmail}, <br/>
-			위시리스트아이디 : ${wis.wisId} <br/>
+			프로그램명 : ${wis.programVO.proName}, <br/>
+			설명 : ${wis.programVO.proDesc} <br/>
+			기간 : ${wis.programVO.proSince} <br/>
 		</c:forEach>
 	</div>
 </div>

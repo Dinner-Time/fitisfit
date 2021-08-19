@@ -2,9 +2,25 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="co.leaf.fit.wishlist.service.WishlistMapper">
 
-	<select id="wisSelectList" resultType="WishlistVO">
-		select * from fit_wishlist
-		order by wis_id
+	<resultMap type="ProgramVO" id="ProgramVO">
+		<result column="pro_name" property="proName" />
+		<result column="pro_desc" property="proDesc" />
+		<result column="pro_since" property="proSince" />
+	</resultMap>
+
+	<resultMap type="WishlistVO" id="WishlistVO">
+		<result column="wis_id" property="wisId" />
+		<result column="wis_proid" property="wisProId" />
+		<result column="wis_mememail" property="wisMemEmail" />
+		<collection property="programVO" resultMap="ProgramVO" />
+	</resultMap>
+
+	<select id="wisSelectList" parameterType="WishlistVO"
+		resultMap="WishlistVO">
+		select fit_wishlist.wis_proid, fit_program.pro_name,fit_program.pro_desc,
+		fit_program.pro_since
+		from fit_wishlist inner join fit_program
+		on fit_wishlist.wis_proid = fit_program.pro_id
 	</select>
 
 	<insert id="wisInsert" parameterType="WishlistVO">

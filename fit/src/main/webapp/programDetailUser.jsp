@@ -130,24 +130,14 @@ End Fixed Navigation
             </div>
             <br/>
             <!-- blockquote -->
-            
-<c:if test="${proPeriod == 0 }">             
-<div class="card">
-<div class="container">
-  <h2>기간선택</h2>
+		 <div class="card">
+		 <p>기간선택</p>
+            <div class="container">
   <!-- Button to Open the Modal -->
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-    1달권
+    Open modal
   </button>
- 
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-    2달권
-  </button>
-  
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-    3달권
-  </button>
-
+	<br/>
   <!-- The Modal -->
   <div class="modal" id="myModal">
     <div class="modal-dialog">
@@ -160,28 +150,23 @@ End Fixed Navigation
         </div>
         
         <!-- Modal body -->
-        <div class="modal-body" align="center">
-       <div class="row" >
+        <div class="modal-body">
+          Modal body..
+        </div>
         
-      <form name="해당 폼의 이름" action="값을 보낼 주소" method="post">
-        <input type='date' name='startDate' value=''/>&nbsp;~&nbsp;
-    </form>
-    <form name="해당 폼의 이름" action="값을 보낼 주소" method="post">
-        <input type='date' name='endDate' value=''/>
-    </form>
-        </div>
-        </div>
-     
         <!-- Modal footer -->
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         </div>
+        
       </div>
     </div>
   </div>
+  
 </div>
-</div>
-</c:if>  
+            </div>
+
+
    <br/>
    <div class="card">
    <h2>후기</h2>
@@ -224,52 +209,53 @@ End Fixed Navigation
 <br/>
 		<div class="card">
 		<h2>다른 프로그램들과 비교해보세요!</h2>
-		<div class="row filtr-container">
-					<div class="col-md-3 col-sm-6 col-xs-6 filtr-item " data-category="mix, design" >
-						<div class="portfolio-block">
-							<img class="img-fluid" src="images/portfolio/portfolio-1.jpg" alt="">
-							<div class="caption">
-								<a class="search-icon" href="images/portfolio/portfolio-1.jpg" data-lightbox="image-1">
-									<i class="tf-ion-ios-search-strong"></i>
-								</a>
-								<h4><a href="">AirBnB Postcard</a></h4>
-							</div>
-						</div>
+			<div class="container">
+		<div class="row">
+		
+			<!-- single blog post -->
+			<article class="col-md-4 col-sm-6 col-xs-12 clearfix ">
+				<div class="card">
+				<div class="post-item">
+					<div class="media-wrapper">
+						<img src="images/blog/post-1.jpg" alt="amazing caves coverimage" class="img-fluid">
 					</div>
-					<div class="col-md-3 col-sm-6 col-xs-6 filtr-item " data-category="mix, design, ios">
-						<div class="portfolio-block">
-							<img class="img-fluid" src="images/portfolio/portfolio-2.jpg" alt="">
-							<div class="caption">
-								<a class="search-icon" href="images/portfolio/portfolio-2.jpg" data-lightbox="image-1">
-									<i class="tf-ion-ios-search-strong"></i>
-								</a>
-								<h4><a href="">AirBnB Postcard</a></h4>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 col-sm-6 col-xs-6 filtr-item " data-category="mix, photography, development">
-						<div class="portfolio-block">
-							<img class="img-fluid" src="images/portfolio/portfolio-3.jpg" alt="">
-							<div class="caption">
-								<a class="search-icon" href="images/portfolio/portfolio-3.jpg" data-lightbox="image-1">
-									<i class="tf-ion-ios-search-strong"></i>
-								</a>
-								<h4><a href="">AirBnB Postcard</a></h4>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 col-sm-6 col-xs-6 filtr-item " data-category="mix, photography, ios">
-						<div class="portfolio-block">
-							<img class="img-fluid" src="images/portfolio/portfolio-4.jpg" alt="">
-							<div class="caption">
-								<a class="search-icon" href="images/portfolio/portfolio-4.jpg" data-lightbox="image-1">
-									<i class="tf-ion-ios-search-strong"></i>
-								</a>
-								<h4><a href="">AirBnB Postcard</a></h4>
-							</div>
+
+					<div class="content">
+						<h3><a href="single-post.html">프로그램명</a></h3>
+						<p>설명</p>
+						<p>날짜</p>
+						<div align="center">
+						<a class="btn btn-main" href="" style="background-color: #4343FE; border:none;">가격</a>
 						</div>
 					</div>
 				</div>
+				</div>
+			</article>
+			<!-- /single blog post -->
+			
+				<!-- single blog post -->
+			<article class="col-md-4 col-sm-6 col-xs-12 clearfix ">
+				<div class="card">
+				<div class="post-item">
+					<div class="media-wrapper">
+						<img src="images/blog/post-1.jpg" alt="amazing caves coverimage" class="img-fluid">
+					</div>
+
+					<div class="content">
+						<h3><a href="single-post.html">프로그램명</a></h3>
+						<p>설명</p>
+						<p>날짜</p>
+						<div align="center">
+						<a class="btn btn-main" href="" style="background-color: #4343FE; border:none;">가격</a>
+						</div>
+					</div>
+				</div>
+				</div>
+			</article>
+			<!-- /single blog post -->
+		</div> 		<!-- End row -->
+		
+	</div>
 		</div>
             
           </div>
@@ -281,7 +267,7 @@ End Fixed Navigation
       
         <div class="card" style="width:359px">
 		  <div class="card-body text-center">
-		    <a class="btn btn-main" href="#" style="background-color:#4343fe; border:none">예약가능인원</a><br/><br/>
+		    <a class="btn btn-main" href="#" onmouseover="0" style="background-color:#4343fe; border:none">예약가능인원</a><br/><br/>
 		   <a class="btn btn-main" href="#" style="background-color:#4343fe; border:none">위시리스트 담기</a><br/><br/>
 		    <a class="btn btn-main" href="#" style="background-color:#4343fe; border:none">등록</a><br/>
 		  </div>

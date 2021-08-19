@@ -47,7 +47,7 @@
 
 
 
-	<!--
+<!--
 Start About Section
 ==================================== -->
 <section class="about" id="about">
@@ -68,6 +68,27 @@ Start About Section
 			
 		
 			<!-- single blog post -->
+			<article class="col-md-3 col-sm-6 col-xs-12 clearfix ">
+				<div class="card">
+				<div class="post-item">
+					<div class="media-wrapper">
+						<img src="images/blog/post-1.jpg" alt="amazing caves coverimage" class="img-fluid">
+					</div>
+
+					<div class="content">
+						<h3><a href="single-post.html">프로그램명</a></h3>
+						<p>설명</p>
+						<p>날짜</p>
+						<div align="center">
+						<a class="btn btn-main" href="" style="background-color: #4343FE; border:none;">비우기</a>
+						</div>
+					</div>
+				</div>
+				</div>
+			</article>
+			<!-- /single blog post -->
+			
+				<!-- single blog post -->
 			<article class="col-md-3 col-sm-6 col-xs-12 clearfix ">
 				<div class="card">
 				<div class="post-item">

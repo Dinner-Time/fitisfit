@@ -9,7 +9,7 @@ public class JusoPopup implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		return "member/jusoPopup";
+		return "api/jusoPopup";
 	}
 
 }

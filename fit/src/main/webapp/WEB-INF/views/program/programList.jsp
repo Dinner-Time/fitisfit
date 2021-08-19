@@ -104,6 +104,12 @@ li {
 </head>
 
 <body id="body">
+	<div id="preloader">
+		<div class='preloader'>
+			<span></span> <span></span> <span></span> <span></span> <span></span>
+			<span></span>
+		</div>
+	</div>
 	<jsp:include page="/WEB-INF/views/home/header.jsp" />
 	<section class="blog" id="blog">
 		<div class="container col-11">

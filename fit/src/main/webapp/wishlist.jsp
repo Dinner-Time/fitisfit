@@ -1,4 +1,4 @@
-<!-- 파트너-강사추가페이지 -->
+<!-- 파트너-프로그램추가페이지 -->
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -43,34 +43,7 @@
 <body id="body">
 <jsp:include page="/WEB-INF/views/home/header.jsp" />
 
- <!--
-  Start Preloader
-  ==================================== -->
-  <div id="preloader">
-    <div class='preloader'>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div> 
-  <!--
-  End Preloader
-  ==================================== -->
-
-
-  
-
-<!--
-Fixed Navigation
-==================================== -->
-
-<!--
-End Fixed Navigation
-==================================== -->
-
+ 
 
 
 
@@ -78,72 +51,42 @@ End Fixed Navigation
 Start About Section
 ==================================== -->
 <section class="about" id="about">
-<form id="frm" name="frm" action="insInsert.do" method="post">
+
+
+<form id="frm" name="frm" action="" method="post">
 	<div class="container">
 		<div class="row">
 		
 			<!-- section title -->
+			<div class="col-12">
+				<div class="title text-center ">
+					<h2>위시리스트</h2>
+					<div class="border"></div>
+				</div>
+			</div>
+			<!-- /section title -->
 			
 		
-			<div class="col-md-4">
-			<div class="card" style="width:300px">
-    <img class="card-img-top" src="images/team/member-1.jpg" alt="Card image" style="width:100%">
-    <div class="card-body" >
-    <input type="file" id = "insPhoto" name="insPhoto">
- 
-    </div>
-  </div>
-  <br>
-			</div>
-			<div class="col-md-8">
-				<p>
-				<!-- Contact Form -->
-			<div class="contact-form" >
-					<div class="form-group">
-						<input type="text" placeholder="이름" class="form-control" name="insName" id="insName" required="required">
+			<!-- single blog post -->
+			<article class="col-md-3 col-sm-6 col-xs-12 clearfix ">
+				<div class="card">
+				<div class="post-item">
+					<div class="media-wrapper">
+						<img src="images/blog/post-1.jpg" alt="amazing caves coverimage" class="img-fluid">
 					</div>
-					
-					<div class="form-group">
-					
-						<input type="text" placeholder="전화번호" class="form-control" name="insPhone" id="insPhone" required="required">
-					</div>
-					
-					<div class="form-group">
-								<div class="form-group">
-								<select name="insGender" class="form-control" id="insGender">
-									<option value="">성별</option>
-									<option value="">남성</option>
-									<option value="">여성</option>
-								</select>
-							</div>
-					</div>
-					
-					<div class="form-group">
-						<input type="text" placeholder="인스타" class="form-control" name="insInsta" id="insInsta" required="required">
-					</div>
-					
-					<div class="form-group">
-						<input type="text" placeholder="카카오톡" class="form-control" name="insKakao" id="insKakao" required="required">
-					</div>
-					
-					<div class="form-group">
-						<textarea rows="6" placeholder="이력" class="form-control" name="insHistory" id="insHistory" required="required"></textarea>	
-					</div>
-					
-					<div class="form-group">
-						<input type="text" placeholder="업체" class="form-control" name="insParId" id="insParId" required="required">
-					</div>
-					
-			</div>
-			<!-- ./End Contact Form -->
-		
 
-				</p>
-				
-			<div align="right">
-			<button type="submit" class="btn btn-primary">강사추가</button>
-			 </div>
-			</div>
+					<div class="content">
+						<h3><a href="single-post.html">프로그램명</a></h3>
+						<p>설명</p>
+						<p>날짜</p>
+						<div align="center">
+						<a class="btn btn-main" href="" style="background-color: #4343FE; border:none;">비우기</a>
+						</div>
+					</div>
+				</div>
+				</div>
+			</article>
+			<!-- /single blog post -->
 		</div> 		<!-- End row -->
 		
 	</div>
@@ -152,7 +95,67 @@ Start About Section
 </section>   <!-- End section -->
 
 
+<!-- Start Our Team
+		=========================================== -->
+<section class="team" id="team">
+	<div class="container">
+		<div class="row">
 
+			<!-- section title -->
+			<div class="col-12">
+				<div class="title text-center ">
+					<h2>인기 프로그램</h2>
+					<div class="border"></div>
+				</div>
+			</div>
+			<!-- /section title -->
+
+			<!-- single blog post -->
+			<article class="col-md-3 col-sm-6 col-xs-12 clearfix ">
+				<div class="card">
+				<div class="post-item">
+					<div class="media-wrapper">
+						<img src="images/blog/post-1.jpg" alt="amazing caves coverimage" class="img-fluid">
+					</div>
+
+					<div class="content">
+						<h3><a href="single-post.html">프로그램명</a></h3>
+						<p>설명</p>
+						<p>날짜</p>
+						<div align="center">
+						<a class="btn btn-main" href="programDetailUser.jsp" style="background-color: #4343FE; border:none;">가격</a>
+						</div>
+					</div>
+				</div>
+				</div>
+			</article>
+			<!-- /single blog post -->
+
+			<!-- single blog post -->
+			<article class="col-md-3 col-sm-6 col-xs-12 clearfix ">
+				<div class="card">
+				<div class="post-item">
+					<div class="media-wrapper">
+						<img src="images/blog/post-1.jpg" alt="amazing caves coverimage" class="img-fluid">
+					</div>
+
+					<div class="content">
+						<h3><a href="single-post.html">프로그램명</a></h3>
+						<p>설명</p>
+						<p>날짜</p>
+						<div align="center">
+						<a class="btn btn-main" href="programDetailUser.jsp" style="background-color: #4343FE; border:none;">가격</a>
+						</div>
+					</div>
+				</div>
+				</div>
+			</article>
+			<!-- /single blog post -->
+
+			
+		</div> <!-- End row -->
+	</div> <!-- End container -->
+</section> <!-- End section -->
 	
 
 

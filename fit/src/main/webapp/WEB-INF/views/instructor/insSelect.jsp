@@ -1,3 +1,5 @@
+<!-- 파트너-강사수정페이지 -->
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -58,30 +60,12 @@
   End Preloader
   ==================================== -->
 
-
-  
-
-<!--
-Fixed Navigation
-==================================== -->
-
-<!--
-End Fixed Navigation
-==================================== -->
-
-
-
-
 	<!--
 Start About Section
 ==================================== -->
 <section class="about" id="about">
 	<div class="container">
 		<div class="row">
-		
-			<!-- section title -->
-			
-			<!-- /section title -->
 		
 			<div class="col-md-4">
 			<div class="card" style="width:300px">
@@ -134,19 +118,8 @@ Start About Section
 </section>   <!-- End section -->
 
 
-
-	
-
-
-
 	<jsp:include page="/WEB-INF/views/home/footer.jsp" />
-
-
-    <!-- end Footer Area
-    ========================================== -->
-
-
-    
+   
     <!-- 
     Essential Scripts
     =====================================-->

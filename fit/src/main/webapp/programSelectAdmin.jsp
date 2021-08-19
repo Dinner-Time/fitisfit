@@ -1,4 +1,4 @@
-<!-- 파트너-강사추가페이지 -->
+<!-- 파트너-프로그램수정페이지 -->
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -60,111 +60,62 @@
   End Preloader
   ==================================== -->
 
-
-  
-
-<!--
-Fixed Navigation
-==================================== -->
-
-<!--
-End Fixed Navigation
-==================================== -->
-
-
-
-
 	<!--
 Start About Section
 ==================================== -->
 <section class="about" id="about">
-<form id="frm" name="frm" action="insInsert.do" method="post">
 	<div class="container">
 		<div class="row">
-		
-			<!-- section title -->
-			
 		
 			<div class="col-md-4">
 			<div class="card" style="width:300px">
     <img class="card-img-top" src="images/team/member-1.jpg" alt="Card image" style="width:100%">
-    <div class="card-body" >
-    <input type="file" id = "insPhoto" name="insPhoto">
- 
+    <div class="card-body" align="right">
+      <a href="#" class="btn btn-primary">수정</a>
     </div>
   </div>
   <br>
 			</div>
 			<div class="col-md-8">
 				<p>
-				<!-- Contact Form -->
-			<div class="contact-form" >
-					<div class="form-group">
-						<input type="text" placeholder="이름" class="form-control" name="insName" id="insName" required="required">
-					</div>
-					
-					<div class="form-group">
-					
-						<input type="text" placeholder="전화번호" class="form-control" name="insPhone" id="insPhone" required="required">
-					</div>
-					
-					<div class="form-group">
-								<div class="form-group">
-								<select name="insGender" class="form-control" id="insGender">
-									<option value="">성별</option>
-									<option value="">남성</option>
-									<option value="">여성</option>
-								</select>
-							</div>
-					</div>
-					
-					<div class="form-group">
-						<input type="text" placeholder="인스타" class="form-control" name="insInsta" id="insInsta" required="required">
-					</div>
-					
-					<div class="form-group">
-						<input type="text" placeholder="카카오톡" class="form-control" name="insKakao" id="insKakao" required="required">
-					</div>
-					
-					<div class="form-group">
-						<textarea rows="6" placeholder="이력" class="form-control" name="insHistory" id="insHistory" required="required"></textarea>	
-					</div>
-					
-					<div class="form-group">
-						<input type="text" placeholder="업체" class="form-control" name="insParId" id="insParId" required="required">
-					</div>
-					
-			</div>
-			<!-- ./End Contact Form -->
-		
-
+				<table class= "table">
+			<tr>
+				<th>카테고리</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>프로그램명</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>강사명</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>기간</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>등록인원/등록가능인원</th>
+				<td></td>
+			</tr>
+			<tr>
+				<th>프로그램 설명</th>
+				<td></td>
+			</tr>
+		</table>
 				</p>
-				
 			<div align="right">
-			<button type="submit" class="btn btn-primary">강사추가</button>
+			 <a href="#" class="btn btn-primary">수정</a>
 			 </div>
 			</div>
 		</div> 		<!-- End row -->
-		
-	</div>
-	</form>
-	   	<!-- End container -->
+	</div>   	<!-- End container -->
 </section>   <!-- End section -->
 
 
-
-	
-
-
-
 	<jsp:include page="/WEB-INF/views/home/footer.jsp" />
-
-
-    <!-- end Footer Area
-    ========================================== -->
-
-
-    
+   
     <!-- 
     Essential Scripts
     =====================================-->

@@ -1,3 +1,5 @@
+<!-- 파트너-프로그램상세페이지 -->
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -63,18 +65,8 @@
   <!--
   End Preloader
   ==================================== -->
-<!--  
-<section class="single-page-header">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<h2>Blog Single</h2>
-				<ol class="breadcrumb header-bradcrumb">
-				  <li><a href="index.html">Home</a></li>
-				  <li class="active">Blog Single</li>
-				</ol>
-			
-</section>-->
+
+<!-- 본문 -->
 <section class="about" id="about">
 	<div align="center"><h2>프로그램관리</h2></div><br/>
 <div class="container">
@@ -89,7 +81,7 @@
 			</tr>
     </thead>
     <tbody align="center">
-      <c:forEach var="ins" items="">
+      <c:forEach var="pro" items="">
 				<tr onclick="getRecord('')">
 					<td></td>
 					<td></td>
@@ -101,19 +93,19 @@
     </tbody>
   </table>
   		<div>
-			<form id="frm" action="insSelect.do" method="post">
-				<input type="hidden" id="insId" name="insId">
+			<form id="frm" action="" method="post">
+				<input type="hidden" id="" name="">
 			</form>
 		</div>
 		<div align="right">
-		 <a class="btn btn-main" href="" style="background-color:#4343fe; border:none">프로그램 추가</a>
+		 <a class="btn btn-main" href="programInsertAdmin.jsp" style="background-color:#4343fe; border:none">프로그램 추가</a>
 		
 		</div>
 
 </div>
 </section>
 
-
+<!-- 푸터 -->
 <jsp:include page="/WEB-INF/views/home/footer.jsp" />
     
     <!-- 

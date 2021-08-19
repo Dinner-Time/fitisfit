@@ -1,4 +1,4 @@
-<!-- 파트너-강사추가페이지 -->
+<!-- 파트너-프로그램추가페이지 -->
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -78,7 +78,9 @@ End Fixed Navigation
 Start About Section
 ==================================== -->
 <section class="about" id="about">
-<form id="frm" name="frm" action="insInsert.do" method="post">
+
+
+<form id="frm" name="frm" action="" method="post">
 	<div class="container">
 		<div class="row">
 		
@@ -89,7 +91,7 @@ Start About Section
 			<div class="card" style="width:300px">
     <img class="card-img-top" src="images/team/member-1.jpg" alt="Card image" style="width:100%">
     <div class="card-body" >
-    <input type="file" id = "insPhoto" name="insPhoto">
+    <input type="file" id = "proPhoto" name="proPhoto">
  
     </div>
   </div>
@@ -99,41 +101,36 @@ Start About Section
 				<p>
 				<!-- Contact Form -->
 			<div class="contact-form" >
-					<div class="form-group">
-						<input type="text" placeholder="이름" class="form-control" name="insName" id="insName" required="required">
-					</div>
-					
-					<div class="form-group">
-					
-						<input type="text" placeholder="전화번호" class="form-control" name="insPhone" id="insPhone" required="required">
-					</div>
-					
-					<div class="form-group">
-								<div class="form-group">
-								<select name="insGender" class="form-control" id="insGender">
-									<option value="">성별</option>
-									<option value="">남성</option>
-									<option value="">여성</option>
+							<div class="form-group">
+								<select name="catName" class="form-control" id="catName">
+									<option value="">카테고리</option>
+									<option value="">헬스</option>
+									<option value="">요가</option>
+									<option value="">필라테스</option>
 								</select>
 							</div>
+						
+					<div class="form-group">
+					
+						<input type="text" placeholder="프로그램명" class="form-control" name="proName" id="proName" required="required">
 					</div>
 					
 					<div class="form-group">
-						<input type="text" placeholder="인스타" class="form-control" name="insInsta" id="insInsta" required="required">
+						<input type="text" placeholder="강사명" class="form-control" name="insName" id="insName" required="required">
 					</div>
 					
 					<div class="form-group">
-						<input type="text" placeholder="카카오톡" class="form-control" name="insKakao" id="insKakao" required="required">
+						<input type="date" placeholder="기간" class="form-control" name="" id="" required="required">
+						<input type="date" placeholder="기간" class="form-control" name="" id="" required="required">
 					</div>
 					
 					<div class="form-group">
-						<textarea rows="6" placeholder="이력" class="form-control" name="insHistory" id="insHistory" required="required"></textarea>	
+						<input type="text" placeholder="예약가능인원" class="form-control" name="proMaxPeople" id="proMaxPeople" required="required">
 					</div>
 					
 					<div class="form-group">
-						<input type="text" placeholder="업체" class="form-control" name="insParId" id="insParId" required="required">
+						<textarea rows="6" placeholder="프로그램 설명" class="form-control" name="proDesc" id="proDesc" required="required"></textarea>	
 					</div>
-					
 			</div>
 			<!-- ./End Contact Form -->
 		
@@ -141,7 +138,7 @@ Start About Section
 				</p>
 				
 			<div align="right">
-			<button type="submit" class="btn btn-primary">강사추가</button>
+			<button type="submit" class="btn btn-primary">프로그램 추가</button>
 			 </div>
 			</div>
 		</div> 		<!-- End row -->

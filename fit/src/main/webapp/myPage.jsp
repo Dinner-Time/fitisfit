@@ -103,31 +103,53 @@
 			<!-- /section title -->
 
 			<!-- Contact Details -->
-			<div class="col-3"></div>
-			<div class="col-3">
-				<div class="contact-details col-md-12">
-					<ul class="contact-short-info">
-						<li><i class="tf-ion-android-globe"></i> <span>이름</span></li>
-						<li><i class="tf-ion-android-mail"></i> <span>이메일</span></li>
-						<li><i class="tf-ion-ios-home"></i> <span>비밀번호</span></li>
-						<li><i class="tf-ion-ios-home"></i> <span>생년월일</span></li>
-						<li><i class="tf-ion-ios-home"></i> <span>성별</span></li>
-						<li><i class="tf-ion-android-phone-portrait"></i> <span>전화번호</span></li>
-					</ul>
-				</div>
-				<!-- / End Contact Details -->
+			<div class="col-2"></div>
+			<div class="col-2"></div>
+			<div class="col-2">
+				<table>
+					<tr>
+						<td height="50px"><i class="tf-ion-android-globe"></i> <span>이름</span></td>
+					</tr>
+					<tr>
+						<td height="50px"><i class="tf-ion-android-mail"></i> <span>이메일</span></td>
+					</tr>
+					<tr>
+						<td height="50px"><i class="tf-ion-ios-home"></i> <span>비밀번호</span></td>
+					</tr>
+					<tr>
+						<td height="50px"><i class="tf-ion-ios-home"></i> <span>생년월일</span></td>
+					</tr>
+					<tr>
+						<td height="50px"><i class="tf-ion-ios-home"></i> <span>성별</span></td>
+					</tr>
+					<tr>
+						<td height="50px"><i class="tf-ion-android-phone-portrait"></i>
+							<span>전화번호</span></td>
+					</tr>
+				</table>
 			</div>
-			<div class="col-3">
+			<div class="col-2">
 				<div class="contact-details col-md-12">
-					<ul class="contact-short-info">
-						<li>${member.memName }</li>
-						<li>${member.memEmail }</li>
-						<li>${member.memPassword }</li>
-						<li>${member.memBirth }</li>
-						<li>${member.memGender }</li>
-						<li>${member.memPhone }</li>
-						<li>${member.memSubDate }</li>
-					</ul>
+					<table>
+						<tr>
+							<td height="50px"><span>${member.memName }이나은</span></td>
+						</tr>
+						<tr>
+							<td height="50px"><span>${member.memEmail }aaa@aaa</span></td>
+						</tr>
+						<tr>
+							<td height="50px"><span>${member.memPassword }1234</span></td>
+						</tr>
+						<tr>
+							<td height="50px"><span>${member.memBirth }1994-10-30</span></td>
+						</tr>
+						<tr>
+							<td height="50px"><span>${member.memGender }여</span></td>
+						</tr>
+						<tr>
+							<td height="50px"><span>${member.memPhone }010-0000-0000</span></td>
+						</tr>
+					</table>
 				</div>
 			</div>
 		</div>

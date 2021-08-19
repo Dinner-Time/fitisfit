@@ -12,7 +12,7 @@ public class NaverMap implements Command {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		PartnerService dao = new PartnerService();
-		
+		request.setAttribute("list", dao.parSelectList());
 		return "api/map";
 	}
 

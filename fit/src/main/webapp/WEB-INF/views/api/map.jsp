@@ -28,6 +28,7 @@
 		section {
 			min-height: 90vh;
 		}
+
 		#map {
 			height: 80vh;
 			width: 50vw;
@@ -54,6 +55,19 @@
 		</div>
 	</section>
 
+	<!-- db에서 넘어온 자료 저장 -->
+	<div id="partnerData" style="display: none;">
+		<c:forEach var="partner" items="${list }">
+			<div id="${partner.parId }">
+				<span class="parName">${partner.parName }</span>
+				<span class="parAddress">${partner.parAddress }</span>
+				<span class="parPhone">${partner.parPhone }</span>
+				<span class="parIntro">${partner.parIntro }</span>
+				<span class="parPhoto">${partner.parPhoto }</span>
+			</div>
+		</c:forEach>
+	</div>
+	<!-- db에서 넘어온 자료 저장 -->
 
 	<jsp:include page="../home/footer.jsp" />
 	<!-- 자바 스크립트 -->
@@ -77,12 +91,13 @@
 	<!-- Custom js -->
 	<script src="js/script.js"></script>
 	<!-- For Map -->
-	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ugsxrg676w"></script>
-	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ugsxrg676w&submodules=geocoder"></script>
+	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ugsxrg676w">
+	</script>
+	<script type="text/javascript"
+		src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ugsxrg676w&submodules=geocoder"></script>
 	<!-- Custom this Page -->
 	<script>
 		// ********** 여기서 부터 지도 생성 ********** 
-
 		let currLoc; // 현재 위치의 좌표를 저장할 변수
 
 		// 지도 옵션 : 확대, 축소 가능
@@ -101,9 +116,12 @@
 			// 현재 위치를 중심으로 지도를 로딩한다
 			map.setCenter(currLoc);
 			// 현재 위치에 마커 생성
-			new naver.maps.Marker({
+			let currentMarker = new naver.maps.Marker({
 				position: currLoc,
 				map: map
+			});
+			naver.maps.Event.addListener(currentMarker, 'click', function (e) {
+				$('#partners').text('현재위치')
 			});
 		}, function () {
 			alert('error');
@@ -125,30 +143,30 @@
 			});
 		});
 
+		let data = $('#partnerData');
+		let marker;
+		for (let i = 0; i < $(data).children().size(); i++) {
+			let parAddress = $(data).children().eq(i).children().eq(1).text();
+			console.log(); // 주소
+			// 주소 -> 좌표
+			naver.maps.Service.geocode({
+				query: parAddress // 좌표를 구하고자 하는 주소
+			}, function (status, response) {
+				if (status === naver.maps.Service.Status.ERROR) {
+					return alert('Something wrong!'); // 좌표를 구하는데 실패했을때
+				}
+				// 좌표 구하는데 성공
+				marker = new naver.maps.Marker({
+					position: new naver.maps.LatLng(response.v2.addresses[0].y, response.v2.addresses[0].x),
+					map: map
+				});
 
-		// let marker = new naver.maps.Marker({
-		// 	position: new naver.maps.LatLng(37.3595704, 127.105399),
-		// 	map: map
-		// });
+				naver.maps.Event.addListener(marker, 'click', function (e) {
+					alert('good');
+				});
+			});
 
-		// naver.maps.Event.addListener(currMarker, 'click', function (e) {
-		// 		$('#partners').html($('<button class="btn btn-primary">test</button>'));
-		// 	});
-
-		// 주소 -> 좌표
-		// naver.maps.Service.geocode({
-		// 	query: '대구광역시 수성구 화랑로 34길 31' // 좌표를 구하고자 하는 주소
-		// }, function (status, response) {
-		// 	if (status === naver.maps.Service.Status.ERROR) {
-		// 		return alert('Something wrong!'); // 좌표를 구하는데 실패했을때
-		// 	}
-		// 	// 좌표 구하는데 성공
-
-		// 	new naver.maps.Marker({
-		// 		position: new naver.maps.LatLng(response.v2.addresses[0].y, response.v2.addresses[0].x),
-		// 		map: map
-		// 	});
-		// });
+		}
 	</script>
 </body>
 

@@ -6,6 +6,9 @@ public class WishlistVO {
 	private int wisProId;
 	private String wisMemEmail;
 	
+	private ProgramVO programVO;
+
+	
 	public WishlistVO() {
 		// TODO Auto-generated constructor stub
 	}
@@ -32,6 +35,14 @@ public class WishlistVO {
 
 	public void setWisId(int wisId) {
 		this.wisId = wisId;
+	}
+
+	public ProgramVO getProgramVO() {
+		return programVO;
+	}
+
+	public void setProgramVO(ProgramVO programVO) {
+		this.programVO = programVO;
 	}
 	
 	

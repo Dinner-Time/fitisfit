@@ -112,8 +112,8 @@ Start About Section
 								<div class="form-group">
 								<select name="insGender" class="form-control" id="insGender">
 									<option value="">성별</option>
-									<option value="">남성</option>
-									<option value="">여성</option>
+									<option value="남성">남성</option>
+									<option value="여성">여성</option>
 								</select>
 							</div>
 					</div>

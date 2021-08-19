@@ -1,3 +1,5 @@
+<!-- 파트너-강사수정페이지 -->
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -38,128 +40,96 @@
 <link rel="stylesheet" href="plugins/slick/slick.css">
 <!-- Main Stylesheet -->
 <link rel="stylesheet" href="css/style.css">
-<!-- 폰트 시작 -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap"
-	rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap"
-	rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap"
-	rel="stylesheet">
-<!-- 폰트 끝 -->
-
 <style type="text/css">
-.custom-border {
-	height: 2px;
-	margin: 20px auto 20px;
-	position: relative;
-	width: 200px;
-	background: #4343FE;
-}
-
-.custom-nav {
-	font-family: 'Gowun Dodum', sans-serif;
-	border-bottom: 1px solid #4343FE;
-	width: 100%;
-	position: absolute;
-	left: 50%;
-	top: 24%;
-	transform: translate(-50%, -50%);
+.rounded-circle {
+	border-radius: 50% !important;
 }
 </style>
 </head>
 
 <body id="body">
 	<jsp:include page="/WEB-INF/views/home/header.jsp" />
-	<nav class="navbar navbar-expand-lg navbar-light custom-nav">
-		<div class="collapse navbar-collapse" id="navigation">
-			<ul class="navbar-nav text-center">
-				<li style="margin-left: 50px">회원정보</li>
-				<li style="margin-left: 50px">수강내역</li>
-				<li style="margin-left: 50px">위시리스트</li>
-				<li style="margin-left: 50px">고객센터</li>
-			</ul>
+
+	<!--
+  Start Preloader
+  ==================================== -->
+	<div id="preloader">
+		<div class='preloader'>
+			<span></span> <span></span> <span></span> <span></span> <span></span>
+			<span></span>
 		</div>
-	</nav>
-	<div class="container">
-		<div class="row">
+	</div>
+	<!--
+  End Preloader
+  ==================================== -->
 
-			<!-- section title -->
-			<div class="col-12">
-				<div class="title text-center">
-					<h2>회원 정보</h2>
-					<div class="custom-border"></div>
-					<p>My Page</p>
+	<!--
+Start About Section
+==================================== -->
+	<section class="about" id="about">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="title text-center ">
+						<h2>회원 정보</h2>
+						<div class="border"></div>
+					</div>
 				</div>
-			</div>
-			<!-- /section title -->
-
-			<!-- Contact Details -->
-			<div class="col-2"></div>
-			<div class="col-2"></div>
-			<div class="col-2">
-				<table>
-					<tr>
-						<td height="50px"><i class="tf-ion-android-globe"></i> <span>이름</span></td>
-					</tr>
-					<tr>
-						<td height="50px"><i class="tf-ion-android-mail"></i> <span>이메일</span></td>
-					</tr>
-					<tr>
-						<td height="50px"><i class="tf-ion-ios-home"></i> <span>비밀번호</span></td>
-					</tr>
-					<tr>
-						<td height="50px"><i class="tf-ion-ios-home"></i> <span>생년월일</span></td>
-					</tr>
-					<tr>
-						<td height="50px"><i class="tf-ion-ios-home"></i> <span>성별</span></td>
-					</tr>
-					<tr>
-						<td height="50px"><i class="tf-ion-android-phone-portrait"></i>
-							<span>전화번호</span></td>
-					</tr>
-				</table>
-			</div>
-			<div class="col-2">
-				<div class="contact-details col-md-12">
-					<table>
+				<div class="col-md-4" align="center">
+					<div class="card" style="width: 300px">
+						<img class="card-img-top" src="images/team/member-1.jpg"
+							alt="Card image" style="width: 100%">
+						<div class="card-body" align="right">
+							<a href="#" class="btn btn-primary">수정</a>
+						</div>
+					</div>
+					<br>
+				</div>
+				<div class="col-md-8">
+					<p>
+					<table class="table">
 						<tr>
-							<td height="50px"><span>${member.memName }이나은</span></td>
+							<th>사진</th>
+							<td>수정창에서만 보이게 할까 고민 중</td>
 						</tr>
 						<tr>
-							<td height="50px"><span>${member.memEmail }aaa@aaa</span></td>
+							<th>이름</th>
+							<td>이나은</td>
 						</tr>
 						<tr>
-							<td height="50px"><span>${member.memPassword }1234</span></td>
+							<th>이메일</th>
+							<td>aaa@aaa</td>
 						</tr>
 						<tr>
-							<td height="50px"><span>${member.memBirth }1994-10-30</span></td>
+							<th>비밀번호</th>
+							<td>1234 <!-- 원래 비번, 전화번호에 수정 버튼 달기로 했는데 그냥 밑에 수정버튼 누르면 비밀번호, 전화번호 인풋 박스 나타나게 하는게 어떨까 -->
 						</tr>
 						<tr>
-							<td height="50px"><span>${member.memGender }여</span></td>
+							<th>생년월일</th>
+							<td>1994-10-30</td>
 						</tr>
 						<tr>
-							<td height="50px"><span>${member.memPhone }010-0000-0000</span></td>
+							<th>성별</th>
+							<td>여</td>
+						</tr>
+						<tr>
+							<th>전화번호</th>
+							<td>010-0000-0000</td>
 						</tr>
 					</table>
+					<div align="right">
+						<a href="#" class="btn btn-primary">수정</a>
+					</div>
 				</div>
 			</div>
+			<!-- End row -->
 		</div>
-		<!-- end row -->
-	</div>
-	<!-- end container -->
-	<!--================================
-=            Google Map            =
-=================================-->
+		<!-- End container -->
+	</section>
+	<!-- End section -->
 
+
+	<jsp:include page="/WEB-INF/views/home/footer.jsp" />
 
 	<!-- 
     Essential Scripts

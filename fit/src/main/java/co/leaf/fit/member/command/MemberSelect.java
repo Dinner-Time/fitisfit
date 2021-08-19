@@ -27,6 +27,7 @@ public class MemberSelect implements Command {
 		vo.setMemSubDate((java.sql.Date) session.getAttribute("memSubDate"));
 		vo = dao.memSelect(vo);
 		
+		System.out.println(session.getAttribute("memName"));
 		request.setAttribute("member", vo);
 		
 		return "member/myPageMemInfo";

@@ -182,15 +182,15 @@ li {
 					<article class="col-md-3 col-sm-6 col-xs-12 clearfix ">
 						<div class="post-item">
 							<div class="media-wrapper">
-								<img src="${pro.proPhoto}" alt="Program Photo" class="img-fluid">
+								<img src="${pro.proPhoto }" alt="Program Photo" class="img-fluid">
 							</div>
 
 							<div class="content">
 								<h3>
 									<a href="#">${pro.proName }</a>
 								</h3>
-								<p>${pro.proDesc}</p>
-								<p>${pro.proSince}~ ${pro.proPeriod}개월</p>
+								<p>${pro.proDesc }</p>
+								<p>${pro.proSince } ~ ${pro.proPeriod }개월</p>
 								<a class="custom-btn" href="single-post.html">${pro.proPrice*(100 - pro.proSale3)*0.01}&#8361부터</a>
 							</div>
 						</div>

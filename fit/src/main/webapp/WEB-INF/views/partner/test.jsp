@@ -8,11 +8,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:include page="../home/header.jsp" />
+<jsp:include page="/WEB-INF/views/home/header.jsp" />
 	<c:forEach var="partner" items="${list }">
 		${partner.parEmail } / ${partner.parName } / ${partner.parIntro } <br>
 	</c:forEach>
 	<h3><a href="parInsertForm.do">업체 등록</a></h3>
-<jsp:include page="../home/footer.jsp" />
+<jsp:include page="/WEB-INF/views/home/footer.jsp" />
 </body>
 </html>

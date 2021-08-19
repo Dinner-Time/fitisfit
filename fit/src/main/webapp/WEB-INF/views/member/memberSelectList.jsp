@@ -13,6 +13,7 @@
 		${member.memEmail } / ${member.memName } / ${member.memBirth } <br>
 	</c:forEach>
 	<h3><a href="loginForm.do">로그인 / 회원가입</a></h3>
+	<h3><a href="memSelect.do">마이페이지</a></h3>
 <jsp:include page="../home/footer.jsp" />
 </body>
 </html>

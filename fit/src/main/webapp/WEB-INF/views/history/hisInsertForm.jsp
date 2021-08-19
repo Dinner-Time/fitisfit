@@ -90,6 +90,9 @@ p {
 								<!-- 결제 api 모달창 떠야돼... -->
 							</div>
 						</div>
+						<div>
+							<a href="mypageHistory.do">마이페이지 수강내역 (임시)</a>
+						</div>
 					</div>
 					<br>
 				</div>

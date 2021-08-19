@@ -74,13 +74,18 @@
 }
 
 .content {
-	border: 3px solid lightgray;
-	border-radius: 30px;
 	height: 300px;
 	text-align: center;
+	position: relative;
+	overflow: hidden;
+	background-position: center;
+	object-fit: cover;
+	cursor: pointer;
 }
 
-.ing {
+/* 수강 중 */
+.badge-primary {
+	width: 150px;
 	background: #4169E1;
 	color: white;
 	border: 0px solid lightgray;
@@ -89,11 +94,12 @@
 	padding-top: 18px;
 }
 
-.ing:hover {
+.badge-primary:hover {
 	background: #B0C4DE;
 }
-
-.finished {
+/* 수강 완료 */
+.badge-secondary {
+	width: 150px;
 	background: #696969;
 	color: white;
 	border: 0px solid lightgray;
@@ -102,23 +108,49 @@
 	padding-top: 18px;
 }
 
-.finished:hover {
+.badge-secondary:hover {
 	background: #C0C0C0;
 }
 
-h4, h3 {
+h4 {
+	font-family: 'Do Hyeon', sans-serif;
+	text-shadow: 2px 2px 2px black;
+}
+
+h3 {
+	font-family: 'Do Hyeon', sans-serif;
+	font-size: 25px;
+	text-shadow: 2px 2px 2px black;
+}
+.btn-primary{
 	font-family: 'Gowun Dodum', sans-serif;
 }
 
+.post-item .content h3 a {
+	color: white;
+}
+
+.content:hover{
+ 	transition: all .5s;
+	opacity: 0.8;
+
+}
+/* 지역, 카테고리 dropbar */
 .dropbar {
 	border: 1px solid white;
-	background:	#B0C4DE	;
+	background: #0069d9;
 	border-radius: 20px;
 	position: absolute;
 	left: 75%;
 	top: 30%;
 	transform: translate(-20%, -20%);
 	font-family: 'Gowun Dodum', sans-serif;
+}
+.navbar-light .navbar-nav .active>.nav-link, 
+.navbar-light .navbar-nav .nav-link.active, .navbar-light 
+.navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: rgb(255 255 255 / 90%);
+}
 </style>
 </head>
 
@@ -140,50 +172,50 @@ h4, h3 {
 	<section class="blog" id="blog">
 		<div class="container">
 			<div class="row">
-				<!-- 지역별 -->
-	
 
-
-
-				<!-- section title -->
 				<div class="col-12">
 					<div class="title text-center "></div>
 				</div>
-				
-<nav class="navbar navbar-expand-lg navbar-light dropbar" style="z-index: 999;">
-      <div class="collapse navbar-collapse" id="navigation">
-        <ul class="navbar-nav ml-auto text-center">
-          <li class="nav-item dropdown active">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              지역
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">서울</a>
-              <a class="dropdown-item" href="#">인천</a>
-              <a class="dropdown-item" href="#">대전</a>
-              <a class="dropdown-item" href="#">대구</a>
-            </div>
-          </li>
-          <li class="nav-item dropdown active">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              카테고리
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">헬스</a>
-              <a class="dropdown-item" href="#">요가</a>
-              <a class="dropdown-item" href="#">필라테스</a>
-              <a class="dropdown-item" href="#">기타</a>
-            </div>
-          </li>
-	</ul></div></nav>
+
+				<nav class="navbar navbar-expand-lg navbar-light dropbar"
+					style="z-index: 999;">
+					<div class="collapse navbar-collapse" id="navigation">
+						<ul class="navbar-nav ml-auto text-center">
+							<li class="nav-item dropdown active"><a
+								class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+								role="button" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false"> 지역 </a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="#">서울</a> <a
+										class="dropdown-item" href="#">인천</a> <a class="dropdown-item"
+										href="#">대전</a> <a class="dropdown-item" href="#">대구</a> <a
+										class="dropdown-item" href="#">부산</a>
+								</div></li>
+							<li class="nav-item dropdown active"><a
+								class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+								role="button" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false"> 카테고리 </a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="#">헬스</a> <a
+										class="dropdown-item" href="#">요가</a> <a class="dropdown-item"
+										href="#">필라테스</a> <a class="dropdown-item" href="#">수영</a>
+								</div></li>
+						</ul>
+					</div>
+				</nav>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
 				<!-- /section title -->
 				<!-- single blog post -->
 				<article class="col-md-3 col-sm-6 col-xs-12 clearfix ">
 					<div class="post-item">
-						<div class="content">
-							<div class="ing">
+						<div class="content"
+							style="background: url('images/category/Pilates.jpg')">
+							<div class="badge badge-primary">
 								<p />
 								<h4>수강중</h4>
 							</div>
@@ -200,8 +232,9 @@ h4, h3 {
 				<!-- single blog post -->
 				<article class="col-md-3 col-sm-6 col-xs-12 clearfix ">
 					<div class="post-item">
-						<div class="content">
-							<div class="finished">
+						<div class="content"
+							style="background: url('images/category/Swimming.jpg')">
+							<div class="badge badge-secondary">
 								<p />
 								<h4>수강 완료</h4>
 							</div>
@@ -217,8 +250,9 @@ h4, h3 {
 				<!-- single blog post -->
 				<article class="col-md-3 col-sm-6 col-xs-12 clearfix ">
 					<div class="post-item">
-						<div class="content">
-							<div class="finished">
+						<div class="content"
+							style="background: url('images/category/Yoga.jpg')">
+							<div class="badge badge-secondary">
 								<p />
 								<h4>수강 완료</h4>
 							</div>
@@ -231,8 +265,9 @@ h4, h3 {
 				</article>
 				<article class="col-md-3 col-sm-6 col-xs-12 clearfix ">
 					<div class="post-item">
-						<div class="content">
-							<div class="finished">
+						<div class="content"
+							style="background: url('images/category/Gym.jpg')">
+							<div class="badge badge-secondary">
 								<p />
 								<h4>수강 완료</h4>
 							</div>
@@ -253,36 +288,19 @@ h4, h3 {
 	<!--================================
 =            Google Map            =
 =================================-->
-	<jsp:include page="/WEB-INF/views/home/footer.jsp" />
+<br><br><br><br>
+<jsp:include page="/WEB-INF/views/home/footer.jsp" />
 
-	<!-- 
-    Essential Scripts
-    =====================================-->
-	<!-- Main jQuery -->
+	<!-- 자바 스크립트 -->
 	<script src="plugins/jquery/jquery.min.js"></script>
-	<!-- Google Map -->
-	<script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
-	<script src="plugins/google-map/gmap.js"></script>
-
-	<!-- Form Validation -->
 	<script src="plugins/form-validation/jquery.form.js"></script>
 	<script src="plugins/form-validation/jquery.validate.min.js"></script>
-
-	<!-- Bootstrap4 -->
 	<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-	<!-- Parallax -->
 	<script src="plugins/parallax/jquery.parallax-1.1.3.js"></script>
-	<!-- lightbox -->
 	<script src="plugins/lightbox2/dist/js/lightbox.min.js"></script>
-	<!-- Owl Carousel -->
 	<script src="plugins/slick/slick.min.js"></script>
-	<!-- filter -->
 	<script src="plugins/filterizr/jquery.filterizr.min.js"></script>
-	<!-- Smooth Scroll js -->
 	<script src="plugins/smooth-scroll/smooth-scroll.min.js"></script>
-
-	<!-- Custom js -->
 	<script src="js/script.js"></script>
 
 </body>

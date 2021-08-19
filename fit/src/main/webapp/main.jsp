@@ -16,8 +16,7 @@
 <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
 <link rel="stylesheet" href="plugins/themefisher-font/style.css">
 <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="plugins/lightbox2/dist/css/lightbox.min.css">
+<link rel="stylesheet" href="plugins/lightbox2/dist/css/lightbox.min.css">
 <link rel="stylesheet" href="plugins/animate/animate.css">
 <link rel="stylesheet" href="plugins/slick/slick.css">
 <link rel="stylesheet" href="css/style.css">
@@ -112,7 +111,24 @@ li {
 h2 {
 	font-family: 'Gowun Dodum', sans-serif;
 }
+
+#toc-content {
+  display: none;
+}
+
 </style>
+
+<script>
+  function openCloseToc() {
+    if(document.getElementById('toc-content').style.display === 'block') {
+      document.getElementById('toc-content').style.display = 'none';
+      document.getElementById('toc-toggle').innerText = '더보기';
+    } else {
+      document.getElementById('toc-content').style.display = 'block';
+      document.getElementById('toc-toggle').innerText = '접기';
+    }
+  }
+</script>
 
 </head>
 <body id="body">
@@ -133,6 +149,15 @@ h2 {
               <a class="dropdown-item" href="#">인천</a>
               <a class="dropdown-item" href="#">대전</a>
               <a class="dropdown-item" href="#">대구</a>
+              <a class="dropdown-item" href="#">울산</a>
+              <a class="dropdown-item" href="#">부산</a>
+              <a class="dropdown-item" href="#">광주</a>
+              <a class="dropdown-item" href="#">경기</a>
+              <a class="dropdown-item" href="#">강원</a>
+              <a class="dropdown-item" href="#">충청</a>
+              <a class="dropdown-item" href="#">경상</a>
+              <a class="dropdown-item" href="#">전라</a>
+              <a class="dropdown-item" href="#">제주</a>
             </div>
           </li>
           <li class="nav-item dropdown active">
@@ -192,10 +217,10 @@ h2 {
 					<!-- /section title -->
 				</div>
 				<div class="col-md-12">
+				<!-- START ROW -->
 					<div class="row text-center">
 						<div class="col-md-3 col-sm-6 col-xs-12">
-							<div class="service-item"
-								style="background: url('images/region/Seoul.jpg');">
+							<div class="service-item" style="background: url('images/region/Seoul.jpg');">
 								<div class="filter"></div>
 								<p class="reg-cat-title">서울</p>
 								<p class="reg-cat-detail">XX여 개의 센터</p>
@@ -203,8 +228,7 @@ h2 {
 						</div>
 						<!-- END COL -->
 						<div class="col-md-3 col-sm-6 col-xs-12">
-							<div class="service-item"
-								style="background: url('images/region/Incheon.jpg');">
+							<div class="service-item" style="background: url('images/region/Incheon.jpg');">
 								<div class="filter"></div>
 								<p class="reg-cat-title">인천</p>
 								<p class="reg-cat-detail">XX여 개의 센터</p>
@@ -212,8 +236,7 @@ h2 {
 						</div>
 						<!-- END COL -->
 						<div class="col-md-3 col-sm-6 col-xs-12">
-							<div class="service-item"
-								style="background: url('images/region/Daejeon.jpg');">
+							<div class="service-item" style="background: url('images/region/Daejeon.jpg');">
 								<div class="filter"></div>
 								<p class="reg-cat-title">대전</p>
 								<p class="reg-cat-detail">XX여 개의 센터</p>
@@ -221,8 +244,7 @@ h2 {
 						</div>
 						<!-- END COL -->
 						<div class="col-md-3 col-sm-6 col-xs-12">
-							<div class="service-item"
-								style="background: url('images/region/Daegu.jpg');">
+							<div class="service-item" style="background: url('images/region/Daegu.jpg');">
 								<div class="filter"></div>
 								<p class="reg-cat-title">대구</p>
 								<p class="reg-cat-detail">XX여 개의 센터</p>
@@ -230,8 +252,47 @@ h2 {
 						</div>
 						<!-- END COL -->
 					</div>
+					<!-- END ROW -->
+					
 					<div align="center">
-						<a href="#" class="btn btn-main mt-20">더보기</a>
+						<button type="button" id="toc-toggle" class="btn btn-main mt-20" onclick="openCloseToc()">더보기</button>
+						
+					<!-- START ROW -->
+						<div id="toc-content" class="row text-center">
+							<div class="col-md-3 col-sm-6 col-xs-12">
+								<div class="service-item" style="background: url('images/region/Seoul.jpg');">
+									<div class="filter"></div>
+									<p class="reg-cat-title">서울</p>
+									<p class="reg-cat-detail">XX여 개의 센터</p>
+								</div>
+							</div>
+							<!-- END COL -->
+							<div class="col-md-3 col-sm-6 col-xs-12">
+								<div class="service-item" style="background: url('images/region/Incheon.jpg');">
+									<div class="filter"></div>
+									<p class="reg-cat-title">인천</p>
+									<p class="reg-cat-detail">XX여 개의 센터</p>
+								</div>
+							</div>
+							<!-- END COL -->
+							<div class="col-md-3 col-sm-6 col-xs-12">
+								<div class="service-item" style="background: url('images/region/Daejeon.jpg');">
+									<div class="filter"></div>
+									<p class="reg-cat-title">대전</p>
+									<p class="reg-cat-detail">XX여 개의 센터</p>
+								</div>
+							</div>
+							<!-- END COL -->
+							<div class="col-md-3 col-sm-6 col-xs-12">
+								<div class="service-item" style="background: url('images/region/Daegu.jpg');">
+									<div class="filter"></div>
+									<p class="reg-cat-title">대구</p>
+									<p class="reg-cat-detail">XX여 개의 센터</p>
+								</div>
+							</div>
+							<!-- END COL -->
+						</div>
+						<!-- END ROW -->
 					</div>
 				</div>
 			</div>
@@ -252,8 +313,7 @@ h2 {
 				<div class="col-md-12">
 					<div class="row text-center">
 						<div class="col-md-3 col-sm-6 col-xs-12">
-							<div class="service-item"
-								style="background: url('images/category/Gym.jpg');">
+							<div class="service-item" style="background: url('images/category/Gym.jpg');">
 								<div class="filter"></div>
 								<p class="reg-cat-title">헬스</p>
 								<p class="reg-cat-detail">XX여 개의 센터</p>
@@ -261,8 +321,7 @@ h2 {
 						</div>
 						<!-- END COL -->
 						<div class="col-md-3 col-sm-6 col-xs-12">
-							<div class="service-item"
-								style="background: url('images/category/Yoga.jpg');">
+							<div class="service-item" style="background: url('images/category/Yoga.jpg');">
 								<div class="filter"></div>
 								<p class="reg-cat-title">요가</p>
 								<p class="reg-cat-detail">XX여 개의 센터</p>
@@ -285,7 +344,7 @@ h2 {
 						<!-- END COL -->
 					</div>
 					<div align="center">
-						<a href="#" class="btn btn-main mt-20">더보기</a>
+						<button type="button" class="btn btn-main mt-20">더보기</button>
 					</div>
 				</div>
 			</div>

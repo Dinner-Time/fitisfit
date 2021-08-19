@@ -10,7 +10,7 @@
 <meta name="author" content="Themefisher.com">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>History Insert</title>
+<title>결제 확인창</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
@@ -21,6 +21,26 @@
 <link rel="stylesheet" href="plugins/animate/animate.css">
 <link rel="stylesheet" href="plugins/slick/slick.css">
 <link rel="stylesheet" href="css/style.css">
+
+<!-- 폰트 시작 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+<!-- 폰트 끝 -->
+
+<style type="text/css">
+
+h3, h4 {
+	font-family: 'Gowun Dodum', sans-serif;
+}
+p {
+	font-family: 'Gowun Dodum', sans-serif;
+	color: black;
+	font-size: 18px;
+}
+
+</style>
+
 </head>
 
 <body>
@@ -38,27 +58,36 @@
 				<div class="row">
 					<div class="col-6">
 						<div class="card bg-light text-dark">
+							<div class="card-header">
+								<h4 align="center">신청자 정보</h4>
+							</div>
+							<!-- 세션에서 받아오는 부분 -->
 							<div class="card-body" align="left">
-								<h3 align="center">신청자 정보</h3>
-								신청자 이름<br> <br> 
-								전화번호<br> <br> 
-								이메일 주소<br>
+								<p>신청자 이름</p> <br> 
+								<p>전화번호</p> <br> 
+								<p>이메일 주소</p>
 								<input type="text" class="form-control" id="hisMemEmail" name="hisMemEmail">
 							</div>
 						</div>
 					</div>
 					<div class="col-6">
 						<div class="card bg-light text-dark">
+							<div class="card-header">
+								<h4 align="center">결제 정보</h4>
+							</div>
 							<div class="card-body" align="left">
-								<h3 align="center">결제 정보</h3>
-								프로그램ID<br> <input type="number" class="form-control" id="hisProId" name="hisProId"><br>
-								기간<br> <input type="number" class="form-control" id="hisPeriod" name="hisPeriod"><br>
-								결제금액<br> <input type="number" class="form-control" id="hisPaid" name="hisPaid"><br>
-								결제날짜<br> <input type="date" class="form-control" id="hisDate" name="hisDate"><br>
-								<hr>
-								<div align="center">
-									<button type="submit" class="btn btn-outline-primary">결제하기</button>
-								</div>
+								<p>프로그램 ID (세션에서 받아오기)</p> 
+								<input type="number" class="form-control" id="hisProId" name="hisProId"><br>
+								<p>기간 (일)</p> 
+								<input type="number" class="form-control" value="30" id="hisPeriod" name="hisPeriod"><br>
+								<p>결제금액 (원)</p> 
+								<input type="number" class="form-control" value="109000" id="hisPaid" name="hisPaid"><br>
+							</div>
+							<div class="card-footer">
+								<button type="button" class="btn btn-outline-primary">취 소</button>
+								&nbsp;&nbsp;&nbsp;
+								<button type="submit" class="btn btn-primary">결제하기</button>
+								<!-- 결제 api 모달창 떠야돼... -->
 							</div>
 						</div>
 					</div>

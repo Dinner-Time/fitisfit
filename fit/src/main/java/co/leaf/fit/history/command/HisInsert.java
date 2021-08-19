@@ -16,12 +16,13 @@ public class HisInsert implements Command {
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		HistoryMapper dao = new HistoryService();
 		HistoryVO vo = new HistoryVO();
+		long miliseconds = System.currentTimeMillis();
 		
 		vo.setHisMemEmail(request.getParameter("hisMemEmail"));
 		vo.setHisProId(Integer.valueOf(request.getParameter("hisProId")));
 		vo.setHisPeriod(Integer.valueOf(request.getParameter("hisPeriod")));
 		vo.setHisPaid(Integer.valueOf(request.getParameter("hisPaid")));
-		vo.setHisDate(Date.valueOf(request.getParameter("hisDate")));
+		vo.setHisDate(new Date(miliseconds));
 		
 		int n = dao.hisInsert(vo);
 		String message = "";

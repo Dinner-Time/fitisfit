@@ -17,8 +17,7 @@
 <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
 <link rel="stylesheet" href="plugins/themefisher-font/style.css">
 <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="plugins/lightbox2/dist/css/lightbox.min.css">
+<link rel="stylesheet" href="plugins/lightbox2/dist/css/lightbox.min.css">
 <link rel="stylesheet" href="plugins/animate/animate.css">
 <link rel="stylesheet" href="plugins/slick/slick.css">
 <link rel="stylesheet" href="css/style.css">
@@ -49,7 +48,7 @@ li {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 100px;
+  width: 300px;
   height: 20px;
   color: black;
 }
@@ -102,18 +101,18 @@ li {
 			<table class="table table-hover">
 				<thead>
 					<tr align="center">
-						<th scope="col">번호</th>
-						<th scope="col">프로그램</th>
-						<th scope="col">내용</th>
-						<th scope="col">작성일</th>
-						<th scope="col">작성자</th>
+						<th scope="col" class="col-1">번호</th>
+						<th scope="col" class="col-3">프로그램</th>
+						<th scope="col" class="col-4">내용</th>
+						<th scope="col" class="col-2">작성일</th>
+						<th scope="col" class="col-2">작성자</th>
 					</tr>
 				</thead>
 				<tbody>
 					<c:forEach var="review" items="${list}">
 						<tr style="cursor: pointer;" onclick="getRecord('${review.revId}')">
 							<td align="center">${review.revId}</td>
-							<td>${review.revProName}</td>
+							<td align="center"><p class="custom-p">${review.revProName}</p></td>
 							<td><p class="custom-p">${review.revContent}</p></td>
 							<td align="center">${review.revDate}</td>
 							<td align="center">${review.revWriter}</td>
@@ -121,7 +120,8 @@ li {
 					</c:forEach>
 				</tbody>
 			</table>
-			<a href="revInsertForm.do">후기 입력 (임시)</a>
+			<a href="revInsertForm.do">후기 입력 (임시)</a><br>
+			<a href="revSelectListByPar.do">파트너 관리창의 후기 조회 (임시)</a>
 		</div>
 	</div>
 	<div>

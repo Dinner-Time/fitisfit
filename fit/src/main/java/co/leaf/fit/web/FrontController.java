@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.leaf.fit.api.command.JusoPopup;
+import co.leaf.fit.api.command.NaverMap;
 import co.leaf.fit.category.command.CatSelect;
 import co.leaf.fit.category.command.CatSelectList;
 import co.leaf.fit.category.command.CatTest;

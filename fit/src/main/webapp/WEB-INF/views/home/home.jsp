@@ -24,8 +24,15 @@
 </head>
 
 <body id="body">
+	<!-- 페이지 로딩 효과 -->
+	<div id="preloader">
+		<div class='preloader'>
+			<span></span> <span></span> <span></span> <span></span> <span></span>
+			<span></span>
+		</div>
+	</div>
+	<!-- 페이지 로딩 효과 -->
 	<jsp:include page="header.jsp" />
-	
 	<div style="height: 100vh;"class="d-flex justify-content-between align-items-center">
 		<a style="color: #000;"href="proList.do">program</a>
 		<a style="color: #000;" href="salTest.do">sales</a>

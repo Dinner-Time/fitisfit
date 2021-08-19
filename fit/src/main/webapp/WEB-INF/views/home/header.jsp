@@ -53,4 +53,4 @@
     <!-- /main nav -->
   </div>
 </header>
-<div style="height: 200px;"></div>
+<div style="height: 150px;"></div>

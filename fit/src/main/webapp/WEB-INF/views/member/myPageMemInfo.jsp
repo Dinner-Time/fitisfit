@@ -16,7 +16,7 @@
 
 <meta name="author" content="Themefisher.com">
 
-<title>Bingo | Responsive Multipurpose Parallax HTML5 Template</title>
+<title>My Page | Fit is Fit</title>
 
 <!-- Mobile Specific Meta
   ================================================== -->
@@ -77,8 +77,9 @@ Start About Section
 				</div>
 				<div class="col-md-4" align="center">
 					<div class="card" style="width: 300px">
-						<img class="card-img-top" src="images/team/member-1.jpg"
-							alt="Card image" style="width: 100%">
+						<img class="card-img-top img-thumbnail"
+							src="images/team/${member.memPhoto }" alt="member image"
+							style="width: 100%">
 						<div class="card-body" align="right">
 							<a href="#" class="btn btn-primary">수정</a>
 						</div>
@@ -86,40 +87,39 @@ Start About Section
 					<br>
 				</div>
 				<div class="col-md-8">
-					<p>
 					<table class="table">
 						<tr>
-							<th>사진</th>
-							<td>수정창에서만 보이게 할까 고민 중</td>
-						</tr>
-						<tr>
-							<th>이름</th>
+							<th height=70px;>이름</th>
 							<td>${member.memName }</td>
 						</tr>
 						<tr>
-							<th>이메일</th>
+							<th height=70px;>이메일</th>
 							<td>${member.memEmail }</td>
 						</tr>
 						<tr>
-							<th>비밀번호</th>
-							<td>${member.memPassword } <!-- 원래 비번, 전화번호에 수정 버튼 달기로 했는데 그냥 밑에 수정버튼 누르면 비밀번호, 전화번호 인풋 박스 나타나게 하는게 어떨까 -->
+							<th height=70px;>비밀번호</th>
+							<td>${member.memPassword }
+								<button type="button" class="btn btn-primary"
+									style="float: right;" data-toggle="modal"
+									data-target="#exampleModal">수정</button>
+							</td>
 						</tr>
 						<tr>
-							<th>생년월일</th>
+							<th height=70px;>생년월일</th>
 							<td>${member.memBirth }</td>
 						</tr>
 						<tr>
-							<th>성별</th>
+							<th height=70px;>성별</th>
 							<td>${member.memGender }</td>
 						</tr>
 						<tr>
-							<th>전화번호</th>
-							<td>${member.memPhone }</td>
+							<th height=70px;>전화번호</th>
+							<td>${member.memPhone }
+								<button type="button" class="btn btn-primary"
+									style="float: right;">수정</button>
+							</td>
 						</tr>
 					</table>
-					<div align="right">
-						<a href="#" class="btn btn-primary">수정</a>
-					</div>
 				</div>
 			</div>
 			<!-- End row -->
@@ -127,6 +127,49 @@ Start About Section
 		<!-- End container -->
 	</section>
 	<!-- End section -->
+
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">비밀번호 변경</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<form id="frm" name="frm" action="memUpdatePassword.do"
+					method="post">
+					<div class="modal-body">
+						<div class="form-group">
+							현재 비밀번호 : <input type="password" placeholder="Your Password"
+								class="form-control" name="memPassword" id="memPassword">
+						</div>
+						<div class="border" style="width: 100%; background-color: lightgray;"></div>
+						<div class="form-group">
+							새 비밀번호 : <input type="password" placeholder="Your Password"
+								class="form-control" name="newMemPassword" id="newMemPassword"
+								onkeyup="checkPwd()">
+						</div>
+						<div class="form-group">
+							비밀번호 확인 : <input type="password" placeholder="Your Password"
+								class="form-control" name="newMemPasswordConfirm"
+								id="newMemPasswordConfirm" onkeyup="checkPwd()">
+						</div>
+						<div id="checkNewPwd">동일한 암호를 입력하세요.</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary" onclick="pwdCheck()">Save
+							changes</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 
 
 	<jsp:include page="/WEB-INF/views/home/footer.jsp" />
@@ -160,6 +203,34 @@ Start About Section
 
 	<!-- Custom js -->
 	<script src="js/script.js"></script>
+
+	<script type="text/javascript">
+		function checkPwd() {
+			var f1 = document.forms[0];
+			console.log(f1);
+			var pw1 = f1.newMemPassword.value;
+			var pw2 = f1.newMemPasswordConfirm.value;
+			if (pw1 != pw2) {
+				document.getElementById('checkNewPwd').style.color = "red";
+				document.getElementById('checkNewPwd').innerHTML = "암호가 일치하지 않습니다.";
+			} else {
+				document.getElementById('checkNewPwd').style.color = "black";
+				document.getElementById('checkNewPwd').innerHTML = "암호가 확인 되었습니다.";
+			}
+		}
+		function pwdCheck() {
+			var f1 = document.forms[0];
+			console.log(f1);
+			var pw1 = f1.newMemPassword.value;
+			var pw2 = f1.newMemPasswordConfirm.value;
+			if (pw1 != pw2) {
+				alert('비밀번호가 일치하지 않습니다.');
+			} else {
+				alert('수정 완');
+				frm.submit();
+			}
+		}
+	</script>
 
 </body>
 </html>

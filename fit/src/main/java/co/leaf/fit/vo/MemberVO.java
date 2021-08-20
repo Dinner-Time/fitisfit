@@ -105,5 +105,14 @@ public class MemberVO {
 	public void setAuthor(String author) {
 		this.author = author;
 	}
+
+	@Override
+	public String toString() {
+		return "MemberVO [memEmail=" + memEmail + ", memPassword=" + memPassword + ", memName=" + memName
+				+ ", memBirth=" + memBirth + ", memPhone=" + memPhone + ", memAddress=" + memAddress + ", memGender="
+				+ memGender + ", memState=" + memState + ", memSubDate=" + memSubDate + ", memPhoto=" + memPhoto
+				+ ", author=" + author + "]";
+	}
+	
 	
 }

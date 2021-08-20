@@ -31,6 +31,7 @@ import co.leaf.fit.member.command.MemLogin;
 import co.leaf.fit.member.command.MemLoginForm;
 import co.leaf.fit.member.command.MemLogout;
 import co.leaf.fit.member.command.MemTest;
+import co.leaf.fit.member.command.MemUpdatePassword;
 import co.leaf.fit.member.command.MemberSelect;
 import co.leaf.fit.partner.command.ParInsert;
 import co.leaf.fit.partner.command.ParInsertForm;
@@ -95,6 +96,7 @@ public class FrontController extends HttpServlet {
 		map.put("/memInsert.do", new MemInsert());
 		map.put("/jusoPopup.do", new JusoPopup());
 		map.put("/memSelect.do", new MemberSelect());
+		map.put("/memUpdatePassword.do", new MemUpdatePassword());
 		
 		// partner page
 		map.put("/parTest.do", new ParTest());

@@ -26,6 +26,7 @@ import co.leaf.fit.instructor.command.InsInsertForm;
 import co.leaf.fit.instructor.command.InsSelect;
 import co.leaf.fit.instructor.command.InsSelectList;
 import co.leaf.fit.main.command.Home;
+import co.leaf.fit.main.command.Main;
 import co.leaf.fit.member.command.MemInsert;
 import co.leaf.fit.member.command.MemLogin;
 import co.leaf.fit.member.command.MemLoginForm;
@@ -40,6 +41,7 @@ import co.leaf.fit.program.command.ProDetail;
 import co.leaf.fit.program.command.ProList;
 import co.leaf.fit.program.command.ProgramAdd;
 import co.leaf.fit.program.command.ProgramAddForm;
+import co.leaf.fit.program.command.SelectedPrograms;
 import co.leaf.fit.region.command.RegSelect;
 import co.leaf.fit.region.command.RegSelectList;
 import co.leaf.fit.region.command.RegTest;
@@ -70,9 +72,12 @@ public class FrontController extends HttpServlet {
 		map.put("/NaverMap.do", new NaverMap());	
 		// home page
 		map.put("/home.do", new Home());
+		map.put("/main.do", new Main());	
 		
 		// category page
 		map.put("/catTest.do", new CatTest());
+		map.put("/catSelect.do", new CatSelect());
+		map.put("/catSelectList.do", new CatSelectList());
 		
 		// history page
 		map.put("/hisTest.do", new HisTest());
@@ -110,6 +115,8 @@ public class FrontController extends HttpServlet {
 		
 		// region page
 		map.put("/regTest.do", new RegTest());
+		map.put("/regSelect.do", new RegSelect());
+		map.put("/regSelectList.do", new RegSelectList());
 		
 		// review page
 		map.put("/revSelectList.do", new RevSelectList());
@@ -131,13 +138,6 @@ public class FrontController extends HttpServlet {
 		
 		// wishlist page
 		map.put("/wisTest.do", new WisTest());
-		
-		// category jsp
-		map.put("/catSelect.do", new CatSelect());
-		map.put("/catSelectList.do", new CatSelectList());
-		
-		map.put("/regSelect.do", new RegSelect());
-		map.put("/regSelectList.do", new RegSelectList());
 		
 		
 	}

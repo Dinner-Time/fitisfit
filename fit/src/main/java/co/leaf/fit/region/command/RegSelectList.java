@@ -13,11 +13,9 @@ public class RegSelectList implements Command {
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO 지역 전체조회
 		
-//		RegionService dao = new RegionService();
-//		request.setAttribute("list", dao.regSelectList());
+		RegionService dao = new RegionService();
+		request.setAttribute("list", dao.regSelectList());
 		
-		CategoryService rdao = new CategoryService();
-		request.setAttribute("list",rdao.catSelectList());
 		return "region/regSelectList";
 	}
 

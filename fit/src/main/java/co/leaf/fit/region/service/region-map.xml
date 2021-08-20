@@ -3,14 +3,23 @@
 <mapper namespace="co.leaf.fit.region.service.RegionMapper">
 
 
-<select id="regSelectList"
-	    resultType="RegionVO">
-	select * from fit_region order by reg_id
-</select>
+	<select id="regSelectList" resultType="RegionVO">
+		select * from fit_region order by reg_id
+	</select>
+		
+	<select id="regSelect" resultType="RegionVO">
+		select * from fit_region where reg_id = #{regId}	
+	</select>
 	
-<select id="regSelect"
-		resultType="RegionVO">
-	select * from fit_region where region_id = #{regId}	
-</select>
+	<select id="cntProByReg" parameterType="int" resultMap="regionMap">
+		select count(b.pro_id) cntProByReg
+		from fit_partner a
+		left outer join fit_program b on a.par_id = b.pro_parid
+		where a.par_regid = #{regId}
+	</select>
+
+	<resultMap type="int" id="regionMap">
+        <id column="cntProByReg" property="proByReg" />
+    </resultMap>
 
 </mapper>

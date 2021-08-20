@@ -28,7 +28,7 @@
 		.custom-btn {
 			background-color: #4343FE;
 			border: none;
-			transition: all .3s;
+			transition: all .5s;
 		}
 
 		.custom-del:hover {

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 
@@ -147,6 +148,7 @@
 	<script src="js/script.js"></script>
 
 	<script type='text/javascript'>
+		
 		function goPopup() {
 			// 호출된 페이지(jusoPopup.do)에서 실제 주소검색URL(https://www.juso.go.kr/addrlink/addrLinkUrl.do)를 호출하게 됩니다.
 			var pop = window.open("jusoPopup.do", "pop",
@@ -155,6 +157,12 @@
 		function jusoCallBack(roadFullAddr) {
 			$('#roadFullAddr').val(roadFullAddr);
 		}
+		$(document).ready(function(){
+			let fail = "<c:out value='${fail}' />";
+			if(fail == 'fail'){
+				alert('로그인에 실패하였습니다.');
+			}
+		});
 	</script>
 </body>
 

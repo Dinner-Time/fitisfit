@@ -110,11 +110,8 @@ Start About Section
 					
 					<div class="form-group">
 								<div class="form-group">
-								<select name="insGender" class="form-control" id="insGender">
-									<option value="">성별</option>
-									<option value="남성">남성</option>
-									<option value="여성">여성</option>
-								</select>
+								  <input type='radio'  id='insGender' name='insGender' value='남' checked/>남
+ 								 <input type='radio' id='insGender' name='insGender' value='여' />여
 							</div>
 					</div>
 					

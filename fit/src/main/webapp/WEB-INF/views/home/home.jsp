@@ -37,8 +37,8 @@
 		<a style="color: #000;"href="proList.do">program</a>
 		<a style="color: #000;" href="salTest.do">sales</a>
 		<a style="color: #000;" href="timTest.do">timetable</a>
-		<a style="color: #000;" href="catSelectList.do">category</a>
-		<a style="color: #000;" href="regSelectList.do">region</a>
+		<a style="color: #000;" href="catSelectList.do">지역선택시 카테고리나열</a>
+		<a style="color: #000;" href="regSelectList.do">카테고리선택시 지역나열</a>
 		<a style="color: #000;" href="insSelectList.do">instructor</a>
 		<a style="color: #000;" href="memTest.do">member</a>
 		<a style="color: #000;" href="parTest.do">partner</a>

@@ -3,10 +3,6 @@
 <mapper
 	namespace="co.leaf.fit.instructor.service.InstructorMapper">
 
-	<resultMap type="ProgramVO" id="ProgramVO">
-		<result column="pro_name" property="proName" />
-	</resultMap>
-
 	<resultMap type="InstructorVO" id="InstructorVO">
 		<result column="ins_id" property="insId" />
 		<result column="ins_name" property="insName" />
@@ -15,26 +11,25 @@
 		<result column="ins_history" property="insHistory" />
 		<result column="ins_kakao" property="insKakao" />
 		<result column="ins_insta" property="insInsta" />
-		<collection property="programVO" resultMap="ProgramVO" />
+		<result column="pro_name" property="proName" />
 	</resultMap>
 
 	<select id="insSelectList" parameterType="InstructorVO"
 		resultMap="InstructorVO">
-		select fit_instructor.ins_id, fit_instructor.ins_name,
-		fit_program.pro_name, fit_instructor.ins_phone
-		from fit_instructor inner join fit_program
-		on fit_instructor.ins_id = fit_program.pro_insid
+		select a.*, b.pro_name
+		from fit_instructor a inner join fit_program b
+		on a.ins_id = b.pro_insid
 	</select>
 
 	<select id="insSelect" resultType="InstructorVO">
-		select ins_photo, ins_name, ins_phone, ins_gender, ins_insta, ins_kakao, ins_history from fit_instructor where ins_id = #{insId}
+		select * from fit_instructor where ins_id = #{insId}
 	</select>
 
 	<insert id="insInsert" parameterType="InstructorVO">
 		insert into fit_instructor
 		(ins_id, ins_photo, ins_name, ins_phone, ins_gender, ins_insta, ins_kakao,
 		ins_history, ins_parid)
-		values (FIT_INS_SEQ.nextval, #{insPhoto}, #{insId}, #{insPhone},
+		values (FIT_INS_SEQ.nextval, #{insPhoto}, #{insName}, #{insPhone},
 		#{insGender}, #{insInsta}, #{insKakao}, #{insHistory}, #{insParId})
 	</insert>
 

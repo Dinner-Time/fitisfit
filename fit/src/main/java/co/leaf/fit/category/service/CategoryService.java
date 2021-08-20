@@ -21,4 +21,9 @@ public class CategoryService implements CategoryMapper {
 		return map.catSelect(vo);
 	}
 
+	@Override
+	public int cntProByCat(CategoryVO vo) {
+		return map.cntProByCat(vo);
+	}
+
 }

@@ -21,16 +21,19 @@ import co.leaf.fit.history.command.HisInsert;
 import co.leaf.fit.history.command.HisInsertForm;
 import co.leaf.fit.history.command.HisTest;
 import co.leaf.fit.history.command.MypageHistory;
+import co.leaf.fit.instructor.command.InsInfo;
 import co.leaf.fit.instructor.command.InsInsert;
 import co.leaf.fit.instructor.command.InsInsertForm;
 import co.leaf.fit.instructor.command.InsSelect;
 import co.leaf.fit.instructor.command.InsSelectList;
 import co.leaf.fit.main.command.Home;
+import co.leaf.fit.main.command.Main;
 import co.leaf.fit.member.command.MemInsert;
 import co.leaf.fit.member.command.MemLogin;
 import co.leaf.fit.member.command.MemLoginForm;
 import co.leaf.fit.member.command.MemLogout;
 import co.leaf.fit.member.command.MemTest;
+import co.leaf.fit.member.command.MemUpdatePassword;
 import co.leaf.fit.member.command.MemberSelect;
 import co.leaf.fit.partner.command.ParInsert;
 import co.leaf.fit.partner.command.ParInsertForm;
@@ -40,6 +43,7 @@ import co.leaf.fit.program.command.ProDetail;
 import co.leaf.fit.program.command.ProList;
 import co.leaf.fit.program.command.ProgramAdd;
 import co.leaf.fit.program.command.ProgramAddForm;
+import co.leaf.fit.program.command.SelectedPrograms;
 import co.leaf.fit.region.command.RegSelect;
 import co.leaf.fit.region.command.RegSelectList;
 import co.leaf.fit.region.command.RegTest;
@@ -71,9 +75,12 @@ public class FrontController extends HttpServlet {
 		map.put("/NaverMap.do", new NaverMap());	
 		// home page
 		map.put("/home.do", new Home());
+		map.put("/main.do", new Main());	
 		
 		// category page
 		map.put("/catTest.do", new CatTest());
+		map.put("/catSelect.do", new CatSelect());
+		map.put("/catSelectList.do", new CatSelectList());
 		
 		// history page
 		map.put("/hisTest.do", new HisTest());
@@ -86,7 +93,7 @@ public class FrontController extends HttpServlet {
 		map.put("/insSelect.do", new InsSelect());
 		map.put("/insInsertForm.do", new InsInsertForm());
 		map.put("/insInsert.do", new InsInsert());
-		//map.put("/insInfo.do", new InsInfo());
+		map.put("/insInfo.do", new InsInfo());
 		
 		// member page
 		map.put("/memTest.do", new MemTest());
@@ -96,6 +103,7 @@ public class FrontController extends HttpServlet {
 		map.put("/memInsert.do", new MemInsert());
 		map.put("/jusoPopup.do", new JusoPopup());
 		map.put("/memSelect.do", new MemberSelect());
+		map.put("/memUpdatePassword.do", new MemUpdatePassword());
 		
 		// partner page
 		map.put("/parTest.do", new ParTest());
@@ -111,6 +119,8 @@ public class FrontController extends HttpServlet {
 		
 		// region page
 		map.put("/regTest.do", new RegTest());
+		map.put("/regSelect.do", new RegSelect());
+		map.put("/regSelectList.do", new RegSelectList());
 		
 		// review page
 		map.put("/revSelectList.do", new RevSelectList());
@@ -134,13 +144,6 @@ public class FrontController extends HttpServlet {
 		map.put("/wisList.do", new WisList());
 		map.put("/wisDelete.do", new WisDelete());
 		
-		
-		// category jsp
-		map.put("/catSelect.do", new CatSelect());
-		map.put("/catSelectList.do", new CatSelectList());
-		
-		map.put("/regSelect.do", new RegSelect());
-		map.put("/regSelectList.do", new RegSelectList());
 		
 		
 	}

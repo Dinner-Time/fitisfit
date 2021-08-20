@@ -99,7 +99,7 @@
 }
 /* 수강 완료 */
 .badge-secondary {
-	width: 150px;
+	width: 120px;
 	background: #696969;
 	color: white;
 	border: 0px solid lightgray;
@@ -115,6 +115,7 @@
 h4 {
 	font-family: 'Do Hyeon', sans-serif;
 	text-shadow: 2px 2px 2px black;
+	font-size:17px;
 }
 
 h3 {
@@ -211,18 +212,20 @@ h3 {
 				<br>
 				<!-- /section title -->
 				<!-- single blog post -->
-				<article class="col-md-3 col-sm-6 col-xs-12 clearfix ">
+				<article class="col-md-3 col-sm-6 col-xs-12 ">
 					<div class="post-item">
-						<div class="content"
-							style="background: url('images/category/Pilates.jpg')">
-							<div class="badge badge-primary">
+						<div class="media-wrapper" style="background: url('images/category/Swimming.jpg')">
+						<div class="badge badge-secondary">
 								<p />
-								<h4>수강중</h4>
+								<h4>수강 완료</h4>
 							</div>
+						</div>
+						
+						<div class="content">
 							<h3>
-								<br> <a href="#">필라테스</a>
+								<a href="single-post.html">필라테스</a>
 							</h3>
-							<br> <br> <a href="#" class="btn btn-primary">후기 작성</a>
+							<a href="#" class="btn btn-primary">후기 작성</a>
 							<a href="#" class="btn btn-primary">수강 취소</a>
 						</div>
 					</div>

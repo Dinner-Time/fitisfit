@@ -56,9 +56,16 @@
 	rel="stylesheet">
 <!-- 폰트 끝 -->
 
-
+<script type="text/javascript">
+	function delConfirm(){
+		confirm('수강 취소 하시겠습니까?');
+		//수강후기 삭제 뜨기
+	}
+</script>
 
 <style type="text/css">
+
+/* 회원 정보 / 수강내역 / 위시리스트 / 고객센터  */
 .custom-nav {
 	font-family: 'Gowun Dodum', sans-serif;
 	border-bottom: 1px solid #4343FE;
@@ -68,13 +75,14 @@
 	top: 24%;
 	transform: translate(-50%, -50%);
 }
-
+ 
+ 
+ /* 뒷 배경 하얗게 만들기  */
 .blog {
 	background: white;
 }
 
 .content {
-	height: 300px;
 	text-align: center;
 	position: relative;
 	overflow: hidden;
@@ -85,56 +93,59 @@
 
 /* 수강 중 */
 .badge-primary {
-	width: 150px;
+	width: 100px;
+	height: 45px;
 	background: #4169E1;
 	color: white;
 	border: 0px solid lightgray;
 	border-radius: 20px;
-	height: 80px;
-	padding-top: 18px;
+	padding-top: 13px;
+	margin-left: 57%;
+	margin-top:-75%;
 }
 
-.badge-primary:hover {
-	background: #B0C4DE;
-}
 /* 수강 완료 */
 .badge-secondary {
-	width: 120px;
+	width: 100px;
+	height: 45px;
 	background: #696969;
 	color: white;
 	border: 0px solid lightgray;
 	border-radius: 20px;
-	height: 80px;
-	padding-top: 18px;
-}
-
-.badge-secondary:hover {
-	background: #C0C0C0;
+	padding-top: 13px;
+	margin-left: 57%;
+	margin-top:-75%;
 }
 
 h4 {
 	font-family: 'Do Hyeon', sans-serif;
 	text-shadow: 2px 2px 2px black;
-	font-size:17px;
+	font-size: 17px;
 }
 
 h3 {
-	font-family: 'Do Hyeon', sans-serif;
+	font-family: 'Gowun Dodum', sans-serif;;
 	font-size: 25px;
-	text-shadow: 2px 2px 2px black;
 }
-.btn-primary{
+
+.btn-primary {
+	background: #4343FE;
 	font-family: 'Gowun Dodum', sans-serif;
+	border-radius: 40px;
+	border: 1px solid #4343FE;
+	font-size:14px;
+	padding: 10px 20px;
+	
+	
 }
 
 .post-item .content h3 a {
-	color: white;
+	color: black;
 }
 
-.content:hover{
- 	transition: all .5s;
+.content:hover {
+	transition: all .5s;
 	opacity: 0.8;
-
 }
 /* 지역, 카테고리 dropbar */
 .dropbar {
@@ -147,11 +158,22 @@ h3 {
 	transform: translate(-20%, -20%);
 	font-family: 'Gowun Dodum', sans-serif;
 }
-.navbar-light .navbar-nav .active>.nav-link, 
-.navbar-light .navbar-nav .nav-link.active, .navbar-light 
-.navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
-    color: rgb(255 255 255 / 90%);
+.img-fluid {
+    max-width: 100%;
+    height: 200px;
 }
+
+/* .img-fluid:hover{
+	transition: all .5s;
+	opacity: 0.8;
+}
+ */
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active,
+	.navbar-light 
+.navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+	color: rgb(255 255 255/ 90%);
+}
+
 </style>
 </head>
 
@@ -204,80 +226,91 @@ h3 {
 						</ul>
 					</div>
 				</nav>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
+				<br> <br> <br> <br> <br> <br>
 				<!-- /section title -->
 				<!-- single blog post -->
-				<article class="col-md-3 col-sm-6 col-xs-12 ">
+				<article class="col-md-3 col-sm-6 col-xs-12 " style="border:1px;">
 					<div class="post-item">
-						<div class="media-wrapper" style="background: url('images/category/Swimming.jpg')">
-						<div class="badge badge-secondary">
-								<p />
-								<h4>수강 완료</h4>
+						<div class="media-wrapper">
+							<img src="images/category/Pilates.jpg" alt="amazing caves coverimage"
+								class="img-fluid">
+							<div class="badge badge-primary" style="vertical-align:top;">
+								<h4>수강중</h4>
 							</div>
-						</div>
-						
-						<div class="content">
-							<h3>
-								<a href="single-post.html">필라테스</a>
-							</h3>
-							<a href="#" class="btn btn-primary">후기 작성</a>
-							<a href="#" class="btn btn-primary">수강 취소</a>
+							</div>
+							<div class="content">
+								<h3>
+									<a href="single-post.html">필라테스</a>
+								</h3>
+								<br>
+								<br> <button type="button" class="btn btn-primary">후기 작성</button>
+								 <button type="button" class="btn btn-primary" onclick="delConfirm()">수강 취소</button>
+							
 						</div>
 					</div>
 				</article>
 				<!-- /single blog post -->
 
 				<!-- single blog post -->
-				<article class="col-md-3 col-sm-6 col-xs-12 clearfix ">
+				<article class="col-md-3 col-sm-6 col-xs-12 ">
 					<div class="post-item">
-						<div class="content"
-							style="background: url('images/category/Swimming.jpg')">
-							<div class="badge badge-secondary">
-								<p />
+						<div class="media-wrapper">
+							<img src="images/category/Swimming.jpg" alt="amazing caves coverimage"
+								class="img-fluid">
+							<div class="badge badge-secondary" style="vertical-align:top;">
 								<h4>수강 완료</h4>
 							</div>
-							<h3>
-								<br> <a href="#">수영</a>
-							</h3>
-							<br> <br> <a href="#" class="btn btn-primary">후기 작성</a>
+							</div>
+							<div class="content">
+								<h3>
+									<a href="single-post.html">수영</a>
+								</h3>
+								<br>
+								<br> <a href="#" class="btn btn-primary">후기 작성</a> 
+									
+							
 						</div>
 					</div>
 				</article>
 				<!-- end single blog post -->
 
 				<!-- single blog post -->
-				<article class="col-md-3 col-sm-6 col-xs-12 clearfix ">
+				<article class="col-md-3 col-sm-6 col-xs-12 ">
 					<div class="post-item">
-						<div class="content"
-							style="background: url('images/category/Yoga.jpg')">
-							<div class="badge badge-secondary">
-								<p />
+						<div class="media-wrapper">
+							<img src="images/category/Ballet.jpg" alt="amazing caves coverimage"
+								class="img-fluid">
+							<div class="badge badge-secondary" style="vertical-align:top;">
 								<h4>수강 완료</h4>
 							</div>
-							<h3>
-								<br> <a href="#">요가</a>
-							</h3>
-							<br> <br> <a href="#" class="btn btn-primary">후기 작성</a>
+							</div>
+							<div class="content">
+								<h3>
+									<a href="single-post.html">발레</a>
+								</h3>
+								<br>
+								<br> <a href="#" class="btn btn-primary">후기 작성</a>
+									
+							
 						</div>
 					</div>
 				</article>
-				<article class="col-md-3 col-sm-6 col-xs-12 clearfix ">
+				
+				<article class="col-md-3 col-sm-6 col-xs-12 ">
 					<div class="post-item">
-						<div class="content"
-							style="background: url('images/category/Gym.jpg')">
-							<div class="badge badge-secondary">
-								<p />
+						<div class="media-wrapper">
+							<img src="images/category/Yoga.jpg" alt="amazing caves coverimage"
+								class="img-fluid">
+							<div class="badge badge-secondary" style="vertical-align:top;">
 								<h4>수강 완료</h4>
 							</div>
-							<h3>
-								<br> <a href="#">헬스</a>
-							</h3>
-							<br> <br> <a href="#" class="btn btn-primary">후기 작성</a>
+							</div>
+							<div class="content">
+								<h3>
+									<a href="single-post.html">요가</a>
+								</h3>
+								<br>
+								<br> <a href="#" class="btn btn-primary">후기 작성</a> 
 						</div>
 					</div>
 				</article>
@@ -291,8 +324,11 @@ h3 {
 	<!--================================
 =            Google Map            =
 =================================-->
-<br><br><br><br>
-<jsp:include page="/WEB-INF/views/home/footer.jsp" />
+	<br>
+	<br>
+	<br>
+	<br>
+	<jsp:include page="/WEB-INF/views/home/footer.jsp" />
 
 	<!-- 자바 스크립트 -->
 	<script src="plugins/jquery/jquery.min.js"></script>

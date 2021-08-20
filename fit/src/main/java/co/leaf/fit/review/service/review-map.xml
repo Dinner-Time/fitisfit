@@ -20,7 +20,7 @@
 		fit_program a
 		JOIN fit_review b ON a.pro_id = b.rev_proid
 		ORDER BY
-		rev_id desc
+		rev_date desc
 	</select>
 
 	<select id="revSelect" resultMap="ReviewMap">

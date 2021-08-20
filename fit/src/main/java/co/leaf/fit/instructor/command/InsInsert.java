@@ -21,6 +21,7 @@ public class InsInsert implements Command {
 		vo.setInsKakao(request.getParameter("insKakao"));
 		vo.setInsHistory(request.getParameter("insHistory"));
 		vo.setInsParId(Integer.valueOf(request.getParameter("insParId")));
+		System.out.println(vo.toString());
 		int n = dao.insInsert(vo);
 		String page="";
 		if(n!=0){

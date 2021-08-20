@@ -21,7 +21,7 @@ public class Main implements Command {
 		request.setAttribute("catList", catDao.catSelectList());
 		request.setAttribute("regList", regDao.regSelectList());
 		
-		return "home/main2";
+		return "home/main";
 	}
 
 }

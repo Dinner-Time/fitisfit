@@ -37,6 +37,7 @@ import co.leaf.fit.member.command.MemUpdatePassword;
 import co.leaf.fit.member.command.MemberSelect;
 import co.leaf.fit.partner.command.ParInsert;
 import co.leaf.fit.partner.command.ParInsertForm;
+import co.leaf.fit.partner.command.ParSelect;
 import co.leaf.fit.partner.command.ParTest;
 import co.leaf.fit.program.command.MemberEnroll;
 import co.leaf.fit.program.command.ProDetail;
@@ -109,6 +110,7 @@ public class FrontController extends HttpServlet {
 		map.put("/parTest.do", new ParTest());
 		map.put("/parInsertForm.do", new ParInsertForm());
 		map.put("/parInsert.do", new ParInsert());
+		map.put("/parSelect.do", new ParSelect());
 		
 		// program page
 		map.put("/proList.do", new ProList()); // 프로그램 전체 리스트

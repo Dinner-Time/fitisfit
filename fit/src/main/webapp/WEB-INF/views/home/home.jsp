@@ -47,6 +47,7 @@
 		<a style="color: #000;" href="wisList.do">wishlist</a>
 		<a style="color: #000;" href="hisInsertForm.do">history</a>
 		<a style="color: #000;" href="NaverMap.do">naverMap</a>
+		<a style="color: #000;" href="main.do">main</a>
 	</div>
 	<jsp:include page="footer.jsp" />
 

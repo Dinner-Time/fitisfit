@@ -10,7 +10,7 @@
 
     <select id="parSelect"
         resultType="PartnerVO">
-        select * from fit_partner where par_id = #{parId}
+        select p.par_id, p.par_email, p.par_password, p.par_name, r.reg_name, p.par_address, p.par_phone, p.par_intro, p.par_photo, p.par_subdate, p.par_state, p.par_author from fit_partner p inner join fit_region r on p.par_regid = r.reg_id where par_id = #{parId}
     </select>
 
     <insert id="parInsert" parameterType="PartnerVO">

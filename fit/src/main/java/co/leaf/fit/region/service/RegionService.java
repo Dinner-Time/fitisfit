@@ -14,14 +14,18 @@ public class RegionService implements RegionMapper {
 	
 	@Override
 	public List<RegionVO> regSelectList() {
-		// TODO Auto-generated method stub
 		return map.regSelectList();
 	}
 
 	@Override
 	public RegionVO regSelect(RegionVO vo) {
-		// TODO Auto-generated method stub
 		return map.regSelect(vo);
+	}
+
+	// 지역을 선택하면 그 지역의 프로그램 갯수를 출력
+	@Override
+	public int cntProByReg(RegionVO vo) {
+		return map.cntProByReg(vo);
 	}
 
 }

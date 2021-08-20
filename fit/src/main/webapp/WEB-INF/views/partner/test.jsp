@@ -13,6 +13,7 @@
 		${partner.parEmail } / ${partner.parName } / ${partner.parIntro } <br>
 	</c:forEach>
 	<h3><a href="parInsertForm.do">업체 등록</a></h3>
+	<h3><a href="parSelect.do">업체 페이지</a></h3>
 <jsp:include page="/WEB-INF/views/home/footer.jsp" />
 </body>
 </html>

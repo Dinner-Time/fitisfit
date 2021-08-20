@@ -10,5 +10,15 @@
 	<select id="catSelect" resultType="CategoryVO">
 		select * from fit_category where cat_id = #{catId}
 	</select>
+	
+	<select id="cntProByCat" parameterType="int" resultMap="categoryMap">
+		select count(*) cntProByCat
+		from fit_program
+		where pro_catid = #{catId}
+	</select>
+
+    <resultMap type="int" id="categoryMap">
+        <id column="cntProByCat" property="proByCat" />
+    </resultMap>
 
 </mapper>

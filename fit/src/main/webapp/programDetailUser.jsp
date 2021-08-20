@@ -5,8 +5,6 @@
 <html>
 <head>
 
-
-
 <style type="text/css">
 .hover-me a {font-size: 15px;}
 .hover-me a:hover {
@@ -18,9 +16,7 @@ font-size:0;
 }
 
 
-
 </style>
-
 
 <meta charset="UTF-8">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -51,53 +47,13 @@ font-size:0;
   <link rel="stylesheet" href="plugins/slick/slick.css">
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">  
-
+	
 
 </head>
 
 <body id="body">
 <jsp:include page="/WEB-INF/views/home/header.jsp" />
- <!--
-  Start Preloader
-  ==================================== -->
-  <div id="preloader">
-    <div class='preloader'>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div> 
-  <!--
-  End Preloader
-  ==================================== -->
-
-
-   
-
-<!--
-Fixed Navigation
-==================================== -->
-
-<!--
-End Fixed Navigation
-==================================== -->
-<!--  
-<section class="single-page-header">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<h2>Blog Single</h2>
-				<ol class="breadcrumb header-bradcrumb">
-				  <li><a href="index.html">Home</a></li>
-				  <li class="active">Blog Single</li>
-				</ol>
-			</div>
-		</div>
-	</div>
-</section>-->
+ 
 
 <!-- blog details part start -->
 <section class="blog-details section">
@@ -110,29 +66,202 @@ End Fixed Navigation
 	  		</div>
          <br/>
  		<div class="card">
-            <img class="img-fluid w-100" src="images/blog/post-1.jpg" alt="post-image">
+            ${detailList[0].proPhoto } <img class="img-fluid w-100" src="images/blog/post-1.jpg" alt="post-image">
         </div>
             
           <!-- Post Content -->
           <div class="post-content">
            <br/>    
           	<div class="card">
-            <p>프로그램 설명 </p>
+            <div class="card-body"><p>프로그램 설명 ${detailList[0].proDesc } </p></div>
             </div>
+            <br/> 
+            
+            <div class="card">
+            <div class="card-body">
+          	<div class="container">
+                <table class="table table-bordered text-center">
+                        <thead>
+                            <tr class="bg-light-gray">
+                                <th width="15px">시간
+                                </th>
+                                <th width="15px">월</th>
+                                <th width="15px">화</th>
+                                <th width="15px">수</th>
+                                <th width="15px">목</th>
+                                <th width="15px">금</th>
+                                <th width="15px">토</th>
+                                <th width="15px">일</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="align-middle">09:00am</td>
+                                <td>
+                                    <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">Dance</span>
+                                    <div class="margin-10px-top font-size14">9:00-10:00</div>
+                                </td>
+                                <td>
+                                    <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">Dance</span>
+                                    <div class="margin-10px-top font-size14">9:00-10:00</div>
+                                </td>
+
+                                <td>
+                                </td>
+                                
+                                <td>
+                                </td>
+                                
+                                <td>
+                                </td>
+                                
+                                <td>
+                                    <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">Dance</span>
+                                    <div class="margin-10px-top font-size14">9:00-10:00</div> 
+                                </td>
+                                
+                                <td>
+                                </td>
+                            </tr>
+
+                           <tr>
+                                <td class="align-middle">09:00am</td>
+                                <td>
+                                    <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">Dance</span>
+                                    <div class="margin-10px-top font-size14">9:00-10:00</div>
+                                </td>
+                                <td>
+                                    <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">Dance</span>
+                                    <div class="margin-10px-top font-size14">9:00-10:00</div>
+                                </td>
+
+                                <td>
+                                </td>
+                                
+                                <td>
+                                </td>
+                                
+                                <td>
+                                </td>
+                                
+                                <td>
+                                    <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">Dance</span>
+                                    <div class="margin-10px-top font-size14">9:00-10:00</div> 
+                                </td>
+                                
+                                <td>
+                                </td>
+                            </tr>
+
+                             <tr>
+                                <td class="align-middle">09:00am</td>
+                                <td>
+                                    <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">Dance</span>
+                                    <div class="margin-10px-top font-size14">9:00-10:00</div>
+                                </td>
+                                <td>
+                                    <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">Dance</span>
+                                    <div class="margin-10px-top font-size14">9:00-10:00</div>
+                                </td>
+
+                                <td>
+                                </td>
+                                
+                                <td>
+                                </td>
+                                
+                                <td>
+                                </td>
+                                
+                                <td>
+                                    <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">Dance</span>
+                                    <div class="margin-10px-top font-size14">9:00-10:00</div> 
+                                </td>
+                                
+                                <td>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="align-middle">09:00am</td>
+                                <td>
+                                    <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">Dance</span>
+                                    <div class="margin-10px-top font-size14">9:00-10:00</div>
+                                </td>
+                                <td>
+                                    <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">Dance</span>
+                                    <div class="margin-10px-top font-size14">9:00-10:00</div>
+                                </td>
+
+                                <td>
+                                </td>
+                                
+                                <td>
+                                </td>
+                                
+                                <td>
+                                </td>
+                                
+                                <td>
+                                    <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">Dance</span>
+                                    <div class="margin-10px-top font-size14">9:00-10:00</div> 
+                                </td>
+                                
+                                <td>
+                                </td>
+                            </tr>
+
+                             <tr>
+                                <td class="align-middle">09:00am</td>
+                                <td>
+                                    <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">Dance</span>
+                                    <div class="margin-10px-top font-size14">9:00-10:00</div>
+                                </td>
+                                <td>
+                                    <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">Dance</span>
+                                    <div class="margin-10px-top font-size14">9:00-10:00</div>
+                                </td>
+
+                                <td>
+                                </td>
+                                
+                                <td>
+                                </td>
+                                
+                                <td>
+                                </td>
+                                
+                                <td>
+                                    <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">Dance</span>
+                                    <div class="margin-10px-top font-size14">9:00-10:00</div>
+                                </td>
+                                
+                                <td>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            </div>
+            </div>
+            <br/>
+            
                <div class="card">
-            <p>강사소개  
-            어쩌구 저쩌구~~
-            
-						<a class="btn btn-main" href="" style="background-color: #4343FE; border:none;">가격</a>
-			</p>
+            <div class="card-body"><p><a href=""><span class="iconify-inline" data-icon="ion:open-outline" style="color: #4343fe;" data-width="30" data-height="30"></span></a> &nbsp; 강사소개 ${detailList[0].insName }</p>
+            <p>간단한 소개입니다.</p> </div>
+            		
             </div>
-            
+            <br/>
              <div class="card">
-            <p>업체소개 </p>
+              <div class="card-body">
+            <p><a href=""><span class="iconify-inline" data-icon="ion:open-outline" style="color: #4343fe;" data-width="30" data-height="30"></span></a> &nbsp; 업체소개 ${detailList[0].parName } </p>
+         	<p>간단한 소개입니다.</p> </div>
             </div>
             <br/>
             <!-- blockquote -->
 		 <div class="card">
+		 <div class="card-body">
 		 <p>기간선택</p>
             <div class="container">
   <!-- Button to Open the Modal -->
@@ -167,15 +296,15 @@ End Fixed Navigation
 </div>
 <br/>
             </div>
+            </div>
 
 
    <br/>
    <div class="card">
-   <h2>후기</h2>
-         
-
+    <div class="card-body">
+   <p><h2>후기</h2></p>
 		<div class="col-4">
-			<div class="card" align="left" style="width: 30rem;">
+			<div class="card" align="left" style="width:40rem;">
 			  <ul class="list-group list-group-flush">
 			  
 			    <li class="list-group-item">
@@ -183,15 +312,17 @@ End Fixed Navigation
 			    	<h5 class="card-title">리뷰점수</h5>
 			    	<h6 class="card-subtitle mb-2 text-muted">날짜 , 작성자</h6>
 			    	<hr>
-					내용<br>
+					내용ssdsfdf입니다어림ㄴ어라ㅣㅇ너리나ㅓ라ㅣㄴ러ㅣㅏ얾니ㅏ런아ㅣㅓㄹ니ㅓㅇ란이ㅓ림널
 			    </li>
 			  </ul>
 			</div>
 		</div>
 </div>
+</div>
 <br/>
 		<div class="card">
-		<h2>다른 프로그램들과 비교해보세요!</h2>
+		 <div class="card-body">
+		<p><h2>다른 프로그램들과 비교해보세요!</h2>
 			<div class="container">
 		<div class="row">
 		
@@ -237,7 +368,7 @@ End Fixed Navigation
 			</article>
 			<!-- /single blog post -->
 		</div> 		<!-- End row -->
-		
+		</div>
 	</div>
 		</div>
             
@@ -258,6 +389,7 @@ End Fixed Navigation
       
         </aside>
       </div>
+      </p>
     </div>
   </div>
 </section>
@@ -302,6 +434,7 @@ End Fixed Navigation
     
     <!-- Custom js -->
     <script src="js/script.js"></script>
+<script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
 
   </body>
   </html>

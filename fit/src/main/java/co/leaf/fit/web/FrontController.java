@@ -55,7 +55,8 @@ import co.leaf.fit.sales.command.SalPartnerInsert;
 import co.leaf.fit.sales.command.SalPartnerUpdate;
 import co.leaf.fit.sales.command.SalPatnerList;
 import co.leaf.fit.sales.command.SalTest;
-import co.leaf.fit.wishlist.command.WisTest;
+import co.leaf.fit.wishlist.command.WisDelete;
+import co.leaf.fit.wishlist.command.WisList;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -130,7 +131,9 @@ public class FrontController extends HttpServlet {
 		// timetable page
 		
 		// wishlist page
-		map.put("/wisTest.do", new WisTest());
+		map.put("/wisList.do", new WisList());
+		map.put("/wisDelete.do", new WisDelete());
+		
 		
 		// category jsp
 		map.put("/catSelect.do", new CatSelect());

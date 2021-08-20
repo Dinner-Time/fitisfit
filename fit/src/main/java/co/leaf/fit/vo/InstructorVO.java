@@ -11,14 +11,15 @@ public class InstructorVO {
 	private String insHistory;
 	private int insParId;
 	
-	private ProgramVO programVO;
+	private String proName;
 	
-	public ProgramVO getProgramVO() {
-		return programVO;
+
+	public String getProName() {
+		return proName;
 	}
 
-	public void setProgramVO(ProgramVO programVO) {
-		this.programVO = programVO;
+	public void setProName(String proName) {
+		this.proName = proName;
 	}
 
 	public InstructorVO() {
@@ -79,6 +80,8 @@ public class InstructorVO {
 	public void setInsParId(int insParId) {
 		this.insParId = insParId;
 	}
+
+
 	
 	
 }

@@ -96,7 +96,7 @@
 				<tr onclick="getRecord('${ins.insId}')">
 					<td>${ins.insId }</td>
 					<td>${ins.insName}</td>
-					<td>${ins.programVO.proName}</td>
+					<td>${ins.proName}</td>
 					<td>${ins.insPhone}</td>
 				</tr>
 			</c:forEach>

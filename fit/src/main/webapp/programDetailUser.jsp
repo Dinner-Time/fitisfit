@@ -5,24 +5,22 @@
 <html>
 <head>
 
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css'/>
 
 
-<style>
+<style type="text/css">
+.hover-me a {font-size: 15px;}
+.hover-me a:hover {
+font-size:0;
+}
+.hover-me a:hover:before {
+    content: '0/12';
+    font-size:15px;
+}
 
 
 
-
-.inner-star::before{color: #FF9600;}
-.outer-star {position: relative;display: inline-block;color: #CCCCCC;}
-.inner-star {position: absolute;left: 0;top: 0;width: 0%;overflow: hidden;white-space: nowrap;}
-.outer-star::before, .inner-star::before {content: '\f005 \f005 \f005 \f005 \f005';font-family: 'Font Awesome 5 free';font-weight: 900;}
 </style>
 
-<script>
-ratings = {RatingScore: 4.5} 
-totalRating = 5;table = document.querySelector('.RatingStar');function rateIt() {for (rating in ratings) {ratingPercentage = ratings[rating] / totalRating * 100;ratingRounded = Math.round(ratingPercentage / 10) * 10 + '%';star = table.querySelector(`.${rating} .inner-star`);numberRating = table.querySelector(`.${rating} .numberRating`);star.style.width = ratingRounded;numberRating.innerText = ratings[rating];}}rateIt()
-</script>
 
 <meta charset="UTF-8">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -119,14 +117,18 @@ End Fixed Navigation
           <div class="post-content">
            <br/>    
           	<div class="card">
-            <p>프로그램 설명${detailList[3].proDesc } </p>
+            <p>프로그램 설명 </p>
             </div>
                <div class="card">
-            <p>강사소개 ${detailList[14].proDesc } </p>
+            <p>강사소개  
+            어쩌구 저쩌구~~
+            
+						<a class="btn btn-main" href="" style="background-color: #4343FE; border:none;">가격</a>
+			</p>
             </div>
             
              <div class="card">
-            <p>업체소개</p>
+            <p>업체소개 </p>
             </div>
             <br/>
             <!-- blockquote -->
@@ -137,7 +139,7 @@ End Fixed Navigation
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
     Open modal
   </button>
-	<br/>
+	
   <!-- The Modal -->
   <div class="modal" id="myModal">
     <div class="modal-dialog">
@@ -162,49 +164,30 @@ End Fixed Navigation
       </div>
     </div>
   </div>
-  
 </div>
+<br/>
             </div>
 
 
    <br/>
    <div class="card">
    <h2>후기</h2>
-          <table>
-          <tr>
-          <td>
-          <div class='RatingStar'>
-  			<div class='RatingScore'>
-  			  <div class='outer-star'>
-  			  <div class='inner-star'></div>
-  			 </div>
-  		   </div>
-		 </div>
-         </td>
-          <td>
-          <div class="container">
-			  <div class="progress">
-			    <div class="progress-bar" style="width:70%"></div>
-			  </div>
-			</div></td>
-          </tr>
-          </table>
-  			<li class="comment-list-item">
-                <div class="comment-list-item-content">
-                  <h5>Anke Kirsch</h5>
-                  <h6>Aug 20, 2018</h6>
-                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolor emque laudant tota rem
-                    ape riamipsa eaque. </p>
-                </div>
-             </li>
-             <li class="comment-list-item">
-                <div class="comment-list-item-content">
-                  <h5>Falk Burger</h5>
-                  <h6>Aug 20, 2018</h6>
-                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolor emque laudant tota rem
-                    ape riamipsa eaque. </p>
-                </div>
-              </li>
+         
+
+		<div class="col-4">
+			<div class="card" align="left" style="width: 30rem;">
+			  <ul class="list-group list-group-flush">
+			  
+			    <li class="list-group-item">
+			    <!-- 별 모양은 자바스크립트로 구현.. -->
+			    	<h5 class="card-title">리뷰점수</h5>
+			    	<h6 class="card-subtitle mb-2 text-muted">날짜 , 작성자</h6>
+			    	<hr>
+					내용<br>
+			    </li>
+			  </ul>
+			</div>
+		</div>
 </div>
 <br/>
 		<div class="card">
@@ -267,7 +250,7 @@ End Fixed Navigation
       
         <div class="card" style="width:359px">
 		  <div class="card-body text-center">
-		    <a class="btn btn-main" href="#" onmouseover="0" style="background-color:#4343fe; border:none">예약가능인원</a><br/><br/>
+		    <div class="hover-me"><a class="btn btn-main" href="#" style="background-color:#4343fe; border:none">예약가능인원</a></div><br/>
 		   <a class="btn btn-main" href="#" style="background-color:#4343fe; border:none">위시리스트 담기</a><br/><br/>
 		    <a class="btn btn-main" href="#" style="background-color:#4343fe; border:none">등록</a><br/>
 		  </div>

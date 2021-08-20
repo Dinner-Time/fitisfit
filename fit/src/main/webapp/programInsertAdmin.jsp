@@ -38,6 +38,16 @@
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">  
 
+<style type="text/css">
+.custom-border {
+	height: 2px;
+	margin: 20px auto 20px;
+	position: relative;
+	width: 100%;
+	background: gray;
+}
+
+</style>
 </head>
 
 <body id="body">
@@ -83,8 +93,16 @@ Start About Section
 <form id="frm" name="frm" action="" method="post">
 	<div class="container">
 		<div class="row">
-		
 			<!-- section title -->
+			<div class="col-12">
+				<div class="title text-center">
+					<h2>프로그램 등록</h2>
+					<div class="custom-border"></div>
+				</div>
+			</div>
+			<!-- /section title -->
+
+			
 			
 		
 			<div class="col-md-4">

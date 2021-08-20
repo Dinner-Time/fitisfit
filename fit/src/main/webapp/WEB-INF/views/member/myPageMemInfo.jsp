@@ -2,6 +2,7 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -145,7 +146,7 @@ Start About Section
 					<div class="modal-body">
 						<div class="form-group">
 							현재 비밀번호 : <input type="password" placeholder="Your Password"
-								class="form-control" name="memPassword" id="memPassword">
+								class="form-control" name="password" id="password">
 						</div>
 						<div class="border" style="width: 100%; background-color: lightgray;"></div>
 						<div class="form-group">
@@ -223,7 +224,10 @@ Start About Section
 			console.log(f1);
 			var pw1 = f1.newMemPassword.value;
 			var pw2 = f1.newMemPasswordConfirm.value;
-			if (pw1 != pw2) {
+			var pw3 = '<c:out value="${session.memPassword}"/>';
+			var pw4 = f1.password.value;
+			console.log(pw3);
+			if (pw1 != pw2 || pw3 != pw4) {
 				alert('비밀번호가 일치하지 않습니다.');
 			} else {
 				alert('수정 완');

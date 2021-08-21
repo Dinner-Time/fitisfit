@@ -6,8 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="description"
-	content="Bingo One page parallax responsive HTML Template ">
+<meta name="description" content="Bingo One page parallax responsive HTML Template ">
 <meta name="author" content="Themefisher.com">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -17,8 +16,7 @@
 <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
 <link rel="stylesheet" href="plugins/themefisher-font/style.css">
 <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="plugins/lightbox2/dist/css/lightbox.min.css">
+<link rel="stylesheet" href="plugins/lightbox2/dist/css/lightbox.min.css">
 <link rel="stylesheet" href="plugins/animate/animate.css">
 <link rel="stylesheet" href="plugins/slick/slick.css">
 <link rel="stylesheet" href="css/style.css">
@@ -27,15 +25,9 @@
 <!-- 폰트 시작 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap"
-	rel="stylesheet">
-<link
-	href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap"
-	rel="stylesheet">
-<link
-	href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap"
-	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 <!-- 폰트 끝 -->
 
 <style type="text/css">
@@ -141,6 +133,7 @@ h2 {
 </style>
 
 <script type="text/javascript">
+
 	$(document).ready(function() {
 		$(".moreRegion").hide();
 		$("#showMoreReg").click(function() {
@@ -326,7 +319,7 @@ h2 {
 					<div class="row text-center">
 						<c:forEach var="category" items="${catList}" begin="0" end="3">
 							<div class="col-md-3 col-sm-6 col-xs-12">
-								<div class="service-item" style="background: url('images/region/${category.catPhoto}');">
+								<div class="service-item" style="background: url('images/category/${category.catPhoto}');">
 									<div class="filter"></div>
 									<p class="reg-cat-title">${category.catName}</p>
 									<p class="reg-cat-detail">개의 센터</p>
@@ -347,7 +340,7 @@ h2 {
 					<div class="moreCategory row text-center">
 						<c:forEach var="category" items="${catList}" begin="4">
 							<div class="col-md-3 col-sm-6 col-xs-12">
-								<div class="service-item" style="background: url('images/region/${category.catPhoto}');">
+								<div class="service-item" style="background: url('images/category/${category.catPhoto}');">
 									<div class="filter"></div>
 									<p class="reg-cat-title">${category.catName}</p>
 									<p class="reg-cat-detail">개의 센터</p>
@@ -383,8 +376,7 @@ h2 {
 						<!-- testimonial single -->
 						<div class="item text-center">
 							<div align="center">
-								<img src="images/program/GymProgram1.jpg" class="img-fluid"
-									alt="">
+								<img src="images/program/GymProgram1.jpg" class="img-fluid" alt="">
 							</div>
 							<br>
 							<div class="client-meta">
@@ -397,8 +389,7 @@ h2 {
 						<!-- testimonial single -->
 						<div class="item text-center">
 							<div align="center">
-								<img src="images/program/YogaProgram1.jpg" class="img-fluid"
-									alt="">
+								<img src="images/program/YogaProgram1.jpg" class="img-fluid" alt="">
 							</div>
 							<br>
 							<div class="client-meta">
@@ -411,8 +402,7 @@ h2 {
 						<!-- testimonial single -->
 						<div class="item text-center">
 							<div class="client-thumb">
-								<img src="images/client-logo/clients-3.jpg" class="img-fluid"
-									alt="">
+								<img src="images/client-logo/clients-3.jpg" class="img-fluid" alt="">
 							</div>
 							<br>
 							<div class="client-meta">

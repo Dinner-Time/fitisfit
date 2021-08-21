@@ -74,85 +74,22 @@
 
 <body id="body">
 
-	<!--
-  Start Preloader
-  ==================================== -->
-	<div id="preloader">
-		<div class='preloader'>
-			<span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span>
-		</div>
-	</div>
-	<!--
-  End Preloader
-  ==================================== -->
-
-
-
-
-	<!--
-Fixed Navigation
-==================================== -->
-	<header class="navigation fixed-top">
+<body id="body">
+	<jsp:include page="/WEB-INF/views/home/header.jsp" />
+	<section class="single-page-header">
 		<div class="container">
-			<!-- main nav -->
-			<nav class="navbar navbar-expand-lg navbar-light">
-				<!-- logo -->
-				<a class="navbar-brand logo" href="index.html"> <img
-					style="width: 118px; height: 82px;" class="logo-default"
-					src="images/logo.png" alt="logo" /> <img
-					style="width: 118px; height: 82px;" class="logo-white"
-					src="images/logo.png" alt="logo" />
-				</a>
-				<!-- /logo -->
-				<button class="navbar-toggler" type="button" data-toggle="collapse"
-					data-target="#navigation" aria-controls="navigation"
-					aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-
-				<div class="collapse navbar-collapse" id="navigation">
-					<ul class="navbar-nav ml-auto text-center">
-						<li class="nav-item dropdown "><a
-							class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-							role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false"> Homepage </a>
-							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="index.html">Homepage</a> <a
-									class="dropdown-item" href="onepage-slider.html">Onepage</a> <a
-									class="dropdown-item" href="onepage-text.html">Onepage 2</a>
-							</div></li>
-						<li class="nav-item "><a class="nav-link" href="about.html">About
-								Us</a></li>
-						<li class="nav-item "><a class="nav-link" href="service.html">Services</a>
-						</li>
-						<li class="nav-item  active "><a class="nav-link"
-							href="portfolio.html">Portfolio</a></li>
-						<li class="nav-item "><a class="nav-link" href="team.html">Team</a>
-						</li>
-						<li class="nav-item "><a class="nav-link" href="pricing.html">Pricing</a>
-						</li>
-						<li class="nav-item "><a class="nav-link" href="contact.html">Contact</a>
-						</li>
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-							role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false"> Pages </a>
-							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="404.html">404 Page</a> <a
-									class="dropdown-item" href="blog.html">Blog Page</a> <a
-									class="dropdown-item" href="single-post.html">Blog Single
-									Page</a>
-							</div></li>
-					</ul>
+			<div class="row">
+				<div class="col-md-12">
+					<h2>강사명</h2>
+					<ol class="breadcrumb header-bradcrumb">
+						<li><a href=""></a></li>
+						<li class="active"></li>
+					</ol>
 				</div>
-			</nav>
-			<!-- /main nav -->
+			</div>
 		</div>
-	</header>
+	</section>
 	<!--
-End Fixed Navigation
-==================================== -->
 
 	<section class="custom-header">
 		<div class="container"></div>
@@ -166,13 +103,6 @@ End Fixed Navigation
 			<div class="row ">
 				<div class="col-lg-12">
 					<!-- section title -->
-					<div class="title text-center">
-						<div class="border"
-							style="width: 1200px; background-color: lightgray;"></div>
-						<h1>강사 이름</h1>
-						<div class="border"
-							style="width: 1200px; background-color: lightgray;"></div>
-					</div>
 					</div>
 					</div>
 					</div>
@@ -209,9 +139,11 @@ End Fixed Navigation
 						<div class="border-top"
 							style="width: 1200px; background-color: lightgray;"></div>
 					</div>
+					
+					
 					<div class="portfolio-filter">
-						<button type="button">KakaoTalk</button>
-						<button type="button">Instagram</button>
+					<a href=""><span class="iconify" data-icon="vs:kakaotalk-square" style="color: #ffd400;" data-width="30" data-height="30"></span></a>
+					<a href=""><span class="iconify" data-icon="fa-brands:instagram-square" style="color: #d4a7fb;" data-width="33" data-height="33"></span></a>	
 					</div>
 			</div>
 		</div> 		<!-- End row -->
@@ -242,7 +174,7 @@ End Fixed Navigation
 						<h3><a href="single-post.html">Laugh and Cry</a></h3>
 						<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
 							moon officia aute, non skateboard dolor brunch.</p>
-						<a class="btn btn-main" href="single-post.html">Read more</a>
+						<a class="btn btn-main" href="single-post.html" style="background-color:#4343fe; border:none">Read more</a>
 					</div>
 				</div>
 			</article>
@@ -259,7 +191,7 @@ End Fixed Navigation
 						<h3><a href="single-post.html">Laugh and Cry</a></h3>
 						<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
 							moon officia aute, non skateboard dolor brunch.</p>
-						<a class="btn btn-main" href="single-post.html">Read more</a>
+						<a class="btn btn-main" href="single-post.html" style="background-color:#4343fe; border:none">Read more</a>
 					</div>
 				</div>
 			</article>
@@ -276,7 +208,7 @@ End Fixed Navigation
 						<h3><a href="single-post.html">Laugh and Cry</a></h3>
 						<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
 							moon officia aute, non skateboard dolor brunch.</p>
-						<a class="btn btn-main" href="single-post.html">Read more</a>
+						<a class="btn btn-main" href="single-post.html" style="background-color:#4343fe; border:none">Read more</a>
 					</div>
 				</div>
 			</article>
@@ -324,6 +256,7 @@ End Fixed Navigation
 
 	<!-- Custom js -->
 	<script src="js/script.js"></script>
+	<script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
 
 </body>
 </html>

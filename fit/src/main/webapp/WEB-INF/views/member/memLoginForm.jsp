@@ -26,14 +26,33 @@
 
 <body id="body">
     <jsp:include page="../home/header.jsp" />
+	
+	<!-- section title -->
+			<div class="col-12">
+			<div class="title text-center" >
+				
+			</div>
+			</div>
+			<!-- /section title -->
+
 
     <section class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
-        <div class="container card-group">
-            <div class="card">
+        <div class="container">
+      	  <div class="row">
+            <div class="card col-md-6" >
                 <form action="login.do" method="post">
-                    <div class="card-header bg-primary text-white">
-                        <h1 class="mt-2 font-weight-normal">로그인</h1>
+                    <div class="card-header text-black" align="center" style="background-color:white; border:none margin-top:10px">
+                        <h1 class="mt-2 font-weight-normal">Login</h1>
                     </div>
+                     <div class="card-body">
+                        <div class="form-group" align="center">
+                        
+                      <img style="width:300px;height: 230px;" class="logo-white" src="images/logo.png" alt="logo" />
+
+                        
+                        </div>
+                     </div>
+                        
                     <div class="card-body">
                         <div class="form-group">
                             <label for="email">이메일</label>
@@ -56,13 +75,16 @@
                             </span>
                         </div>
                     </div>
-                    <div class="card-footer">
-                        <button class="btn btn-primary" type="submit">로그인</button>
-                        <button class="btn btn-primary" type="reset">취소</button>
+                    <div class="card-footer" style="background-color:white">
+                    	<div align="center">
+                        	<button class="btn btn-primary" type="submit">로그인</button>
+                        	<button class="btn btn-primary" type="reset">취소</button>
+                   		</div>
                     </div>
                 </form>
             </div>
-            <div class="card">
+            
+            <div class="card col-md-6">
                 <form id="signUp" action="memInsert.do" method="post">
                     <div class="card-header bg-primary text-white">
                         <h1 class="mt-2 font-weight-normal">회원 가입</h1>
@@ -115,8 +137,18 @@
                     </div>
                 </form>
             </div>
-        </div>
+		</div>
+       </div>
     </section>
+    
+    	<!-- section title -->
+			<div class="col-12">
+			<div class="title text-center" >
+				
+			</div>
+			</div>
+		<!-- /section title -->
+			
     <jsp:include page="../home/footer.jsp" />
 
     <!-- 자바 스크립트 -->
@@ -139,6 +171,9 @@
     <script src="plugins/smooth-scroll/smooth-scroll.min.js"></script>
     <!-- Custom js -->
     <script src="js/script.js"></script>
+    
+    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+    
 
     <script type='text/javascript'>
     function goPopup(){

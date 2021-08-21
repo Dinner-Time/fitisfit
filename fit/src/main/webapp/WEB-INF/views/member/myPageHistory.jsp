@@ -23,14 +23,20 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
 <style type="text/css">
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+@import url(https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css);
 
 .stateBanner {
+	font-family: 'NanumSquare', sans-serif;
 	text-align: center;
 	font-size: 18px;
 	border-radius: 0px;
 	position: relative;
 	width: 100%;
-	top: 170px;       
+}
+
+h3, h5, p {
+	font-family: 'NanumSquare', sans-serif;
 }
 
 </style>
@@ -48,12 +54,13 @@
 	</div>
 	<!-- /section title -->
 	<div class="container">
-		<div class="row">
-			<div class="col-md-3 col-sm-6 col-xs-12">
-				<c:forEach var="history" items="${list}">
+		<div class="row text-center">
+		<form id="frm" name="frm" action="revInsertForm.do" method="post">
+			<c:forEach var="history" items="${list}">
+				<div class="col-3">
 					<div class="post-item">
 						<div class="stateBanner badge-primary">
-							${history.hisState}				
+							수강중				
 						</div>
 						<div class="media-wrapper">
 							<img src="images/program/${history.proPhoto}" alt="Program Photo" class="img-fluid">
@@ -62,17 +69,21 @@
 							<h5>${history.proName}</h5>
 							<p>${history.hisDate} ~</p>
 						</div>
+						<div>
+							<button type="button" class="btn btn-primary">후기작성</button>
+							<button type="button" class="btn btn-outline-primary" onclick="delConfirm()">수강취소</button>
+							<br><br>
+						</div>
 					</div>
-				</c:forEach>
-			</div>
+				</div>
+			</c:forEach>
+			</form>
 		</div>
 	</div>
 	<br><br><br>
 	<jsp:include page="/WEB-INF/views/home/footer.jsp" />
 
 	<script src="plugins/jquery/jquery.min.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
-	<script src="plugins/google-map/gmap.js"></script>
 	<script src="plugins/form-validation/jquery.form.js"></script>
 	<script src="plugins/form-validation/jquery.validate.min.js"></script>
 	<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
@@ -84,11 +95,22 @@
 	<script src="js/script.js"></script>
 	
 	<script type="text/javascript">
-		let date = new Date($('.content').eq(1).attr('data-hisDate'));
-		let period = $('.content').attr('data-hisPeriod')*1;
-		console.log(date);
-		date.setMonth(date.getMonth()+1+period);
-		console.log(date);
+		let today = new Date(); 
+		
+		for (let i=0; i<5; i++) {
+			let date = new Date($('.content').eq(i).attr('data-hisDate'));
+			let period = $('.content').eq(i).attr('data-hisPeriod')*1;
+			date.setMonth(date.getMonth()+1+period);
+			console.log(date);
+			
+		}
+		function delConfirm() {
+			confirm('정말로 수강취소하시겠습니까?');
+		}
+		function getRecord(n) {
+			frm.hisId.value = n;
+			frm.submit();
+		}
 	</script>
 </body>
 </html>

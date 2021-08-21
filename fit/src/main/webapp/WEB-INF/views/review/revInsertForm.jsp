@@ -53,10 +53,7 @@
 							  </select>
 							</div>
 						</td>
-						<td class="col-8">
-						(프로그램명이 떠야함. 지금은 임시로 프로그램ID(숫자) 입력)<!-- ${review.revProName} -->
-						<input type="number" id="revProId" name="revProId" class="form-control">
-						</td>
+						<td class="col-8">${history.proName}</td>
 					</tr>
 					<tr>
 						<td colspan="2"><textarea id="revContent" name="revContent" class="form-control h-25" aria-label="With textarea" rows="5"></textarea></td>

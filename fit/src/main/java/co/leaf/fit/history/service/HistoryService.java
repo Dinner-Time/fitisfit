@@ -24,6 +24,11 @@ public class HistoryService implements HistoryMapper {
 	}
 
 	@Override
+	public HistoryVO hisSelectOne(MemberVO vo, int hisId) {
+		return map.hisSelectOne(vo, hisId);
+	}
+	
+	@Override
 	public int hisInsert(HistoryVO vo) {
 		return map.hisInsert(vo);
 	}
@@ -37,5 +42,9 @@ public class HistoryService implements HistoryMapper {
 	public int hisDelete(HistoryVO vo) {
 		return map.hisDelete(vo);
 	}
+
+
+
+
 
 }

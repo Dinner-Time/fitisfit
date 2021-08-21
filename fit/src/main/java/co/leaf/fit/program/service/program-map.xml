@@ -3,6 +3,10 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="co.leaf.fit.program.service.ProgramMapper">
+	
+	<select id="proSimpleList" resultType="ProgramVO">
+		select p.*, pa.par_regid from fit_program p inner join fit_partner pa on p.pro_parid = pa.par_id where pa.par_regid = #{regId}
+	</select>
 
 	<select id="proSelectList" resultType="ProgramVO">
 		select pr.pro_name,

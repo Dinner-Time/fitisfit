@@ -184,7 +184,7 @@ h2 {
 
 				$('.reg-submit').click(
 						function() {
-							$(form).attr('action', 'regSelect.do').find(
+							$(form).attr('action', 'regSelectList.do').find(
 									$('input').attr('name', 'regId').val(
 											$(this).attr('data-regid')));
 
@@ -193,7 +193,7 @@ h2 {
 
 				$('.cat-submit').click(
 						function() {
-							$(form).attr('action', 'catSelect.do').find(
+							$(form).attr('action', 'catSelectList.do').find(
 									$('input').attr('name', 'catId').val(
 											$(this).attr('data-catid')));
 							console.log($(this).attr('data-catid'));
@@ -409,7 +409,7 @@ h2 {
 
 
 	<form id="frm" action="" method="POST">
-		<input>
+		<input type="hidden">
 	</form>
 
 	<!-- 인기 프로그램 시작 -->

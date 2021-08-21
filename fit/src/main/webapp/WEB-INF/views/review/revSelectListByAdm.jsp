@@ -37,7 +37,6 @@
 		li {
 			font-family: 'Gowun Dodum', sans-serif;
 			font-size: 15px;
-			margin-left: 10px;
 			margin-right: 10px;
 		}
 
@@ -49,6 +48,12 @@
 			height: 20px;
 			color: black;
 		}
+
+		.dropdown-item.custom:hover{
+			background-color: #4343FE;
+			color: #fff;
+			transition: all .3s;
+		}
 	</style>
 
 </head>
@@ -56,6 +61,14 @@
 <body id="body">
 	<jsp:include page="/WEB-INF/views/home/header.jsp" />
 	<br><br><br><br>
+	<!-- 페이지 로딩 효과 -->
+	<div id="preloader">
+		<div class='preloader'>
+			<span></span> <span></span> <span></span> <span></span> <span></span>
+			<span></span>
+		</div>
+	</div>
+	<!-- 페이지 로딩 효과 -->
 
 	<!-- 관리자 측에서 후기를 상세보기 할 수 있는 페이지 -->
 	<div class="container" style="min-height: 80vh;">
@@ -79,11 +92,11 @@
 								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
 									data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">프로그램</a>
 								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-									<li class="dropdown-item" style="cursor: pointer;" onclick="menuSelect('프로그램')">프로그램
+									<li class="dropdown-item custom" style="cursor: pointer;" onclick="menuSelect('프로그램')">프로그램
 									</li>
-									<li class="dropdown-item" style="cursor: pointer;" onclick="menuSelect('내용')">내용
+									<li class="dropdown-item custom" style="cursor: pointer;" onclick="menuSelect('내용')">내용
 									</li>
-									<li class="dropdown-item" style="cursor: pointer;" onclick="menuSelect('작성자')">작성자
+									<li class="dropdown-item custom" style="cursor: pointer;" onclick="menuSelect('작성자')">작성자
 									</li>
 								</ul>
 							</li>
@@ -126,8 +139,6 @@
 					</c:forEach>
 				</tbody>
 			</table>
-			<a href="revInsertForm.do">후기 입력 (임시)</a><br>
-			<a href="revSelectListByPar.do">파트너 관리창의 후기 조회 (임시)</a>
 		</div>
 		<div class="row d-flex justify-content-center"></div>
 	</div>

@@ -27,6 +27,7 @@ public class ProgramVO {
 	private Date revDate;
 	private String parName;
 	private int proOriId;
+	private int regId;
 	
 	public int getProId() {
 		return proId;
@@ -171,6 +172,12 @@ public class ProgramVO {
 	}
 	public void setProOriId(int proOriId) {
 		this.proOriId = proOriId;
+	}
+	public int getRegId() {
+		return regId;
+	}
+	public void setRegId(int regId) {
+		this.regId = regId;
 	}
 	
 	

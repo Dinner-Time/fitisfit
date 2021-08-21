@@ -197,46 +197,6 @@ li {
 					</article>
 				</c:forEach>
 				<!-- /single blog post -->
-
-				<!-- single blog post -->
-				<article class="col-md-3 col-sm-6 col-xs-12 ">
-					<div class="post-item">
-						<div class="media-wrapper">
-							<img src="images/blog/post-2.jpg" alt="amazing caves coverimage"
-								class="img-fluid">
-						</div>
-
-						<div class="content">
-							<h3>
-								<a href="single-post.html">요가</a>
-							</h3>
-							<p>간략 설명</p>
-							<p>2021-08-17 - 2022-08-16</p>
-							<a class="custom-btn" href="single-post.html">가격</a>
-						</div>
-					</div>
-				</article>
-				<!-- end single blog post -->
-
-				<!-- single blog post -->
-				<article class="col-md-3 col-sm-6 col-xs-12 ">
-					<div class="post-item">
-						<div class="media-wrapper">
-							<img src="images/blog/post-3.jpg" alt="amazing caves coverimage"
-								class="img-fluid">
-						</div>
-
-						<div class="content">
-							<h3>
-								<a href="single-post.html">필라테스</a>
-							</h3>
-							<p>간략 설명</p>
-							<p>2021-08-17 - 2022-08-16</p>
-							<a class="custom-btn" href="single-post.html">가격</a>
-						</div>
-					</div>
-				</article>
-				<!-- end single blog post -->
 			</div>
 			<!-- end row -->
 		</div>

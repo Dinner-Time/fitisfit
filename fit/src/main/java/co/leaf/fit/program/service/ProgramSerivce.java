@@ -42,4 +42,9 @@ public class ProgramSerivce implements ProgramMapper{
 		return map.proMemberEnroll(vo);	
 	}
 
+	@Override
+	public List<ProgramVO> proSimpleList(ProgramVO vo) {
+		return map.proSimpleList(vo);
+	}
+
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import co.leaf.fit.vo.ProgramVO;
 
 public interface ProgramMapper {
+	List<ProgramVO> proSimpleList(ProgramVO vo);
 	List<ProgramVO> proSelectList();
 	List<ProgramVO> proSelect(ProgramVO vo);
 	

@@ -111,7 +111,7 @@ li {
 		</div>
 	</div>
 	<jsp:include page="/WEB-INF/views/home/header.jsp" />
-	<section class="blog" id="blog">
+	<section class="service-2 section">
 		<div class="container col-11">
 			<!-- main nav -->
 			<nav class="navbar navbar-inverse navbar-expand-lg navbar-light custom-nav"
@@ -179,36 +179,37 @@ li {
 				<!-- /section title -->
 				<!-- single blog post -->
 				<c:forEach var="pro" items="${list }">
-					<article class="col-md-3 col-sm-6 col-xs-12 clearfix ">
-						<div class="post-item">
+					<article class="col-md-3 col-sm-6 col-xs-12 clearfix">
+						<div class="service-item" style="padding: 20px 20px;">
 							<div class="media-wrapper">
 								<img src="${pro.proPhoto }" alt="Program Photo" class="img-fluid">
 							</div>
-
+							<br>
 							<div class="content">
 								<h3>
-									<a href="#">${pro.proName }</a>
+									${pro.proName }
 								</h3>
 								<p>${pro.proDesc }</p>
-								<p>${pro.proSince } ~ ${pro.proPeriod }개월</p>
+								<p>${pro.proSince }
+								<c:if test="${pro.proPeriod != 0}"> ~ ${pro.proPeriod }개월</c:if></p>
 								<a class="custom-btn" href="single-post.html">${pro.proPrice*(100 - pro.proSale3)*0.01}&#8361부터</a>
 							</div>
 						</div>
 					</article>
 				</c:forEach>
 				<!-- /single blog post -->
-
+				
 				<!-- single blog post -->
 				<article class="col-md-3 col-sm-6 col-xs-12 ">
-					<div class="post-item">
+					<div class="service-item">
 						<div class="media-wrapper">
 							<img src="images/blog/post-2.jpg" alt="amazing caves coverimage"
 								class="img-fluid">
 						</div>
-
+						<br>
 						<div class="content">
 							<h3>
-								<a href="single-post.html">요가</a>
+								요가
 							</h3>
 							<p>간략 설명</p>
 							<p>2021-08-17 - 2022-08-16</p>
@@ -220,15 +221,15 @@ li {
 
 				<!-- single blog post -->
 				<article class="col-md-3 col-sm-6 col-xs-12 ">
-					<div class="post-item">
+					<div class="service-item">
 						<div class="media-wrapper">
 							<img src="images/blog/post-3.jpg" alt="amazing caves coverimage"
 								class="img-fluid">
 						</div>
-
+						<br>
 						<div class="content">
 							<h3>
-								<a href="single-post.html">필라테스</a>
+								필라테스
 							</h3>
 							<p>간략 설명</p>
 							<p>2021-08-17 - 2022-08-16</p>
@@ -244,9 +245,6 @@ li {
 	</section>
 	<jsp:include page="../home/footer.jsp" />
 </body>
-
-
-
 
 
 <!-- 

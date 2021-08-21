@@ -43,8 +43,13 @@ public class ProgramSerivce implements ProgramMapper{
 	}
 
 	@Override
-	public List<ProgramVO> proSimpleList(ProgramVO vo) {
-		return map.proSimpleList(vo);
+	public List<ProgramVO> proRegSimpleList(ProgramVO vo) {
+		return map.proRegSimpleList(vo);
+	}
+
+	@Override
+	public List<ProgramVO> proCatSimpleList(ProgramVO vo) {
+		return map.proCatSimpleList(vo);
 	}
 
 }

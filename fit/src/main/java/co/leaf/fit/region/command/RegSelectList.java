@@ -25,10 +25,10 @@ public class RegSelectList implements Command {
 		ProgramVO proVO = new ProgramVO();
 		
 		regVO.setRegId(regId);
-		proVO.setRegId(regId);
+		proVO.setParRegId(regId);
 		
 		request.setAttribute("catList", catDao.catSelectList());
-		request.setAttribute("proList", proDao.proSimpleList(proVO));
+		request.setAttribute("proList", proDao.proRegSimpleList(proVO));
 		request.setAttribute("regName", regDao.regSelect(regVO).getRegName());
 		
 		return "region/regSelectList";

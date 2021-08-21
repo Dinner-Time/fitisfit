@@ -13,9 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.leaf.fit.api.command.JusoPopup;
 import co.leaf.fit.api.command.NaverMap;
-import co.leaf.fit.category.command.CatSelect;
 import co.leaf.fit.category.command.CatSelectList;
-import co.leaf.fit.category.command.CatTest;
 import co.leaf.fit.common.Command;
 import co.leaf.fit.history.command.HisInsert;
 import co.leaf.fit.history.command.HisInsertForm;
@@ -48,9 +46,7 @@ import co.leaf.fit.program.command.ProgramAdd;
 import co.leaf.fit.program.command.ProgramAddForm;
 import co.leaf.fit.program.command.SelectedPrograms;
 import co.leaf.fit.program.command.programDetailUser;
-import co.leaf.fit.region.command.RegSelect;
 import co.leaf.fit.region.command.RegSelectList;
-import co.leaf.fit.region.command.RegTest;
 import co.leaf.fit.review.command.RevInsert;
 import co.leaf.fit.review.command.RevInsertForm;
 import co.leaf.fit.review.command.RevSelectByAdm;
@@ -77,17 +73,17 @@ public class FrontController extends HttpServlet {
 
 	public void init(ServletConfig config) throws ServletException {
 		// use api
-		map.put("/jusoPopup.do", new JusoPopup());
-		map.put("/NaverMap.do", new NaverMap());	
+		map.put("/jusoPopup.do", new JusoPopup()); // 주소 api페이지를 연결
+		map.put("/NaverMap.do", new NaverMap()); // 네이버 지도 api를 활용한 내 주변 찾기 페이지를 연결
 		
-		// home page
-		map.put("/home.do", new Home());
-		map.put("/main.do", new Main());	
+		// main page
+		map.put("/main.do", new Main()); // home 페이지로 연결
+		
+		// region page
+		map.put("/regSelectList.do", new RegSelectList()); // 지역별 프로그램을 확인하는 페이지로 연결
 		
 		// category page
-		map.put("/catTest.do", new CatTest());
-		map.put("/catSelect.do", new CatSelect());
-		map.put("/catSelectList.do", new CatSelectList());
+		map.put("/catSelectList.do", new CatSelectList()); // 카테고리별 프로그램을 확인하는 페이지로 연결
 		
 		// history page
 		map.put("/hisTest.do", new HisTest());
@@ -128,10 +124,7 @@ public class FrontController extends HttpServlet {
 		
 		map.put("/programDetailUser.do", new programDetailUser());	
 		
-		// region page
-		map.put("/regTest.do", new RegTest());
-		map.put("/regSelect.do", new RegSelect());
-		map.put("/regSelectList.do", new RegSelectList());
+
 		
 		// review page
 		map.put("/revSelectList.do", new RevSelectList());

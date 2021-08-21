@@ -286,7 +286,7 @@
 					<div class="row text-center">
 						<c:forEach var="category" items="${catList}" begin="0" end="3">
 							<div class="col-md-3 col-sm-6 col-xs-12">
-								<div class="service-item cat-submit" data-regid="${category.catId}"
+								<div class="service-item cat-submit" data-catid="${category.catId}"
 									style="background: url('images/region/${category.catPhoto}');">
 									<div class="filter"></div>
 									<p class="reg-cat-title">${category.catName}</p>
@@ -299,8 +299,9 @@
 					<!-- 숨겨져있는 카드들 -->
 					<div class="moreCategory row text-center">
 						<c:forEach var="category" items="${catList}" begin="4">
+							
 							<div class="col-md-3 col-sm-6 col-xs-12">
-								<div class="service-item cat-submit" data-regid="${category.catId}"
+								<div class="service-item cat-submit" data-catid="${category.catId}"
 									style="background: url('images/region/${category.catPhoto}');">
 									<div class="filter"></div>
 									<p class="reg-cat-title">${category.catName}</p>

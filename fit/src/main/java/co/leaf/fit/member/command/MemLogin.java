@@ -33,7 +33,7 @@ public class MemLogin implements Command {
 			if(vo != null) {
 				session.setAttribute("session", vo);
 				
-				page = "home.do";
+				page = "main.do";
 			} else {
 				request.setAttribute("fail", "fail");
 				page = "loginForm.do";
@@ -51,7 +51,7 @@ public class MemLogin implements Command {
 			if(vo != null) {
 				session.setAttribute("session", vo);
 				
-				page = "home.do";
+				page = "main.do";
 			} else {
 				request.setAttribute("fail", "fail");
 				page = "loginForm.do";

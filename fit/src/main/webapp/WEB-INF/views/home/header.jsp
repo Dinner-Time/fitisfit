@@ -70,17 +70,17 @@
             </li>
             <c:if test="${session.author == 'M'}">
 	            <li class="nav-item ">
-	              <a class="nav-link" id="memberPage">마이 페이지</a>
+	              <a class="nav-link" href="#" id="memberPage">마이 페이지</a>
 	            </li>
             </c:if>
             <c:if test="${session.author == 'A'}">
 	            <li class="nav-item ">
-	              <a class="nav-link" id="adminPage">관리자 페이지</a>
+	              <a class="nav-link" href="#" id="adminPage">관리자 페이지</a>
 	            </li>
 	        </c:if>
 	        <c:if test="${session.author == 'P'}">
 	            <li class="nav-item ">
-	              <a class="nav-link" id="partnerPage">파트너 페이지</a>
+	              <a class="nav-link" href="#" id="partnerPage">파트너 페이지</a>
 	            </li>
             </c:if>
           </c:if>
@@ -103,7 +103,7 @@
 		      <a class="nav-link" href="#">수강내역</a>
 		    </li>
 		    <li class="slideLi nav-item">
-		      <a class="nav-link" href="#">위시리스트</a>
+		      <a class="nav-link" href="wisList.do">위시리스트</a>
 		    </li>
 		  </ul>
 		</nav>

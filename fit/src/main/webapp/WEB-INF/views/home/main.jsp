@@ -147,78 +147,74 @@ h2 {
 }
 </style>
 
-<<<<<<< HEAD
+
 <script type="text/javascript">
-		$(document).ready(function () {
-			$(".moreRegion").hide();
-			$("#showMoreReg").click(function () {
-				$(".moreRegion").slideDown(1000);
-				$("#showMoreReg").hide();
-				$("#foldReg").show();
+	$(document).ready(
+			function() {
+				$(".moreRegion").hide();
+				$("#showMoreReg").click(function() {
+					$(".moreRegion").slideDown(400);
+					$("#showMoreReg").hide();
+					$("#foldReg").show();
+				})
+
+				$("#foldReg").click(function() {
+					$(".moreRegion").slideUp(1000, function() {
+						$("#foldReg").hide();
+						$("#showMoreReg").show();
+					});
+				})
+
+				$(".moreCategory").hide();
+				$("#showMoreCat").click(function() {
+					$(".moreCategory").slideDown(400);
+					$("#showMoreCat").hide();
+					$("#foldCat").show();
+				})
+
+				$("#foldCat").hide();
+				$("#foldCat").click(function() {
+					$(".moreCategory").slideUp(400, function() {
+						$("#foldCat").hide();
+						$("#showMoreCat").show();
+					});
+				})
+
+				let form = $('#frm');
+
+				$('.reg-submit').click(
+						function() {
+							$(form).attr('action', 'regSelect.do').find(
+									$('input').attr('name', 'regId').val(
+											$(this).attr('data-regid')));
+
+							$(form).submit();
+						});
+
+				$('.cat-submit').click(
+						function() {
+							$(form).attr('action', 'catSelect.do').find(
+									$('input').attr('name', 'catId').val(
+											$(this).attr('data-catid')));
+							console.log($(this).attr('data-catid'));
+
+							$(form).submit();
+						})
 			})
-=======
-<script type="text/javascript">
-
-	$(document).ready(function() {
-		$(".moreRegion").hide();
-		$("#showMoreReg").click(function() {
-			$(".moreRegion").slideDown(400);
-			$("#showMoreReg").hide();
-			$("#foldReg").show();
-		})
->>>>>>> refs/heads/main
-
-			$("#foldReg").click(function () {
-				$(".moreRegion").slideUp(1000, function () {
-					$("#foldReg").hide();
-					$("#showMoreReg").show();
-				});
-			})
-
-			$(".moreCategory").hide();
-			$("#showMoreCat").click(function () {
-				$(".moreCategory").slideDown(400);
-				$("#showMoreCat").hide();
-				$("#foldCat").show();
-			})
-
-			$("#foldCat").hide();
-			$("#foldCat").click(function () {
-				$(".moreCategory").slideUp(400, function () {
-					$("#foldCat").hide();
-					$("#showMoreCat").show();
-				});
-			})
-
-			let form = $('#frm');
-
-			$('.reg-submit').click(function () {
-				$(form)
-					.attr('action', 'regSelect.do')
-					.find($('input')
-						.attr('name', 'regId')
-						.val($(this).attr('data-regid')));
-
-				$(form).submit();
-			});
-
-			$('.cat-submit').click(function () {
-				$(form)
-					.attr('action', 'catSelect.do')
-					.find($('input')
-						.attr('name', 'catId')
-						.val($(this).attr('data-catid')));
-				console.log($(this).attr('data-catid'));
-
-				$(form).submit();
-			})
-		})
-	</script>
+</script>
 
 </head>
 
 <body id="body">
 	<jsp:include page="/WEB-INF/views/home/header.jsp" />
+	<!-- 페이지 로딩 효과 -->
+	<div id="preloader">
+		<div class='preloader'>
+			<span></span> <span></span> <span></span> <span></span> <span></span>
+			<span></span>
+		</div>
+	</div>
+	<!-- 페이지 로딩 효과 -->
 	<br>
 	<br>
 	<br>
@@ -345,11 +341,9 @@ h2 {
 			</div>
 			<!-- 지역별 메뉴 끝 -->
 
-			<br>
-			<br>
+			<br> <br>
 			<hr>
-			<br>
-			<br>
+			<br> <br>
 
 			<!-- 카테고리별 메뉴 시작 -->
 			<div class="row">
@@ -365,18 +359,13 @@ h2 {
 					<div class="row text-center">
 						<c:forEach var="category" items="${catList}" begin="0" end="3">
 							<div class="col-md-3 col-sm-6 col-xs-12">
-								<<<<<<< HEAD
 								<div class="service-item cat-submit"
 									data-regid="${category.catId}"
 									style="background: url('images/region/${category.catPhoto}');">
-									=======
-									<div class="service-item"
-										style="background: url('images/category/${category.catPhoto}');">
-										>>>>>>> refs/heads/main
-										<div class="filter"></div>
-										<p class="reg-cat-title">${category.catName}</p>
-									</div>
+									<div class="filter"></div>
+									<p class="reg-cat-title">${category.catName}</p>
 								</div>
+							</div>
 						</c:forEach>
 					</div>
 					<!-- Start Button -->
@@ -392,18 +381,13 @@ h2 {
 					<div class="moreCategory row text-center">
 						<c:forEach var="category" items="${catList}" begin="4">
 							<div class="col-md-3 col-sm-6 col-xs-12">
-								<<<<<<< HEAD
 								<div class="service-item cat-submit"
 									data-regid="${category.catId}"
 									style="background: url('images/region/${category.catPhoto}');">
-									=======
-									<div class="service-item"
-										style="background: url('images/category/${category.catPhoto}');">
-										>>>>>>> refs/heads/main
-										<div class="filter"></div>
-										<p class="reg-cat-title">${category.catName}</p>
-									</div>
+									<div class="filter"></div>
+									<p class="reg-cat-title">${category.catName}</p>
 								</div>
+							</div>
 						</c:forEach>
 					</div>
 					<!-- END ROW -->
@@ -423,11 +407,11 @@ h2 {
 	</section>
 	<!-- End section -->
 
-	<<<<<<< HEAD
+
 	<form id="frm" action="" method="POST">
 		<input>
 	</form>
-	=======
+
 	<!-- 인기 프로그램 시작 -->
 	<section class="testimonial section" id="testimonial">
 		<div class="container">
@@ -485,7 +469,7 @@ h2 {
 		<!-- End container -->
 	</section>
 	<!-- 인기 프로그램 끝 -->
-	>>>>>>> refs/heads/main
+
 
 	<jsp:include page="/WEB-INF/views/home/footer.jsp" />
 

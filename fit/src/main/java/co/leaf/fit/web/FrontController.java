@@ -73,7 +73,10 @@ public class FrontController extends HttpServlet {
     }
 
 	public void init(ServletConfig config) throws ServletException {
+		// use api
+		map.put("/jusoPopup.do", new JusoPopup());
 		map.put("/NaverMap.do", new NaverMap());	
+		
 		// home page
 		map.put("/home.do", new Home());
 		map.put("/main.do", new Main());	
@@ -102,7 +105,6 @@ public class FrontController extends HttpServlet {
 		map.put("/login.do", new MemLogin());
 		map.put("/logout.do", new MemLogout());
 		map.put("/memInsert.do", new MemInsert());
-		map.put("/jusoPopup.do", new JusoPopup());
 		map.put("/memSelect.do", new MemberSelect());
 		map.put("/memUpdatePassword.do", new MemUpdatePassword());
 		

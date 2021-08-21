@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import co.leaf.fit.common.DataSource;
+import co.leaf.fit.vo.MemberVO;
 import co.leaf.fit.vo.WishlistVO;
 
 public class WishlistService implements WishlistMapper {
@@ -13,9 +14,9 @@ public class WishlistService implements WishlistMapper {
     private WishlistMapper map = sqlSession.getMapper(WishlistMapper.class);
 	
 	@Override
-	public List<WishlistVO> wisSelectList() {
+	public List<WishlistVO> wisSelectList(MemberVO vo) {
 		// TODO Auto-generated method stub
-		return map.wisSelectList();
+		return map.wisSelectList(vo);
 	}
 
 	@Override

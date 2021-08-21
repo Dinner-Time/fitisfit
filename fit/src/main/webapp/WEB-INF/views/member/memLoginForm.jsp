@@ -1,27 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>피트다 피트!!</title>
-    <!-- Mobile Specific Meta ================================================== -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- CSS ================================================== -->
-    <!-- Themefisher Icon font -->
-    <link rel="stylesheet" href="plugins/themefisher-font/style.css">
-    <!-- bootstrap.min css -->
-    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-    <!-- Lightbox.min css -->
-    <link rel="stylesheet" href="plugins/lightbox2/dist/css/lightbox.min.css">
-    <!-- animation css -->
-    <link rel="stylesheet" href="plugins/animate/animate.css">
-    <!-- Slick Carousel -->
-    <link rel="stylesheet" href="plugins/slick/slick.css">
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>피트다 피트!!</title>
+<!-- Mobile Specific Meta ================================================== -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- CSS ================================================== -->
+<!-- Themefisher Icon font -->
+<link rel="stylesheet" href="plugins/themefisher-font/style.css">
+<!-- bootstrap.min css -->
+<link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+<!-- Lightbox.min css -->
+<link rel="stylesheet"
+	href="plugins/lightbox2/dist/css/lightbox.min.css">
+<!-- animation css -->
+<link rel="stylesheet" href="plugins/animate/animate.css">
+<!-- Slick Carousel -->
+<link rel="stylesheet" href="plugins/slick/slick.css">
+<!-- Main Stylesheet -->
+<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body id="body">
@@ -175,15 +177,24 @@
     <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
     
 
-    <script type='text/javascript'>
-    function goPopup(){
-    	// 호출된 페이지(jusoPopup.do)에서 실제 주소검색URL(https://www.juso.go.kr/addrlink/addrLinkUrl.do)를 호출하게 됩니다.
-    	var pop = window.open("jusoPopup.do","pop","width=570,height=420, scrollbars=yes, resizable=yes"); 
-    }
-    function jusoCallBack(roadFullAddr){
-    	$('#roadFullAddr').val(roadFullAddr);
-    }
-    </script>
+
+	<script type='text/javascript'>
+		
+		function goPopup() {
+			// 호출된 페이지(jusoPopup.do)에서 실제 주소검색URL(https://www.juso.go.kr/addrlink/addrLinkUrl.do)를 호출하게 됩니다.
+			var pop = window.open("jusoPopup.do", "pop",
+					"width=570,height=420, scrollbars=yes, resizable=yes");
+		}
+		function jusoCallBack(roadFullAddr) {
+			$('#roadFullAddr').val(roadFullAddr);
+		}
+		$(document).ready(function(){
+			let fail = "<c:out value='${fail}' />";
+			if(fail == 'fail'){
+				alert('로그인에 실패하였습니다.');
+			}
+		});
+	</script>
 </body>
 
 </html>

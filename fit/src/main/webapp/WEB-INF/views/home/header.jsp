@@ -1,12 +1,45 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<style type="text/css">
+
+.memSlideMenu, .parSlideMenu, .admSlideMenu {
+	display: none;
+}
+
+.slideLi {
+	margin-right: 50px;
+}
+
+</style>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#memberPage").click(function() {
+			$(".memSlideMenu").slideToggle(400);
+		})
+	})
+	$(document).ready(function() {
+		$("#partnerPage").click(function() {
+			$(".parSlideMenu").slideToggle(400);
+		})
+	})
+	$(document).ready(function() {
+		$("#adminPage").click(function() {
+			$(".admSlideMenu").slideToggle(400);
+		})
+	})
+</script>
+
 <header class="navigation fixed-top">
   <div class="container">
     <!-- main nav -->
     <nav class="navbar navbar-expand-lg navbar-light">
       <!-- logo -->
-      <a class="navbar-brand logo" href="home.do">
+      <a class="navbar-brand logo" href="main.do">
         <img style="width:118px;height: 82px;" class="logo-default" src="images/logo.png" alt="logo" />
         <img style="width:118px;height: 82px;" class="logo-white" src="images/logo.png" alt="logo" />
       </a>
@@ -35,22 +68,89 @@
                     location.href = 'logout.do';
                   }})()">로그아웃</a>
             </li>
-            <li class="nav-item ">
-            	<c:if test="${session.author == 'M' }">
-              <a class="nav-link" href="memSelect.do">마이 페이지</a>
-            	</c:if>
-            	<c:if test="${session.author == 'A' }">
-              <a class="nav-link" href="memSelect.do">관리자 페이지</a>
-            	</c:if>
-            	<c:if test="${session.author == 'P' }">
-              <a class="nav-link" href="memSelect.do">파트너 페이지</a>
-            	</c:if>
-            </li>
+            <c:if test="${session.author == 'M'}">
+	            <li class="nav-item ">
+	              <a class="nav-link" id="memberPage">마이 페이지</a>
+	            </li>
+            </c:if>
+            <c:if test="${session.author == 'A'}">
+	            <li class="nav-item ">
+	              <a class="nav-link" id="adminPage">관리자 페이지</a>
+	            </li>
+	        </c:if>
+	        <c:if test="${session.author == 'P'}">
+	            <li class="nav-item ">
+	              <a class="nav-link" id="partnerPage">파트너 페이지</a>
+	            </li>
+            </c:if>
           </c:if>
         </ul>
       </div>
     </nav>
     <!-- /main nav -->
+   
+    
   </div>
+  
+	<!-- 회원 메뉴 시작 -->
+	<div class="memSlideMenu">
+		<nav class="navbar justify-content-center navbar-expand-sm bg-light">
+		  <ul class="navbar-nav">
+		    <li class="slideLi nav-item">
+		      <a class="nav-link" href="memSelect.do">회원정보</a>
+		    </li>
+		    <li class="slideLi nav-item">
+		      <a class="nav-link" href="#">수강내역</a>
+		    </li>
+		    <li class="slideLi nav-item">
+		      <a class="nav-link" href="#">위시리스트</a>
+		    </li>
+		  </ul>
+		</nav>
+	</div>
+	<!-- 회원 메뉴 끝 -->
+	
+	<!-- 관리자 메뉴 시작 -->
+	<div class="admSlideMenu">
+		<nav class="navbar justify-content-center navbar-expand-sm bg-light">
+		  <ul class="navbar-nav">
+		    <li class="slideLi nav-item">
+		      <a class="nav-link" href="#">회원관리</a>
+		    </li>
+		    <li class="slideLi nav-item">
+		      <a class="nav-link" href="#">파트너관리</a>
+		    </li>
+		    <li class="slideLi nav-item">
+		      <a class="nav-link" href="#">프로그램관리</a>
+		    </li>
+		    <li class="slideLi nav-item">
+		      <a class="nav-link" href="revSelectListByAdm.do">후기관리</a>
+		    </li>
+		  </ul>
+		</nav>
+	</div>
+	<!-- 관리자 메뉴 끝 -->
+
+	<!-- 파트너 메뉴 시작 -->
+	<div class="parSlideMenu">
+		<nav class="navbar justify-content-center navbar-expand-sm bg-light">
+		  <ul class="navbar-nav">
+		    <li class="slideLi nav-item">
+		      <a class="nav-link" href="#">파트너정보</a>
+		    </li>
+		    <li class="slideLi nav-item">
+		      <a class="nav-link" href="#">강사관리</a>
+		    </li>
+		    <li class="slideLi nav-item">
+		      <a class="nav-link" href="#">프로그램관리</a>
+		    </li>
+		    <li class="slideLi nav-item">
+		      <a class="nav-link" href="#">후기관리</a>
+		    </li>
+		  </ul>
+		</nav>
+	</div>
+	<!-- 파트너 메뉴 끝 -->
+	
 </header>
 <div style="height: 150px;"></div>

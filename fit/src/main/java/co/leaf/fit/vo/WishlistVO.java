@@ -1,16 +1,11 @@
 package co.leaf.fit.vo;
 
-public class WishlistVO {
+public class WishlistVO extends ProgramVO{
 	
-	private int wisId;
 	private int wisProId;
 	private String wisMemEmail;
 	
-	private ProgramVO programVO;
-
-	
 	public WishlistVO() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public int getWisProId() {
@@ -29,21 +24,9 @@ public class WishlistVO {
 		this.wisMemEmail = wisMemEmail;
 	}
 
-	public int getWisId() {
-		return wisId;
+	@Override
+	public String toString() {
+		return "WishlistVO [wisProId=" + wisProId + ", wisMemEmail=" + wisMemEmail + "]";
 	}
-
-	public void setWisId(int wisId) {
-		this.wisId = wisId;
-	}
-
-	public ProgramVO getProgramVO() {
-		return programVO;
-	}
-
-	public void setProgramVO(ProgramVO programVO) {
-		this.programVO = programVO;
-	}
-	
 	
 }

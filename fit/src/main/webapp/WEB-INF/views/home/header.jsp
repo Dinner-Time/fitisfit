@@ -39,7 +39,7 @@
     <!-- main nav -->
     <nav class="navbar navbar-expand-lg navbar-light">
       <!-- logo -->
-      <a class="navbar-brand logo" href="home.do">
+      <a class="navbar-brand logo" href="main.do">
         <img style="width:118px;height: 82px;" class="logo-default" src="images/logo.png" alt="logo" />
         <img style="width:118px;height: 82px;" class="logo-white" src="images/logo.png" alt="logo" />
       </a>

@@ -7,9 +7,8 @@
 <title>지역 한 건 조회</title>
 </head>
 <body>
-<jsp:include page="../home/header.jsp" />
-	
-	
-<jsp:include page="../home/footer.jsp" />
+	<div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+		<h1>${regId}</h1>
+	</div>
 </body>
 </html>

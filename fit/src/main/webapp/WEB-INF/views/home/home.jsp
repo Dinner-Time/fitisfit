@@ -44,7 +44,7 @@
 		<a style="color: #000;" href="parTest.do">partner</a>
 		<a style="color: #000;" href="revSelectList.do">reviewSelectList</a>
 		<a style="color: #000;" href="revSelectListByAdm.do">revSelectListByAdm</a>
-		<a style="color: #000;" href="wisTest.do">wishlist</a>
+		<a style="color: #000;" href="wisList.do">wishlist</a>
 		<a style="color: #000;" href="hisInsertForm.do">history</a>
 		<a style="color: #000;" href="NaverMap.do">naverMap</a>
 		<a style="color: #000;" href="main.do">main</a>

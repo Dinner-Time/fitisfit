@@ -13,8 +13,10 @@ public class HistoryVO {
 	private Date hisDate;
 	private int hisId;
 	
-	private String hisProName;
+	private String proName;
+	private String proPhoto;
 	
+	private String hisState;
 	
 	public HistoryVO() {}
 
@@ -83,12 +85,35 @@ public class HistoryVO {
 		this.hisId = hisId;
 	}
 
-	public String getHisProName() {
-		return hisProName;
+
+	public String getProName() {
+		return proName;
 	}
 
-	public void setHisProName(String hisProName) {
-		this.hisProName = hisProName;
+
+	public void setProName(String proName) {
+		this.proName = proName;
 	}
+
+
+	public String getProPhoto() {
+		return proPhoto;
+	}
+
+
+	public void setProPhoto(String proPhoto) {
+		this.proPhoto = proPhoto;
+	}
+
+
+	public String getHisState() {
+		return hisState;
+	}
+
+
+	public void setHisState(String hisState) {
+		this.hisState = hisState;
+	}
+
 	
 }

@@ -1,12 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
 <html>
-<!--<![endif]-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="description"
@@ -16,45 +11,27 @@
 
 <title>수강내역</title>
 
-<!-- Mobile Specific Meta
-  ================================================== -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- Favicon -->
 <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
-
-<!-- CSS
-  ================================================== -->
-<!-- Themefisher Icon font -->
 <link rel="stylesheet" href="plugins/themefisher-font/style.css">
-<!-- bootstrap.min css -->
 <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-<!-- Lightbox.min css -->
-<link rel="stylesheet"
-	href="plugins/lightbox2/dist/css/lightbox.min.css">
-<!-- animation css -->
+<link rel="stylesheet" href="plugins/lightbox2/dist/css/lightbox.min.css">
 <link rel="stylesheet" href="plugins/animate/animate.css">
-<!-- Slick Carousel -->
 <link rel="stylesheet" href="plugins/slick/slick.css">
-<!-- Main Stylesheet -->
 <link rel="stylesheet" href="css/style.css">
-<!-- 폰트 시작 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap"
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap"
 	rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap"
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap"
 	rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link
 	href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap"
 	rel="stylesheet">
-<!-- 폰트 끝 -->
 
 <script type="text/javascript">
 	function delConfirm(){
@@ -190,8 +167,8 @@ h3 {
 			</ul>
 		</div>
 	</nav>
-
 	<br>
+	
 	<section class="blog" id="blog">
 		<div class="container">
 			<div class="row">

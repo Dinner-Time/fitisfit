@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import co.leaf.fit.common.DataSource;
 import co.leaf.fit.vo.HistoryVO;
+import co.leaf.fit.vo.MemberVO;
 
 public class HistoryService implements HistoryMapper {
 
@@ -18,7 +19,7 @@ public class HistoryService implements HistoryMapper {
 	}
 
 	@Override
-	public HistoryVO hisSelect(HistoryVO vo) {
+	public List<HistoryVO> hisSelect(MemberVO vo) {
 		return map.hisSelect(vo);
 	}
 

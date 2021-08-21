@@ -17,6 +17,16 @@ public class PartnerVO {
 	private String parState;
 	private String author;
 	
+	private String regName;
+	
+
+	public String getRegName() {
+		return regName;
+	}
+
+	public void setRegName(String regName) {
+		this.regName = regName;
+	}
 
 	public PartnerVO () {}
 

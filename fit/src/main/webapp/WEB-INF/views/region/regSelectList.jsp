@@ -3,78 +3,71 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
-
 <head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta name="description" content="Bingo One page parallax responsive HTML Template ">
-		<meta name="author" content="Themefisher.com">
+	<title>피트다 피트!!</title>
 
-		<title>FitIsFit REGION</title>
+	<!-- CSS ================================================== -->
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+	<!-- Themefisher Icon font -->
+	<link rel="stylesheet" href="plugins/themefisher-font/style.css">
+	<!-- bootstrap.min css -->
+	<link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+	<!-- Lightbox.min css -->
+	<link rel="stylesheet" href="plugins/lightbox2/dist/css/lightbox.min.css">
+	<!-- animation css -->
+	<link rel="stylesheet" href="plugins/animate/animate.css">
+	<!-- Slick Carousel -->
+	<link rel="stylesheet" href="plugins/slick/slick.css">
+	<!-- Main Stylesheet -->
+	<link rel="stylesheet" href="css/style.css">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+	<!-- 폰트 시작 -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+	<!-- 폰트 끝 -->
 
-		<link rel="stylesheet" href="plugins/themefisher-font/style.css">
-		<link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" href="plugins/lightbox2/dist/css/lightbox.min.css">
-		<link rel="stylesheet" href="plugins/animate/animate.css">
-		<link rel="stylesheet" href="plugins/slick/slick.css">
-		<link rel="stylesheet" href="css/style.css?after">
+	<style type="text/css">
+		.custom-btn {
+			letter-spacing: 1px;
+			border-radius: 40px;
+			width: 100%;
+			height: 80px;
+		}
 
-		<!-- 폰트 시작 -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
-		<!-- 폰트 끝 -->
+		.custom-border {
+			height: 2px;
+			margin: 20px auto 20px;
+			position: relative;
+			width: 200px;
+			background: #4343FE;
+		}
 
+		h1 {
+			font-family: 'Gowun Dodum', sans-serif;
+			color: white;
+			text-shadow: 5px 5px 5px black;
+		}
 
-		<style type="text/css">
-			.custom-btn {
-				letter-spacing: 1px;
-				border-radius: 40px;
-				width: 100%;
-				height: 80px;
-			}
+		.custom-title {
+			background-image: url('images/region/Seoul.jpg');
+			background-size: cover;
+			background-position: center;
+			height: 40vh;
+			position: absolute;
+			top: 10vh;
+			left: 0;
+		}
 
-			.custom-border {
-				height: 2px;
-				margin: 20px auto 20px;
-				position: relative;
-				width: 200px;
-				background: #4343FE;
-			}
-
-			h1 {
-				font-family: 'Gowun Dodum', sans-serif;
-				color: white;
-				text-shadow: 5px 5px 5px black;
-			}
-
-			.custom-title {
-				background-image: url('images/region/Seoul.jpg');
-				background-size: cover;
-				background-position: center;
-				height: 40vh;
-				position: absolute;
-				top: 10vh;
-				left: 0;
-			}
-
-			td {
-				width: 1250px;
-				height: 300px;
-			}
-		</style>
-
-	</head>
+	</style>
+</head>
 
 <body id="body">
 	<jsp:include page="../home/header.jsp" />
@@ -88,19 +81,25 @@
 	<!-- 페이지 로딩 효과 -->
 
 	<section class="portfolio section-sm" id="portfolio">
+		<!-- container-fluid -->
 		<div class="container-fluid">
+			<!-- title(지역 이름) -->
 			<div class="row">
 				<div class="col-12 custom-title d-flex align-items-center justify-content-center">
 					<h1>${regName}</h1>
 				</div>
 				<div style="height: calc(50vh - 150px);"></div>
 			</div>
+			<!-- title(지역 이름) -->
+		</div>
+		<!-- container-fluid -->
+		<!-- container -->
+		<div class="container">
 			<div class="row">
-				<div class="col-2"></div>
-				<div class="portfolio-filter col-8">
+				<div class="portfolio-filter">
 					<div class="row">
 						<c:forEach var="category" items="${catList }" varStatus="status">
-							<div class="col-2" style="margin-bottom: 5px;">
+							<div class="col-xl-2 col-lg-3 col-md-4 col-6" style="margin-bottom: 5px;">
 								<button class="btn custom-btn" style="font-size: 24px;"
 									onclick="showPrograms(${status.count})">${category.catName }</button>
 							</div>
@@ -110,7 +109,7 @@
 			</div>
 			<div id="programs" class="row">
 				<c:forEach var="pro" items="${proList }">
-					<article class="col-3" data-catId="${pro.proCatId}">
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12" data-catId="${pro.proCatId}">
 						<div class="post-item">
 							<div class="media-wrapper">
 								<img src="${pro.proPhoto }" alt="Program Photo" class="img-fluid">
@@ -128,34 +127,45 @@
 					</article>
 				</c:forEach>
 			</div>
+			<!-- 높이 맞추기(없을경우 footer가 위로 올라온다) -->
+			<div style="min-height: 10vh;"></div>
 		</div>
-
+		<!-- container -->
 	</section>
 	<!-- End section -->
 
 	<jsp:include page="/WEB-INF/views/home/footer.jsp" />
 
+	<!-- 자바 스크립트 -->
+	<!-- Main jQuery -->
 	<script src="plugins/jquery/jquery.min.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
-	<script src="plugins/google-map/gmap.js"></script>
-
+	<!-- Form Validation -->
 	<script src="plugins/form-validation/jquery.form.js"></script>
 	<script src="plugins/form-validation/jquery.validate.min.js"></script>
+	<!-- Bootstrap4 -->
 	<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+	<!-- Parallax -->
 	<script src="plugins/parallax/jquery.parallax-1.1.3.js"></script>
+	<!-- lightbox -->
 	<script src="plugins/lightbox2/dist/js/lightbox.min.js"></script>
+	<!-- Owl Carousel -->
 	<script src="plugins/slick/slick.min.js"></script>
+	<!-- filter -->
 	<script src="plugins/filterizr/jquery.filterizr.min.js"></script>
+	<!-- Smooth Scroll js -->
 	<script src="plugins/smooth-scroll/smooth-scroll.min.js"></script>
+	<!-- Custom js -->
 	<script src="js/script.js"></script>
-
+	<!-- Custom for this Page -->
 	<script type="text/javascript">
 		let programs = $('#programs');
+		// 선택한 카테고리에 해당하는 프로그램만 보여주는 함수
+		// db에서 모든 프로그램을 가져와 catId가 내가 선택한 버튼의 catId와 같은 것만 보여준다.
 		function showPrograms(n) {
-			$(programs).slideUp(400, function(){
+			$(programs).slideUp(400, function () {
 				programs.children().hide();
-				for(let i =0; i<programs.children().length; i++){
-					if($(this).children().eq(i).attr('data-catId') == n){
+				for (let i = 0; i < programs.children().length; i++) {
+					if ($(this).children().eq(i).attr('data-catId') == n) {
 						$(this).children().eq(i).show()
 					}
 				}

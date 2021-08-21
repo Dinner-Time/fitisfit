@@ -24,6 +24,16 @@
 <link rel="stylesheet" href="plugins/slick/slick.css">
 <!-- Main Stylesheet -->
 <link rel="stylesheet" href="css/style.css">
+
+<style type="text/css">
+.custom-border {
+	height: 2px;
+	margin: 20px auto 20px;
+	position: relative;
+	width: 100%;
+	background: gray;
+}
+</style>
 </head>
 
 <body id="body">
@@ -41,28 +51,24 @@
     <section class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
         <div class="container">
       	  <div class="row">
-            <div class="card col-md-6" >
+            <div class="card col-md-6" style="border:none;" >
                 <form action="login.do" method="post">
-                    <div class="card-header text-black" align="center" style="background-color:white; border:none margin-top:10px">
-                        <h1 class="mt-2 font-weight-normal">Login</h1>
+                    <div class="card-header text-black" align="center" style="background-color:white; border:none; margin-top:10px">
+                        <h2 class="mt-2 font-weight-normal">Login</h2>
+                        <div class="custom-border"></div>
                     </div>
                      <div class="card-body">
                         <div class="form-group" align="center">
-                        
-                      <img style="width:300px;height: 230px;" class="logo-white" src="images/logo.png" alt="logo" />
-
-                        
+                     	 <img style="width:220px;height: 160px;" class="logo-white" src="images/logo.png" alt="logo" />
                         </div>
                      </div>
                         
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="email">이메일</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="이메일을 입력해주세요." required>
                         </div>
                         <div class="form-group">
-                            <label for="password">비밀번호</label>
-                            <input type="password" class="form-control" id="password" name="password" required>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="패스워드를 입력해주세요." required>
                         </div>
                         <div class="form-group form-check">
                             <span class="m-3">
@@ -86,23 +92,21 @@
                 </form>
             </div>
             
-            <div class="card col-md-6">
+            <div class="card col-md-6"  style="border:none;">
                 <form id="signUp" action="memInsert.do" method="post">
-                    <div class="card-header bg-primary text-white">
-                        <h1 class="mt-2 font-weight-normal">회원 가입</h1>
+                   <div class="card-header text-black" align="center" style="background-color:white; border:none; margin-top:10px">
+                        <h2 class="mt-2 font-weight-normal">Sign up</h2>
+                        <div class="custom-border"></div>
                     </div>
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="email">이메일</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="이메일을 입력해주세요." required>
                         </div>
                         <div class="form-group">
-                            <label for="password">비밀번호</label>
-                            <input type="password" class="form-control" id="password" name="password" required>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="패스워드를 입력해주세요." required>
                         </div>
                         <div class="form-group">
-                            <label for="name">이름</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="이름을 입력해주세요." required>
                         </div>
                         <div class="form-group form-check">
                             <span class="m-3">
@@ -115,22 +119,19 @@
                             </span>
                         </div>
                         <div class="form-group">
-                            <label for="birth">생년월일</label>
                             <input type="date" class="form-control" id="birth" name="birth" value="2000-01-01" required>
                         </div>
                         <div class="form-group">
-                            <label for="phone">전화번호</label>
-                            <input type="text" class="form-control" id="phone" name="phone" required>
+                            <input type="text" class="form-control" id="phone" name="phone" placeholder="전화번호를 입력해주세요." required>
                         </div>
                         <div class="form-group">
-                            <label for="address">주소</label>
                             <div class="d-flex justify-content-end">
-                                <input type="text" class="form-control" id="roadFullAddr" name="roadFullAddr" required readonly>
+                                <input type="text" class="form-control" id="roadFullAddr" name="roadFullAddr" placeholder="주소를 입력해주세요." required readonly>
                                 <input type="button" class="btn btn-primary ml-2" onClick="goPopup();" value="검색"/>
                             </div>
                         </div>
                     </div>
-                    <div class="card-footer">
+                    <div class="card-footer" style="background-color:white" align="center">
                         <button class="btn btn-primary" type="button" onclick='(function(){
                         	alert("환영합니다!!");
                         	$("#signUp").submit();
@@ -143,6 +144,8 @@
        </div>
     </section>
     
+    	
+			
     	<!-- section title -->
 			<div class="col-12">
 			<div class="title text-center" >

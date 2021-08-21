@@ -61,19 +61,20 @@ font-size:0;
     <div class="row">
       <div class="col-lg-8">
         <article class="post">
+       
 	        <div class="card">
 	    		<div class="card-body"><h1>프로그램명 ${detailList[0].proName }</h1></div>
 	  		</div>
          <br/>
  		<div class="card">
-            ${detailList[0].proPhoto } <img class="img-fluid w-100" src="images/blog/post-1.jpg" alt="post-image">
+           <img class="img-fluid w-100" src="images/blog/post-1.jpg" alt="post-image">
         </div>
             
           <!-- Post Content -->
           <div class="post-content">
            <br/>    
           	<div class="card">
-            <div class="card-body"><p>프로그램 설명 ${detailList[0].proDesc } </p></div>
+            <div class="card-body"><p>프로그램 설명 ${detailList[0].proDesc }</p></div>
             </div>
             <br/> 
             
@@ -128,14 +129,17 @@ font-size:0;
             <br/>
         
                <div class="card">
-            <div class="card-body"><p><a href=""><span class="iconify-inline" data-icon="ion:open-outline" style="color: #4343fe;" data-width="30" data-height="30"></span></a> &nbsp; 강사소개 ${detailList[0].insName }</p>
+            <div class="card-body">
+            	<p><a href=""><span class="iconify-inline" data-icon="ion:open-outline" style="color: #4343fe;" data-width="30" data-height="30"></span></a> 
+            	&nbsp; 강사소개 ${detailList[0].insName }</p>
             <p>간단한 소개입니다.</p> </div>
             		
             </div>
             <br/>
              <div class="card">
               <div class="card-body">
-            <p><a href=""><span class="iconify-inline" data-icon="ion:open-outline" style="color: #4343fe;" data-width="30" data-height="30"></span></a> &nbsp; 업체소개 ${detailList[0].parName } </p>
+           		 <p><a href=""><span class="iconify-inline" data-icon="ion:open-outline" style="color: #4343fe;" data-width="30" data-height="30"></span></a> 
+           		 &nbsp; 업체소개 ${detailList[0].parName }</p>
          	<p>간단한 소개입니다.</p> </div>
             </div>
             <br/>
@@ -253,7 +257,8 @@ font-size:0;
 		</div>
             
           </div>
-      
+    
+     
       </div>
       <div class="col-lg-4">
         <!-- sidebar -->

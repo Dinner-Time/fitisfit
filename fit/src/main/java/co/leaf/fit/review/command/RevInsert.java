@@ -4,6 +4,7 @@ import java.sql.Date;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import co.leaf.fit.common.Command;
 import co.leaf.fit.review.service.ReviewMapper;
@@ -19,13 +20,13 @@ public class RevInsert implements Command {
 		ReviewMapper dao = new ReviewService();
 		ReviewVO vo = new ReviewVO();
 		long miliseconds = System.currentTimeMillis();
-		
+		HttpSession session = request.getSession();
 		
 		vo.setRevProId(Integer.valueOf(request.getParameter("revProId")));
 		vo.setRevContent(request.getParameter("revContent"));;
 		vo.setRevScore(3.5);
 		vo.setRevDate(new Date(miliseconds));	// 날짜는 자동으로 오늘 날짜 들어감
-		vo.setRevWriter("테스트작성자");
+		vo.setRevWriter((String)session.getAttribute("memName"));
 		
 		int n = dao.revInsert(vo);
 		String message = "";

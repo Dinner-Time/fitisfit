@@ -30,7 +30,7 @@ public class MemInsert implements Command {
 		try {
 			dao.memInsert(vo);
 		} catch(Exception e) {
-			
+			e.printStackTrace();
 		}
 		
 		return "loginForm.do";

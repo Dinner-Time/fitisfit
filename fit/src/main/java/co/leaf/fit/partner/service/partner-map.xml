@@ -3,40 +3,65 @@
 
 <mapper namespace="co.leaf.fit.partner.service.PartnerMapper">
 
-    <select id="parSelectList"
-        resultType="PartnerVO">
-        select * from fit_partner order by par_subdate desc
-    </select>
+	<resultMap type="PartnerVO" id="PartnerVO">
+		<result column="par_id" property="parId" />
+		<result column="par_email" property="parEmail" />
+		<result column="par_password" property="parPassword" />
+		<result column="par_name" property="parName" />
+		<result column="par_regid" property="parRegId" />
+		<result column="par_address" property="parAddress" />
+		<result column="par_phone" property="parPhoto" />
+		<result column="par_intro" property="parIntro" />
+		<result column="par_photo" property="parPhoto" />
+		<result column="par_subdate" property="parSubDate" />
+		<result column="par_state" property="parState" />
+		<result column="par_author" property="author" />
+		<result column="reg_name" property="regName" />
+	</resultMap>
 
-    <select id="parSelect"
-        resultType="PartnerVO">
-        select p.par_id, p.par_email, p.par_password, p.par_name, r.reg_name, p.par_address, p.par_phone, p.par_intro, p.par_photo, p.par_subdate, p.par_state, p.par_author from fit_partner p inner join fit_region r on p.par_regid = r.reg_id where par_id = #{parId}
-    </select>
+	<select id="parSelectList" resultType="PartnerVO">
+		select * from fit_partner order by par_subdate desc
+	</select>
 
-    <insert id="parInsert" parameterType="PartnerVO">
-        insert into fit_partner (par_id, par_email, par_password, par_name, par_regid, par_address, par_phone, par_intro, par_photo, par_subdate) 
-        values (FIT_PAR_SEQ.nextval, #{parEmail}, #{parPassword}, #{parName}, #{parRegId}, #{parAddress}, #{parPhone}, #{parIntro}, #{parPhoto}, #{parSubDate})
-    </insert>
+	<select id="parSelect" resultType="PartnerVO">
+		select p.par_id, p.par_email, p.par_password, p.par_name, r.reg_name, p.par_address, p.par_phone, p.par_intro, p.par_photo,
+		p.par_subdate, p.par_state, p.par_author from fit_partner p inner join
+		fit_region r on p.par_regid = r.reg_id where par_id = #{parId}
+	</select>
 
-    <insert id="parUpdateBefore" parameterType="PartnerVO">
-		insert into fit_partner (par_id, par_email, par_password, par_name, par_regid, par_address, par_phone, par_intro, par_photo, par_subdate, par_state) 
-        values (FIT_PAR_SEQ.nextval, #{parEmail}, #{parPassword}, #{parName}, #{parRegId}, #{parAddress}, #{parPhone}, #{parIntro}, #{parPhoto}, #{parSubDate}, 'M')
-    </insert>
-    
-    <delete id="parUpdateAfter" parameterType="PartnerVO">
-        delete from fit_partner where par_email = #{parEmail} and par_state = 'Y'
-    </delete>
-    
-    <update id="parUpdate" parameterType="PartnerVO">
-    	update fit_partner set par_state = 'Y' where par_email = #{par_email} and par_state = 'M'
-    </update>
+	<insert id="parInsert" parameterType="PartnerVO">
+		insert into fit_partner (par_id, par_email, par_password, par_name,
+		par_regid, par_address, par_phone, par_intro, par_photo, par_subdate)
+		values (FIT_PAR_SEQ.nextval, #{parEmail}, #{parPassword}, #{parName},
+		#{parRegId}, #{parAddress}, #{parPhone}, #{parIntro}, #{parPhoto},
+		#{parSubDate})
+	</insert>
 
-    <delete id="parDelete" parameterType="PartnerVO">
-        delete from fit_partner where par_email = #{parEmail}
-    </delete>
-    
-    <select id="parLogin" resultType="PartnerVO">
-		select * from fit_partner where par_email = #{parEmail} and par_password = #{parPassword}
+	<insert id="parUpdateBefore" parameterType="PartnerVO">
+		insert into
+		fit_partner (par_id, par_email, par_password, par_name, par_regid,
+		par_address, par_phone, par_intro, par_photo, par_subdate, par_state)
+		values (FIT_PAR_SEQ.nextval, #{parEmail}, #{parPassword}, #{parName},
+		#{parRegId}, #{parAddress}, #{parPhone}, #{parIntro}, #{parPhoto},
+		#{parSubDate}, 'M')
+	</insert>
+
+	<delete id="parUpdateAfter" parameterType="PartnerVO">
+		delete from fit_partner where par_email = #{parEmail} and par_state = 'Y'
+	</delete>
+
+	<update id="parUpdate" parameterType="PartnerVO">
+		update fit_partner set par_state = 'Y' where par_email = #{par_email} and
+		par_state = 'M'
+	</update>
+
+	<delete id="parDelete" parameterType="PartnerVO">
+		delete from fit_partner where par_email = #{parEmail}
+	</delete>
+
+	<select id="parLogin" resultType="PartnerVO">
+		select * from fit_partner where
+		par_email = #{parEmail} and par_password = #{parPassword}
 	</select>
 
 </mapper>

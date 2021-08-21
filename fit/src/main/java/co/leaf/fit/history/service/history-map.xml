@@ -13,6 +13,7 @@
 		<id property="hisDate" column="his_date" />
 		<id property="hisId" column="his_id" />
 		<id property="hisProName" column="pro_id" />
+		<id property="hisProPhoto" column="pro_photo" />
 	</resultMap>
 
 	<select id="hisSelectList" resultType="HistoryVO">
@@ -21,10 +22,25 @@
 	</select>
 
 	<select id="hisSelect" resultType="HistoryVO">
-		select * from fit_history
-		where his_d = #{hisId}
+		SELECT
+		a.pro_name, a.pro_photo, b.*
+		FROM
+		fit_program a
+		JOIN fit_history b ON a.pro_id = b.his_proid
+        WHERE his_mememail = #{memEmail}
+		ORDER BY
+		his_date desc
 	</select>
-
+	
+	<select id="hisSelectOne" resultType="HistoryVO">
+		SELECT
+		a.pro_name, a.pro_photo, b.*
+		FROM
+		fit_program a
+		JOIN fit_history b ON a.pro_id = b.his_proid
+        WHERE his_mememail = #{memEmail} and his_id = #{hisId};
+	</select>
+	
 	<insert id="hisInsert" parameterType="HistoryVO">
 		insert into fit_history
 			(his_mememail, his_proid, his_period,

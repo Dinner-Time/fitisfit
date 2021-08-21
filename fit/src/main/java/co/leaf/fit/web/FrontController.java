@@ -28,6 +28,8 @@ import co.leaf.fit.instructor.command.InsSelect;
 import co.leaf.fit.instructor.command.InsSelectList;
 import co.leaf.fit.main.command.Home;
 import co.leaf.fit.main.command.Main;
+import co.leaf.fit.member.command.AdminMemSelect;
+import co.leaf.fit.member.command.AdminMemSelectList;
 import co.leaf.fit.member.command.MemInsert;
 import co.leaf.fit.member.command.MemLogin;
 import co.leaf.fit.member.command.MemLoginForm;
@@ -45,6 +47,7 @@ import co.leaf.fit.program.command.ProList;
 import co.leaf.fit.program.command.ProgramAdd;
 import co.leaf.fit.program.command.ProgramAddForm;
 import co.leaf.fit.program.command.SelectedPrograms;
+import co.leaf.fit.program.command.programDetailUser;
 import co.leaf.fit.region.command.RegSelect;
 import co.leaf.fit.region.command.RegSelectList;
 import co.leaf.fit.region.command.RegTest;
@@ -107,6 +110,8 @@ public class FrontController extends HttpServlet {
 		map.put("/memInsert.do", new MemInsert());
 		map.put("/memSelect.do", new MemberSelect());
 		map.put("/memUpdatePassword.do", new MemUpdatePassword());
+		map.put("/adminMemSelectList.do", new AdminMemSelectList());
+		map.put("/adminMemSelect.do", new AdminMemSelect());
 		
 		// partner page
 		map.put("/parTest.do", new ParTest());
@@ -120,6 +125,8 @@ public class FrontController extends HttpServlet {
 		map.put("/memberEnroll.do", new MemberEnroll()); // 결제 완료 이후 등록
 		map.put("/programAddForm.do", new ProgramAddForm()); // 프로그램 추가 페이지
 		map.put("/programAdd.do", new ProgramAdd()); // 프로그램 추가 기능
+		
+		map.put("/programDetailUser.do", new programDetailUser());	
 		
 		// region page
 		map.put("/regTest.do", new RegTest());

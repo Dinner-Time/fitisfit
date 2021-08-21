@@ -2,14 +2,9 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
 <html>
-<!--<![endif]-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="description"
@@ -19,28 +14,16 @@
 
 <title>My Page | Fit is Fit</title>
 
-<!-- Mobile Specific Meta
-  ================================================== -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- Favicon -->
 <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
-
-<!-- CSS
-  ================================================== -->
-<!-- Themefisher Icon font -->
 <link rel="stylesheet" href="plugins/themefisher-font/style.css">
-<!-- bootstrap.min css -->
 <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-<!-- Lightbox.min css -->
 <link rel="stylesheet"
 	href="plugins/lightbox2/dist/css/lightbox.min.css">
-<!-- animation css -->
 <link rel="stylesheet" href="plugins/animate/animate.css">
-<!-- Slick Carousel -->
 <link rel="stylesheet" href="plugins/slick/slick.css">
-<!-- Main Stylesheet -->
 <link rel="stylesheet" href="css/style.css">
+
 <style type="text/css">
 .rounded-circle {
 	border-radius: 50% !important;
@@ -51,22 +34,12 @@
 <body id="body">
 	<jsp:include page="/WEB-INF/views/home/header.jsp" />
 
-	<!--
-  Start Preloader
-  ==================================== -->
 	<div id="preloader">
 		<div class='preloader'>
 			<span></span> <span></span> <span></span> <span></span> <span></span>
 			<span></span>
 		</div>
 	</div>
-	<!--
-  End Preloader
-  ==================================== -->
-
-	<!--
-Start About Section
-==================================== -->
 	<section class="about" id="about">
 		<div class="container">
 			<div class="row">
@@ -78,9 +51,16 @@ Start About Section
 				</div>
 				<div class="col-md-4" align="center">
 					<div class="card" style="width: 300px">
-						<img class="card-img-top img-thumbnail"
-							src="images/team/${member.memPhoto }" alt="member image"
-							style="width: 100%">
+						<c:if test="${member.memPhoto != null }">
+							<img class="card-img-top img-thumbnail"
+								src="images/team/${member.memPhoto }" alt="member image"
+								style="width: 100%">
+						</c:if>
+						<c:if test="${member.memPhoto == null}">
+							<img class="card-img-top img-thumbnail"
+								src="images/blog/generalProfile.jpg" alt="member image"
+								style="width: 100%">
+						</c:if>
 						<div class="card-body" align="right">
 							<a href="#" class="btn btn-primary">수정</a>
 						</div>
@@ -122,14 +102,15 @@ Start About Section
 						</tr>
 					</table>
 				</div>
+				<div class="card-body" align="center">
+					<button type="button" class="btn btn-primary" style="float: center;"
+						data-toggle="modal" data-target="#exampleModal2">회원 탈퇴</button>
+				</div>
 			</div>
-			<!-- End row -->
 		</div>
-		<!-- End container -->
 	</section>
-	<!-- End section -->
 
-	<!-- Modal -->
+	<!-- Modal Start -->
 	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
 		aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
@@ -148,7 +129,8 @@ Start About Section
 							현재 비밀번호 : <input type="password" placeholder="Your Password"
 								class="form-control" name="password" id="password">
 						</div>
-						<div class="border" style="width: 100%; background-color: lightgray;"></div>
+						<div class="border"
+							style="width: 100%; background-color: lightgray;"></div>
 						<div class="form-group">
 							새 비밀번호 : <input type="password" placeholder="Your Password"
 								class="form-control" name="newMemPassword" id="newMemPassword"
@@ -171,38 +153,61 @@ Start About Section
 			</div>
 		</div>
 	</div>
+	<!-- Modal End -->
+	
+	<!-- Modal Start -->
+	<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">비밀번호 확인</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<form id="frm" name="frm" action="memUpdatePassword.do"
+					method="post">
+					<div class="modal-body">
+						<div class="form-group">
+							비밀번호 : <input type="password" placeholder="Your Password"
+								class="form-control" name="memDelPassword" id="memDelPassword"
+								onkeyup="checkPwd2()">
+						</div>
+						<div class="form-group">
+							비밀번호 확인 : <input type="password" placeholder="Your Password"
+								class="form-control" name="memDelPasswordConfirm"
+								id="memDelPasswordConfirm" onkeyup="checkPwd2()">
+						</div>
+						<div id="checkPwd">동일한 암호를 입력하세요.</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary" onclick="memDelete()">탈퇴</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- Modal End -->
 
 
 	<jsp:include page="/WEB-INF/views/home/footer.jsp" />
 
-	<!-- 
-    Essential Scripts
-    =====================================-->
-	<!-- Main jQuery -->
 	<script src="plugins/jquery/jquery.min.js"></script>
-	<!-- Google Map -->
 	<script
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
 	<script src="plugins/google-map/gmap.js"></script>
-
-	<!-- Form Validation -->
 	<script src="plugins/form-validation/jquery.form.js"></script>
 	<script src="plugins/form-validation/jquery.validate.min.js"></script>
-
-	<!-- Bootstrap4 -->
 	<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-	<!-- Parallax -->
 	<script src="plugins/parallax/jquery.parallax-1.1.3.js"></script>
-	<!-- lightbox -->
 	<script src="plugins/lightbox2/dist/js/lightbox.min.js"></script>
-	<!-- Owl Carousel -->
 	<script src="plugins/slick/slick.min.js"></script>
-	<!-- filter -->
 	<script src="plugins/filterizr/jquery.filterizr.min.js"></script>
-	<!-- Smooth Scroll js -->
 	<script src="plugins/smooth-scroll/smooth-scroll.min.js"></script>
-
-	<!-- Custom js -->
 	<script src="js/script.js"></script>
 
 	<script type="text/javascript">
@@ -219,6 +224,18 @@ Start About Section
 				document.getElementById('checkNewPwd').innerHTML = "암호가 확인 되었습니다.";
 			}
 		}
+		function checkPwd2() {
+			var f2 = document.forms[1];
+			var pw1 = f2.memDelPassword.value;
+			var pw2 = f2.memDelPasswordConfirm.value;
+			if (pw1 != pw2) {
+				document.getElementById('checkPwd').style.color = "red";
+				document.getElementById('checkPwd').innerHTML = "암호가 일치하지 않습니다.";
+			} else {
+				document.getElementById('checkPwd').style.color = "black";
+				document.getElementById('checkPwd').innerHTML = "암호가 확인 되었습니다.";
+			}
+		}
 		function pwdCheck() {
 			var f1 = document.forms[0];
 			console.log(f1);
@@ -231,6 +248,19 @@ Start About Section
 				alert('비밀번호가 일치하지 않습니다.');
 			} else {
 				alert('수정 완');
+				frm.submit();
+			}
+		}
+		function memDelete() {
+			var f2 = document.forms[1];
+			var pw1 = f2.memDelPassword.value;
+			var pw2 = f2.memDelPasswordConfirm.value;
+			var pw3 = '<c:out value="${session.memPassword}"/>';
+			console.log(pw3);
+			if (pw1 != pw2 || pw1 != pw3 || pw2 != pw3) {
+				alert('비밀번호가 일치하지 않습니다.');
+			} else {
+				alert('정말 탈퇴하시겠습니까?'); <!-- 미완성 -->
 				frm.submit();
 			}
 		}

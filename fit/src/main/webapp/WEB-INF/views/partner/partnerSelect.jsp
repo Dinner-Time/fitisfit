@@ -103,7 +103,7 @@ Start About Section
 						</tr>
 						<tr>
 							<th height=70px;>지역</th>
-							<td>${partner.parRegId }</td>
+							<td>${partner.regName }</td>
 						</tr>
 						<tr>
 							<th height=70px;>주소</th>

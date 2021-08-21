@@ -9,20 +9,20 @@ import co.leaf.fit.member.service.MemberMapper;
 import co.leaf.fit.member.service.MemberService;
 import co.leaf.fit.vo.MemberVO;
 
-public class MemUpdatePassword implements Command {
+public class AdminMemSelect implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		MemberMapper dao = new MemberService();
 		MemberVO vo = new MemberVO();
-		HttpSession session = request.getSession();
-
-		vo = (MemberVO) session.getAttribute("session");
-
-		vo.setMemPassword(request.getParameter("newMemPassword"));
-		dao.memUpdatePassword(vo);
-
-		return "/memSelect.do";
+		
+		vo.setMemEmail(request.getParameter("memEmail"));
+		
+		vo = dao.memSelect(vo);
+		
+		request.setAttribute("member", vo);
+		
+		return "member/adminMemSelect";
 	}
 
 }

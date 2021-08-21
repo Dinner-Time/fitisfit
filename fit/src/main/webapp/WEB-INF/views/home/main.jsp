@@ -3,7 +3,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
+
 <head>
+
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="description"
@@ -11,7 +13,9 @@
 <meta name="author" content="Themefisher.com">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
 <title>메인</title>
+
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
@@ -23,6 +27,8 @@
 <link rel="stylesheet" href="plugins/slick/slick.css">
 <link rel="stylesheet" href="css/style.css">
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+
 
 <!-- 폰트 시작 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,6 +43,7 @@
 	href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap"
 	rel="stylesheet">
 <!-- 폰트 끝 -->
+
 
 <style type="text/css">
 .container-nav {
@@ -140,7 +147,18 @@ h2 {
 }
 </style>
 
+<<<<<<< HEAD
 <script type="text/javascript">
+		$(document).ready(function () {
+			$(".moreRegion").hide();
+			$("#showMoreReg").click(function () {
+				$(".moreRegion").slideDown(1000);
+				$("#showMoreReg").hide();
+				$("#foldReg").show();
+			})
+=======
+<script type="text/javascript">
+
 	$(document).ready(function() {
 		$(".moreRegion").hide();
 		$("#showMoreReg").click(function() {
@@ -148,73 +166,86 @@ h2 {
 			$("#showMoreReg").hide();
 			$("#foldReg").show();
 		})
+>>>>>>> refs/heads/main
 
-	})
+			$("#foldReg").click(function () {
+				$(".moreRegion").slideUp(1000, function () {
+					$("#foldReg").hide();
+					$("#showMoreReg").show();
+				});
+			})
 
-	$(document).ready(function() {
-		$("#foldReg").click(function() {
-			$(".moreRegion").slideUp(400, function() {
-				$("#foldReg").hide();
-				$("#showMoreReg").show();
+			$(".moreCategory").hide();
+			$("#showMoreCat").click(function () {
+				$(".moreCategory").slideDown(400);
+				$("#showMoreCat").hide();
+				$("#foldCat").show();
+			})
+
+			$("#foldCat").hide();
+			$("#foldCat").click(function () {
+				$(".moreCategory").slideUp(400, function () {
+					$("#foldCat").hide();
+					$("#showMoreCat").show();
+				});
+			})
+
+			let form = $('#frm');
+
+			$('.reg-submit').click(function () {
+				$(form)
+					.attr('action', 'regSelect.do')
+					.find($('input')
+						.attr('name', 'regId')
+						.val($(this).attr('data-regid')));
+
+				$(form).submit();
 			});
-		})
-	})
-	
-	$(document).ready(function() {
-		$(".moreCategory").hide();
-		$("#showMoreCat").click(function() {
-			$(".moreCategory").slideDown(400);
-			$("#showMoreCat").hide();
-			$("#foldCat").show();
-		})
 
-	})
+			$('.cat-submit').click(function () {
+				$(form)
+					.attr('action', 'catSelect.do')
+					.find($('input')
+						.attr('name', 'catId')
+						.val($(this).attr('data-catid')));
+				console.log($(this).attr('data-catid'));
 
-	$(document).ready(function() {
-		$("#foldCat").hide();
-		$("#foldCat").click(function() {
-			$(".moreCategory").slideUp(400, function() {
-				$("#foldCat").hide();
-				$("#showMoreCat").show();
-			});
+				$(form).submit();
+			})
 		})
-	})
-
-</script>
+	</script>
 
 </head>
+
 <body id="body">
 	<jsp:include page="/WEB-INF/views/home/header.jsp" />
-	<br>	<br>	<br>	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 	<div class="container">
 		<!-- 검색바 시작 -->
 		<nav class="navbar navbar-expand-lg navbar-light custom-nav"
 			style="z-index: 999;">
-			<div class="collapse navbar-collapse" id="navigation">
+			<div class="collapse navbar-collapse">
 				<ul class="navbar-nav ml-auto text-center">
 					<li class="nav-item dropdown active"><a
 						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 						role="button" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="false"> 지역 </a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#">서울</a> <a class="dropdown-item"
-								href="#">인천</a> <a class="dropdown-item" href="#">대전</a> <a
-								class="dropdown-item" href="#">대구</a> <a class="dropdown-item"
-								href="#">울산</a> <a class="dropdown-item" href="#">부산</a> <a
-								class="dropdown-item" href="#">광주</a> <a class="dropdown-item"
-								href="#">경기</a> <a class="dropdown-item" href="#">강원</a> <a
-								class="dropdown-item" href="#">충청</a> <a class="dropdown-item"
-								href="#">경상</a> <a class="dropdown-item" href="#">전라</a> <a
-								class="dropdown-item" href="#">제주</a>
+							<c:forEach var="region" items="${regList}">
+								<a class="dropdown-item" href="#">${region.regName}</a>
+							</c:forEach>
 						</div></li>
 					<li class="nav-item dropdown active"><a
 						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 						role="button" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="false"> 카테고리 </a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a class="dropdown-item" href="#">헬스</a> <a class="dropdown-item"
-								href="#">요가</a> <a class="dropdown-item" href="#">필라테스</a> <a
-								class="dropdown-item" href="#">기타</a>
+							<c:forEach var="category" items="${catList}">
+								<a class="dropdown-item" href="#">${category.catName}</a>
+							</c:forEach>
 						</div></li>
 					<li class="nav-item dropdown active"><a
 						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
@@ -236,7 +267,11 @@ h2 {
 						<button type="button" class="btn btn-outline-primary">검색</button>
 					</li>
 					<li>
-						<button type="button" class="btn btn-primary">내 주변 찾기</button>
+						<button type="button" class="btn btn-primary"
+							onclick="(function(){
+							location.href = 'NaverMap.do';
+						})()">내
+							주변 찾기</button>
 					</li>
 				</ul>
 			</div>
@@ -263,10 +298,11 @@ h2 {
 					<div class="row text-center">
 						<c:forEach var="region" items="${regList}" begin="0" end="3">
 							<div class="col-md-3 col-sm-6 col-xs-12">
-								<div class="service-item" style="background: url('images/region/${region.regPhoto}');">
+								<div class="service-item reg-submit"
+									style="background: url('images/region/${region.regPhoto}');"
+									data-regid="${region.regId}">
 									<div class="filter"></div>
 									<p class="reg-cat-title">${region.regName}</p>
-									<p class="reg-cat-detail">개의 센터</p>
 								</div>
 							</div>
 						</c:forEach>
@@ -280,22 +316,23 @@ h2 {
 						</div>
 					</div>
 					<!-- End Button -->
-					
+
 					<!-- 더보기 지역 -->
 					<!-- START ROW -->
 					<div class="moreRegion row text-center">
 						<c:forEach var="region" items="${regList}" begin="4">
 							<div class="col-md-3 col-sm-6 col-xs-12">
-								<div class="service-item" style="background: url('images/region/${region.regPhoto}');">
+								<div class="service-item reg-submit"
+									style="background: url('images/region/${region.regPhoto}');"
+									data-regid="${region.regId}">
 									<div class="filter"></div>
 									<p class="reg-cat-title">${region.regName}</p>
-									<p class="reg-cat-detail">개의 센터</p>
 								</div>
 							</div>
 						</c:forEach>
 					</div>
 					<!-- END ROW -->
-					
+
 					<!-- Start Button -->
 					<div class="row">
 						<div class="col" align="center">
@@ -308,9 +345,11 @@ h2 {
 			</div>
 			<!-- 지역별 메뉴 끝 -->
 
-			<br><br>
+			<br>
+			<br>
 			<hr>
-			<br><br>
+			<br>
+			<br>
 
 			<!-- 카테고리별 메뉴 시작 -->
 			<div class="row">
@@ -326,12 +365,18 @@ h2 {
 					<div class="row text-center">
 						<c:forEach var="category" items="${catList}" begin="0" end="3">
 							<div class="col-md-3 col-sm-6 col-xs-12">
-								<div class="service-item" style="background: url('images/region/${category.catPhoto}');">
-									<div class="filter"></div>
-									<p class="reg-cat-title">${category.catName}</p>
-									<p class="reg-cat-detail">개의 센터</p>
+								<<<<<<< HEAD
+								<div class="service-item cat-submit"
+									data-regid="${category.catId}"
+									style="background: url('images/region/${category.catPhoto}');">
+									=======
+									<div class="service-item"
+										style="background: url('images/category/${category.catPhoto}');">
+										>>>>>>> refs/heads/main
+										<div class="filter"></div>
+										<p class="reg-cat-title">${category.catName}</p>
+									</div>
 								</div>
-							</div>
 						</c:forEach>
 					</div>
 					<!-- Start Button -->
@@ -347,24 +392,29 @@ h2 {
 					<div class="moreCategory row text-center">
 						<c:forEach var="category" items="${catList}" begin="4">
 							<div class="col-md-3 col-sm-6 col-xs-12">
-								<div class="service-item" style="background: url('images/region/${category.catPhoto}');">
-									<div class="filter"></div>
-									<p class="reg-cat-title">${category.catName}</p>
-									<p class="reg-cat-detail">개의 센터</p>
+								<<<<<<< HEAD
+								<div class="service-item cat-submit"
+									data-regid="${category.catId}"
+									style="background: url('images/region/${category.catPhoto}');">
+									=======
+									<div class="service-item"
+										style="background: url('images/category/${category.catPhoto}');">
+										>>>>>>> refs/heads/main
+										<div class="filter"></div>
+										<p class="reg-cat-title">${category.catName}</p>
+									</div>
 								</div>
-							</div>
 						</c:forEach>
 					</div>
-					<!-- END ROW -->	
-					
+					<!-- END ROW -->
+
 					<!-- Start Button -->
 					<div class="row">
 						<div class="col" align="center">
 							<button type="button" id="foldCat" class="btn btn-main mt-20">접기</button>
 						</div>
 					</div>
-					<!-- End Button -->		
-							
+					<!-- End Button -->
 				</div>
 			</div>
 			<!-- 카테고리별 메뉴 끝 -->
@@ -373,6 +423,11 @@ h2 {
 	</section>
 	<!-- End section -->
 
+	<<<<<<< HEAD
+	<form id="frm" action="" method="POST">
+		<input>
+	</form>
+	=======
 	<!-- 인기 프로그램 시작 -->
 	<section class="testimonial section" id="testimonial">
 		<div class="container">
@@ -430,6 +485,7 @@ h2 {
 		<!-- End container -->
 	</section>
 	<!-- 인기 프로그램 끝 -->
+	>>>>>>> refs/heads/main
 
 	<jsp:include page="/WEB-INF/views/home/footer.jsp" />
 
@@ -445,4 +501,5 @@ h2 {
 	<script src="plugins/smooth-scroll/smooth-scroll.min.js"></script>
 	<script src="js/script.js"></script>
 </body>
+
 </html>

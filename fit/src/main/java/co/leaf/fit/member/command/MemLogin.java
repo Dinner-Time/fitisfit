@@ -32,10 +32,10 @@ public class MemLogin implements Command {
 			
 			if(vo != null) {
 				session.setAttribute("session", vo);
-				session.setAttribute("author", "general");
 				
-				page = "home.do";
+				page = "main.do";
 			} else {
+				request.setAttribute("fail", "fail");
 				page = "loginForm.do";
 			}
 			
@@ -50,10 +50,10 @@ public class MemLogin implements Command {
 			
 			if(vo != null) {
 				session.setAttribute("session", vo);
-				session.setAttribute("author", "partner");
 				
-				page = "home.do";
+				page = "main.do";
 			} else {
+				request.setAttribute("fail", "fail");
 				page = "loginForm.do";
 			}
 		}

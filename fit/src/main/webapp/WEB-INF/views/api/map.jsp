@@ -73,7 +73,7 @@
 								<div id="partnerName">업체명</div>
 							</div>
 							<div class="col-12">
-								<img src="images/about/" id="partnerPhoto" class="img-fluid" alt="">
+								<img src="images/about/about-2.png" id="partnerPhoto" class="img-fluid" alt="">
 							</div>
 							<div class="col-12">
 								<div class="custom-border"></div>
@@ -176,7 +176,7 @@
 				$(partners).hide('slow', function () {
 					$(partners).attr('id', 'partners');
 					$(partners).find('#partnerName').html('현재위치');
-					$(partners).find('#partnerPhoto').attr('src', 'images/about/');
+					$(partners).find('#partnerPhoto').attr('src', 'images/about/about-2.png');
 					$(partners).find('#partnerAddress').html('업체 주소');
 					$(partners).find('#partnerIntro').html('업체 전화번호');
 					$(partners).find('#partnerPhone').html('업체 소개');

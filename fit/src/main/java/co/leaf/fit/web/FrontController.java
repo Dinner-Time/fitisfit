@@ -60,7 +60,8 @@ import co.leaf.fit.sales.command.SalPartnerInsert;
 import co.leaf.fit.sales.command.SalPartnerUpdate;
 import co.leaf.fit.sales.command.SalPatnerList;
 import co.leaf.fit.sales.command.SalTest;
-import co.leaf.fit.wishlist.command.WisTest;
+import co.leaf.fit.wishlist.command.WisDelete;
+import co.leaf.fit.wishlist.command.WisList;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -72,7 +73,10 @@ public class FrontController extends HttpServlet {
     }
 
 	public void init(ServletConfig config) throws ServletException {
+		// use api
+		map.put("/jusoPopup.do", new JusoPopup());
 		map.put("/NaverMap.do", new NaverMap());	
+		
 		// home page
 		map.put("/home.do", new Home());
 		map.put("/main.do", new Main());	
@@ -101,7 +105,6 @@ public class FrontController extends HttpServlet {
 		map.put("/login.do", new MemLogin());
 		map.put("/logout.do", new MemLogout());
 		map.put("/memInsert.do", new MemInsert());
-		map.put("/jusoPopup.do", new JusoPopup());
 		map.put("/memSelect.do", new MemberSelect());
 		map.put("/memUpdatePassword.do", new MemUpdatePassword());
 		
@@ -142,7 +145,9 @@ public class FrontController extends HttpServlet {
 		// timetable page
 		
 		// wishlist page
-		map.put("/wisTest.do", new WisTest());
+		map.put("/wisList.do", new WisList());
+		map.put("/wisDelete.do", new WisDelete());
+		
 		
 		
 	}

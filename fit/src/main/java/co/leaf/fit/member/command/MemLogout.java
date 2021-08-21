@@ -12,7 +12,7 @@ public class MemLogout implements Command {
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
 		session.invalidate();
-		return "home.do";
+		return "main.do";
 	}
 
 }

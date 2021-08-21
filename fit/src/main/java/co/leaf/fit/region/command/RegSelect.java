@@ -9,7 +9,7 @@ public class RegSelect implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
+		request.setAttribute("regId", request.getParameter("regId"));
 		return "region/regSelect";
 	}
 

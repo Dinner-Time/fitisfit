@@ -243,8 +243,9 @@ li {
 		</div>
 		<!-- end container -->
 	</section>
-
+	<jsp:include page="../home/footer.jsp" />
 </body>
+
 
 <!-- 
     Essential Scripts

@@ -45,6 +45,7 @@
 	<select id="proSelect" resultType="ProgramVO">
 		select pr.pro_name,
 		pr.pro_id,
+		pr.pro_parid,
 		pr.pro_photo,
 		pr.pro_desc,
 		pr.pro_since,
@@ -58,6 +59,7 @@
 		reg.reg_name,
 		pa.par_name,
 		i.ins_name,
+        i.ins_id,
 		r.rev_score,
 		r.rev_content,
 		r.rev_writer,

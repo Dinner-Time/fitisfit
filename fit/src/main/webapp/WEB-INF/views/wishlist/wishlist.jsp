@@ -129,8 +129,14 @@
 	<script src="js/script.js"></script>
 	<!-- Script for this Page -->
 	<script>
+		let error = '<c:out value="${error}" />';
 		let form = $('#wishListForm');
 		let proId = $(form).find('#proId');
+
+		console.log(error);
+		if(error == 'error'){
+			alert('이미 추가된 프로그램입니다.');
+		}
 
 		$('.custom-go').click(function () {
 			formSubmit('programDetailUser.do', $(this).attr('data-id'))

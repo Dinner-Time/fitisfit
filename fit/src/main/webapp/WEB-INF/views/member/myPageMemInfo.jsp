@@ -1,34 +1,45 @@
-<!-- 파트너-강사수정페이지 -->
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="description"
-	content="Bingo One page parallax responsive HTML Template ">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="author" content="Themefisher.com">
+	<title>피트다 피트!!</title>
 
-<title>My Page | Fit is Fit</title>
+	<!-- CSS ================================================== -->
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+	<!-- Themefisher Icon font -->
+	<link rel="stylesheet" href="plugins/themefisher-font/style.css">
+	<!-- bootstrap.min css -->
+	<link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+	<!-- Lightbox.min css -->
+	<link rel="stylesheet" href="plugins/lightbox2/dist/css/lightbox.min.css">
+	<!-- animation css -->
+	<link rel="stylesheet" href="plugins/animate/animate.css">
+	<!-- Slick Carousel -->
+	<link rel="stylesheet" href="plugins/slick/slick.css">
+	<!-- Main Stylesheet -->
+	<link rel="stylesheet" href="css/style.css">
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
-<link rel="stylesheet" href="plugins/themefisher-font/style.css">
-<link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="plugins/lightbox2/dist/css/lightbox.min.css">
-<link rel="stylesheet" href="plugins/animate/animate.css">
-<link rel="stylesheet" href="plugins/slick/slick.css">
-<link rel="stylesheet" href="css/style.css">
+	<!-- 폰트 시작 -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+	<!-- 폰트 끝 -->
 
-<style type="text/css">
-.rounded-circle {
-	border-radius: 50% !important;
-}
-</style>
+	<style type="text/css">
+		.rounded-circle {
+			border-radius: 50% !important;
+		}
+	</style>
 </head>
 
 <body id="body">
@@ -52,14 +63,12 @@
 				<div class="col-md-4" align="center">
 					<div class="card" style="width: 300px">
 						<c:if test="${member.memPhoto != null }">
-							<img class="card-img-top img-thumbnail"
-								src="images/team/${member.memPhoto }" alt="member image"
-								style="width: 100%">
+							<img class="card-img-top img-thumbnail" src="images/team/${member.memPhoto }"
+								alt="member image" style="width: 100%">
 						</c:if>
 						<c:if test="${member.memPhoto == null}">
-							<img class="card-img-top img-thumbnail"
-								src="images/blog/generalProfile.jpg" alt="member image"
-								style="width: 100%">
+							<img class="card-img-top img-thumbnail" src="images/blog/generalProfile.jpg"
+								alt="member image" style="width: 100%">
 						</c:if>
 						<div class="card-body" align="right">
 							<a href="#" class="btn btn-primary">수정</a>
@@ -80,8 +89,7 @@
 						<tr>
 							<th height=70px;>비밀번호</th>
 							<td>${member.memPassword }
-								<button type="button" class="btn btn-primary"
-									style="float: right;" data-toggle="modal"
+								<button type="button" class="btn btn-primary" style="float: right;" data-toggle="modal"
 									data-target="#exampleModal">수정</button>
 							</td>
 						</tr>
@@ -95,57 +103,54 @@
 						</tr>
 						<tr>
 							<th height=70px;>전화번호</th>
-							<td>${member.memPhone }
-								<button type="button" class="btn btn-primary"
-									style="float: right;">수정</button>
+							<td>
+								<form id="phoneChange" class="d-flex justify-content-between" action="">
+									<input class="form-control" type="text" style="width: 70% !important;"
+										value="${member.memPhone }" readonly>
+									<button id="phoneChangeBtn" type="button" class="btn btn-primary">수정</button>
+								</form>
 							</td>
 						</tr>
 					</table>
 				</div>
 				<div class="card-body" align="center">
-					<button type="button" class="btn btn-primary" style="float: center;"
-						data-toggle="modal" data-target="#exampleModal2">회원 탈퇴</button>
+					<button type="button" class="btn btn-primary" style="float: center;" data-toggle="modal"
+						data-target="#exampleModal2">회원 탈퇴</button>
 				</div>
 			</div>
 		</div>
 	</section>
 
 	<!-- Modal Start -->
-	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-		aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title" id="exampleModalLabel">비밀번호 변경</h5>
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<form id="frm" name="frm" action="memUpdatePassword.do"
-					method="post">
+				<form id="frm" name="frm" action="memUpdatePassword.do" method="post">
 					<div class="modal-body">
 						<div class="form-group">
-							현재 비밀번호 : <input type="password" placeholder="Your Password"
-								class="form-control" name="password" id="password">
+							현재 비밀번호 : <input type="password" placeholder="Your Password" class="form-control"
+								name="password" id="password">
 						</div>
-						<div class="border"
-							style="width: 100%; background-color: lightgray;"></div>
+						<div class="border" style="width: 100%; background-color: lightgray;"></div>
 						<div class="form-group">
-							새 비밀번호 : <input type="password" placeholder="Your Password"
-								class="form-control" name="newMemPassword" id="newMemPassword"
-								onkeyup="checkPwd()">
+							새 비밀번호 : <input type="password" placeholder="Your Password" class="form-control"
+								name="newMemPassword" id="newMemPassword" onkeyup="checkPwd()">
 						</div>
 						<div class="form-group">
-							비밀번호 확인 : <input type="password" placeholder="Your Password"
-								class="form-control" name="newMemPasswordConfirm"
-								id="newMemPasswordConfirm" onkeyup="checkPwd()">
+							비밀번호 확인 : <input type="password" placeholder="Your Password" class="form-control"
+								name="newMemPasswordConfirm" id="newMemPasswordConfirm" onkeyup="checkPwd()">
 						</div>
 						<div id="checkNewPwd">동일한 암호를 입력하세요.</div>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary"
-							data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 						<button type="button" class="btn btn-primary" onclick="pwdCheck()">Save
 							changes</button>
 					</div>
@@ -154,37 +159,32 @@
 		</div>
 	</div>
 	<!-- Modal End -->
-	
+
 	<!-- Modal Start -->
-	<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog"
-		aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title" id="exampleModalLabel">비밀번호 확인</h5>
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<form id="frm" name="frm" action="memUpdatePassword.do"
-					method="post">
+				<form id="frm" name="frm" action="memUpdatePassword.do" method="post">
 					<div class="modal-body">
 						<div class="form-group">
-							비밀번호 : <input type="password" placeholder="Your Password"
-								class="form-control" name="memDelPassword" id="memDelPassword"
-								onkeyup="checkPwd2()">
+							비밀번호 : <input type="password" placeholder="Your Password" class="form-control"
+								name="memDelPassword" id="memDelPassword" onkeyup="checkPwd2()">
 						</div>
 						<div class="form-group">
-							비밀번호 확인 : <input type="password" placeholder="Your Password"
-								class="form-control" name="memDelPasswordConfirm"
-								id="memDelPasswordConfirm" onkeyup="checkPwd2()">
+							비밀번호 확인 : <input type="password" placeholder="Your Password" class="form-control"
+								name="memDelPasswordConfirm" id="memDelPasswordConfirm" onkeyup="checkPwd2()">
 						</div>
 						<div id="checkPwd">동일한 암호를 입력하세요.</div>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary"
-							data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 						<button type="button" class="btn btn-primary" onclick="memDelete()">탈퇴</button>
 					</div>
 				</form>
@@ -196,20 +196,27 @@
 
 	<jsp:include page="/WEB-INF/views/home/footer.jsp" />
 
+	<!-- 자바 스크립트 -->
+	<!-- Main jQuery -->
 	<script src="plugins/jquery/jquery.min.js"></script>
-	<script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
-	<script src="plugins/google-map/gmap.js"></script>
+	<!-- Form Validation -->
 	<script src="plugins/form-validation/jquery.form.js"></script>
 	<script src="plugins/form-validation/jquery.validate.min.js"></script>
+	<!-- Bootstrap4 -->
 	<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+	<!-- Parallax -->
 	<script src="plugins/parallax/jquery.parallax-1.1.3.js"></script>
+	<!-- lightbox -->
 	<script src="plugins/lightbox2/dist/js/lightbox.min.js"></script>
+	<!-- Owl Carousel -->
 	<script src="plugins/slick/slick.min.js"></script>
+	<!-- filter -->
 	<script src="plugins/filterizr/jquery.filterizr.min.js"></script>
+	<!-- Smooth Scroll js -->
 	<script src="plugins/smooth-scroll/smooth-scroll.min.js"></script>
+	<!-- Custom js -->
 	<script src="js/script.js"></script>
-
+	<!-- Custom for this Page -->
 	<script type="text/javascript">
 		function checkPwd() {
 			var f1 = document.forms[0];
@@ -224,6 +231,7 @@
 				document.getElementById('checkNewPwd').innerHTML = "암호가 확인 되었습니다.";
 			}
 		}
+
 		function checkPwd2() {
 			var f2 = document.forms[1];
 			var pw1 = f2.memDelPassword.value;
@@ -236,6 +244,7 @@
 				document.getElementById('checkPwd').innerHTML = "암호가 확인 되었습니다.";
 			}
 		}
+
 		function pwdCheck() {
 			var f1 = document.forms[0];
 			console.log(f1);
@@ -248,9 +257,10 @@
 				alert('비밀번호가 일치하지 않습니다.');
 			} else {
 				alert('수정 완');
-				frm.submit();
+				$('#frm').submit();
 			}
 		}
+
 		function memDelete() {
 			var f2 = document.forms[1];
 			var pw1 = f2.memDelPassword.value;
@@ -260,11 +270,47 @@
 			if (pw1 != pw2 || pw1 != pw3 || pw2 != pw3) {
 				alert('비밀번호가 일치하지 않습니다.');
 			} else {
-				alert('정말 탈퇴하시겠습니까?'); <!-- 미완성 -->
-				frm.submit();
+				alert('정말 탈퇴하시겠습니까?');
+				$('#frm').submit();
 			}
 		}
+
+		let form = $('#phoneChange');
+		let input = $(form).find('input');
+		let inputBefore = $(input).val();
+		let memEmail = "<c:out value='${member.memEmail }'/>";
+
+		$('#phoneChangeBtn').click(function () {
+			if ($(this).text() == '수정') {
+				$('#phoneChange').children().eq(0).prop('readonly', false);
+				$(this).text('완료')
+			} else if ($(this).text() == '완료') {
+				let rtnNum;
+				let regExp = /01[01689]-[1-9]{1}[0-9]{2,3}-[0-9]{4}$/;
+				let myArray;
+				if (regExp.test($(input).val())) {
+					if (confirm('정말로 수정하시겠습니까?')) {
+						alert('전화번호가 수정되었습니다.')
+						// $(form).submit();
+						$.ajax({
+							url: 'PhoneNumChange',
+							data: {
+								memEmail: memEmail,
+								
+							}
+						})
+					}
+				} else {
+					alert('전화번호 형식이 아닙니다\n다시 한 번 확인해주세요.');
+					$(input).val(inputBefore);
+				}
+
+				$('#phoneChange').children().eq(0).prop('readonly', true);
+				$(this).text('수정')
+			}
+		})
 	</script>
 
 </body>
+
 </html>

@@ -120,7 +120,7 @@
 								</h3>
 								<p>${pro.proDesc }</p>
 								<p>${pro.proSince } ~ ${pro.proPeriod }개월</p>
-								<a class="custom-btn" href="single-post.html">${pro.proPrice*(100 -
+								<a class="custom-btn pro-submit" data-proId="${pro.proId}" style="cursor: pointer;">${pro.proPrice*(100 -
 									pro.proSale3)*0.01}&#8361부터</a>
 							</div>
 						</div>
@@ -135,6 +135,10 @@
 	<!-- End section -->
 
 	<jsp:include page="/WEB-INF/views/home/footer.jsp" />
+
+	<form id="frm" action="programDetailUser.do">
+		<input type="hidden" name="proId">
+	</form>
 
 	<!-- 자바 스크립트 -->
 	<!-- Main jQuery -->
@@ -172,6 +176,14 @@
 				$(this).slideDown(400);
 			});
 		}
+
+		// 해당 프로그램으로 이동하는 함수
+		let form = $('#frm');
+		$('.pro-submit').click(function(){
+			let proId = $(this).attr('data-proId');
+			$(form).find('input').val(proId)
+			$(form).submit();
+		});
 	</script>
 
 </body>

@@ -13,9 +13,9 @@ public class InstructorService implements InstructorMapper {
     private InstructorMapper map = sqlSession.getMapper(InstructorMapper.class);
 	
 	@Override
-	public List<InstructorVO> insSelectList() {
+	public List<InstructorVO> insSelectList(InstructorVO vo) {
 		// TODO Auto-generated method stub
-		return map.insSelectList();
+		return map.insSelectList(vo);
 	}
 
 	@Override

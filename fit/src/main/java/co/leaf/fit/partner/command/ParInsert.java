@@ -25,13 +25,13 @@ public class ParInsert implements Command {
 		vo.setParPassword(request.getParameter("parPassword"));
 		vo.setParName(request.getParameter("parName"));
 		vo.setParRegId(Integer.parseInt(request.getParameter("parRegId")));
-		vo.setParAddress(request.getParameter("parAddress"));
+		vo.setParAddress(request.getParameter("roadFullAddr"));
 		vo.setParPhone(request.getParameter("parPhone"));
 		vo.setParIntro(request.getParameter("parIntro"));
 		vo.setParSubDate(Date.valueOf(date));
 		dao.parInsert(vo);
 		
-		return "partner/insertTest";
+		return "loginForm.do";
 	}
 
 }

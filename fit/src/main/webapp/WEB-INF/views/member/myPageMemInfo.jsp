@@ -171,7 +171,12 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
+
+				<form id="frm2" name="frm2" action="memDelete.do"
+					method="post">
+
 				<form id="frm" name="frm" action="memUpdatePassword.do" method="post">
+
 					<div class="modal-body">
 						<div class="form-group">
 							비밀번호 : <input type="password" placeholder="Your Password" class="form-control"
@@ -236,7 +241,8 @@
 			var f2 = document.forms[1];
 			var pw1 = f2.memDelPassword.value;
 			var pw2 = f2.memDelPasswordConfirm.value;
-			if (pw1 != pw2) {
+			var pw3 = '<c:out value="${session.memPassword}"/>';
+			if (pw1 != pw2 || pw1 != pw3 || pw2 != pw3) {
 				document.getElementById('checkPwd').style.color = "red";
 				document.getElementById('checkPwd').innerHTML = "암호가 일치하지 않습니다.";
 			} else {
@@ -270,8 +276,17 @@
 			if (pw1 != pw2 || pw1 != pw3 || pw2 != pw3) {
 				alert('비밀번호가 일치하지 않습니다.');
 			} else {
+
+				if(confirm('정말 탈퇴하시겠습니까?') == true) {
+					alert('탈퇴 완');
+					frm2.submit();
+				} else {
+					return;
+				}
+
 				alert('정말 탈퇴하시겠습니까?');
 				$('#frm').submit();
+
 			}
 		}
 

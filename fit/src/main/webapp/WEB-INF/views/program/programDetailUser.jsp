@@ -53,7 +53,7 @@
 
 <body id="body">
   <jsp:include page="/WEB-INF/views/home/header.jsp" />
-
+	
   <!-- blog details part start -->
   <section class="blog-details section">
     <div class="container">
@@ -62,7 +62,8 @@
           <article class="post">
             <div class="card">
               <div class="card-body">
-                <h1>프로그램명 ${detailList[0].proName }</h1>
+                <h1>${detailList[0].proName}
+              </h1>
               </div>
             </div>
             <br />
@@ -74,7 +75,7 @@
               <br />
               <div class="card">
                 <div class="card-body">
-                  <p>프로그램 설명 ${detailList[0].proDesc }</p>
+                  <p>${detailList[0].proDesc }</p>
                 </div>
               </div>
               <br />
@@ -97,26 +98,31 @@
                       <tr>
                         <td>
                           <span
-                            class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">Dance</span>
-                          <div class="margin-10px-top font-size14">9:00-10:00</div>
+                            class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">${timetable.timMon }</span>
                         </td>
                         <td>
                           <span
-                            class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">Dance</span>
-                          <div class="margin-10px-top font-size14">9:00-10:00</div>
+                            class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">${timetable.timTue }</span>
                         </td>
                         <td>
+                        <span
+                            class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">${timetable.timWen }</span>
                         </td>
                         <td>
+                        <span
+                            class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">${timetable.timThu }</span>
                         </td>
                         <td>
+                         <span
+                            class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">${timetable.timFri }</span>
                         </td>
                         <td>
-                          <span
-                            class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">Dance</span>
-                          <div class="margin-10px-top font-size14">9:00-10:00</div>
+                         <span
+                            class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">${timetable.timSat }</span>
                         </td>
                         <td>
+                         <span
+                            class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">${timetable.timSun }</span>
                         </td>
                       </tr>
                     </tbody>
@@ -128,8 +134,8 @@
                 <div class="card-body">
                   <p><a href=""><span class="iconify-inline" data-icon="ion:open-outline" style="color: #4343fe;"
                         data-width="30" data-height="30"></span></a>
-                    &nbsp; 강사소개 ${detailList[0].insName }</p>
-                  <p>간단한 소개입니다.</p>
+                    &nbsp; ${detailList[0].insName }  </p>
+                  <p>강사 소개입니다.</p>
                 </div>
               </div>
               <br />
@@ -137,8 +143,8 @@
                 <div class="card-body">
                   <p><a href=""><span class="iconify-inline" data-icon="ion:open-outline" style="color: #4343fe;"
                         data-width="30" data-height="30"></span></a>
-                    &nbsp; 업체소개 ${detailList[0].parName }</p>
-                  <p>간단한 소개입니다.</p>
+                    &nbsp; ${detailList[0].parName }</p>
+                  <p>업체 소개입니다.</p>
                 </div>
               </div>
               <br />
@@ -186,11 +192,11 @@
                       <ul class="list-group list-group-flush">
                         <li class="list-group-item">
                           <!-- 별 모양은 자바스크립트로 구현.. -->
-                          <h5 class="card-title">리뷰점수</h5>
-                          <h6 class="card-subtitle mb-2 text-muted">날짜 , 작성자</h6>
+                          <h5 class="card-title">리뷰점수 : ${review.revScore}</h5>
+                          <h6 class="card-subtitle mb-2 text-muted">날짜 : ${detail.revDate } , 작성자 : ${detail.revWriter }</h6>
                           <hr>
-                          내용ssdsfdf입니다어림ㄴ어라ㅣㅇ너리나ㅓ라ㅣㄴ러ㅣㅏ얾니ㅏ런아ㅣㅓㄹ니ㅓㅇ란이ㅓ림널
-                        </li>
+							내용 : ${detail.revContent }                        
+						</li>
                       </ul>
                     </div>
                   </div>

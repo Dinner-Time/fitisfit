@@ -68,6 +68,10 @@ h3, h5, p {
 							<p>${history.hisDate} ~</p>
 						</div>
 						<div>
+							<input type="hidden" id="hisId" name="hisId" value="${history.hisId}">
+							<input type="hidden" id="hisMemEmail" name="hisMemEmail" value="${history.hisMemEmail}">
+						</div>
+						<div>
 							<button type="submit" class="btn btn-primary">후기작성</button>
 							<button type="button" class="btn btn-outline-primary" onclick="delConfirm()">수강취소</button>
 							<br><br>
@@ -112,7 +116,6 @@ h3, h5, p {
 			
 			if ($(hisState).eq(i).children().first().text() == "수강완료") {
 				$(hisState).eq(i).children().first().css({'background-color' : 'gray'});
-				
 			}
 		}
 		

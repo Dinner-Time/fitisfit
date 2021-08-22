@@ -8,21 +8,12 @@
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>피트다 피트!!</title>
-<!-- Mobile Specific Meta ================================================== -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- CSS ================================================== -->
-<!-- Themefisher Icon font -->
 <link rel="stylesheet" href="plugins/themefisher-font/style.css">
-<!-- bootstrap.min css -->
 <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-<!-- Lightbox.min css -->
-<link rel="stylesheet"
-	href="plugins/lightbox2/dist/css/lightbox.min.css">
-<!-- animation css -->
+<link rel="stylesheet" href="plugins/lightbox2/dist/css/lightbox.min.css">
 <link rel="stylesheet" href="plugins/animate/animate.css">
-<!-- Slick Carousel -->
 <link rel="stylesheet" href="plugins/slick/slick.css">
-<!-- Main Stylesheet -->
 <link rel="stylesheet" href="css/style.css">
 
 <style type="text/css">
@@ -33,6 +24,11 @@
 	width: 100%;
 	background: gray;
 }
+#password, #passwordConfirm {
+	font-family: sans-serif;
+}
+
+
 </style>
 </head>
 
@@ -55,7 +51,7 @@
 					<form action="login.do" method="post">
 						<div class="card-header text-black" align="center"
 							style="background-color: white; border: none; margin-top: 10px">
-							<h2 class="mt-2 font-weight-normal">Login</h2>
+							<h2 class="mt-2 font-weight-normal">로그인</h2>
 							<div class="custom-border"></div>
 						</div>
 						<div class="card-body">
@@ -97,7 +93,7 @@
 					<form id="signUp" action="memInsert.do" method="post">
 						<div class="card-header text-black" align="center"
 							style="background-color: white; border: none; margin-top: 10px">
-							<h2 class="mt-2 font-weight-normal">Sign up</h2>
+							<h2 class="mt-2 font-weight-normal">회원가입</h2>
 							<div class="custom-border"></div>
 						</div>
 						<div class="card-body">

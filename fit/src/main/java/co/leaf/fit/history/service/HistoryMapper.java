@@ -12,7 +12,7 @@ public interface HistoryMapper {
 	// 회원 한명의 내역 전체 조회
 	List<HistoryVO> hisSelect(MemberVO vo);
 	// 회원 한명의 한건 조회
-	HistoryVO hisSelectOne(MemberVO vo, int hisId);
+	HistoryVO hisSelectOne(HistoryVO vo);
 	// 입력
 	int hisInsert(HistoryVO vo);
 	// 수정

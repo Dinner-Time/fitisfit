@@ -136,7 +136,7 @@
 		<nav class="navbar justify-content-center navbar-expand-sm bg-light">
 		  <ul class="navbar-nav">
 		    <li class="slideLi nav-item">
-		      <a class="nav-link" href="#">파트너정보</a>
+		      <a class="nav-link" href="parSelect.do">파트너정보</a>
 		    </li>
 		    <li class="slideLi nav-item">
 		      <a class="nav-link" href="#">강사관리</a>

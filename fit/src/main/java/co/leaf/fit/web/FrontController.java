@@ -36,7 +36,11 @@ import co.leaf.fit.member.command.MemLogout;
 import co.leaf.fit.member.command.MemTest;
 import co.leaf.fit.member.command.MemUpdatePassword;
 import co.leaf.fit.member.command.MemberSelect;
+
+import co.leaf.fit.member.command.memPhotoUpload;
+
 import co.leaf.fit.partner.command.MemPartnerSelect;
+
 import co.leaf.fit.partner.command.ParInsert;
 import co.leaf.fit.partner.command.ParInsertForm;
 import co.leaf.fit.partner.command.ParSelect;
@@ -112,6 +116,7 @@ public class FrontController extends HttpServlet {
 		map.put("/adminMemSelectList.do", new AdminMemSelectList());
 		map.put("/adminMemSelect.do", new AdminMemSelect());
 		map.put("/memDelete.do", new MemDelete());
+		map.put("/memPhotoUpload.do", new memPhotoUpload());
 		
 		// partner page
 		map.put("/parTest.do", new ParTest());

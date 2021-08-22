@@ -37,6 +37,7 @@
 </head>
 
 <body id="body">
+
 	<jsp:include page="../home/header.jsp" />
 
 	<!-- section title -->

@@ -18,8 +18,8 @@ public class programDetailUser implements Command {
 		ProgramVO vo = new ProgramVO();
 		TimetableVO vo2 = new TimetableVO();
 		
-		vo.setProId(Integer.parseInt(request.getParameter("proId")));
-		vo2.setTimProId(Integer.parseInt(request.getParameter("proId")));
+		vo.setProId(Integer.valueOf(request.getParameter("proId")));
+		vo2.setTimProId(Integer.valueOf(request.getParameter("proId")));
 		
 		request.setAttribute("detailList", dao.proSelect(vo));
 		request.setAttribute("timetable", dao2.timSelect(vo2));

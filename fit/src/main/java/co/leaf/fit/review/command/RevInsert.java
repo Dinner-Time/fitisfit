@@ -10,7 +10,6 @@ import co.leaf.fit.common.Command;
 import co.leaf.fit.review.service.ReviewMapper;
 import co.leaf.fit.review.service.ReviewService;
 import co.leaf.fit.vo.ReviewVO;
-import oracle.sql.DATE;
 
 public class RevInsert implements Command {
 

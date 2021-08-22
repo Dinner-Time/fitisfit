@@ -21,27 +21,7 @@ public class MypageHistory implements Command {
 		HttpSession session = request.getSession();
 		HistoryMapper hisDao = new HistoryService();
 		
-//		Calendar cal = Calendar.getInstance(); 
-//        Date today = new Date(System.currentTimeMillis());
-		
 		List<HistoryVO> list = hisDao.hisSelect((MemberVO) session.getAttribute("session"));
-		
-//		String hisState = "";
-//		
-//		for (HistoryVO history : list) {
-//			Date hisDate = history.getHisDate();
-//			int hisPeriod = history.getHisPeriod();
-//			cal.setTime(hisDate);
-//			cal.add(Calendar.DATE, hisPeriod);
-//			Date endDate = (Date)cal.getTime();
-//			
-//			if (today.after(endDate)) {
-//				hisState = "수강완료";
-//			} else {
-//				hisState = "수강중";
-//			}
-//			history.setHisState(hisState);
-//		}
 		
 		request.setAttribute("list", list);	
 		

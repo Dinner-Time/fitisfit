@@ -4,11 +4,13 @@ import java.sql.Date;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import co.leaf.fit.common.Command;
 import co.leaf.fit.history.service.HistoryMapper;
 import co.leaf.fit.history.service.HistoryService;
 import co.leaf.fit.vo.HistoryVO;
+import co.leaf.fit.vo.MemberVO;
 
 public class HisInsert implements Command {
 
@@ -18,7 +20,11 @@ public class HisInsert implements Command {
 		HistoryVO vo = new HistoryVO();
 		long miliseconds = System.currentTimeMillis();
 		
-		vo.setHisMemEmail(request.getParameter("hisMemEmail"));
+		MemberVO member = new MemberVO();
+		HttpSession session = request.getSession();
+		member = (MemberVO) session.getAttribute("session");
+		
+		vo.setHisMemEmail(member.getMemEmail());
 		vo.setHisProId(Integer.valueOf(request.getParameter("hisProId")));
 		vo.setHisPeriod(Integer.valueOf(request.getParameter("hisPeriod")));
 		vo.setHisPaid(Integer.valueOf(request.getParameter("hisPaid")));
@@ -35,7 +41,7 @@ public class HisInsert implements Command {
 		
 		request.setAttribute("message", message);
 		
-		return "history/hisInsert";
+		return "member/myPageHistory";
 	}
 
 }

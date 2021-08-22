@@ -25,7 +25,7 @@ public class MypageHistory implements Command {
 		
 		request.setAttribute("list", list);	
 		
-		return "member/myPageHistory";
+		return "mypageHistory.do";
 	}
 
 }

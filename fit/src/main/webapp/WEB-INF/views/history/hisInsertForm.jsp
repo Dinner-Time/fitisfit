@@ -63,10 +63,9 @@ p {
 							</div>
 							<!-- 세션에서 받아오는 부분 -->
 							<div class="card-body" align="left">
-								<p>신청자 이름</p> <br> 
-								<p>전화번호</p> <br> 
-								<p>이메일 주소</p>
-								<input type="text" class="form-control" id="hisMemEmail" name="hisMemEmail">
+								<p>${member.memName }</p> <br> 
+								<p>${member.memPhone }</p> <br> 
+								<p>${member.memEmail }</p>
 							</div>
 						</div>
 					</div>
@@ -86,8 +85,7 @@ p {
 							<div class="card-footer">
 								<button type="button" class="btn btn-outline-primary">취 소</button>
 								&nbsp;&nbsp;&nbsp;
-								<button type="submit" class="btn btn-primary">결제하기</button>
-								<!-- 결제 api 모달창 떠야돼... -->
+								<button type="button" class="btn btn-primary" onclick="payment()">결제하기</button>
 							</div>
 						</div>
 						<div>
@@ -103,4 +101,10 @@ p {
 	<br>
 	<jsp:include page="../home/footer.jsp" />
 </body>
+<script type="text/javascript">
+	function payment() {
+		alert("결제가 완료되었습니다.");
+		frm.submit();
+	}
+</script>
 </html>

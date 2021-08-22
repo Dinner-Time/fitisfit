@@ -174,9 +174,7 @@
 
 				<form id="frm2" name="frm2" action="memDelete.do"
 					method="post">
-
-				<form id="frm" name="frm" action="memUpdatePassword.do" method="post">
-
+				
 					<div class="modal-body">
 						<div class="form-group">
 							비밀번호 : <input type="password" placeholder="Your Password" class="form-control"
@@ -238,7 +236,7 @@
 		}
 
 		function checkPwd2() {
-			var f2 = document.forms[1];
+			var f2 = document.forms[2];
 			var pw1 = f2.memDelPassword.value;
 			var pw2 = f2.memDelPasswordConfirm.value;
 			var pw3 = '<c:out value="${session.memPassword}"/>';
@@ -268,7 +266,7 @@
 		}
 
 		function memDelete() {
-			var f2 = document.forms[1];
+			var f2 = document.forms[2];
 			var pw1 = f2.memDelPassword.value;
 			var pw2 = f2.memDelPasswordConfirm.value;
 			var pw3 = '<c:out value="${session.memPassword}"/>';
@@ -283,10 +281,6 @@
 				} else {
 					return;
 				}
-
-				alert('정말 탈퇴하시겠습니까?');
-				$('#frm').submit();
-
 			}
 		}
 

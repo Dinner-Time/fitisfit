@@ -7,7 +7,7 @@ import co.leaf.fit.vo.InstructorVO;
 public interface InstructorMapper {
 	
 	//전체조회
-	List<InstructorVO> insSelectList();	
+	List<InstructorVO> insSelectList(InstructorVO vo);	
 	
 	//한건
 	InstructorVO insSelect(InstructorVO vo);	

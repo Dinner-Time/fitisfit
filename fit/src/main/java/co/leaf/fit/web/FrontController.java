@@ -19,6 +19,7 @@ import co.leaf.fit.history.command.HisInsert;
 import co.leaf.fit.history.command.HisInsertForm;
 import co.leaf.fit.history.command.HisTest;
 import co.leaf.fit.history.command.MypageHistory;
+import co.leaf.fit.instructor.command.InsDelete;
 import co.leaf.fit.instructor.command.InsInfo;
 import co.leaf.fit.instructor.command.InsInsert;
 import co.leaf.fit.instructor.command.InsInsertForm;
@@ -98,6 +99,7 @@ public class FrontController extends HttpServlet {
 		map.put("/insInsertForm.do", new InsInsertForm());
 		map.put("/insInsert.do", new InsInsert());
 		map.put("/insInfo.do", new InsInfo());
+		map.put("/insDelete.do", new InsDelete());
 		
 		// member page
 		map.put("/memTest.do", new MemTest());

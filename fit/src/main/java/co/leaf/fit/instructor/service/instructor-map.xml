@@ -36,8 +36,6 @@
 
 	<update id="insUpdate" parameterType="InstructorVO">
 		update fit_instructor set
-		ins_photo = #{insPhoto},
-		ins_name = #{insName},
 		ins_phone = #{insPhone},
 		ins_insta = #{insInsta},
 		ins_kakao = #{insKakao},

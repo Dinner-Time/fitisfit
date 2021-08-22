@@ -8,7 +8,7 @@ import co.leaf.fit.instructor.service.InstructorMapper;
 import co.leaf.fit.instructor.service.InstructorService;
 import co.leaf.fit.vo.InstructorVO;
 
-public class InsDelete implements Command {
+public class InsUpdate implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
@@ -16,11 +16,15 @@ public class InsDelete implements Command {
 		InstructorMapper dao = new InstructorService();
 		InstructorVO vo = new InstructorVO();
 		
-		vo.setInsId(Integer.parseInt(request.getParameter("Id")));
+		vo.setInsId(Integer.valueOf(request.getParameter("insId")));
+		vo.setInsPhone(request.getParameter("insPhone"));
+		vo.setInsInsta(request.getParameter("insInsta"));
+		vo.setInsKakao(request.getParameter("insKakao"));
+		vo.setInsHistory(request.getParameter("insHistory"));
 		
-		dao.insDelete(vo);
+		dao.insUpdate(vo);
 		
-		return "insSelectList.do";
+		return "insSelect.do";
 	}
 
 }

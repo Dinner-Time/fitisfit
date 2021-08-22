@@ -25,6 +25,7 @@ import co.leaf.fit.instructor.command.InsInsert;
 import co.leaf.fit.instructor.command.InsInsertForm;
 import co.leaf.fit.instructor.command.InsSelect;
 import co.leaf.fit.instructor.command.InsSelectList;
+import co.leaf.fit.instructor.command.InsUpdate;
 import co.leaf.fit.main.command.Home;
 import co.leaf.fit.main.command.Main;
 import co.leaf.fit.member.command.AdminMemSelect;
@@ -100,6 +101,7 @@ public class FrontController extends HttpServlet {
 		map.put("/insInsert.do", new InsInsert());
 		map.put("/insInfo.do", new InsInfo());
 		map.put("/insDelete.do", new InsDelete());
+		map.put("/insUpdate.do", new InsUpdate());
 		
 		// member page
 		map.put("/memTest.do", new MemTest());

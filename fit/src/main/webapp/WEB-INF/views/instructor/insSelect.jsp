@@ -77,36 +77,49 @@ Start About Section
 					<br>
 				</div>
 				<div class="col-md-8">
-					<table class="table">
-						<tr>
-							<th>이름</th>
-							<td>${ins.insName}</td>
-						</tr>
-						<tr>
-							<th>연락처</th>
-							<td>${ins.insPhone}</td>
-						</tr>
-						<tr>
-							<th>성별</th>
-							<td>${ins.insGender}</td>
-						</tr>
-						<tr>
-							<th>인스타</th>
-							<td>${ins.insInsta}</td>
-						</tr>
-						<tr>
-							<th>카카오</th>
-							<td>${ins.insKakao}</td>
-						</tr>
-						<tr>
-							<th>이력</th>
-							<td>${ins.insHistory}</td>
-						</tr>
-					</table>
-					<div align="right">
-						<a href="#" class="btn btn-primary">수정</a> <a href="#"
-							id="insDelete" class="btn btn-danger">삭제</a>
-					</div>
+					<form id="updateForm" name="updateForm" action="insUpdate.do"
+						method="POST">
+						<input type="hidden" id="insId" name="insId" value="${ins.insId}">
+						<table class="table">
+							<tr>
+								<th>이름</th>
+								<td>${ins.insName}</td>
+							</tr>
+							<tr>
+								<th>연락처</th>
+								<td><input id="insPhone" name="insPhone"
+									class="form-control" type="text" style="width: 70% !important;"
+									value="${ins.insPhone }" readonly></td>
+							</tr>
+							<tr>
+								<th>성별</th>
+								<td>${ins.insGender}</td>
+							</tr>
+							<tr>
+								<th>인스타</th>
+								<td><input id="insInsta" name="insInsta"
+									class="form-control" type="text" style="width: 70% !important;"
+									value="${ins.insInsta }" readonly></td>
+							</tr>
+							<tr>
+								<th>카카오</th>
+								<td><input id="insKakao" name="insKakao"
+									class="form-control" type="text" style="width: 70% !important;"
+									value="${ins.insKakao }" readonly></td>
+							</tr>
+							<tr>
+								<th>이력</th>
+								<td>
+								<input id="insHistory" name="insHistory"
+									class="form-control" type="text" style="width: 70% !important;"
+									value="${ins.insHistory}" readonly></td>
+							</tr>
+						</table>
+						<div align="right">
+							<button id="updateBtn" type="button" class="btn btn-primary">수정</button>
+							<a href="#" id="insDelete" class="btn btn-danger">삭제</a>
+						</div>
+					</form>
 				</div>
 			</div>
 			<!-- End row -->
@@ -115,8 +128,8 @@ Start About Section
 	</section>
 	<!-- End section -->
 
-	<form action="" method="POST">
-		<input type="hidden" id="insId" name="insId" value="">${ins.insId}
+	<form id="deleteForm" name="deleteForm" action="" method="POST">
+		<input type="hidden" id="Id" name="Id" value="${ins.insId}">
 	</form>
 
 	<jsp:include page="/WEB-INF/views/home/footer.jsp" />
@@ -152,23 +165,51 @@ Start About Section
 	<script src="js/script.js"></script>
 
 	<script type="text/javascript">
-		let form = $('form');
-		let insDelete = $('#insDelete');
-		let input = $(form).find('input');
-		let insId = $('#insId');
-
 		$(insDelete).click(function() {
-			if(confirm("해당 강사를 삭제하시겠습니까?") == true) {
+			let form = $('#deleteForm');
+			let insDelete = $('#insDelete');
+			if (confirm("해당 강사를 삭제하시겠습니까?") == true) {
 				alert("삭제 완");
-				$(insDelete).attr() <!-- 미완성 -->
 				$(form).attr('action', 'insDelete.do');
-				$(input).attr('name', "insId").val(insId);
 				$(form).submit();
 			} else {
 				return;
 			}
-			
+
 		});
+
+		let form = $('#updateForm');
+		let input = $('#insPhone');
+		let inputBefore = $(input).val();
+
+		$('#updateBtn').click(function() {
+			if ($(this).text() == '수정') {
+				$('#insPhone').prop('readonly', false);
+				$('#insInsta').prop('readonly', false);
+				$('#insKakao').prop('readonly', false);
+				$('#insHistory').prop('readonly', false);
+				$(this).text('완료')
+			} else if ($(this).text() == '완료') {
+				let rtnNum;
+				let regExp = /01[01689]-[0-9]{1}[0-9]{2,3}-[0-9]{4}$/;
+				let myArray;
+				if (regExp.test($(input).val())) {
+					if (confirm('정말로 수정하시겠습니까?')) {
+						alert('수정되었습니다.')
+						$(form).submit();
+					}
+				} else {
+					alert('전화번호 형식이 아닙니다\n다시 한 번 확인해주세요.');
+					$(input).val(inputBefore);
+				}
+
+				$('#insPhone').prop('readonly', true);
+				$('#insInsta').prop('readonly', true);
+				$('#insKakao').prop('readonly', true);
+				$('#insHistory').prop('readonly', true);
+				$(this).text('수정')
+			}
+		})
 	</script>
 
 </body>

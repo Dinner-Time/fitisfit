@@ -222,7 +222,7 @@
 	<!-- Custom for this Page -->
 	<script type="text/javascript">
 		function checkPwd() {
-			var f1 = document.forms[0];
+			var f1 = document.forms[1];
 			console.log(f1);
 			var pw1 = f1.newMemPassword.value;
 			var pw2 = f1.newMemPasswordConfirm.value;
@@ -250,7 +250,7 @@
 		}
 
 		function pwdCheck() {
-			var f1 = document.forms[0];
+			var f1 = document.forms[1];
 			console.log(f1);
 			var pw1 = f1.newMemPassword.value;
 			var pw2 = f1.newMemPasswordConfirm.value;
@@ -295,7 +295,7 @@
 				$(this).text('완료')
 			} else if ($(this).text() == '완료') {
 				let rtnNum;
-				let regExp = /01[01689]-[1-9]{1}[0-9]{2,3}-[0-9]{4}$/;
+				let regExp = /01[01689]-[0-9]{1}[0-9]{2,3}-[0-9]{4}$/;
 				let myArray;
 				if (regExp.test($(input).val())) {
 					if (confirm('정말로 수정하시겠습니까?')) {

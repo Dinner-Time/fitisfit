@@ -54,14 +54,12 @@ h3, h5, p {
 	</div>
 	<!-- /section title -->
 	<div class="container">
-		<div class="row text-center">
 		<form id="frm" name="frm" action="revInsertForm.do" method="post">
-			<c:forEach var="history" items="${list}">
+		<div class="row text-center">
+			<c:forEach var="history" items="${list}" varStatus="status">
 				<div class="col-3">
-					<div class="post-item">
-						<div class="stateBanner badge-primary">
-							수강중				
-						</div>
+					<div class="post-item" data-idx="${status.index}">
+						<div class="stateBanner badge-primary"></div>
 						<div class="media-wrapper">
 							<img src="images/program/${history.proPhoto}" alt="Program Photo" class="img-fluid">
 						</div>
@@ -70,15 +68,15 @@ h3, h5, p {
 							<p>${history.hisDate} ~</p>
 						</div>
 						<div>
-							<button type="button" class="btn btn-primary">후기작성</button>
+							<button type="submit" class="btn btn-primary">후기작성</button>
 							<button type="button" class="btn btn-outline-primary" onclick="delConfirm()">수강취소</button>
 							<br><br>
 						</div>
 					</div>
 				</div>
 			</c:forEach>
-			</form>
 		</div>
+		</form>
 	</div>
 	<br><br><br>
 	<jsp:include page="/WEB-INF/views/home/footer.jsp" />
@@ -96,20 +94,34 @@ h3, h5, p {
 	
 	<script type="text/javascript">
 		let today = new Date(); 
-		
-		for (let i=0; i<5; i++) {
+		let hisState = $('.post-item');
+		let lastIdx = $(hisState).last().attr("data-idx")*1;
+
+
+		for (let i=0; i<=lastIdx; i++) {
 			let date = new Date($('.content').eq(i).attr('data-hisDate'));
 			let period = $('.content').eq(i).attr('data-hisPeriod')*1;
 			date.setMonth(date.getMonth()+1+period);
-			console.log(date);
+
 			
+			if (today > date) {
+				$(hisState).eq(i).children().first().text('수강완료');
+			} else {
+				$(hisState).eq(i).children().first().text('수강중');
+			}
+			
+			if ($(hisState).eq(i).children().first().text() == "수강완료") {
+				$(hisState).eq(i).children().first().css({'background-color' : 'gray'});
+				
+			}
 		}
+		
 		function delConfirm() {
-			confirm('정말로 수강취소하시겠습니까?');
-		}
-		function getRecord(n) {
-			frm.hisId.value = n;
-			frm.submit();
+			var result = confirm('정말로 수강취소하시겠습니까?');
+			if (result) {
+				
+			}
+
 		}
 	</script>
 </body>

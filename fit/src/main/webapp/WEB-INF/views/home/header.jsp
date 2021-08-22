@@ -100,7 +100,7 @@
 		      <a class="nav-link" href="memSelect.do">회원정보</a>
 		    </li>
 		    <li class="slideLi nav-item">
-		      <a class="nav-link" href="#">수강내역</a>
+		      <a class="nav-link" href="mypageHistory.do">수강내역</a>
 		    </li>
 		    <li class="slideLi nav-item">
 		      <a class="nav-link" href="wisList.do">위시리스트</a>

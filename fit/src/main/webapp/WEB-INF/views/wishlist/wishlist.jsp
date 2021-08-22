@@ -133,7 +133,7 @@
 		let proId = $(form).find('#proId');
 
 		$('.custom-go').click(function () {
-			formSubmit('', $(this).attr('data-id'))
+			formSubmit('programDetailUser.do', $(this).attr('data-id'))
 		});
 		$('.custom-del').click(function () {
 			if(confirm('정말 삭제하시겠습니까?')){

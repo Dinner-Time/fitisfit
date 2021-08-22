@@ -24,8 +24,8 @@ public class HistoryService implements HistoryMapper {
 	}
 
 	@Override
-	public HistoryVO hisSelectOne(MemberVO vo, int hisId) {
-		return map.hisSelectOne(vo, hisId);
+	public HistoryVO hisSelectOne(HistoryVO vo) {
+		return map.hisSelectOne(vo);
 	}
 	
 	@Override

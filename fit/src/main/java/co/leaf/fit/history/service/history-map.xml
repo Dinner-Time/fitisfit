@@ -34,11 +34,11 @@
 	
 	<select id="hisSelectOne" resultType="HistoryVO">
 		SELECT
-		a.pro_name, a.pro_photo, b.*
+		a.*, b.*
 		FROM
 		fit_program a
 		JOIN fit_history b ON a.pro_id = b.his_proid
-        WHERE his_mememail = #{memEmail} and his_id = #{hisId};
+        WHERE his_mememail = #{hisMemEmail} and his_id = #{hisId};
 	</select>
 	
 	<insert id="hisInsert" parameterType="HistoryVO">

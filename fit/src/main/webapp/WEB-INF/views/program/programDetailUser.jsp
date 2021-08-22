@@ -45,7 +45,7 @@
     }
 
     .hover-me a:hover:before {
-      content: '0/12';
+      content: '${detailList[0].proPeople }/${detailList[0].proMaxPeople }';
       font-size: 15px;
     }
   </style>
@@ -53,7 +53,7 @@
 
 <body id="body">
   <jsp:include page="/WEB-INF/views/home/header.jsp" />
-	
+
   <!-- blog details part start -->
   <section class="blog-details section">
     <div class="container">
@@ -63,12 +63,12 @@
             <div class="card">
               <div class="card-body">
                 <h1>${detailList[0].proName}
-              </h1>
+                </h1>
               </div>
             </div>
             <br />
             <div class="card">
-              <img class="img-fluid w-100" src="images/blog/post-1.jpg" alt="post-image">
+              <img class="img-fluid w-100" src="${detailList[0].proPhoto }" alt="post-image">
             </div>
             <!-- Post Content -->
             <div class="post-content">
@@ -98,31 +98,38 @@
                       <tr>
                         <td>
                           <span
-                            class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">${timetable.timMon }</span>
+                            class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">${timetable.timMon
+                            }</span>
                         </td>
                         <td>
                           <span
-                            class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">${timetable.timTue }</span>
+                            class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">${timetable.timTue
+                            }</span>
                         </td>
                         <td>
-                        <span
-                            class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">${timetable.timWen }</span>
+                          <span
+                            class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">${timetable.timWen
+                            }</span>
                         </td>
                         <td>
-                        <span
-                            class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">${timetable.timThu }</span>
+                          <span
+                            class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">${timetable.timThu
+                            }</span>
                         </td>
                         <td>
-                         <span
-                            class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">${timetable.timFri }</span>
+                          <span
+                            class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">${timetable.timFri
+                            }</span>
                         </td>
                         <td>
-                         <span
-                            class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">${timetable.timSat }</span>
+                          <span
+                            class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">${timetable.timSat
+                            }</span>
                         </td>
                         <td>
-                         <span
-                            class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">${timetable.timSun }</span>
+                          <span
+                            class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">${timetable.timSun
+                            }</span>
                         </td>
                       </tr>
                     </tbody>
@@ -132,19 +139,17 @@
               <br />
               <div class="card">
                 <div class="card-body">
-                  <p><a href=""><span class="iconify-inline" data-icon="ion:open-outline" style="color: #4343fe;"
-                        data-width="30" data-height="30"></span></a>
-                    &nbsp; ${detailList[0].insName }  </p>
-                  <p>강사 소개입니다.</p>
+                  <p><a id="insSelect" href=""><span class="iconify-inline" data-icon="ion:open-outline"
+                        style="color: #4343fe;" data-width="30" data-height="30"></span></a>
+                    &nbsp; 강사소개 : ${detailList[0].insName } </p>
                 </div>
               </div>
               <br />
               <div class="card">
                 <div class="card-body">
-                  <p><a href=""><span class="iconify-inline" data-icon="ion:open-outline" style="color: #4343fe;"
-                        data-width="30" data-height="30"></span></a>
-                    &nbsp; ${detailList[0].parName }</p>
-                  <p>업체 소개입니다.</p>
+                  <p><a id="parSelect" href=""><span class="iconify-inline" data-icon="ion:open-outline"
+                        style="color: #4343fe;" data-width="30" data-height="30"></span></a>
+                    &nbsp; 업체소개 : ${detailList[0].parName }</p>
                 </div>
               </div>
               <br />
@@ -190,26 +195,30 @@
                   <div class="col-4">
                     <div class="card" align="left" style="width:40rem;">
                       <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                          <!-- 별 모양은 자바스크립트로 구현.. -->
-                          <h5 class="card-title">리뷰점수 : ${review.revScore}</h5>
-                          <h6 class="card-subtitle mb-2 text-muted">날짜 : ${detail.revDate } , 작성자 : ${detail.revWriter }</h6>
-                          <hr>
-							내용 : ${detail.revContent }                        
-						</li>
+                        <c:forEach var="review" items="${detailList }">
+                          <li class="list-group-item">
+                            <!-- 별 모양은 자바스크립트로 구현.. -->
+                            <h5 class="card-title">리뷰점수 : ${review.revScore}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">내용 : ${review.revContent }
+                            </h6>
+                            <hr>
+                            날짜 : ${review.revDate } , 작성자 : ${review.revWriter}
+                          </li>
+                        </c:forEach>
                       </ul>
                     </div>
                   </div>
                 </div>
               </div>
               <br />
-              <div class="card">
+
+              <!-- <div class="card">
                 <div class="card-body">
                   <p>
                     <h2>다른 프로그램들과 비교해보세요!</h2>
                     <div class="container">
                       <div class="row">
-                        <!-- single blog post -->
+                       
                         <article class="col-md-4 col-sm-6 col-xs-12 clearfix ">
                           <div class="card">
                             <div class="post-item">
@@ -227,31 +236,9 @@
                             </div>
                           </div>
                         </article>
-                        <!-- /single blog post -->
-                        <!-- single blog post -->
-                        <article class="col-md-4 col-sm-6 col-xs-12 clearfix ">
-                          <div class="card">
-                            <div class="post-item">
-                              <div class="media-wrapper">
-                                <img src="images/blog/post-1.jpg" alt="amazing caves coverimage" class="img-fluid">
-                              </div>
+                       /single blog post -->
 
-                              <div class="content">
-                                <h3><a href="single-post.html">프로그램명</a></h3>
-                                <p>설명</p>
-                                <p>날짜</p>
-                                <div align="center">
-                                  <a class="btn btn-main" href="" style="background-color: #4343FE; border:none;">가격</a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </article>
-                        <!-- /single blog post -->
-                      </div> <!-- End row -->
-                    </div>
-                </div>
-              </div>
+
             </div>
         </div>
         <div class="col-lg-4">
@@ -259,15 +246,19 @@
           <aside class="sidebar" style="position:sticky; top:150px;">
             <div class="card" style="width:359px">
               <div class="card-body text-center">
-                <div class="hover-me"><a class="btn btn-main" href="#"
-                    style="background-color:#4343fe; border:none">예약가능인원</a></div><br />
-                <a class="btn btn-main" href="#" style="background-color:#4343fe; border:none">위시리스트 담기</a><br /><br />
-                <a class="btn btn-main" href="#" style="background-color:#4343fe; border:none">등록</a><br />
+                <a id="goWishList" class="btn btn-main" href="#" style="background-color:#4343fe; border:none">위시리스트 담기</a><br /><br />
+                <div class="hover-me">
+                  <a id="goEnroll" class="btn btn-main" href="#" style="background-color:#4343fe; border:none">등록</a>
+                </div><br />
               </div>
             </div>
           </aside>
         </div>
   </section>
+
+  <form action="" method="POST">
+    <input type="hidden" name="" value="">
+  </form>
 
   <jsp:include page="/WEB-INF/views/home/footer.jsp" />
 
@@ -291,7 +282,39 @@
   <script src="plugins/smooth-scroll/smooth-scroll.min.js"></script>
   <!-- Custom js -->
   <script src="js/script.js"></script>
+  <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+  <!-- Custom for this Page -->
+  <script>
+    let goWishList = $('#goWishList');
+    let goEnroll = $('#goEnroll');
+    let session = "<c:out value='${session}' />"
+    let form = $('form');
+    let input = $(form).find('input');
+    let proId = "<c:out value='${detailList[0].proDesc }' />";
 
+    function sessionCheck(){
+      if(session == ''){
+        alert('로그인이 필요한 서비스입니다.');
+        location.href = 'loginForm.do';
+        return false;
+      }
+      return true;
+    }
+
+    $(goWishList).click(function(){
+      if(sessionCheck()){
+        
+      }
+
+    });
+    $(goEnroll).click(function(){
+      if(sessionCheck()){
+        $(form).attr('action', 'hisInsertForm.do');
+        $(input).attr('name', "hisProId").val(proId);
+        $(form).submit();
+      }
+    });
+  </script>
 </body>
 
 </html>

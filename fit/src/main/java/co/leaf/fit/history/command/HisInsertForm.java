@@ -13,6 +13,7 @@ public class HisInsertForm implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
+
 		MemberMapper dao = new MemberService();
 		MemberVO vo = new MemberVO();
 		
@@ -24,6 +25,9 @@ public class HisInsertForm implements Command {
 		
 		request.setAttribute("member", vo);
 		
+
+		request.setAttribute("hisProId", request.getParameter("hisProId"));
+
 		return "history/hisInsertForm";
 	}
 

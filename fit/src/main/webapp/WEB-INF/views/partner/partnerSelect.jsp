@@ -79,7 +79,7 @@ Start About Section
 				<div class="col-md-4" align="center">
 					<div class="card" style="width: 300px">
 						<img class="card-img-top img-thumbnail"
-							src="images/team/${member.memPhoto }" alt="member image"
+							src="images/team/${partner.parPhoto }" alt="member image"
 							style="width: 100%">
 						<div class="card-body" align="right">
 							<a href="#" class="btn btn-primary">수정</a>
@@ -225,7 +225,7 @@ Start About Section
 			console.log(f1);
 			var pw1 = f1.newMemPassword.value;
 			var pw2 = f1.newMemPasswordConfirm.value;
-			var pw3 = '<c:out value="${session.memPassword}"/>';
+			var pw3 = '<c:out value="${session.parPassword}"/>';
 			var pw4 = f1.password.value;
 			console.log(pw3);
 			if (pw1 != pw2 || pw3 != pw4) {

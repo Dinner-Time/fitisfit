@@ -9,12 +9,7 @@ public class HisInsertForm implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		// 회원 정보를 먼저 뿌려주고
-		
-		
-		// Insert할 내역도 뿌려줌
-		
-		
+		request.setAttribute("hisProId", request.getParameter("hisProId"));
 		return "history/hisInsertForm";
 	}
 

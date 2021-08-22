@@ -121,7 +121,7 @@
 								</h3>
 								<p>${pro.proDesc }</p>
 								<p>${pro.proSince } ~ ${pro.proPeriod }개월</p>
-								<a class="custom-btn" href="single-post.html">${pro.proPrice*(100 -
+								<a class="custom-btn pro-submit" data-proId="${pro.proId}" style="cursor: pointer;">${pro.proPrice*(100 -
 									pro.proSale3)*0.01}&#8361부터</a>
 							</div>
 						</div>
@@ -134,6 +134,10 @@
 		<!-- container -->
 	</section>
 	<!-- End section -->
+
+	<form id="frm" action="programDetailUser.do">
+		<input type="hidden" name="proId">
+	</form>
 
    <jsp:include page="/WEB-INF/views/home/footer.jsp" />
 
@@ -159,9 +163,10 @@
 	<script src="js/script.js"></script>
 	<!-- Custom for this Page -->
 	<script type="text/javascript">
-		let programs = $('#programs');
+
 		// 선택한 카테고리에 해당하는 프로그램만 보여주는 함수
 		// db에서 모든 프로그램을 가져와 regId가 내가 선택한 버튼의 regId와 같은 것만 보여준다.
+		let programs = $('#programs');
 		function showPrograms(n) {
 			$(programs).slideUp(400, function () {
 				programs.children().hide();
@@ -174,6 +179,14 @@
 				$(this).slideDown(400);
 			});
 		}
+
+		// 해당 프로그램으로 이동하는 함수
+		let form = $('#frm');
+		$('.pro-submit').click(function(){
+			let proId = $(this).attr('data-proId');
+			$(form).find('input').val(proId)
+			$(form).submit();
+		});
 	</script>
 
 </body>

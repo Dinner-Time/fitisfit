@@ -124,8 +124,6 @@ public class FrontController extends HttpServlet {
 		
 		map.put("/programDetailUser.do", new programDetailUser());	
 		
-
-		
 		// review page
 		map.put("/revSelectList.do", new RevSelectList());
 		map.put("/revSelectListByAdm.do", new RevSelectListByAdm());
@@ -142,14 +140,9 @@ public class FrontController extends HttpServlet {
 		map.put("/salPartnerInsert.do", new SalPartnerInsert()); // 파트너 사에서 오늘 수익 정산
 		map.put("/salPartnerUpdate.do", new SalPartnerUpdate()); // 파트너 사에서 정산 금액 수정
 		
-		// timetable page
-		
 		// wishlist page
 		map.put("/wisList.do", new WisList());
 		map.put("/wisDelete.do", new WisDelete());
-		
-		
-		
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

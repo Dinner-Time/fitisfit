@@ -24,7 +24,7 @@ public class ProDetail implements Command {
 		request.setAttribute("detailList", dao.proSelect(vo));
 		request.setAttribute("timetable", dao2.timSelect(vo2));
 		
-		return "program/programDetail";
+		return "program/programDetailUser";
 	}
 
 }

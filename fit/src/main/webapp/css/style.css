@@ -1,20 +1,27 @@
 @import url("https://fonts.googleapis.com/css?family=Catamaran:400,500,600,700,700|Source+Sans+Pro:400,600");
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+@import url(https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css);
+
+* {
+	font-family: 'NanumSquare', sans-serif;
+}
+
 body {
-	background-color: #d4d4d4;
+  background-color: #d4d4d4;
   line-height: 1.4;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'NanumSquare', sans-serif;
   -webkit-font-smoothing: antialiased;
   background-color: #EEEEEE;
 }
 
 p {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'NanumSquare', sans-serif;
   color: #848484;
   font-size: 16px;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Catamaran", sans-serif;
+  font-family: 'NanumSquare', sans-serif;
   font-weight: 600;
 }
 
@@ -285,7 +292,7 @@ a:focus, a:hover {
 .header-bradcrumb a, .header-bradcrumb .active {
   color: #cfcfcf;
   font-weight: 200;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'NanumSquare', sans-serif;
 }
 
 .header-bradcrumb a:hover {
@@ -811,7 +818,7 @@ a:focus, a:hover {
   display: inline-block;
   color: #666;
   font-size: 13px;
-  font-family: "Catamaran", sans-serif;
+  font-family: 'NanumSquare', sans-serif;
   margin-bottom: 5px;
   font-weight: 600;
 }
@@ -837,7 +844,7 @@ a:focus, a:hover {
   margin-bottom: 15px;
   font-size: 16px;
   color: #777;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'NanumSquare', sans-serif;
 }
 
 .about-2 .checklist li:before {
@@ -845,7 +852,7 @@ a:focus, a:hover {
   margin-right: 12px;
   margin-left: -45px;
   content: "\f375";
-  font-family: "themefisher-font";
+  font-family: 'NanumSquare', sans-serif;
   opacity: 1;
   border-radius: 50%;
   padding: 2px 8px;
@@ -914,7 +921,7 @@ a:focus, a:hover {
   height: 45px !important;
   color: #0c0c0c;
   height: 38px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'NanumSquare', sans-serif;
   font-size: 14px;
   border-radius: 0;
 }
@@ -2021,7 +2028,7 @@ a:focus, a:hover {
   letter-spacing: 1px;
   text-transform: capitalize;
   transition: color .3s;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'NanumSquare', sans-serif;
   display: block;
 }
 

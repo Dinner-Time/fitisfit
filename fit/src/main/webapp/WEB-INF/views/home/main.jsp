@@ -57,17 +57,6 @@
 			filter: brightness(100%);
 		}
 
-		.reg-cat-detail {
-			font-family: 'Do Hyeon', sans-serif;
-			font-size: 25px;
-			text-align: center;
-			color: white;
-			text-shadow: 2px 2px 2px black;
-			vertical-align: bottom;
-			filter: brightness(100%);
-			vertical-align: bottom;
-		}
-
 		.service-item {
 			position: relative;
 			overflow: hidden;
@@ -121,10 +110,6 @@
 			font-size: 20px;
 			margin-left: 10px;
 			margin-right: 10px;
-		}
-
-		h2 {
-			font-family: 'Gowun Dodum', sans-serif;
 		}
 
 		.hide {
@@ -287,7 +272,7 @@
 						<c:forEach var="category" items="${catList}" begin="0" end="3">
 							<div class="col-md-3 col-sm-6 col-xs-12">
 								<div class="service-item cat-submit" data-catid="${category.catId}"
-									style="background: url('images/region/${category.catPhoto}');">
+									style="background: url('images/category/${category.catPhoto}');">
 									<div class="filter"></div>
 									<p class="reg-cat-title">${category.catName}</p>
 								</div>
@@ -302,7 +287,7 @@
 							
 							<div class="col-md-3 col-sm-6 col-xs-12">
 								<div class="service-item cat-submit" data-catid="${category.catId}"
-									style="background: url('images/region/${category.catPhoto}');">
+									style="background: url('images/category/${category.catPhoto}');">
 									<div class="filter"></div>
 									<p class="reg-cat-title">${category.catName}</p>
 								</div>

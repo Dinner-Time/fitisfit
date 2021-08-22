@@ -41,7 +41,7 @@
 					<div class="card">
 					  <div class="card-body">
 					  	<img class="card-img-top" src="images/program/GymProgram1.jpg" alt="Card image">
-					  	<p>(프로그램명)</p>
+					  	<p>(프로그램명) ${list.proName}</p>
 					  </div>
 					</div>
 				</div>

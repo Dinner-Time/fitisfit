@@ -17,11 +17,14 @@ public class RevInsertForm implements Command {
 		
 		HttpSession session = request.getSession();
 		HistoryMapper hisDao = new HistoryService();
-		HistoryVO vo = new HistoryVO();
+		HistoryVO hisVO = new HistoryVO();
+		MemberVO memVO = (MemberVO)session.getAttribute("session");
+		hisVO.setHisMemEmail(memVO.getMemEmail());
+		hisVO.setHisId(Integer.valueOf(request.getParameter("hisId")));
 		
-		vo = hisDao.hisSelectOne((MemberVO)session.getAttribute("session"), Integer.valueOf(request.getParameter("hisId")));
+		hisVO = hisDao.hisSelectOne(hisVO);
 		
-		request.setAttribute("history", vo);
+		request.setAttribute("history", hisVO);
 		
 		return "review/revInsertForm";
 	}

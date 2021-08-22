@@ -36,9 +36,10 @@
 	<!-- 폰트 끝 -->
 
 	<style type="text/css">
-		.rounded-circle {
-			border-radius: 50% !important;
-		}
+	.rounded-circle {
+		border-radius: 50% !important;
+	}
+		
 	</style>
 </head>
 
@@ -63,16 +64,19 @@
 				<div class="col-md-4" align="center">
 					<div class="card" style="width: 300px">
 						<c:if test="${member.memPhoto != null }">
-							<img class="card-img-top img-thumbnail" src="images/team/${member.memPhoto }"
+							<img class="card-img-top img-thumbnail" src="images/member/${member.memPhoto }"
 								alt="member image" style="width: 100%">
 						</c:if>
 						<c:if test="${member.memPhoto == null}">
-							<img class="card-img-top img-thumbnail" src="images/blog/generalProfile.jpg"
+							<img class="card-img-top img-thumbnail" src="images/member/generalProfile.jpg"
 								alt="member image" style="width: 100%">
 						</c:if>
-						<div class="card-body" align="right">
-							<a href="#" class="btn btn-primary">수정</a>
-						</div>
+						<form method="post" action="memPhotoUpload.do" enctype="multipart/form-data">
+							<div class="card-body" align="right">
+								  <input type="file" name="memPhoto" id="memPhoto">
+								  <button type="submit" class="btn btn-primary">등록/수정</button>
+							</div>
+						</form>
 					</div>
 					<br>
 				</div>

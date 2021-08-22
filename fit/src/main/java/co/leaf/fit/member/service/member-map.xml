@@ -23,6 +23,11 @@
 		set mem_password = #{memPassword} where mem_email = #{memEmail}
 	</update>
 
+	<update id="memUpdatePhoto" parameterType="MemberVO">
+		update fit_member
+		set mem_photo = #{memPhoto} where mem_email = #{memEmail} 
+	</update>
+
 	<update id="memUpdatePhone" parameterType="MemberVO">
 		update fit_member set
 		mem_phone = #{memPhone} where mem_email = #{memEmail}

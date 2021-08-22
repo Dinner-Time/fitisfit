@@ -18,7 +18,7 @@ public class MemberSelect implements Command {
 		
 		HttpSession session = request.getSession();
 		
-		vo = (MemberVO) session.getAttribute("session");
+		vo = (MemberVO)session.getAttribute("session");
 		
 		vo = dao.memSelect(vo);
 		

@@ -19,11 +19,13 @@ import co.leaf.fit.history.command.HisInsert;
 import co.leaf.fit.history.command.HisInsertForm;
 import co.leaf.fit.history.command.HisTest;
 import co.leaf.fit.history.command.MypageHistory;
+import co.leaf.fit.instructor.command.InsDelete;
 import co.leaf.fit.instructor.command.InsInfo;
 import co.leaf.fit.instructor.command.InsInsert;
 import co.leaf.fit.instructor.command.InsInsertForm;
 import co.leaf.fit.instructor.command.InsSelect;
 import co.leaf.fit.instructor.command.InsSelectList;
+import co.leaf.fit.instructor.command.InsUpdate;
 import co.leaf.fit.main.command.Home;
 import co.leaf.fit.main.command.Main;
 import co.leaf.fit.member.command.AdminMemSelect;
@@ -36,7 +38,11 @@ import co.leaf.fit.member.command.MemLogout;
 import co.leaf.fit.member.command.MemTest;
 import co.leaf.fit.member.command.MemUpdatePassword;
 import co.leaf.fit.member.command.MemberSelect;
+
 import co.leaf.fit.member.command.memPhotoUpload;
+
+import co.leaf.fit.partner.command.MemPartnerSelect;
+
 import co.leaf.fit.partner.command.ParInsert;
 import co.leaf.fit.partner.command.ParInsertForm;
 import co.leaf.fit.partner.command.ParSelect;
@@ -62,6 +68,7 @@ import co.leaf.fit.sales.command.SalPartnerUpdate;
 import co.leaf.fit.sales.command.SalPatnerList;
 import co.leaf.fit.sales.command.SalTest;
 import co.leaf.fit.wishlist.command.WisDelete;
+import co.leaf.fit.wishlist.command.WisInsert;
 import co.leaf.fit.wishlist.command.WisList;
 
 @WebServlet("*.do")
@@ -99,6 +106,8 @@ public class FrontController extends HttpServlet {
 		map.put("/insInsertForm.do", new InsInsertForm());
 		map.put("/insInsert.do", new InsInsert());
 		map.put("/insInfo.do", new InsInfo());
+		map.put("/insDelete.do", new InsDelete());
+		map.put("/insUpdate.do", new InsUpdate());
 		
 		// member page
 		map.put("/memTest.do", new MemTest());
@@ -118,6 +127,7 @@ public class FrontController extends HttpServlet {
 		map.put("/parInsertForm.do", new ParInsertForm());
 		map.put("/parInsert.do", new ParInsert());
 		map.put("/parSelect.do", new ParSelect());
+		map.put("/memPartnerSelect.do", new MemPartnerSelect());
 		
 		// program page
 		map.put("/proList.do", new ProList()); // 프로그램 전체 리스트
@@ -147,6 +157,7 @@ public class FrontController extends HttpServlet {
 		
 		// wishlist page
 		map.put("/wisList.do", new WisList());
+		map.put("/wisInsert.do",new WisInsert());
 		map.put("/wisDelete.do", new WisDelete());
 	}
 

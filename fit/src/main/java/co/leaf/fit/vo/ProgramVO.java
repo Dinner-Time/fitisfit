@@ -21,6 +21,7 @@ public class ProgramVO {
 	private String catName;
 	private String regName;
 	private String insName;
+	private int insId;
 	private int revScore;
 	private String revContent;
 	private String revWriter;
@@ -178,6 +179,12 @@ public class ProgramVO {
 	}
 	public void setParRegId(int parRegId) {
 		this.parRegId = parRegId;
+	}
+	public int getInsId() {
+		return insId;
+	}
+	public void setInsId(int insId) {
+		this.insId = insId;
 	}
 	
 	

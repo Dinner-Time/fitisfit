@@ -178,9 +178,7 @@
 
 				<form id="frm2" name="frm2" action="memDelete.do"
 					method="post">
-
-				<form id="frm" name="frm" action="memUpdatePassword.do" method="post">
-
+				
 					<div class="modal-body">
 						<div class="form-group">
 							비밀번호 : <input type="password" placeholder="Your Password" class="form-control"
@@ -228,7 +226,7 @@
 	<!-- Custom for this Page -->
 	<script type="text/javascript">
 		function checkPwd() {
-			var f1 = document.forms[0];
+			var f1 = document.forms[1];
 			console.log(f1);
 			var pw1 = f1.newMemPassword.value;
 			var pw2 = f1.newMemPasswordConfirm.value;
@@ -242,7 +240,7 @@
 		}
 
 		function checkPwd2() {
-			var f2 = document.forms[1];
+			var f2 = document.forms[2];
 			var pw1 = f2.memDelPassword.value;
 			var pw2 = f2.memDelPasswordConfirm.value;
 			var pw3 = '<c:out value="${session.memPassword}"/>';
@@ -256,7 +254,7 @@
 		}
 
 		function pwdCheck() {
-			var f1 = document.forms[0];
+			var f1 = document.forms[1];
 			console.log(f1);
 			var pw1 = f1.newMemPassword.value;
 			var pw2 = f1.newMemPasswordConfirm.value;
@@ -272,7 +270,7 @@
 		}
 
 		function memDelete() {
-			var f2 = document.forms[1];
+			var f2 = document.forms[2];
 			var pw1 = f2.memDelPassword.value;
 			var pw2 = f2.memDelPasswordConfirm.value;
 			var pw3 = '<c:out value="${session.memPassword}"/>';
@@ -287,10 +285,6 @@
 				} else {
 					return;
 				}
-
-				alert('정말 탈퇴하시겠습니까?');
-				$('#frm').submit();
-
 			}
 		}
 
@@ -305,7 +299,7 @@
 				$(this).text('완료')
 			} else if ($(this).text() == '완료') {
 				let rtnNum;
-				let regExp = /01[01689]-[1-9]{1}[0-9]{2,3}-[0-9]{4}$/;
+				let regExp = /01[01689]-[0-9]{1}[0-9]{2,3}-[0-9]{4}$/;
 				let myArray;
 				if (regExp.test($(input).val())) {
 					if (confirm('정말로 수정하시겠습니까?')) {

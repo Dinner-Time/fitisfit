@@ -4,6 +4,24 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="co.leaf.fit.program.service.ProgramMapper">
 
+	<select id="proRegSimpleList" resultType="ProgramVO">
+		select p.*,
+		pa.par_regid 
+		from fit_program p 
+		inner join fit_partner pa 
+		on p.pro_parid = pa.par_id 
+		where pa.par_regid = #{parRegId}
+	</select>
+
+	<select id="proCatSimpleList" resultType="ProgramVO">
+		select p.*,
+		pa.par_regid from 
+		fit_program p 
+		inner join fit_partner pa 
+		on p.pro_parid = pa.par_id 
+		where p.pro_catid = #{proCatId}
+	</select>
+
 	<select id="proSelectList" resultType="ProgramVO">
 		select pr.pro_name,
 		pr.pro_id,
@@ -46,34 +64,39 @@
 		r.rev_date
 		from fit_program pr
 		inner join fit_partner pa
-		on pr.pro_parid =
+		on
+		pr.pro_parid =
 		pa.par_id
 		inner join fit_instructor i
-		on i.ins_id = pr.pro_insid
+		on i.ins_id =
+		pr.pro_insid
 		left
 		outer join fit_review r
 		on r.rev_proid = pr.pro_id
 		inner join
 		fit_category c
 		on c.cat_id = pr.pro_catid
-		inner join (select pt.par_id,
+		inner join (select
+		pt.par_id,
 		re.reg_name
 		from fit_region re
 		inner join fit_partner pt
-		on re.reg_id = pt.par_regid) reg
+		on
+		re.reg_id = pt.par_regid) reg
 		on reg.par_id = pr.pro_parid
 		where
 		pr.pro_state = 'Y' and pr.pro_id = #{proId}
 	</select>
-	
+
 	<delete id="proReqProcess">
-		delete from fit_program 
+		delete from fit_program
 		where pro_id = #{proOriId}
 	</delete>
-	
+
 	<update id="proReqDone" parameterType="ProgramVO">
-		update fit_program 
-		set pro_id = #{pro_oriid}, pro_state = 'Y', pro_oriid = null where pro_id = #{pro_id}
+		update fit_program
+		set pro_id = #{pro_oriid}, pro_state = 'Y', pro_oriid = null where pro_id
+		= #{pro_id}
 	</update>
 
 	<insert id="proInsertReq" parameterType="ProgramVO">
@@ -96,7 +119,7 @@
 		#{proName},
 		#{proOriId})
 	</insert>
-	
+
 	<insert id="proUpdateReq" parameterType="ProgramVO">
 		insert into fit_program
 		values

@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -111,7 +112,7 @@ li {
 		</div>
 	</div>
 	<jsp:include page="/WEB-INF/views/home/header.jsp" />
-	<section class="service-2 section">
+	<section class="blog" id="blog">
 		<div class="container col-11">
 			<!-- main nav -->
 			<nav class="navbar navbar-inverse navbar-expand-lg navbar-light custom-nav"
@@ -179,65 +180,24 @@ li {
 				<!-- /section title -->
 				<!-- single blog post -->
 				<c:forEach var="pro" items="${list }">
-					<article class="col-md-3 col-sm-6 col-xs-12 clearfix">
-						<div class="service-item" style="padding: 20px 20px;">
+					<article class="col-md-3 col-sm-6 col-xs-12 clearfix ">
+						<div class="post-item">
 							<div class="media-wrapper">
 								<img src="${pro.proPhoto }" alt="Program Photo" class="img-fluid">
 							</div>
-							<br>
+
 							<div class="content">
 								<h3>
-									${pro.proName }
+									<a href="#">${pro.proName }</a>
 								</h3>
 								<p>${pro.proDesc }</p>
-								<p>${pro.proSince }
-								<c:if test="${pro.proPeriod != 0}"> ~ ${pro.proPeriod }개월</c:if></p>
+								<p>${pro.proSince } ~ ${pro.proPeriod }개월</p>
 								<a class="custom-btn" href="single-post.html">${pro.proPrice*(100 - pro.proSale3)*0.01}&#8361부터</a>
 							</div>
 						</div>
 					</article>
 				</c:forEach>
 				<!-- /single blog post -->
-				
-				<!-- single blog post -->
-				<article class="col-md-3 col-sm-6 col-xs-12 ">
-					<div class="service-item">
-						<div class="media-wrapper">
-							<img src="images/blog/post-2.jpg" alt="amazing caves coverimage"
-								class="img-fluid">
-						</div>
-						<br>
-						<div class="content">
-							<h3>
-								요가
-							</h3>
-							<p>간략 설명</p>
-							<p>2021-08-17 - 2022-08-16</p>
-							<a class="custom-btn" href="single-post.html">가격</a>
-						</div>
-					</div>
-				</article>
-				<!-- end single blog post -->
-
-				<!-- single blog post -->
-				<article class="col-md-3 col-sm-6 col-xs-12 ">
-					<div class="service-item">
-						<div class="media-wrapper">
-							<img src="images/blog/post-3.jpg" alt="amazing caves coverimage"
-								class="img-fluid">
-						</div>
-						<br>
-						<div class="content">
-							<h3>
-								필라테스
-							</h3>
-							<p>간략 설명</p>
-							<p>2021-08-17 - 2022-08-16</p>
-							<a class="custom-btn" href="single-post.html">가격</a>
-						</div>
-					</div>
-				</article>
-				<!-- end single blog post -->
 			</div>
 			<!-- end row -->
 		</div>
@@ -245,6 +205,9 @@ li {
 	</section>
 	<jsp:include page="../home/footer.jsp" />
 </body>
+
+
+
 
 
 <!-- 
@@ -276,6 +239,7 @@ li {
 
 <!-- Custom js -->
 <script src="js/script.js"></script>
+
 
 
 </html>

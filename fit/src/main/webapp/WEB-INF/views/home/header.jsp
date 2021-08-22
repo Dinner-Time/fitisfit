@@ -53,7 +53,7 @@
         <ul class="navbar-nav ml-auto text-center">
           <c:if test="${session.author != 'A' and session.author != 'P'}">
             <li class="nav-item ">
-              <a class="nav-link" href="loginForm.do">파트너 등록</a>
+              <a class="nav-link" href="parInsertForm.do">파트너 등록</a>
             </li>
           </c:if>
           <c:if test="${session == null }">

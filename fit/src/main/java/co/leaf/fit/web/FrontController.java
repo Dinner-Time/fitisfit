@@ -125,6 +125,7 @@ public class FrontController extends HttpServlet {
 		map.put("/programAdd.do", new ProgramAdd()); // 프로그램 추가 기능
 		
 		map.put("/programDetailUser.do", new programDetailUser());	
+		map.put("/hisInsertForm.do", new HisInsertForm());
 		
 		// review page
 		map.put("/revSelectList.do", new RevSelectList());

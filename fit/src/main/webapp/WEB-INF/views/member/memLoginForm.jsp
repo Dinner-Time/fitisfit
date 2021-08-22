@@ -38,17 +38,8 @@
 
 <body id="body">
     <jsp:include page="../home/header.jsp" />
-	
-	<!-- section title -->
-			<div class="col-12">
-			<div class="title text-center" >
-				
-			</div>
-			</div>
-			<!-- /section title -->
 
-
-    <section class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <section class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
         <div class="container">
       	  <div class="row">
             <div class="card col-md-6" style="border:none;" >

@@ -139,7 +139,7 @@
               <br />
               <div class="card">
                 <div class="card-body">
-                  <p><a id="insSelect" href=""><span class="iconify-inline" data-icon="ion:open-outline"
+                  <p><a id="insSelect"><span class="iconify-inline" data-icon="ion:open-outline"
                         style="color: #4343fe;" data-width="30" data-height="30"></span></a>
                     &nbsp; 강사소개 : ${detailList[0].insName } </p>
                 </div>
@@ -147,7 +147,7 @@
               <br />
               <div class="card">
                 <div class="card-body">
-                  <p><a id="parSelect" href=""><span class="iconify-inline" data-icon="ion:open-outline"
+                  <p><a id="parSelect"><span class="iconify-inline" data-icon="ion:open-outline"
                         style="color: #4343fe;" data-width="30" data-height="30"></span></a>
                     &nbsp; 업체소개 : ${detailList[0].parName }</p>
                 </div>
@@ -285,12 +285,15 @@
   <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
   <!-- Custom for this Page -->
   <script>
-    let goWishList = $('#goWishList');
-    let goEnroll = $('#goEnroll');
     let session = "<c:out value='${session}' />"
     let form = $('form');
     let input = $(form).find('input');
-    let proId = "<c:out value='${detailList[0].proDesc }' />";
+
+    let proId = "<c:out value='${detailList[0].proId }' />";
+    let insId = "<c:out value='${detailList[0].insId }' />";
+    let parId = "<c:out value='${detailList[0].proParId }' />";
+
+    let canEnroll = '<c:out value="${detailList[0].proPeople }"/>' == '<c:out value="${detailList[0].proMaxPeople }"/>';
 
     function sessionCheck(){
       if(session == ''){
@@ -301,16 +304,38 @@
       return true;
     }
 
-    $(goWishList).click(function(){
-      if(sessionCheck()){
-        
+    function enrollCheck(){
+      if(canEnroll){
+        alert('등록 가능 인원이 모두 찼습니다.')
+        return false;
       }
+      return true;
+    }
 
+    $('#insSelect').click(function(){
+      $(form).attr('action', 'insSelect.do');
+      $(input).attr('name', "insId").val(insId);
+      $(form).submit();
     });
-    $(goEnroll).click(function(){
+
+    $('#parSelect').click(function(){
+      $(form).attr('action', 'memPartnerSelect.do');
+      $(input).attr('name', "parId").val(parId);
+      $(form).submit();
+    });
+
+    $('#goWishList').click(function(){
       if(sessionCheck()){
+        $(form).attr('action', 'wisInsert.do');
+        $(input).attr('name', "proId").val(proId);
+        $(form).submit();
+      }
+    });
+
+    $('#goEnroll').click(function(){
+      if(sessionCheck() && enrollCheck()){
         $(form).attr('action', 'hisInsertForm.do');
-        $(input).attr('name', "hisProId").val(proId);
+        $(input).attr('name', "proId").val(proId);
         $(form).submit();
       }
     });

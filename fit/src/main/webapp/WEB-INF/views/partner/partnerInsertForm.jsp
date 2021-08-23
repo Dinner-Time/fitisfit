@@ -38,6 +38,15 @@
 <body id="body">
 	<jsp:include page="/WEB-INF/views/home/header.jsp" />
 
+	<!-- 페이지 로딩 효과 -->
+	<div id="preloader">
+		<div class='preloader'>
+			<span></span> <span></span> <span></span> <span></span> <span></span>
+			<span></span>
+		</div>
+	</div>
+	<!-- 페이지 로딩 효과 -->
+
 	<section class="about" id="about">
 		<div class="container">
 			<form id="parInsert" name="parInsert" action="parInsert.do" method="post" enctype="multipart/form-data">
@@ -82,22 +91,7 @@
 									name="parName" placeholder="이름을 입력해주세요." required>
 							</div>
 							<div class="form-group">
-								<select id="parRegId" name="parRegId" class="form-control">
-									<option selected>지역을 선택해주세요.</option>
-									<option value="1">서울</option>
-									<option value="2">인천</option>
-									<option value="3">대전</option>
-									<option value="4">대구</option>
-									<option value="5">울산</option>
-									<option value="6">부산</option>
-									<option value="7">광주</option>
-									<option value="8">경기</option>
-									<option value="9">강원</option>
-									<option value="10">충청</option>
-									<option value="11">경상</option>
-									<option value="12">전라</option>
-									<option value="13">제주</option>
-								</select>
+								<input type="hidden" id="parRegId" name="parRegId" value="">
 							</div>
 							<div class="form-group">
 								<label id="phoneLabel" class="text-danger" for="parPhone"></label>
@@ -168,6 +162,7 @@
 		}
 		function jusoCallBack(roadFullAddr) {
 			$('#roadFullAddr').val(roadFullAddr);
+			parRegIdVal(roadFullAddr.substr(0,2));
 		}
 		$(document).ready(function() {
 			let regExp = /^[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}/;
@@ -194,6 +189,24 @@
 					document.getElementById('checkPwd').style.color = "black";
 					document.getElementById('checkPwd').innerHTML = "암호가 확인 되었습니다.";
 				}
+			}
+		}
+
+		function parRegIdVal(regName){
+			switch (regName){
+				case '서울': $('#parRegId').val(1); break;
+				case '인천': $('#parRegId').val(2); break;
+				case '대전': $('#parRegId').val(3); break;
+				case '대구': $('#parRegId').val(4); break;
+				case '울산': $('#parRegId').val(5); break;
+				case '부산': $('#parRegId').val(6); break;
+				case '광주': $('#parRegId').val(7); break;
+				case '경기': $('#parRegId').val(8); break;
+				case '강원': $('#parRegId').val(9); break;
+				case '충청': $('#parRegId').val(10); break;
+				case '경상': $('#parRegId').val(11); break;
+				case '전라': $('#parRegId').val(12); break;
+				case '제주': $('#parRegId').val(13); break;
 			}
 		}
 	</script>

@@ -215,7 +215,9 @@
 						<c:forEach var="region" items="${regList}" begin="0" end="3">
 							<div class="col-md-3 col-sm-6 col-xs-12">
 								<div class="service-item reg-submit"
-									style="background: url('images/region/${region.regPhoto}');"
+									style="background: url('images/region/${region.regPhoto}');
+											background-position: center;
+											background-size: cover;"
 									data-regid="${region.regId}">
 									<div class="filter"></div>
 									<p class="reg-cat-title">${region.regName}</p>
@@ -230,7 +232,9 @@
 						<c:forEach var="region" items="${regList}" begin="4">
 							<div class="col-md-3 col-sm-6 col-xs-12">
 								<div class="service-item reg-submit"
-									style="background: url('images/region/${region.regPhoto}');"
+									style="background: url('images/region/${region.regPhoto}');
+											background-position: center;
+											background-size: cover;"
 									data-regid="${region.regId}">
 									<div class="filter"></div>
 									<p class="reg-cat-title">${region.regName}</p>
@@ -272,7 +276,9 @@
 						<c:forEach var="category" items="${catList}" begin="0" end="3">
 							<div class="col-md-3 col-sm-6 col-xs-12">
 								<div class="service-item cat-submit" data-catid="${category.catId}"
-									style="background: url('images/category/${category.catPhoto}');">
+									style="background: url('images/category/${category.catPhoto}');
+											background-position: center;
+											background-size: cover;">
 									<div class="filter"></div>
 									<p class="reg-cat-title">${category.catName}</p>
 								</div>
@@ -287,7 +293,9 @@
 							
 							<div class="col-md-3 col-sm-6 col-xs-12">
 								<div class="service-item cat-submit" data-catid="${category.catId}"
-									style="background: url('images/category/${category.catPhoto}');">
+									style="background: url('images/category/${category.catPhoto}');
+											background-position: center;
+											background-size: cover;">
 									<div class="filter"></div>
 									<p class="reg-cat-title">${category.catName}</p>
 								</div>
@@ -315,50 +323,6 @@
 	<form id="frm" action="" method="POST">
 		<input type="hidden">
 	</form>
-
-	<!-- 인기 프로그램 시작 -->
-	<!-- <section class="testimonial section" id="testimonial">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="testimonial-slider">
-						<div class="item text-center">
-							<div align="center">
-								<img src="images/program/GymProgram1.jpg" class="img-fluid" alt="">
-							</div>
-							<br>
-							<div class="client-meta">
-								<h3>파워짐 상설 헬스 프로그램</h3>
-								<span>파워짐</span>
-							</div>
-						</div>
-						<div class="item text-center">
-							<div align="center">
-								<img src="images/program/YogaProgram1.jpg" class="img-fluid" alt="">
-							</div>
-							<br>
-							<div class="client-meta">
-								<h3>샨티요가센터 상반기 그룹요가</h3>
-								<span>샨티요가센터</span>
-							</div>
-						</div>
-						<div class="item text-center">
-							<div class="client-thumb">
-								<img src="images/client-logo/clients-3.jpg" class="img-fluid" alt="">
-							</div>
-							<br>
-							<div class="client-meta">
-								<h3>인기 프로그램3</h3>
-								<span>센터3</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section> -->
-	<!-- 인기 프로그램 끝 -->
-
 
 	<jsp:include page="/WEB-INF/views/home/footer.jsp" />
 

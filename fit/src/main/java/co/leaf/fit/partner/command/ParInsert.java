@@ -22,21 +22,36 @@ public class ParInsert implements Command {
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 
 		try {
+			// 사진 업로드
+			int sizeLimit = 15 * 1024 * 1024;
+			String realPath = request.getSession().getServletContext().getRealPath("/") + "images/partner";
+
+			File dir = new File(realPath);
+			if (!dir.exists())
+				dir.mkdirs();
+
+			MultipartRequest multipartRequest = null;
+
 			PartnerMapper dao = new PartnerService();
 			PartnerVO vo = new PartnerVO();
 
 			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 			String date = format.format(System.currentTimeMillis());
 
-			vo.setParEmail(request.getParameter("parEmail"));
-			vo.setParPassword(request.getParameter("parPassword"));
-			vo.setParName(request.getParameter("parName"));
-			vo.setParRegId(Integer.parseInt(request.getParameter("parRegId")));
-			vo.setParAddress(request.getParameter("roadFullAddr"));
-			vo.setParPhone(request.getParameter("parPhone"));
-			vo.setParIntro(request.getParameter("parIntro"));
-			vo.setParSubDate(Date.valueOf(date));
+			multipartRequest = new MultipartRequest(request, realPath, sizeLimit, "utf-8",
+					new DefaultFileRenamePolicy());
 
+			String filename = multipartRequest.getFilesystemName("parPhoto");
+
+			vo.setParPhoto(filename);
+			vo.setParEmail(multipartRequest.getParameter("parEmail"));
+			vo.setParPassword(multipartRequest.getParameter("parPassword"));
+			vo.setParName(multipartRequest.getParameter("parName"));
+			vo.setParRegId(Integer.valueOf(multipartRequest.getParameter("parRegId")));
+			vo.setParAddress(multipartRequest.getParameter("roadFullAddr"));
+			vo.setParPhone(multipartRequest.getParameter("parPhone"));
+			vo.setParIntro(multipartRequest.getParameter("parIntro"));
+			vo.setParSubDate(Date.valueOf(date));
 			dao.parInsert(vo);
 			request.setAttribute("partnerSuccess", "success");
 		} catch (Exception e) {

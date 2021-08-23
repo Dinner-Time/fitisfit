@@ -1,4 +1,4 @@
-<%-- <%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page import = "java.io.File" %>
@@ -15,7 +15,7 @@
 		String filename = "";
 		int sizeLimit = 15*1024*1024;
 		
-		String realPath = request.getServletContext().getRealPath("images/member");
+		String realPath = request.getSession().getServletContext().getRealPath("/") + "images/member";
 		
 		File dir = new File(realPath);
 		if (!dir.exists()) dir.mkdirs();
@@ -33,4 +33,4 @@
 	<img src="${pageContext.request.contextPath}/images/member/<%=filename %>" />
 	
 </body>
-</html> --%>
+</html>

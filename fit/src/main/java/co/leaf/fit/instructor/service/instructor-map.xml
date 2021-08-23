@@ -47,6 +47,12 @@
 		where ins_id = #{insId}
 	</update>
 
+	<update id="insUpdatePhoto" parameterType="InstructorVO">
+		update fit_instructor set
+		ins_photo = #{insPhoto}
+		where ins_id = #{insId}
+	</update>
+
 	<delete id="insDelete" parameterType="InstructorVO">
 		delete from fit_instructor where ins_id = #{insId}
 	</delete>

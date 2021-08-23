@@ -27,7 +27,7 @@ import co.leaf.fit.instructor.command.InsListPartner;
 import co.leaf.fit.instructor.command.InsSelect;
 import co.leaf.fit.instructor.command.InsSelectList;
 import co.leaf.fit.instructor.command.InsUpdate;
-import co.leaf.fit.main.command.Home;
+import co.leaf.fit.instructor.command.InsUpdatePhoto;
 import co.leaf.fit.main.command.Main;
 import co.leaf.fit.member.command.AdminMemSelect;
 import co.leaf.fit.member.command.AdminMemSelectList;
@@ -36,14 +36,15 @@ import co.leaf.fit.member.command.MemInsert;
 import co.leaf.fit.member.command.MemLogin;
 import co.leaf.fit.member.command.MemLoginForm;
 import co.leaf.fit.member.command.MemLogout;
+import co.leaf.fit.member.command.MemPhotoUpload;
 import co.leaf.fit.member.command.MemTest;
 import co.leaf.fit.member.command.MemUpdatePassword;
 import co.leaf.fit.member.command.MemberSelect;
-
-import co.leaf.fit.member.command.memPhotoUpload;
-
 import co.leaf.fit.partner.command.MemPartnerSelect;
+
+
 import co.leaf.fit.partner.command.ParAdmWaitList;
+
 import co.leaf.fit.partner.command.ParInsert;
 import co.leaf.fit.partner.command.ParInsertForm;
 import co.leaf.fit.partner.command.ParReqConfirm;
@@ -56,8 +57,11 @@ import co.leaf.fit.program.command.ProList;
 import co.leaf.fit.program.command.ProParSimpleList;
 import co.leaf.fit.program.command.ProgramAdd;
 import co.leaf.fit.program.command.ProgramAddForm;
+
+
 import co.leaf.fit.program.command.ProReqConfirm;
 import co.leaf.fit.program.command.SelectedPrograms;
+
 import co.leaf.fit.program.command.programDetailUser;
 import co.leaf.fit.region.command.RegSelectList;
 import co.leaf.fit.review.command.RevInsert;
@@ -114,6 +118,7 @@ public class FrontController extends HttpServlet {
 		map.put("/insInfo.do", new InsInfo());
 		map.put("/insDelete.do", new InsDelete());
 		map.put("/insUpdate.do", new InsUpdate());
+		map.put("/insUpdatePhoto.do", new InsUpdatePhoto());
 		
 		// member page
 		map.put("/memTest.do", new MemTest());
@@ -126,7 +131,7 @@ public class FrontController extends HttpServlet {
 		map.put("/adminMemSelectList.do", new AdminMemSelectList());
 		map.put("/adminMemSelect.do", new AdminMemSelect());
 		map.put("/memDelete.do", new MemDelete());
-		map.put("/memPhotoUpload.do", new memPhotoUpload());
+		map.put("/memPhotoUpload.do", new MemPhotoUpload());
 		
 		// partner page
 		map.put("/parTest.do", new ParTest());

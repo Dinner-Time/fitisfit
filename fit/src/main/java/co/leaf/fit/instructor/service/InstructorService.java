@@ -14,38 +14,37 @@ public class InstructorService implements InstructorMapper {
 	
 	@Override
 	public List<InstructorVO> insSelectList(InstructorVO vo) {
-		// TODO Auto-generated method stub
 		return map.insSelectList(vo);
 	}
 
 	@Override
 	public InstructorVO insSelect(InstructorVO vo) {
-		// TODO Auto-generated method stub
 		return map.insSelect(vo);
 	}
 
 	@Override
 	public int insInsert(InstructorVO vo) {
-		// TODO Auto-generated method stub
 		return map.insInsert(vo);
 	}
 
 	@Override
 	public int insUpdate(InstructorVO vo) {
-		// TODO Auto-generated method stub
 		return map.insUpdate(vo);
 	}
 
 	@Override
 	public int insDelete(InstructorVO vo) {
-		// TODO Auto-generated method stub
 		return map.insDelete(vo);
 	}
 
 	@Override
 	public List<InstructorVO> insListPartner(InstructorVO vo) {
-		// TODO Auto-generated method stub
 		return map.insListPartner(vo);
+	}
+
+	@Override
+	public int insUpdatePhoto(InstructorVO vo) {
+		return map.insUpdatePhoto(vo);
 	}
 
 }

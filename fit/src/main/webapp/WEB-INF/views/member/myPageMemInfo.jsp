@@ -9,22 +9,14 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>피트다 피트!!</title>
+	<title>마이페이지 | Fit is Fit</title>
 
-	<!-- CSS ================================================== -->
-	<!-- Favicon -->
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
-	<!-- Themefisher Icon font -->
 	<link rel="stylesheet" href="plugins/themefisher-font/style.css">
-	<!-- bootstrap.min css -->
 	<link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-	<!-- Lightbox.min css -->
 	<link rel="stylesheet" href="plugins/lightbox2/dist/css/lightbox.min.css">
-	<!-- animation css -->
 	<link rel="stylesheet" href="plugins/animate/animate.css">
-	<!-- Slick Carousel -->
 	<link rel="stylesheet" href="plugins/slick/slick.css">
-	<!-- Main Stylesheet -->
 	<link rel="stylesheet" href="css/style.css">
 
 	<!-- 폰트 시작 -->
@@ -73,7 +65,7 @@
 						</c:if>
 						<form method="post" action="memPhotoUpload.do" enctype="multipart/form-data">
 							<div class="card-body" align="right">
-								  <input type="file" name="memPhoto" id="memPhoto">
+								  <input type="file" name="memPhoto" id="memPhoto"><br>
 								  <button type="submit" class="btn btn-primary">등록/수정</button>
 							</div>
 						</form>
@@ -92,8 +84,8 @@
 						</tr>
 						<tr>
 							<th height=70px;>비밀번호</th>
-							<td>${member.memPassword }
-								<button type="button" class="btn btn-primary" style="float: right;" data-toggle="modal"
+							<td>
+								<button type="button" class="btn btn-primary" data-toggle="modal"
 									data-target="#exampleModal">수정</button>
 							</td>
 						</tr>

@@ -1,77 +1,55 @@
 <!-- 파트너-강사수정페이지 -->
 
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
 <html>
-<!--<![endif]-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="description"
-	content="Bingo One page parallax responsive HTML Template ">
+<meta name="description" content="Bingo One page parallax responsive HTML Template ">
 
 <meta name="author" content="Themefisher.com">
 
-<title>Bingo | Responsive Multipurpose Parallax HTML5 Template</title>
+<title>강사정보 | Fit is Fit</title>
 
-<!-- Mobile Specific Meta
-  ================================================== -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- Favicon -->
 <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
-
-<!-- CSS
-  ================================================== -->
-<!-- Themefisher Icon font -->
 <link rel="stylesheet" href="plugins/themefisher-font/style.css">
-<!-- bootstrap.min css -->
 <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-<!-- Lightbox.min css -->
-<link rel="stylesheet"
-	href="plugins/lightbox2/dist/css/lightbox.min.css">
-<!-- animation css -->
+<link rel="stylesheet" href="plugins/lightbox2/dist/css/lightbox.min.css">
 <link rel="stylesheet" href="plugins/animate/animate.css">
-<!-- Slick Carousel -->
 <link rel="stylesheet" href="plugins/slick/slick.css">
-<!-- Main Stylesheet -->
 <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body id="body">
 	<jsp:include page="/WEB-INF/views/home/header.jsp" />
-
-	<!--
-  Start Preloader
-  ==================================== -->
 	<div id="preloader">
 		<div class='preloader'>
 			<span></span> <span></span> <span></span> <span></span> <span></span>
 			<span></span>
 		</div>
 	</div>
-	<!--
-  End Preloader
-  ==================================== -->
-
-	<!--
-Start About Section
-==================================== -->
-	<section class="about" id="about">
+	<br><br>
+	<!-- section title -->
+	<div class="title text-center">
+		<h3>강사 정보</h3>
+		<div class="border"></div>
+	</div>
+	<!-- /section title -->
+	<section style="margin-bottom: 100px">
 		<div class="container">
 			<div class="row">
-
 				<div class="col-md-4">
 					<div class="card" style="width: 300px">
-						<img class="card-img-top" src="images/team/member-1.jpg"
+						<img class="card-img-top" src="images/instructor/${ins.insPhoto}"
 							alt="Card image" style="width: 100%">
 						<div class="card-body" align="right">
-							<a href="#" class="btn btn-primary">수정</a>
+							<form id="photoFrm" name="photoFrm" action="insUpdatePhoto.do" method="post" enctype="multipart/form-data">
+								<input type="hidden" id="insId" name="insId" value="${ins.insId}">
+								<input type="file" id="insPhoto" name="insPhoto"><br>
+								<button type="submit" class="btn btn-primary" style="float: right">등록</button>
+							</form>
 						</div>
 					</div>
 					<br>
@@ -109,13 +87,13 @@ Start About Section
 							</tr>
 							<tr>
 								<th>이력</th>
-								<td>
-								<input id="insHistory" name="insHistory"
+								<td><input id="insHistory" name="insHistory"
 									class="form-control" type="text" style="width: 70% !important;"
 									value="${ins.insHistory}" readonly></td>
 							</tr>
 						</table>
 						<div align="right">
+							<button type="button" class="btn btn-outline-primary" onclick="location.href='insSelectList.do'">돌아가기</button>
 							<button id="updateBtn" type="button" class="btn btn-primary">수정</button>
 							<a href="#" id="insDelete" class="btn btn-danger">삭제</a>
 						</div>

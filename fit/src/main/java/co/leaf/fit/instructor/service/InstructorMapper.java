@@ -20,6 +20,9 @@ public interface InstructorMapper {
 	//수정
 	int insUpdate(InstructorVO vo);
 	
+	//사진수정
+	int insUpdatePhoto(InstructorVO vo);
+	
 	//삭제
 	int insDelete(InstructorVO vo);
 } 

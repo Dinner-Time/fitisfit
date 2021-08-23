@@ -15,7 +15,7 @@ import co.leaf.fit.member.service.MemberMapper;
 import co.leaf.fit.member.service.MemberService;
 import co.leaf.fit.vo.MemberVO;
 
-public class memPhotoUpload implements Command {
+public class MemPhotoUpload implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
@@ -26,8 +26,9 @@ public class memPhotoUpload implements Command {
 		
 		
 		int sizeLimit = 15*1024*1024;
+		String realPath = request.getSession().getServletContext().getRealPath("/") + "images/member";
 		
-		String realPath = request.getServletContext().getRealPath("images/member");
+		System.out.println(realPath);
 		
 		File dir = new File(realPath);
 		if (!dir.exists()) dir.mkdirs();
@@ -40,7 +41,7 @@ public class memPhotoUpload implements Command {
 			e.printStackTrace();
 		}
 		
-		String filename = multipartRequest.getFilesystemName("photo");
+		String filename = multipartRequest.getFilesystemName("memPhoto");
 		
 		vo.setMemPhoto(filename);
 		dao.memUpdatePhoto(vo);

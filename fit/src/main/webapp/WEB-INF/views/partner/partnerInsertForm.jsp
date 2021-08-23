@@ -2,12 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
 <html>
-<!--<![endif]-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="description"
@@ -15,30 +10,18 @@
 
 <meta name="author" content="Themefisher.com">
 
-<title>Bingo | Responsive Multipurpose Parallax HTML5 Template</title>
+<title>환영합니다! | Fit is Fit</title>
 
-<!-- Mobile Specific Meta
-  ================================================== -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Favicon -->
 <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
-
-<!-- CSS
-  ================================================== -->
-<!-- Themefisher Icon font -->
 <link rel="stylesheet" href="plugins/themefisher-font/style.css">
-<!-- bootstrap.min css -->
 <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-<!-- Lightbox.min css -->
-<link rel="stylesheet"
-	href="plugins/lightbox2/dist/css/lightbox.min.css">
-<!-- animation css -->
+<link rel="stylesheet" href="plugins/lightbox2/dist/css/lightbox.min.css">
 <link rel="stylesheet" href="plugins/animate/animate.css">
-<!-- Slick Carousel -->
 <link rel="stylesheet" href="plugins/slick/slick.css">
-<!-- Main Stylesheet -->
 <link rel="stylesheet" href="css/style.css">
+
 <style type="text/css">
 .custom-border {
 	height: 2px;
@@ -53,23 +36,20 @@
 <body id="body">
 	<jsp:include page="/WEB-INF/views/home/header.jsp" />
 
-	<!--Start Contact Us
-	=========================================== -->
 	<section class="about" id="about">
 		<div class="container">
 			<div class="row">
 
-				<!-- Contact Details -->
 				<div class="card col-md-6" style="border: none;">
 					<div class="card" style="width: 100%; margin-top: 100px;">
 						<c:if test="${member.memPhoto != null }">
 							<img class="card-img-top img-thumbnail"
-								src="images/team/${member.memPhoto }" alt="member image"
+								src="images/partner/${member.memPhoto }" alt="partner image"
 								style="width: 100%">
 						</c:if>
 						<c:if test="${member.memPhoto == null}">
 							<img class="card-img-top img-thumbnail"
-								src="images/blog/generalProfile.jpg" alt="member image"
+								src="images/partner/generalProfile.jpg" alt="partner image"
 								style="width: 100%">
 						</c:if>
 						<div class="card-body" align="right">

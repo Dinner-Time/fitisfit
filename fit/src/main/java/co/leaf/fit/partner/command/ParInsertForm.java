@@ -9,6 +9,8 @@ public class ParInsertForm implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
+		
+		
 		return "partner/partnerInsertForm";
 	}
 

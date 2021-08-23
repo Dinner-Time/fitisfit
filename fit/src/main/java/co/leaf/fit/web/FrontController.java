@@ -48,6 +48,7 @@ import co.leaf.fit.partner.command.ParAdmWaitList;
 
 import co.leaf.fit.partner.command.ParInsert;
 import co.leaf.fit.partner.command.ParInsertForm;
+import co.leaf.fit.partner.command.ParModRequest;
 import co.leaf.fit.partner.command.ParReqConfirm;
 import co.leaf.fit.partner.command.ParSelect;
 import co.leaf.fit.partner.command.ParTest;
@@ -144,6 +145,7 @@ public class FrontController extends HttpServlet {
 		map.put("/memPartnerSelect.do", new MemPartnerSelect());
 		map.put("/proParSimpleList.do", new ProParSimpleList());
 		map.put("/parUpdatePhoto.do", new ParUpdatePhoto());
+		map.put("/parModRequest.do", new ParModRequest());
 		
 		map.put("/parAdmWaitList.do", new ParAdmWaitList());
 		map.put("/parReqConfirm.do", new ParReqConfirm());

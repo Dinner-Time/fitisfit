@@ -52,4 +52,10 @@ public class ProgramSerivce implements ProgramMapper{
 		return map.proCatSimpleList(vo);
 	}
 
+	@Override
+	public List<ProgramVO> proParSimpleList(ProgramVO vo) {
+		// TODO Auto-generated method stub
+		return map.proParSimpleList(vo);
+	}
+
 }

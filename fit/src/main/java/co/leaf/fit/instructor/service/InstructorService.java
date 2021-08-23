@@ -42,4 +42,10 @@ public class InstructorService implements InstructorMapper {
 		return map.insDelete(vo);
 	}
 
+	@Override
+	public List<InstructorVO> insListPartner(InstructorVO vo) {
+		// TODO Auto-generated method stub
+		return map.insListPartner(vo);
+	}
+
 }

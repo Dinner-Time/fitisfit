@@ -21,6 +21,11 @@
 		on p.pro_parid = pa.par_id 
 		where p.pro_catid = #{proCatId}
 	</select>
+	
+	<select id="proParSimpleList" resultType="ProgramVO">
+		select * from
+		fit_program where pro_parId = #{proParId}
+	</select>
 
 	<select id="proSelectList" resultType="ProgramVO">
 		select pr.pro_name,

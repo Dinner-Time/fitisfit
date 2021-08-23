@@ -48,6 +48,18 @@
 	width: 100%;
 	background: gray;
 }
+
+.custom-btn {
+	background: none;
+	border: none;
+    outline: none;
+	color: gray-dark;
+	letter-spacing: 1px;
+}
+.custom-btn:focus {
+	border: none;
+    outline: none;
+}
 </style>
 </head>
 
@@ -72,11 +84,18 @@ Start About Section
 	<section class="about-2 section" id="about">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6">
-					<img src="images/about/about-2.png" class="img-fluid"
-						alt="지도 들어갈 곳">
+				<div class="col-md-6" style="height: 300px;" align="center">
+					<div class="row">
+						<div class="col-md-2"></div>
+						<div class="col-md-8">
+							<img class="card-img-top img-thumbnail"
+								src="images/partner/${partner.parPhoto }" alt="partner image"
+								style="width: 100%;">
+						</div>
+					</div>
 				</div>
 				<div class="col-md-6">
+					<br>
 					<div class="custom-border"></div>
 					<br>
 					<ul class="checklist">
@@ -92,9 +111,9 @@ Start About Section
 			<!-- End row -->
 		</div>
 		<!-- End container -->
+		<br>
 	</section>
 	<!-- End section -->
-
 	<!-- Start Pricing section
 		=========================================== -->
 	<section class="pricing-table " id="pricing">
@@ -114,16 +133,22 @@ Start About Section
 					<article class="col-md-3 col-sm-6 col-xs-12">
 						<div class="post-item">
 							<div class="media-wrapper">
-								<img src="${pro.proPhoto }" alt="Program Photo" class="img-fluid">
+								<img src="${pro.proPhoto }" alt="Program Photo"
+									class="img-fluid">
 							</div>
 
 							<div class="content">
-								<h3>
-									<a href="#">${pro.proName }</a>
-								</h3>
-								<p>${pro.proDesc }</p>
-								<p>${pro.proSince }</p>
-								<a class="custom-btn" href="single-post.html">${pro.proPrice}</a>
+								<form id="proSelct" name="proSelect"
+									action="programDetailUser.do" method="POST">
+									<input type="hidden" id="proId" name="proId"
+										value="${pro.proId }">
+									<h3>
+										<a href="#">${pro.proName }</a>
+									</h3>
+									<p>${pro.proDesc }</p>
+									<p>${pro.proSince }</p>
+									<button class="custom-btn" type="submit">${pro.proPrice}₩</button>
+								</form>
 							</div>
 						</div>
 					</article>
@@ -149,37 +174,44 @@ Start About Section
 				</div>
 				<!-- /section title -->
 				<c:forEach var="ins" items="${insList }">
-				<!-- team member -->
-				<div class="col-md-3 col-sm-6 ">
-					<div class="team-member text-center">
-						<div class="member-photo">
-							<!-- member photo -->
-							<img class="img-fluid" src="images/team/member-1.jpg"
-								alt="Meghna">
-							<!-- /member photo -->
+					<!-- team member -->
+					<div class="col-md-3 col-sm-6 ">
+						<div class="team-member text-center">
+							<div class="member-photo">
+								<!-- member photo -->
+								<img class="img-fluid" src="images/team/member-1.jpg"
+									alt="Meghna">
+								<!-- /member photo -->
 
-							<!-- member social profile -->
-							<div class="mask">
-								<ul class="clearfix">
-									<li><a href="#"><i class="tf-ion-social-facebook"></i></a></li>
-									<li><a href="#"><i class="tf-ion-social-twitter"></i></a></li>
-									<li><a href="#"><i
-											class="tf-ion-social-google-outline"></i></a></li>
-									<li><a href="#"><i class="tf-ion-social-dribbble"></i></a></li>
-								</ul>
+								<!-- member social profile -->
+								<div class="mask">
+									<ul class="clearfix">
+										<li><a href="#"><i class="tf-ion-social-facebook"></i></a></li>
+										<li><a href="#"><i class="tf-ion-social-twitter"></i></a></li>
+										<li><a href="#"><i
+												class="tf-ion-social-google-outline"></i></a></li>
+										<li><a href="#"><i class="tf-ion-social-dribbble"></i></a></li>
+									</ul>
+								</div>
+								<!-- /member social profile -->
 							</div>
-							<!-- /member social profile -->
-						</div>
 
-						<!-- member name & designation -->
-						<div class="member-content">
-							<h3>${ins.insName }</h3>
-						</div>
-						<!-- /member name & designation -->
+							<!-- member name & designation -->
+							<form id="insSelct" name="insSelect" action="insSelect.do"
+								method="POST">
+								<input type="hidden" id="insId" name="insId"
+									value="${ins.insId }">
+								<div class="member-content">
+									<button class="custom-btn" type="submit">
+										<h3>${ins.insName }</h3>
+									</button>
+								</div>
+							</form>
+							<!-- /member name & designation -->
 
+						</div>
 					</div>
-				</div>
-				<!-- end team member -->
+					<!-- end team member -->
 				</c:forEach>
 			</div>
 			<!-- End row -->
@@ -187,6 +219,9 @@ Start About Section
 		<!-- End container -->
 	</section>
 	<!-- End section -->
+	<form action="" method="POST">
+		<input type="hidden" name="" value="">
+	</form>
 	<!--
     Essential Scripts
     =====================================-->

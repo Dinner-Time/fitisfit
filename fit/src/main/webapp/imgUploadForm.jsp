@@ -6,18 +6,11 @@
 <meta charset="UTF-8">
 <title>Image Upload Test</title>
 
-<style type="text/css">
-
-
-</style>
-
 </head>
 <body>
-<div class="upload">
 	<form method="post" action="imgUpload.jsp" enctype="multipart/form-data">
-	  <input type="file" name="memPhoto" id="memPhoto">
-		<input type="submit" value="upload" />
+	  <input type="file" name="memPhoto">
+		<input type="submit" value="업로드" />
 	</form>
-</div>
 </body>
 </html>

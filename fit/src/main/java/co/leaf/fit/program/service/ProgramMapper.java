@@ -13,10 +13,13 @@ public interface ProgramMapper {
 	List<ProgramVO> proSelectList();
 	List<ProgramVO> proSelect(ProgramVO vo);
 	
+	ProgramVO proSimpleSelect(ProgramVO vo);
 	int proInsertReq(ProgramVO vo);
 	int proUpdate(ProgramVO vo);
 	int proMemberEnroll(ProgramVO vo);
 	int proDelete(ProgramVO vo);
+	
+	int proUpdatePhoto(ProgramVO vo);
 	
 	int proReqProcess(ProgramVO vo);
 	int proReqDone(ProgramVO vo);

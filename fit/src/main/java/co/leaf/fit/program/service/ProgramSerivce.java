@@ -54,26 +54,33 @@ public class ProgramSerivce implements ProgramMapper{
 
 	@Override
 	public List<ProgramVO> proParSimpleList(ProgramVO vo) {
-		// TODO Auto-generated method stub
 		return map.proParSimpleList(vo);
 	}
 
 	@Override
 	public List<ProgramVO> proAdmWaitList() {
-		// TODO Auto-generated method stub
 		return map.proAdmWaitList();
 	}
 
 	@Override
 	public int proReqProcess(ProgramVO vo) {
-		// TODO Auto-generated method stub
 		return map.proReqProcess(vo);
 	}
 
 	@Override
 	public int proReqDone(ProgramVO vo) {
-		// TODO Auto-generated method stub
 		return map.proReqDone(vo);
 	}
 
+	@Override
+	public int proUpdatePhoto(ProgramVO vo) {
+		return map.proUpdatePhoto(vo);
+	}
+
+	@Override
+	public ProgramVO proSimpleSelect(ProgramVO vo) {
+		return map.proSimpleSelect(vo);
+	}
+	
+	
 }

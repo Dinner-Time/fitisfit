@@ -1,3 +1,5 @@
+<!-- 파트너 - 프로그램 상세보기 -->
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -9,38 +11,21 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>피트다 피트!!</title>
+<title>프로그램 관리 | Fit is Fit</title>
 
-<!-- CSS ================================================== -->
-<!-- Favicon -->
 <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
-<!-- Themefisher Icon font -->
 <link rel="stylesheet" href="plugins/themefisher-font/style.css">
-<!-- bootstrap.min css -->
 <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-<!-- Lightbox.min css -->
-<link rel="stylesheet"
-	href="plugins/lightbox2/dist/css/lightbox.min.css">
-<!-- animation css -->
+<link rel="stylesheet" href="plugins/lightbox2/dist/css/lightbox.min.css">
 <link rel="stylesheet" href="plugins/animate/animate.css">
-<!-- Slick Carousel -->
 <link rel="stylesheet" href="plugins/slick/slick.css">
-<!-- Main Stylesheet -->
 <link rel="stylesheet" href="css/style.css">
 
-<!-- 폰트 시작 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap"
-	rel="stylesheet">
-<link
-	href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap"
-	rel="stylesheet">
-<link
-	href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap"
-	rel="stylesheet">
-<!-- 폰트 끝 -->
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 
 <style type="text/css">
 .hover-me a {
@@ -78,22 +63,15 @@
 				<div class="col-lg-4">
 					<div class="card">
 						<div class="card-body">
-							<c:if test="${detailList[0].proPhoto != null }">
-								<img class="card-img-top img-thumbnail"
-									src="images/program/${detailList[0].proPhoto }"
-									alt="program image" style="width: 100%">
-							</c:if>
-							<c:if test="${detailList[0].proPhoto == null }">
-								<img class="card-img-top img-thumbnail"
-									src="images/team/admin.jpg" alt="member image"
-									style="width: 100%">
-							</c:if>
+							<img class="card-img-top img-thumbnail" src="images/program/${detailList[0].proPhoto }"
+								alt="program image" style="width: 100%">
 						</div>
 						<div class="card-footer">
-							<p>
-								<button type="button" class="btn btn-primary"
-									style="float: right;">수정</button>
-							</p>
+							<form id="photoFrm" name="photoFrm" action="proUpdatePhoto.do" method="post" enctype="multipart/form-data">
+								<input type="file" id="proPhoto" name="proPhoto"><br>
+								<input type="hidden" id="proId" name="proId" value="${detailList[0].proId}">
+								<button type="submit" class="btn btn-primary" style="float: right;">수정</button>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -169,30 +147,6 @@
 									</div>
 								</div>
 							</div>
-
-							<!-- <div class="card">
-                <div class="card-body">
-                  <p>
-                    <h2>다른 프로그램들과 비교해보세요!</h2>
-                    <div class="container">
-                      <div class="row">
-                       
-                        <article class="col-md-4 col-sm-6 col-xs-12 clearfix ">
-                          <div class="card">
-                            <div class="post-item">
-                              <div class="media-wrapper">
-                                <img src="images/blog/post-1.jpg" alt="amazing caves coverimage" class="img-fluid">
-                              </div>
-                              <div class="content">
-                                <h3><a href="single-post.html">프로그램명</a></h3>
-                                <p>설명</p>
-                                <p>날짜</p>
-                                <div align="center">
-                                  <a class="btn btn-main" href="" style="background-color: #4343FE; border:none;">가격</a>
-                                </div>
-                              </div>
-                       
-                       /single blog post -->
 						</div>
 					</article>
 				</div>
@@ -206,28 +160,17 @@
 
 	<jsp:include page="/WEB-INF/views/home/footer.jsp" />
 
-	<!-- 자바 스크립트 -->
-	<!-- Main jQuery -->
 	<script src="plugins/jquery/jquery.min.js"></script>
-	<!-- Form Validation -->
 	<script src="plugins/form-validation/jquery.form.js"></script>
 	<script src="plugins/form-validation/jquery.validate.min.js"></script>
-	<!-- Bootstrap4 -->
 	<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-	<!-- Parallax -->
 	<script src="plugins/parallax/jquery.parallax-1.1.3.js"></script>
-	<!-- lightbox -->
 	<script src="plugins/lightbox2/dist/js/lightbox.min.js"></script>
-	<!-- Owl Carousel -->
 	<script src="plugins/slick/slick.min.js"></script>
-	<!-- filter -->
 	<script src="plugins/filterizr/jquery.filterizr.min.js"></script>
-	<!-- Smooth Scroll js -->
 	<script src="plugins/smooth-scroll/smooth-scroll.min.js"></script>
-	<!-- Custom js -->
 	<script src="js/script.js"></script>
 	<script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
-	<!-- Custom for this Page -->
 	<script>
 		let session = "<c:out value='${session}' />"
 		let form = $('form');

@@ -63,6 +63,7 @@ import co.leaf.fit.program.command.ProgramAddForm;
 
 
 import co.leaf.fit.program.command.ProReqConfirm;
+import co.leaf.fit.program.command.ProUpdatePhoto;
 import co.leaf.fit.program.command.SelectedPrograms;
 
 import co.leaf.fit.program.command.programDetailUser;
@@ -158,6 +159,7 @@ public class FrontController extends HttpServlet {
 		map.put("/programAdd.do", new ProgramAdd()); // 프로그램 추가 기능
 		map.put("/proAdmWaitList.do", new ProAdmWaitList());
 		map.put("/proReqConfirm.do", new ProReqConfirm());
+		map.put("/proUpdatePhoto.do", new ProUpdatePhoto());
 		
 		map.put("/programDetailUser.do", new programDetailUser());	
 		map.put("/hisInsertForm.do", new HisInsertForm());

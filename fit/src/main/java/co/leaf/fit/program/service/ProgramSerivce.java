@@ -23,8 +23,8 @@ public class ProgramSerivce implements ProgramMapper{
 	}
 
 	@Override
-	public int proInsert(ProgramVO vo) {
-		return map.proInsert(vo);
+	public int proInsertReq(ProgramVO vo) {
+		return map.proInsertReq(vo);
 	}
 
 	@Override

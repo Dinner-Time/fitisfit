@@ -1,10 +1,15 @@
 package co.leaf.fit.partner.command;
 
+import java.io.File;
+import java.io.IOException;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import co.leaf.fit.common.Command;
 import co.leaf.fit.partner.service.PartnerMapper;
@@ -15,6 +20,7 @@ public class ParInsert implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
+
 		try {
 			PartnerMapper dao = new PartnerService();
 			PartnerVO vo = new PartnerVO();
@@ -38,7 +44,6 @@ public class ParInsert implements Command {
 			request.setAttribute("partnerError", "error");
 			return "main.do";
 		}
-
 		return "loginForm.do";
 	}
 

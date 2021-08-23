@@ -58,4 +58,9 @@ public class PartnerService implements PartnerMapper {
 		return map.parAdmWaitList();
 	}
 
+	@Override
+	public int parUpdatePhoto(PartnerVO vo) {
+		return map.parUpdatePhoto(vo);
+	}
+
 }

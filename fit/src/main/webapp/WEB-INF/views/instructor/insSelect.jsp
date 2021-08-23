@@ -1,6 +1,7 @@
 <!-- 파트너-강사수정페이지 -->
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,11 +46,13 @@
 						<img class="card-img-top" src="images/instructor/${ins.insPhoto}"
 							alt="Card image" style="width: 100%">
 						<div class="card-body" align="right">
+						<c:if test="${session.author == 'P' }">
 							<form id="photoFrm" name="photoFrm" action="insUpdatePhoto.do" method="post" enctype="multipart/form-data">
 								<input type="hidden" id="insId" name="insId" value="${ins.insId}">
 								<input type="file" id="insPhoto" name="insPhoto"><br>
 								<button type="submit" class="btn btn-primary" style="float: right">등록</button>
 							</form>
+							</c:if>
 						</div>
 					</div>
 					<br>
@@ -92,11 +95,13 @@
 									value="${ins.insHistory}" readonly></td>
 							</tr>
 						</table>
+						<c:if test="${session.author == 'P' }">
 						<div align="right">
-							<button type="button" class="btn btn-outline-primary" onclick="location.href='insSelectList.do'">돌아가기</button>
+							<!-- <button type="button" class="btn btn-outline-primary" onclick="location.href='insSelectList.do'">돌아가기</button> -->
 							<button id="updateBtn" type="button" class="btn btn-primary">수정</button>
 							<a href="#" id="insDelete" class="btn btn-danger">삭제</a>
 						</div>
+						</c:if>
 					</form>
 				</div>
 			</div>

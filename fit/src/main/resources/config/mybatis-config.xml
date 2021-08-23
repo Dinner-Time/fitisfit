@@ -20,7 +20,6 @@
 		<typeAlias type="co.leaf.fit.vo.ProgramVO" alias="ProgramVO"/>
 		<typeAlias type="co.leaf.fit.vo.RegionVO" alias="RegionVO"/>
 		<typeAlias type="co.leaf.fit.vo.ReviewVO" alias="ReviewVO"/>
-		<typeAlias type="co.leaf.fit.vo.SalesVO" alias="SalesVO"/>
 		<typeAlias type="co.leaf.fit.vo.TimetableVO" alias="TimetableVO"/>
 		<typeAlias type="co.leaf.fit.vo.WishlistVO" alias="WishlistVO"/>
 	</typeAliases>
@@ -46,7 +45,6 @@
 		<mapper resource="co/leaf/fit/program/service/program-map.xml" />
 		<mapper resource="co/leaf/fit/region/service/region-map.xml" />
 		<mapper resource="co/leaf/fit/review/service/review-map.xml" />
-		<mapper resource="co/leaf/fit/sales/service/sales-map.xml" />
 		<mapper resource="co/leaf/fit/timetable/service/timetable-map.xml" />
 		<mapper resource="co/leaf/fit/wishlist/service/wishlist-map.xml" />
 	</mappers>

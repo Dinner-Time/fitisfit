@@ -53,6 +53,12 @@
 		= #{parId}
 	</update>
 
+	<update id="parUpdatePhoto" parameterType="PartnerVO">
+		update fit_partner
+		set par_photo = #{parPhoto}
+		where par_email = #{parEmail} 
+	</update>
+
 	<insert id="parUpdateReq" parameterType="PartnerVO">
 		insert into fit_partner
 		values

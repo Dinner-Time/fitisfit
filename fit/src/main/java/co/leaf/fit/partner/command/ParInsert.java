@@ -1,10 +1,15 @@
 package co.leaf.fit.partner.command;
 
+import java.io.File;
+import java.io.IOException;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import co.leaf.fit.common.Command;
 import co.leaf.fit.partner.service.PartnerMapper;
@@ -21,15 +26,35 @@ public class ParInsert implements Command {
 		SimpleDateFormat format = new SimpleDateFormat ("yyyy-MM-dd");
 		String date = format.format(System.currentTimeMillis());
 		
-		vo.setParEmail(request.getParameter("parEmail"));
-		vo.setParPassword(request.getParameter("parPassword"));
-		vo.setParName(request.getParameter("parName"));
-		vo.setParRegId(Integer.parseInt(request.getParameter("parRegId")));
-		vo.setParAddress(request.getParameter("roadFullAddr"));
-		vo.setParPhone(request.getParameter("parPhone"));
-		vo.setParIntro(request.getParameter("parIntro"));
-		vo.setParSubDate(Date.valueOf(date));
-		dao.parInsert(vo);
+		
+		// 사진 업로드
+		int sizeLimit = 15*1024*1024;
+		String realPath = request.getSession().getServletContext().getRealPath("/") + "images/partner";
+		
+		File dir = new File(realPath);
+		if (!dir.exists()) dir.mkdirs();
+		
+		MultipartRequest multipartRequest = null;
+		
+		try {
+			multipartRequest = new MultipartRequest(request, realPath, sizeLimit, "utf-8", new DefaultFileRenamePolicy());
+		
+			String filename = multipartRequest.getFilesystemName("parPhoto");
+			
+			vo.setParPhoto(filename);
+			vo.setParEmail(multipartRequest.getParameter("parEmail"));
+			vo.setParPassword(multipartRequest.getParameter("parPassword"));
+			vo.setParName(multipartRequest.getParameter("parName"));
+			vo.setParRegId(Integer.valueOf(multipartRequest.getParameter("parRegId")));
+			vo.setParAddress(multipartRequest.getParameter("roadFullAddr"));
+			vo.setParPhone(multipartRequest.getParameter("parPhone"));
+			vo.setParIntro(multipartRequest.getParameter("parIntro"));
+			vo.setParSubDate(Date.valueOf(date));
+			dao.parInsert(vo);
+		
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
 		return "loginForm.do";
 	}

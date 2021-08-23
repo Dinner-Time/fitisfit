@@ -124,6 +124,8 @@
 
 	<insert id="proInsertReq" parameterType="ProgramVO">
 		insert into fit_program
+		(pro_id, pro_parid, pro_catid, pro_photo, pro_desc, pro_since, pro_period, pro_price,
+		pro_sale2, pro_sale3, pro_maxpeople, pro_people, pro_insid, pro_state, pro_name, pro_oriid)
 		values
 		(FIT_PRO_SEQ.nextval,
 		#{proParId},
@@ -133,8 +135,8 @@
 		#{proSince},
 		#{proPeriod},
 		#{proPrice},
-		#{proSales2},
-		#{proSales3},
+		#{proSale2},
+		#{proSale3},
 		#{proMaxPeople},
 		0,
 		#{proInsId},
@@ -154,8 +156,8 @@
 		#{proSince},
 		#{proPeriod},
 		#{proPrice},
-		#{proSales2},
-		#{proSales3},
+		#{proSale2},
+		#{proSale3},
 		#{proMaxPeople},
 		#{proPeople},
 		#{proInsId},

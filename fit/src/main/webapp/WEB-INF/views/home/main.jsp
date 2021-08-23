@@ -427,8 +427,14 @@
 					$('input').attr('name', 'catId').val(
 						$(this).attr('data-catid')));
 				$(form).submit();
-			})
-		})
+			});
+			
+			// 파트너 등록 에러 처리
+			console.log("<c:out value='${partnerError}'/>");
+			if("<c:out value='${partnerError}'/>" == 'error'){
+				alert('등록에 실패하였습니다.');
+			}
+		});
 	</script>
 </body>
 

@@ -43,8 +43,4 @@ public class HistoryService implements HistoryMapper {
 		return map.hisDelete(vo);
 	}
 
-
-
-
-
 }

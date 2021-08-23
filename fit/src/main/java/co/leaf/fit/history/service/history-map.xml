@@ -12,7 +12,7 @@
 		<id property="hisCatId" column="his_catid" />
 		<id property="hisDate" column="his_date" />
 		<id property="hisId" column="his_id" />
-		<id property="hisProName" column="pro_id" />
+		<id property="hisProName" column="pro_name" />
 		<id property="hisProPhoto" column="pro_photo" />
 	</resultMap>
 

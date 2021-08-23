@@ -13,8 +13,8 @@ public class HistoryVO {
 	private Date hisDate;
 	private int hisId;
 	
-	private String proName;
-	private String proPhoto;
+	private String hisProName;
+	private String hisProPhoto;
 	
 	private String hisState;
 	
@@ -85,27 +85,6 @@ public class HistoryVO {
 		this.hisId = hisId;
 	}
 
-
-	public String getProName() {
-		return proName;
-	}
-
-
-	public void setProName(String proName) {
-		this.proName = proName;
-	}
-
-
-	public String getProPhoto() {
-		return proPhoto;
-	}
-
-
-	public void setProPhoto(String proPhoto) {
-		this.proPhoto = proPhoto;
-	}
-
-
 	public String getHisState() {
 		return hisState;
 	}
@@ -113,6 +92,26 @@ public class HistoryVO {
 
 	public void setHisState(String hisState) {
 		this.hisState = hisState;
+	}
+
+
+	public String getHisProName() {
+		return hisProName;
+	}
+
+
+	public void setHisProName(String hisProName) {
+		this.hisProName = hisProName;
+	}
+
+
+	public String getHisProPhoto() {
+		return hisProPhoto;
+	}
+
+
+	public void setHisProPhoto(String hisProPhoto) {
+		this.hisProPhoto = hisProPhoto;
 	}
 
 	

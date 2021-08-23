@@ -66,12 +66,12 @@
 
 				<c:forEach var="wish" items="${list }">
 					<!-- single blog post -->
-					<article class="col-xl-3 col-lg-4 col-md-6 col-sm-12 clearfix ">
+					<article class="col-xl-3 col-lg-4 col-md-6 col-sm-12 clearfix">
 						<div class="card">
 							<div class="post-item">
 								<div class="media-wrapper">
 									<!-- src="images/program/ + ${wish.proPhoto}" -->
-									<img src="images/blog/post-1.jpg" alt="amazing caves coverimage" class="img-fluid">
+									<img src="images/program/${wish.proPhoto}" alt="amazing caves coverimage" class="img-fluid">
 								</div>
 
 								<div class="content">
@@ -141,9 +141,22 @@
 		$('.custom-go').click(function () {
 			formSubmit('programDetailUser.do', $(this).attr('data-id'))
 		});
+
 		$('.custom-del').click(function () {
 			if (confirm('정말 삭제하시겠습니까?')) {
-				formSubmit('wisDelete.do', $(this).attr('data-id'));
+				let target = $(this).parent().parent().parent().parent().parent()
+				$.ajax({
+					url: 'WishlistDelete',
+					data: {
+						proId: $(this).attr('data-id')
+					},
+					success: function(){
+						$(target).remove();
+					},
+					error: function(){
+						alert("error");
+					}
+				})
 			}
 		});
 

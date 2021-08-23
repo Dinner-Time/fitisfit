@@ -5,8 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="description"
-	content="Bingo One page parallax responsive HTML Template ">
+<meta name="description" content="Bingo One page parallax responsive HTML Template ">
 
 <meta name="author" content="Themefisher.com">
 
@@ -30,6 +29,9 @@
 	width: 100%;
 	background: gray;
 }
+#parPassword, #parPasswordConfirm {
+	font-family: sans-serif;
+}
 </style>
 </head>
 
@@ -38,34 +40,24 @@
 
 	<section class="about" id="about">
 		<div class="container">
+			<form id="parInsert" name="parInsert" action="parInsert.do" method="post" enctype="multipart/form-data">
 			<div class="row">
-
-				<div class="card col-md-6" style="border: none;">
-					<div class="card" style="width: 100%; margin-top: 100px;">
-						<c:if test="${member.memPhoto != null }">
-							<img class="card-img-top img-thumbnail"
-								src="images/partner/${member.memPhoto }" alt="partner image"
+					<div class="card col-md-6" style="border: none;">
+						<div class="card" style="width: 100%; margin-top: 100px;">
+							<img class="card-img-top img-thumbnail" src="images/partner/gymPictogram.jpg" alt="partner image"
 								style="width: 100%">
-						</c:if>
-						<c:if test="${member.memPhoto == null}">
-							<img class="card-img-top img-thumbnail"
-								src="images/partner/generalProfile.jpg" alt="partner image"
-								style="width: 100%">
-						</c:if>
-						<div class="card-body" align="right">
-							<a href="#" class="btn btn-primary">수정</a>
+							<div class="card-body">
+								<input type="file" id="parPhoto" name="parPhoto">
+							</div>
 						</div>
 					</div>
-				</div>
-				<!-- / End Contact Details -->
+					<!-- / End Contact Details -->
 
-				<!-- Contact Form -->
-				<div class="card col-md-6" style="border: none;">
-					<form id="parInsert" name="parInsert" action="parInsert.do"
-						method="post">
+					<!-- Contact Form -->
+					<div class="card col-md-6" style="border: none;">
 						<div class="card-header text-black" align="center"
 							style="background-color: white; border: none; margin-top: 10px">
-							<h2 class="mt-2 font-weight-normal">Partner Sign up</h2>
+							<h2 class="mt-2 font-weight-normal">파트너 등록</h2>
 							<div class="custom-border"></div>
 						</div>
 						<div class="card-body">
@@ -108,6 +100,7 @@
 								</select>
 							</div>
 							<div class="form-group">
+								<label id="phoneLabel" class="text-danger" for="parPhone"></label>
 								<input type="text" class="form-control" id="parPhone"
 									name="parPhone" placeholder="전화번호를 입력해주세요." required>
 							</div>
@@ -131,56 +124,40 @@
 									var f1 = document.forms[0];
 									var pw1 = f1.parPassword.value;
 									var pw2 = f1.parPasswordConfirm.value;
-									console.log(pw1);
-									console.log(pw2);
-									if (pw1 == pw2) {
-                        				alert("환영합니다!!");
-                        				$("#parInsert").submit();
-									} else {
-										alert("비밀번호를 확인해주세요.")
+									if($("#phoneLabel").text() != ""){
+										alert("전화번호를 확인해주세요.")
+									}else{
+										if (pw1 == pw2) {
+											$("#parInsert").submit();
+										} else {
+											alert("비밀번호를 확인해주세요.")
+										}
 									}
                      		   })()'>회원가입</button>
 							<button class="btn btn-primary" type="reset">취소</button>
 						</div>
-					</form>
-				</div>
-				<!-- ./End Contact Form -->
-
+					</div>
+					<!-- ./End Contact Form -->
 			</div>
+			</form>
 			<!-- end row -->
 		</div>
 	</section>
 	<!-- end container -->
 	<!-- end section -->
 	<jsp:include page="/WEB-INF/views/home/footer.jsp" />
-	<!-- 
-    Essential Scripts
-    =====================================-->
-	<!-- Main jQuery -->
-	<script src="plugins/jquery/jquery.min.js"></script>
-	<!-- Google Map -->
-	<script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
-	<script src="plugins/google-map/gmap.js"></script>
 
-	<!-- Form Validation -->
+	<script src="plugins/jquery/jquery.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
+	<script src="plugins/google-map/gmap.js"></script>
 	<script src="plugins/form-validation/jquery.form.js"></script>
 	<script src="plugins/form-validation/jquery.validate.min.js"></script>
-
-	<!-- Bootstrap4 -->
 	<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-	<!-- Parallax -->
 	<script src="plugins/parallax/jquery.parallax-1.1.3.js"></script>
-	<!-- lightbox -->
 	<script src="plugins/lightbox2/dist/js/lightbox.min.js"></script>
-	<!-- Owl Carousel -->
 	<script src="plugins/slick/slick.min.js"></script>
-	<!-- filter -->
 	<script src="plugins/filterizr/jquery.filterizr.min.js"></script>
-	<!-- Smooth Scroll js -->
 	<script src="plugins/smooth-scroll/smooth-scroll.min.js"></script>
-
-	<!-- Custom js -->
 	<script src="js/script.js"></script>
 
 	<script type="text/javascript">
@@ -193,22 +170,30 @@
 			$('#roadFullAddr').val(roadFullAddr);
 		}
 		$(document).ready(function() {
-			let fail = "<c:out value='${fail}' />";
-			if (fail == 'fail') {
-				alert('로그인에 실패하였습니다.');
-			}
+			let regExp = /^[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}/;
+			let phone = $('#parPhone');
+
+			$(phone).on("change keyup paste", function(){
+				if(!regExp.test($(phone).val())){
+					$('#phoneLabel').text('전화번호 형식이 아닙니다.');
+				}else{
+					$('#phoneLabel').text('');
+				}
+			});
 		});
 
 		function checkPwd() {
 			var f1 = document.forms[0];
 			var pw1 = f1.parPassword.value;
 			var pw2 = f1.parPasswordConfirm.value;
-			if (pw1 != pw2) {
-				document.getElementById('checkPwd').style.color = "red";
-				document.getElementById('checkPwd').innerHTML = "암호가 일치하지 않습니다.";
-			} else {
-				document.getElementById('checkPwd').style.color = "black";
-				document.getElementById('checkPwd').innerHTML = "암호가 확인 되었습니다.";
+			if(pw1 != ''){
+				if (pw1 != pw2) {
+					document.getElementById('checkPwd').style.color = "red";
+					document.getElementById('checkPwd').innerHTML = "암호가 일치하지 않습니다.";
+				} else {
+					document.getElementById('checkPwd').style.color = "black";
+					document.getElementById('checkPwd').innerHTML = "암호가 확인 되었습니다.";
+				}
 			}
 		}
 	</script>

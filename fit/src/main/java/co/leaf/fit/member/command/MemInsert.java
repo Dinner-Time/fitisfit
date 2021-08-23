@@ -15,24 +15,27 @@ public class MemInsert implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		MemberMapper dao = new MemberService();
-		MemberVO vo = new MemberVO();
-		
-		vo.setMemEmail(request.getParameter("email"));
-		vo.setMemPassword(request.getParameter("password"));
-		vo.setMemName(request.getParameter("name"));
-		vo.setMemBirth(Date.valueOf(request.getParameter("birth")));
-		vo.setMemPhone(request.getParameter("phone"));
-		vo.setMemAddress(request.getParameter("roadFullAddr"));
-		vo.setMemGender(request.getParameter("gender"));
-		vo.setMemSubDate(Date.valueOf(LocalDate.now()));
-		
 		try {
+			MemberMapper dao = new MemberService();
+			MemberVO vo = new MemberVO();
+
+			vo.setMemEmail(request.getParameter("email"));
+			vo.setMemPassword(request.getParameter("password"));
+			vo.setMemName(request.getParameter("name"));
+			vo.setMemBirth(Date.valueOf(request.getParameter("birth")));
+			vo.setMemPhone(request.getParameter("phone"));
+			vo.setMemAddress(request.getParameter("roadFullAddr"));
+			vo.setMemGender(request.getParameter("gender"));
+			vo.setMemSubDate(Date.valueOf(LocalDate.now()));
+
 			dao.memInsert(vo);
-		} catch(Exception e) {
+			
+			request.setAttribute("memberSuccess", "success");
+		} catch (Exception e) {
 			e.printStackTrace();
+			request.setAttribute("memberError", "error");
 		}
-		
+
 		return "loginForm.do";
 	}
 

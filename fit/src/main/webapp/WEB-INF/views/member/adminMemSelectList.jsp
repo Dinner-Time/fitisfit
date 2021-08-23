@@ -23,32 +23,7 @@
 <link rel="stylesheet" href="plugins/slick/slick.css">
 <link rel="stylesheet" href="css/style.css">
 
-<script>
-	
-	function getRecord(n) {
-		frm.memEmail.value = n;
-		frm.submit();
-	}
-	
-	function searchMember() {
-		let memName = $('#memName').val();
-		let memEmail = $('#memEmail').val();
-		let memData = $('#memData').children();
-		$('#memTable').slideUp(400, function(){
-			for (let i = 0; i < memData.length; i++) {
-				let member = $(memData).eq(i).children().eq(1).text();
-				console.log(member)
-				if (memName != null) {
-					if (member.includes(memName)) {
-						console.log($(memData).html());
-						$('#memTable').slideDown(400);
-					}
-				}
-			}
-		});
-	}
-	
-</script>
+
 
 <style type="text/css">
 .custom-p {
@@ -95,11 +70,6 @@
 			<table class="table">
 				<tbody>
 					<tr style="cursor: pointer;">
-						<td align="center">가입일</td>
-						<td><input type="date" id="memSubDate" name="memSubDate">
-							~ <input type="date" id="memSubDate" name="memSubDate"></td>
-					</tr>
-					<tr style="cursor: pointer;">
 						<td align="center">이름</td>
 						<td><input type="text" id="memName" name="memName"></td>
 					</tr>
@@ -109,7 +79,7 @@
 					</tr>
 				</tbody>
 			</table>
-			<button class="custom-btn" type="button" onclick="searchMember()">검색</button>
+			<button class="searchBtn custom-btn" type="button">검색</button>
 		</div>
 	</div>
 	<br>
@@ -127,7 +97,7 @@
 				</thead>
 				<tbody id="memData">
 					<c:forEach var="member" items="${list}">
-						<tr style="cursor: pointer;"
+						<tr style="cursor: pointer;" data-name="${member.memName}" data-email="${member.memEmail}"
 							onclick="getRecord('${member.memEmail}')">
 							<td align="center">${member.memSubDate}</td>
 							<td align="center">${member.memName}</td>
@@ -163,5 +133,28 @@
 	<script src="plugins/smooth-scroll/smooth-scroll.min.js"></script>
 	<script src="js/script.js"></script>
 
+	<script>
+	
+		function getRecord(n) {
+			frm.memEmail.value = n;
+			frm.submit();
+		}
+	
+		$('.searchBtn').click(function(){
+			let memName = $('#memName').val();
+			let memEmail = $('#memEmail').val();
+			let memData = $('#memData').children();
+			$('#memData').hide(300, function(){
+				for(let i=0; i<memData.length; i++){
+					$(memData).eq(i).hide();
+					if($(memData).eq(i).attr("data-name").includes(memName) && $(memData).eq(i).attr("data-email").includes(memEmail)){
+						$(memData).eq(i).show();
+					}
+				}
+				$(this).show(300);
+			});
+		});
+		
+	</script>
 </body>
 </html>

@@ -186,6 +186,29 @@ public class ProgramVO {
 	public void setInsId(int insId) {
 		this.insId = insId;
 	}
+	@Override
+	public String toString() {
+		return "ProgramVO [proId=" + proId + ", proParId=" + proParId + ", proCatId=" + proCatId + ", proPhoto="
+				+ proPhoto + ", proDesc=" + proDesc + ", proSince=" + proSince + ", proPeriod=" + proPeriod
+				+ ", proPrice=" + proPrice + ", proSale2=" + proSale2 + ", proSale3=" + proSale3 + ", proMaxPeople="
+				+ proMaxPeople + ", proPeople=" + proPeople + ", proInsId=" + proInsId + ", proState=" + proState
+				+ ", proName=" + proName + ", catName=" + catName + ", regName=" + regName + ", insName=" + insName
+				+ ", insId=" + insId + ", revScore=" + revScore + ", revContent=" + revContent + ", revWriter="
+				+ revWriter + ", revDate=" + revDate + ", parName=" + parName + ", proOriId=" + proOriId + ", parRegId="
+				+ parRegId + ", getProId()=" + getProId() + ", getProParId()=" + getProParId() + ", getProCatId()="
+				+ getProCatId() + ", getProPhoto()=" + getProPhoto() + ", getProDesc()=" + getProDesc()
+				+ ", getProSince()=" + getProSince() + ", getProPeriod()=" + getProPeriod() + ", getProPrice()="
+				+ getProPrice() + ", getProSale2()=" + getProSale2() + ", getProSale3()=" + getProSale3()
+				+ ", getProMaxPeople()=" + getProMaxPeople() + ", getProPeople()=" + getProPeople() + ", getProInsId()="
+				+ getProInsId() + ", getProState()=" + getProState() + ", getProName()=" + getProName()
+				+ ", getCatName()=" + getCatName() + ", getRegName()=" + getRegName() + ", getInsName()=" + getInsName()
+				+ ", getRevScore()=" + getRevScore() + ", getRevContent()=" + getRevContent() + ", getRevWriter()="
+				+ getRevWriter() + ", getRevDate()=" + getRevDate() + ", getParName()=" + getParName()
+				+ ", getProOriId()=" + getProOriId() + ", getParRegId()=" + getParRegId() + ", getInsId()=" + getInsId()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+				+ "]";
+	}
+	
 	
 	
 }

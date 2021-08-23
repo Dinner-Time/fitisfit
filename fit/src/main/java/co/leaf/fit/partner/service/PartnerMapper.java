@@ -15,6 +15,7 @@ public interface PartnerMapper {
 	int parInsert(PartnerVO vo);
 	int parDelete(PartnerVO vo);
 	
+	int parUpdatePhoto(PartnerVO vo);
 	int parUpdateReq(PartnerVO vo);
 	int parReqProcess(PartnerVO vo);
 	int parReqDone(PartnerVO vo);

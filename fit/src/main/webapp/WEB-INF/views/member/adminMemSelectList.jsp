@@ -70,11 +70,6 @@
 			<table class="table">
 				<tbody>
 					<tr style="cursor: pointer;">
-						<td align="center">가입일</td>
-						<td><input type="date" id="memSubDate" name="memSubDate">
-							~ <input type="date" id="memSubDate" name="memSubDate"></td>
-					</tr>
-					<tr style="cursor: pointer;">
 						<td align="center">이름</td>
 						<td><input type="text" id="memName" name="memName"></td>
 					</tr>

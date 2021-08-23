@@ -19,7 +19,12 @@ public class InsSelectList implements Command {
 		InstructorVO vo = new InstructorVO();
 		PartnerVO par = (PartnerVO) session.getAttribute("session");
 		
-		vo.setInsParId(par.getParId());
+		try {
+			vo.setInsParId(par.getParId());
+		}catch(Exception e) {
+			e.printStackTrace();
+			return "main.do";
+		}
 		request.setAttribute("list", dao.insSelectList(vo));
 		return "instructor/insSelectList";
 	}

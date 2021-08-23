@@ -18,13 +18,10 @@ import co.leaf.fit.common.Command;
 import co.leaf.fit.history.command.HisDelete;
 import co.leaf.fit.history.command.HisInsert;
 import co.leaf.fit.history.command.HisInsertForm;
-import co.leaf.fit.history.command.HisTest;
 import co.leaf.fit.history.command.MypageHistory;
 import co.leaf.fit.instructor.command.InsDelete;
-import co.leaf.fit.instructor.command.InsInfo;
 import co.leaf.fit.instructor.command.InsInsert;
 import co.leaf.fit.instructor.command.InsInsertForm;
-import co.leaf.fit.instructor.command.InsListPartner;
 import co.leaf.fit.instructor.command.InsSelect;
 import co.leaf.fit.instructor.command.InsSelectList;
 import co.leaf.fit.instructor.command.InsUpdate;
@@ -38,20 +35,15 @@ import co.leaf.fit.member.command.MemLogin;
 import co.leaf.fit.member.command.MemLoginForm;
 import co.leaf.fit.member.command.MemLogout;
 import co.leaf.fit.member.command.MemPhotoUpload;
-import co.leaf.fit.member.command.MemTest;
 import co.leaf.fit.member.command.MemUpdatePassword;
 import co.leaf.fit.member.command.MemberSelect;
 import co.leaf.fit.partner.command.MemPartnerSelect;
-
-
 import co.leaf.fit.partner.command.ParAdmWaitList;
-
 import co.leaf.fit.partner.command.ParInsert;
 import co.leaf.fit.partner.command.ParInsertForm;
 import co.leaf.fit.partner.command.ParModRequest;
 import co.leaf.fit.partner.command.ParReqConfirm;
 import co.leaf.fit.partner.command.ParSelect;
-import co.leaf.fit.partner.command.ParTest;
 import co.leaf.fit.partner.command.ParUpdatePhoto;
 import co.leaf.fit.program.command.MemberEnroll;
 import co.leaf.fit.program.command.ProAdmWaitList;
@@ -60,12 +52,8 @@ import co.leaf.fit.program.command.ProList;
 import co.leaf.fit.program.command.ProParSimpleList;
 import co.leaf.fit.program.command.ProgramAdd;
 import co.leaf.fit.program.command.ProgramAddForm;
-
-
 import co.leaf.fit.program.command.ProReqConfirm;
 import co.leaf.fit.program.command.ProUpdatePhoto;
-import co.leaf.fit.program.command.SelectedPrograms;
-
 import co.leaf.fit.program.command.programDetailUser;
 import co.leaf.fit.region.command.RegSelectList;
 import co.leaf.fit.review.command.RevInsert;
@@ -74,12 +62,6 @@ import co.leaf.fit.review.command.RevSelectByAdm;
 import co.leaf.fit.review.command.RevSelectList;
 import co.leaf.fit.review.command.RevSelectListByAdm;
 import co.leaf.fit.review.command.RevSelectListByPar;
-import co.leaf.fit.sales.command.SalAdminDetail;
-import co.leaf.fit.sales.command.SalAdminList;
-import co.leaf.fit.sales.command.SalPartnerInsert;
-import co.leaf.fit.sales.command.SalPartnerUpdate;
-import co.leaf.fit.sales.command.SalPatnerList;
-import co.leaf.fit.sales.command.SalTest;
 import co.leaf.fit.wishlist.command.WisDelete;
 import co.leaf.fit.wishlist.command.WisInsert;
 import co.leaf.fit.wishlist.command.WisList;
@@ -108,7 +90,6 @@ public class FrontController extends HttpServlet {
 		map.put("/catSelectList.do", new CatSelectList()); // 카테고리별 프로그램을 확인하는 페이지로 연결
 		
 		// history page
-		map.put("/hisTest.do", new HisTest());
 		map.put("/hisInsertForm.do", new HisInsertForm());
 		map.put("/hisInsert.do", new HisInsert());
 		map.put("/mypageHistory.do", new MypageHistory());
@@ -116,17 +97,14 @@ public class FrontController extends HttpServlet {
 		
 		// instructor page
 		map.put("/insSelectList.do", new InsSelectList());
-		map.put("/insListPartner.do", new InsListPartner());
 		map.put("/insSelect.do", new InsSelect());
 		map.put("/insInsertForm.do", new InsInsertForm());
 		map.put("/insInsert.do", new InsInsert());
-		map.put("/insInfo.do", new InsInfo());
 		map.put("/insDelete.do", new InsDelete());
 		map.put("/insUpdate.do", new InsUpdate());
 		map.put("/insUpdatePhoto.do", new InsUpdatePhoto());
 		
 		// member page
-		map.put("/memTest.do", new MemTest());
 		map.put("/loginForm.do", new MemLoginForm());
 		map.put("/login.do", new MemLogin());
 		map.put("/logout.do", new MemLogout());
@@ -139,7 +117,6 @@ public class FrontController extends HttpServlet {
 		map.put("/memPhotoUpload.do", new MemPhotoUpload());
 		
 		// partner page
-		map.put("/parTest.do", new ParTest());
 		map.put("/parInsertForm.do", new ParInsertForm());
 		map.put("/parInsert.do", new ParInsert());
 		map.put("/parSelect.do", new ParSelect());
@@ -171,14 +148,6 @@ public class FrontController extends HttpServlet {
 		map.put("/revSelectListByPar.do", new RevSelectListByPar());
 		map.put("/revInsertForm.do", new RevInsertForm());
 		map.put("/revInsert.do", new RevInsert());
-		
-		// sales page 
-		map.put("/salTest.do", new SalTest());
-		map.put("/salAdminList.do", new SalAdminList()); // 관리자 화면에서 수익 관리
-		map.put("/salAdminDetail.do", new SalAdminDetail()); // 관리자 화면에서 수익 자세히보기
-		map.put("/salPatnerList.do", new SalPatnerList()); // 파트너 사에서 자기 수익 보기
-		map.put("/salPartnerInsert.do", new SalPartnerInsert()); // 파트너 사에서 오늘 수익 정산
-		map.put("/salPartnerUpdate.do", new SalPartnerUpdate()); // 파트너 사에서 정산 금액 수정
 		
 		// wishlist page
 		map.put("/wisList.do", new WisList());

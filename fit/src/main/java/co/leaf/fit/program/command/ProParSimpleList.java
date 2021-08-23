@@ -17,10 +17,15 @@ public class ProParSimpleList implements Command {
 		ProgramSerivce dao = new ProgramSerivce();
 		ProgramVO vo = new ProgramVO();
 		PartnerVO parVO = (PartnerVO) session.getAttribute("session");
+		try {
+			vo.setProParId(parVO.getParId());
+			System.out.println(vo.getProParId());
+			request.setAttribute("list", dao.proParSimpleList(vo));
+		} catch(Exception e) {
+			e.printStackTrace();
+			return "main.do";
+		}
 		
-		vo.setProParId(parVO.getParId());
-		
-		request.setAttribute("list", dao.proParSimpleList(vo));
 		return "program/proParSimpleList";
 	}
 

@@ -9,7 +9,8 @@
 		pa.par_regid
 		from fit_program p
 		inner join fit_partner pa
-		on p.pro_parid = pa.par_id
+		on p.pro_parid
+		= pa.par_id
 		where pa.par_regid = #{parRegId}
 	</select>
 
@@ -18,7 +19,8 @@
 		pa.par_regid from
 		fit_program p
 		inner join fit_partner pa
-		on p.pro_parid = pa.par_id
+		on p.pro_parid
+		= pa.par_id
 		where p.pro_catid = #{proCatId}
 	</select>
 
@@ -111,7 +113,8 @@
 	</select>
 
 	<select id="proSimpleSelect" resultType="ProgramVO">
-		select * from fit_program
+		select * from
+		fit_program
 		where pro_id = #{proId}
 	</select>
 
@@ -124,13 +127,16 @@
 		update fit_program
 		set
 		pro_id = #{proOriId}, pro_state = 'Y', pro_oriid = null where pro_id
-		= #{proId}
+		=
+		#{proId}
 	</update>
 
 	<insert id="proInsertReq" parameterType="ProgramVO">
 		insert into fit_program
-		(pro_id, pro_parid, pro_catid, pro_photo, pro_desc, pro_since, pro_period, pro_price,
-		pro_sale2, pro_sale3, pro_maxpeople, pro_people, pro_insid, pro_state, pro_name, pro_oriid)
+		(pro_id, pro_parid, pro_catid, pro_photo, pro_desc, pro_since,
+		pro_period, pro_price,
+		pro_sale2, pro_sale3, pro_maxpeople, pro_people,
+		pro_insid, pro_state, pro_name, pro_oriid)
 		values
 		(FIT_PRO_SEQ.nextval,
 		#{proParId},
@@ -172,18 +178,17 @@
 	</insert>
 
 	<update id="proMemberEnroll" parameterType="ProgramVO">
-		<if test="proPeople lt proMaxPeople">
-			update fit_program
-			set pro_people = pro_people + 1
-			where
-			pro_id = #{proId}
-		</if>
+		update fit_program
+		set pro_people = pro_people + 1
+		where
+		pro_id = #{proId}
 	</update>
 
 	<update id="proUpdatePhoto" parameterType="ProgramVO">
 		update fit_program
-		set pro_photo = #{proPhoto}
-		where pro_id = #{proId}	
+		set
+		pro_photo = #{proPhoto}
+		where pro_id = #{proId}
 	</update>
 
 	<delete id="proDelete" parameterType="ProgramVO">

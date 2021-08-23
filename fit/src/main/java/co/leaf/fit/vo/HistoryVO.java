@@ -17,6 +17,8 @@ public class HistoryVO {
 	private String hisProPhoto;
 	
 	private String hisState;
+	private String proPhoto;
+	private String proName;
 	
 	public HistoryVO() {}
 
@@ -112,6 +114,26 @@ public class HistoryVO {
 
 	public void setHisProPhoto(String hisProPhoto) {
 		this.hisProPhoto = hisProPhoto;
+	}
+
+
+	public String getProPhoto() {
+		return proPhoto;
+	}
+
+
+	public void setProPhoto(String proPhoto) {
+		this.proPhoto = proPhoto;
+	}
+
+
+	public String getProName() {
+		return proName;
+	}
+
+
+	public void setProName(String proName) {
+		this.proName = proName;
 	}
 
 	

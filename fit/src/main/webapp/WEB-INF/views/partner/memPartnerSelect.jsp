@@ -133,7 +133,7 @@ Start About Section
 					<article class="col-md-3 col-sm-6 col-xs-12">
 						<div class="post-item">
 							<div class="media-wrapper">
-								<img src="${pro.proPhoto }" alt="Program Photo"
+								<img src="images/program/${pro.proPhoto }" alt="Program Photo"
 									class="img-fluid">
 							</div>
 
@@ -179,7 +179,7 @@ Start About Section
 						<div class="team-member text-center">
 							<div class="member-photo">
 								<!-- member photo -->
-								<img class="img-fluid" src="images/team/member-1.jpg"
+								<img class="img-fluid" src="images/instructor/${ins.insPhoto }"
 									alt="Meghna">
 								<!-- /member photo -->
 

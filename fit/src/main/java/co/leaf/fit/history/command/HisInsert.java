@@ -9,8 +9,10 @@ import javax.servlet.http.HttpSession;
 import co.leaf.fit.common.Command;
 import co.leaf.fit.history.service.HistoryMapper;
 import co.leaf.fit.history.service.HistoryService;
+import co.leaf.fit.program.service.ProgramSerivce;
 import co.leaf.fit.vo.HistoryVO;
 import co.leaf.fit.vo.MemberVO;
+import co.leaf.fit.vo.ProgramVO;
 
 public class HisInsert implements Command {
 
@@ -34,6 +36,10 @@ public class HisInsert implements Command {
 		String message = "";
 		
 		if (n != 0) {
+			ProgramSerivce proDao = new ProgramSerivce();
+			ProgramVO proVO = new ProgramVO();
+			proVO.setProId(vo.getHisProId());
+			proDao.proMemberEnroll(proVO);
 			message = "결제가 완료되었습니다.";
 		} else {
 			message = "결제에 실패했습니다.";
@@ -41,7 +47,7 @@ public class HisInsert implements Command {
 		
 		request.setAttribute("message", message);
 		
-		return "member/myPageHistory";
+		return "mypageHistory.do";
 	}
 
 }

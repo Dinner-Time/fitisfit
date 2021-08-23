@@ -113,7 +113,7 @@
 		<nav class="navbar justify-content-center navbar-expand-sm bg-light">
 		  <ul class="navbar-nav">
 		    <li class="slideLi nav-item">
-		      <a class="nav-link" href="#">회원관리</a>
+		      <a class="nav-link" href="adminMemSelectList.do">회원관리</a>
 		    </li>
 		    <li class="slideLi nav-item">
 		      <a class="nav-link" href="parAdmWaitList.do">파트너관리</a>

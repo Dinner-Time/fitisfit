@@ -18,6 +18,7 @@ public class Main implements Command {
 
 		request.setAttribute("catList", catDao.catSelectList());
 		request.setAttribute("regList", regDao.regSelectList());
+		request.setAttribute("partnerError", (String) request.getAttribute("partnerError"));
 
 		return "home/main";
 	}

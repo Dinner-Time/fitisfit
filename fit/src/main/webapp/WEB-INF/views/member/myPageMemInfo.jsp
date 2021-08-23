@@ -290,18 +290,20 @@
 				$('#phoneChange').children().eq(0).prop('readonly', false);
 				$(this).text('완료')
 			} else if ($(this).text() == '완료') {
-				let rtnNum;
 				let regExp = /01[01689]-[0-9]{1}[0-9]{2,3}-[0-9]{4}$/;
-				let myArray;
 				if (regExp.test($(input).val())) {
 					if (confirm('정말로 수정하시겠습니까?')) {
-						alert('전화번호가 수정되었습니다.')
-						// $(form).submit();
 						$.ajax({
 							url: 'PhoneNumChange',
 							data: {
 								memEmail: memEmail,
-								
+								memPhone: $(input).val()
+							},
+							success: function(){
+								alert('전화번호가 수정되었습니다.');
+							},
+							error: function(){
+								alert('에러가 발생했습니다.');
 							}
 						})
 					}

@@ -15,22 +15,30 @@ public class ParInsert implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		PartnerMapper dao = new PartnerService();
-		PartnerVO vo = new PartnerVO();
-		
-		SimpleDateFormat format = new SimpleDateFormat ("yyyy-MM-dd");
-		String date = format.format(System.currentTimeMillis());
-		
-		vo.setParEmail(request.getParameter("parEmail"));
-		vo.setParPassword(request.getParameter("parPassword"));
-		vo.setParName(request.getParameter("parName"));
-		vo.setParRegId(Integer.parseInt(request.getParameter("parRegId")));
-		vo.setParAddress(request.getParameter("roadFullAddr"));
-		vo.setParPhone(request.getParameter("parPhone"));
-		vo.setParIntro(request.getParameter("parIntro"));
-		vo.setParSubDate(Date.valueOf(date));
-		dao.parInsert(vo);
-		
+		try {
+			PartnerMapper dao = new PartnerService();
+			PartnerVO vo = new PartnerVO();
+
+			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+			String date = format.format(System.currentTimeMillis());
+
+			vo.setParEmail(request.getParameter("parEmail"));
+			vo.setParPassword(request.getParameter("parPassword"));
+			vo.setParName(request.getParameter("parName"));
+			vo.setParRegId(Integer.parseInt(request.getParameter("parRegId")));
+			vo.setParAddress(request.getParameter("roadFullAddr"));
+			vo.setParPhone(request.getParameter("parPhone"));
+			vo.setParIntro(request.getParameter("parIntro"));
+			vo.setParSubDate(Date.valueOf(date));
+
+			dao.parInsert(vo);
+			request.setAttribute("partnerSuccess", "success");
+		} catch (Exception e) {
+			e.printStackTrace();
+			request.setAttribute("partnerError", "error");
+			return "main.do";
+		}
+
 		return "loginForm.do";
 	}
 

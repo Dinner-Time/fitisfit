@@ -108,6 +108,7 @@
 								</select>
 							</div>
 							<div class="form-group">
+								<label id="phoneLabel" class="text-danger" for="parPhone"></label>
 								<input type="text" class="form-control" id="parPhone"
 									name="parPhone" placeholder="전화번호를 입력해주세요." required>
 							</div>
@@ -131,13 +132,14 @@
 									var f1 = document.forms[0];
 									var pw1 = f1.parPassword.value;
 									var pw2 = f1.parPasswordConfirm.value;
-									console.log(pw1);
-									console.log(pw2);
-									if (pw1 == pw2) {
-                        				alert("환영합니다!!");
-                        				$("#parInsert").submit();
-									} else {
-										alert("비밀번호를 확인해주세요.")
+									if($("#phoneLabel").text() != ""){
+										alert("전화번호를 확인해주세요.")
+									}else{
+										if (pw1 == pw2) {
+											$("#parInsert").submit();
+										} else {
+											alert("비밀번호를 확인해주세요.")
+										}
 									}
                      		   })()'>회원가입</button>
 							<button class="btn btn-primary" type="reset">취소</button>
@@ -193,22 +195,30 @@
 			$('#roadFullAddr').val(roadFullAddr);
 		}
 		$(document).ready(function() {
-			let fail = "<c:out value='${fail}' />";
-			if (fail == 'fail') {
-				alert('로그인에 실패하였습니다.');
-			}
+			let regExp = /^[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}/;
+			let phone = $('#parPhone');
+
+			$(phone).on("change keyup paste", function(){
+				if(!regExp.test($(phone).val())){
+					$('#phoneLabel').text('전화번호 형식이 아닙니다.');
+				}else{
+					$('#phoneLabel').text('');
+				}
+			});
 		});
 
 		function checkPwd() {
 			var f1 = document.forms[0];
 			var pw1 = f1.parPassword.value;
 			var pw2 = f1.parPasswordConfirm.value;
-			if (pw1 != pw2) {
-				document.getElementById('checkPwd').style.color = "red";
-				document.getElementById('checkPwd').innerHTML = "암호가 일치하지 않습니다.";
-			} else {
-				document.getElementById('checkPwd').style.color = "black";
-				document.getElementById('checkPwd').innerHTML = "암호가 확인 되었습니다.";
+			if(pw1 != ''){
+				if (pw1 != pw2) {
+					document.getElementById('checkPwd').style.color = "red";
+					document.getElementById('checkPwd').innerHTML = "암호가 일치하지 않습니다.";
+				} else {
+					document.getElementById('checkPwd').style.color = "black";
+					document.getElementById('checkPwd').innerHTML = "암호가 확인 되었습니다.";
+				}
 			}
 		}
 	</script>

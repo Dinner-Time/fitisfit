@@ -100,11 +100,6 @@
           <input type="hidden" id="proOriId" name="proOriId">
         </form>
       </div>
-      <div align="right">
-        <a class="btn btn-main" href="programAddForm.do" style="background-color:#4343fe; border:none">프로그램추가</a>
-
-      </div>
-
     </div>
   </section>
 

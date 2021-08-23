@@ -143,7 +143,7 @@
 		      <a class="nav-link" href="proParSimpleList.do">프로그램관리</a>
 		    </li>
 		    <li class="slideLi nav-item">
-		      <a class="nav-link" href="#">후기관리</a>
+		      <a class="nav-link" href="revSelectListByPar.do">후기관리</a>
 		    </li>
 		  </ul>
 		</nav>

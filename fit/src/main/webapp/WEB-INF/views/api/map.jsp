@@ -83,7 +83,7 @@
 									<li id="partnerPhone">업체 전화번호</li>
 									<li id="partnerIntro">업체 소개</li>
 								</ul>
-								<button id="partnerSubmit" class="btn btn-main mt-20">프로그램 보러가기</button> <br>
+								<button id="partnerSubmit" class="btn btn-main mt-20">보러가기</button> <br>
 								<br>
 								<div class="custom-border"></div>
 							</div>
@@ -112,9 +112,9 @@
 	<!-- db에서 넘어온 자료 저장 -->
 
 	<!-- db로 보내는 form -->
-	<form id="partnerFrm" action="proDetail.do" method="post">
+	<form id="partnerFrm" action="memPartnerSelect.do" method="post">
 		<!-- name을 parId로 변경 필수!! -->
-		<input type="hidden" id="proId" name="proId">
+		<input type="hidden" id="parId" name="parId">
 	</form>
 
 	<jsp:include page="../home/footer.jsp" />
@@ -239,7 +239,7 @@
 					$(partners).hide('slow', function () {
 						$(partners).attr('id', parId);
 						$(partners).find('#partnerName').html(parName);
-						$(partners).find('#partnerPhoto').attr('src', 'images/about/about-2.png'); //  + parPhoto
+						$(partners).find('#partnerPhoto').attr('src', 'images/about/'+ parPhoto);
 						$(partners).find('#partnerAddress').html(parAddress);
 						$(partners).find('#partnerIntro').html(parIntro);
 						$(partners).find('#partnerPhone').html(parPhone);
@@ -247,17 +247,18 @@
 					});
 				});
 			});
-
-			// 프로그램 더보기
-			$('#partnerSubmit').click(function () {
-				if($(partners).attr('id') == "partners"){
-					alert('잘못된 업체입니다. 다시 한번 확인해주세요');
-				} else{
-					$('#partnerFrm').find('#proId').val($(partners).attr('id'));
-					$('#partnerFrm').submit();
-				}
-			});
 		}
+		
+		// 파트너사 보러가기
+		$('#partnerSubmit').click(function (e) {
+			console.log(e);
+			if($(partners).attr('id') == "partners"){
+				alert('잘못된 업체입니다. 다시 한번 확인해주세요');
+			} else{
+				$('#partnerFrm').find('#parId').val($(partners).attr('id'));
+				$('#partnerFrm').submit();
+			}
+		});
 	</script>
 </body>
 

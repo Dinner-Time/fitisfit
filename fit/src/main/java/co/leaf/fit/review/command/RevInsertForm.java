@@ -25,6 +25,7 @@ public class RevInsertForm implements Command {
 		hisVO = hisDao.hisSelectOne(hisVO);
 		
 		request.setAttribute("history", hisVO);
+		request.setAttribute("proId", hisVO.getHisProId());
 		
 		return "review/revInsertForm";
 	}

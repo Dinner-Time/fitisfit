@@ -27,20 +27,6 @@ public class PartnerService implements PartnerMapper {
 		return map.parInsert(vo);
 	}
 
-	@Override
-	public int parUpdateBefore(PartnerVO vo) {
-		return 0;
-	}
-
-	@Override
-	public int parUpdateAfter(PartnerVO vo) {
-		return 0;
-	}
-
-	@Override
-	public int parUpdate(PartnerVO vo) {
-		return 0;
-	}
 
 	@Override
 	public int parDelete(PartnerVO vo) {
@@ -50,6 +36,26 @@ public class PartnerService implements PartnerMapper {
 	@Override
 	public PartnerVO parLogin(PartnerVO vo) {
 		return map.parLogin(vo);
+	}
+
+	@Override
+	public int parUpdateReq(PartnerVO vo) {
+		return map.parUpdateReq(vo);
+	}
+
+	@Override
+	public int parReqProcess(PartnerVO vo) {
+		return map.parReqProcess(vo);
+	}
+
+	@Override
+	public int parReqDone(PartnerVO vo) {
+		return map.parReqDone(vo);
+	}
+
+	@Override
+	public List<PartnerVO> parAdmWaitList() {
+		return map.parAdmWaitList();
 	}
 
 }

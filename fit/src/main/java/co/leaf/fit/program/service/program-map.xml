@@ -6,25 +6,34 @@
 
 	<select id="proRegSimpleList" resultType="ProgramVO">
 		select p.*,
-		pa.par_regid 
-		from fit_program p 
-		inner join fit_partner pa 
-		on p.pro_parid = pa.par_id 
+		pa.par_regid
+		from fit_program p
+		inner join fit_partner pa
+		on p.pro_parid = pa.par_id
 		where pa.par_regid = #{parRegId}
 	</select>
 
 	<select id="proCatSimpleList" resultType="ProgramVO">
 		select p.*,
-		pa.par_regid from 
-		fit_program p 
-		inner join fit_partner pa 
-		on p.pro_parid = pa.par_id 
+		pa.par_regid from
+		fit_program p
+		inner join fit_partner pa
+		on p.pro_parid = pa.par_id
 		where p.pro_catid = #{proCatId}
 	</select>
-	
+
 	<select id="proParSimpleList" resultType="ProgramVO">
 		select * from
 		fit_program where pro_parId = #{proParId}
+		and pro_state = 'Y'
+	</select>
+
+	<select id="proAdmWaitList" resultType="ProgramVO">
+		select p.*, pa.par_name
+		from fit_program p
+		inner join fit_partner pa
+		on p.pro_parid = pa.par_id
+		where pro_oriid is not null
 	</select>
 
 	<select id="proSelectList" resultType="ProgramVO">
@@ -64,46 +73,53 @@
 		reg.reg_name,
 		pa.par_name,
 		i.ins_name,
-        i.ins_id,
+		i.ins_id,
 		r.rev_score,
 		r.rev_content,
 		r.rev_writer,
 		r.rev_date
-		from fit_program pr
+		from
+		fit_program pr
 		inner join fit_partner pa
 		on
 		pr.pro_parid =
 		pa.par_id
-		inner join fit_instructor i
+		inner
+		join fit_instructor i
 		on i.ins_id =
 		pr.pro_insid
 		left
-		outer join fit_review r
+		outer join
+		fit_review r
 		on r.rev_proid = pr.pro_id
 		inner join
 		fit_category c
-		on c.cat_id = pr.pro_catid
+		on
+		c.cat_id = pr.pro_catid
 		inner join (select
 		pt.par_id,
 		re.reg_name
-		from fit_region re
+		from
+		fit_region re
 		inner join fit_partner pt
 		on
 		re.reg_id = pt.par_regid) reg
 		on reg.par_id = pr.pro_parid
 		where
-		pr.pro_state = 'Y' and pr.pro_id = #{proId}
+		pr.pro_state = 'Y' and pr.pro_id =
+		#{proId}
 	</select>
 
-	<delete id="proReqProcess">
+	<delete id="proReqProcess" parameterType="ProgramVO">
 		delete from fit_program
 		where pro_id = #{proOriId}
 	</delete>
 
 	<update id="proReqDone" parameterType="ProgramVO">
 		update fit_program
-		set pro_id = #{pro_oriid}, pro_state = 'Y', pro_oriid = null where pro_id
-		= #{pro_id}
+		set
+		pro_id = #{proOriId}, pro_state = 'Y', pro_oriid = null where pro_id
+		= #{proId}
 	</update>
 
 	<insert id="proInsertReq" parameterType="ProgramVO">
@@ -124,7 +140,7 @@
 		#{proInsId},
 		'E',
 		#{proName},
-		#{proOriId})
+		FIT_PRO_SEQ.nextval)
 	</insert>
 
 	<insert id="proUpdateReq" parameterType="ProgramVO">

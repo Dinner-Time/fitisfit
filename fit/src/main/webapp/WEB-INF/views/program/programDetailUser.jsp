@@ -241,6 +241,7 @@
 
             </div>
         </div>
+        <c:if test="${session.author == 'M' }">
         <div class="col-lg-4">
           <!-- sidebar -->
           <aside class="sidebar" style="position:sticky; top:150px;">
@@ -254,6 +255,7 @@
             </div>
           </aside>
         </div>
+        </c:if>
   </section>
 
   <form action="" method="POST">

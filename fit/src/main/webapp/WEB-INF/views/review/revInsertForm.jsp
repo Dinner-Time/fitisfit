@@ -38,12 +38,13 @@
 		</div>
 		<div class="col-6">
 			<form id="frm" name="frm" action="revInsert.do" method="post">
+				<input type="hidden" name="revProId" value="${proId }">
 				<table class="table table-bordered">
 					<tr align="center">
 						<td class="col-4">
 							<div class="form-group">
 							  <label for="revScore">(별점. 현재는 3.5로 고정시켜놈..)</label>
-							  <select class="form-control" id="revScore">
+							  <select class="form-control" id="revScore" name="revScore">
 							    <option value="0">0점</option>
 							    <option value="1">1점</option>
 							    <option value="2">2점</option>

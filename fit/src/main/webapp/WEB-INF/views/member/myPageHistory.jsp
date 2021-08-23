@@ -73,7 +73,7 @@ h3, h5, p {
 						</div>
 						<div>
 							<button type="submit" class="btn btn-primary">후기작성</button>
-							<button type="button" class="btn btn-outline-primary" onclick="delConfirm()">수강취소</button>
+							<button type="button" class="btn btn-outline-danger" onclick="delConfirm(${history.hisId})">수강취소</button>
 							<br><br>
 						</div>
 					</div>
@@ -119,10 +119,22 @@ h3, h5, p {
 			}
 		}
 		
-		function delConfirm() {
+		function delConfirm(hisId) {
 			var result = confirm('정말로 수강취소하시겠습니까?');
 			if (result) {
+				var form = document.createElement('form');
+				form.setAttribute('method','post');
+				form.setAttribute('action', 'hisDelete.do');
+				document.charset = "utf-8";
 				
+				var hidden = document.createElement('input');
+				hidden.setAttribute('type','hidden');
+				hidden.setAttribute('name','hisId');
+				hidden.setAttribute('value', hisId);
+					
+				form.appendChild(hidden);
+				document.body.appendChild(form);
+				form.submit();
 			}
 
 		}

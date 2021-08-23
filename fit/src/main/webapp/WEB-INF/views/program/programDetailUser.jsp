@@ -95,7 +95,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
+                      <tr style="font-size: x-small">
                         <td>
                           <span
                             class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom font-size16 xs-font-size13">${timetable.timMon

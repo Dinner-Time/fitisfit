@@ -19,5 +19,8 @@ public interface PartnerMapper {
 	int parUpdateReq(PartnerVO vo);
 	int parReqProcess(PartnerVO vo);
 	int parReqDone(PartnerVO vo);
-
+	
+	List<PartnerVO> parSelectPro(PartnerVO vo);
+	List<PartnerVO> parSelectIns(PartnerVO vo);
+	
 }

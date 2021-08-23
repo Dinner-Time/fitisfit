@@ -110,7 +110,7 @@
 					</table>
 				</div>
 				<div class="card-body" align="center">
-					<button type="button" class="btn btn-primary" style="float: center;" data-toggle="modal"
+					<button type="button" class="btn btn-danger" style="float: center;" data-toggle="modal"
 						data-target="#exampleModal2">회원 탈퇴</button>
 				</div>
 			</div>
@@ -218,7 +218,7 @@
 	<!-- Custom for this Page -->
 	<script type="text/javascript">
 		function checkPwd() {
-			var f1 = document.forms[1];
+			var f1 = document.forms[2];
 			console.log(f1);
 			var pw1 = f1.newMemPassword.value;
 			var pw2 = f1.newMemPasswordConfirm.value;
@@ -232,7 +232,7 @@
 		}
 
 		function checkPwd2() {
-			var f2 = document.forms[2];
+			var f2 = document.forms[3];
 			var pw1 = f2.memDelPassword.value;
 			var pw2 = f2.memDelPasswordConfirm.value;
 			var pw3 = '<c:out value="${session.memPassword}"/>';
@@ -246,7 +246,7 @@
 		}
 
 		function pwdCheck() {
-			var f1 = document.forms[1];
+			var f1 = document.forms[2];
 			console.log(f1);
 			var pw1 = f1.newMemPassword.value;
 			var pw2 = f1.newMemPasswordConfirm.value;
@@ -262,7 +262,7 @@
 		}
 
 		function memDelete() {
-			var f2 = document.forms[2];
+			var f2 = document.forms[3];
 			var pw1 = f2.memDelPassword.value;
 			var pw2 = f2.memDelPasswordConfirm.value;
 			var pw3 = '<c:out value="${session.memPassword}"/>';

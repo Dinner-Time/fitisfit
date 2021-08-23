@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -56,7 +57,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<h2>업체명</h2>
+					<h2>${partner.parName }</h2>
 					<ol class="breadcrumb header-bradcrumb">
 						<li><a href=""></a></li>
 						<li class="active"></li>
@@ -79,11 +80,11 @@ Start About Section
 					<div class="custom-border"></div>
 					<br>
 					<ul class="checklist">
-						<li>업체 주소</li>
-						<li>업체 이메일</li>
-						<li>업체 소개</li>
+						<li>${partner.parAddress }</li>
+						<li>${partner.parEmail }</li>
+						<li>${partner.parIntro }</li>
 					</ul>
-					<a href="#" class="btn btn-main mt-20">전화번호</a> <br>
+					<a href="#" class="btn btn-main mt-20">${partner.parPhone }</a> <br>
 					<br>
 					<div class="custom-border"></div>
 				</div>
@@ -109,77 +110,24 @@ Start About Section
 				<!-- /section title -->
 
 				<!-- single blog post -->
-				<article class="col-md-3 col-sm-6 col-xs-12 ">
-					<div class="post-item">
-						<div class="media-wrapper">
-							<img src="images/blog/post-3.jpg" alt="amazing caves coverimage"
-								class="img-fluid">
-						</div>
+				<c:forEach var="pro" items="${proList }">
+					<article class="col-md-3 col-sm-6 col-xs-12">
+						<div class="post-item">
+							<div class="media-wrapper">
+								<img src="${pro.proPhoto }" alt="Program Photo" class="img-fluid">
+							</div>
 
-						<div class="content">
-							<h3>
-								<a href="single-post.html">필라테스</a>
-							</h3>
-							<p>간략 설명</p>
-							<p>2021-08-17 - 2022-08-16</p>
-							<a class="custom-btn" href="single-post.html">가격</a>
+							<div class="content">
+								<h3>
+									<a href="#">${pro.proName }</a>
+								</h3>
+								<p>${pro.proDesc }</p>
+								<p>${pro.proSince }</p>
+								<a class="custom-btn" href="single-post.html">${pro.proPrice}</a>
+							</div>
 						</div>
-					</div>
-				</article>
-				<article class="col-md-3 col-sm-6 col-xs-12 ">
-					<div class="post-item">
-						<div class="media-wrapper">
-							<img src="images/blog/post-3.jpg" alt="amazing caves coverimage"
-								class="img-fluid">
-						</div>
-
-						<div class="content">
-							<h3>
-								<a href="single-post.html">수영</a>
-							</h3>
-							<p>간략 설명</p>
-							<p>2021-08-17 - 2022-08-16</p>
-							<a class="custom-btn" href="single-post.html">가격</a>
-						</div>
-					</div>
-				</article>
-				<article class="col-md-3 col-sm-6 col-xs-12 ">
-					<div class="post-item">
-						<div class="media-wrapper">
-							<img src="images/blog/post-3.jpg" alt="amazing caves coverimage"
-								class="img-fluid">
-						</div>
-
-						<div class="content">
-							<h3>
-								<a href="single-post.html">수영</a>
-							</h3>
-							<p>간략 설명</p>
-							<p>2021-08-17 - 2022-08-16</p>
-							<a class="custom-btn" href="single-post.html">가격</a>
-						</div>
-					</div>
-				</article>
-
-				<article class="col-md-3 col-sm-6 col-xs-12 ">
-					<div class="post-item">
-						<div class="media-wrapper">
-							<img src="images/blog/post-3.jpg" alt="amazing caves coverimage"
-								class="img-fluid">
-						</div>
-
-						<div class="content">
-							<h3>
-								<a href="single-post.html">수영</a>
-							</h3>
-							<p>간략 설명</p>
-							<p>2021-08-17 - 2022-08-16</p>
-							<a class="custom-btn" href="single-post.html">가격</a>
-						</div>
-					</div>
-				</article>
-
-
+					</article>
+				</c:forEach>
 			</div>
 			<!-- End row -->
 		</div>
@@ -196,11 +144,11 @@ Start About Section
 				<div class="col-12">
 					<div class="title text-center ">
 						<h2>강사 소개</h2>
-						<div class="border" style="background:#4343FE"></div>
+						<div class="border" style="background: #4343FE"></div>
 					</div>
 				</div>
 				<!-- /section title -->
-
+				<c:forEach var="ins" items="${insList }">
 				<!-- team member -->
 				<div class="col-md-3 col-sm-6 ">
 					<div class="team-member text-center">
@@ -225,112 +173,14 @@ Start About Section
 
 						<!-- member name & designation -->
 						<div class="member-content">
-							<h3>Michael Jonson</h3>
-							<span>Head Of Marketing</span>
+							<h3>${ins.insName }</h3>
 						</div>
 						<!-- /member name & designation -->
 
 					</div>
 				</div>
 				<!-- end team member -->
-
-				<!-- team member -->
-				<div class="col-md-3 col-sm-6 ">
-					<div class="team-member text-center">
-						<div class="member-photo">
-							<!-- member photo -->
-							<img class="img-fluid" src="images/team/member-2.jpg"
-								alt="Meghna">
-							<!-- /member photo -->
-
-							<!-- member social profile -->
-							<div class="mask">
-								<ul class="clearfix">
-									<li><a href="#"><i class="tf-ion-social-facebook"></i></a></li>
-									<li><a href="#"><i class="tf-ion-social-twitter"></i></a></li>
-									<li><a href="#"><i
-											class="tf-ion-social-google-outline"></i></a></li>
-									<li><a href="#"><i class="tf-ion-social-dribbble"></i></a></li>
-								</ul>
-							</div>
-							<!-- /member social profile -->
-						</div>
-
-						<!-- member name & designation -->
-						<div class="member-content">
-							<h3>Carrick Mollenkamp</h3>
-							<span>Web Developer</span>
-						</div>
-						<!-- /member name & designation -->
-					</div>
-				</div>
-				<!-- end team member -->
-
-				<!-- team member -->
-				<div class="col-md-3 col-sm-6 ">
-					<div class="team-member text-center">
-						<div class="member-photo">
-							<!-- member photo -->
-							<img class="img-fluid" src="images/team/member-3.jpg"
-								alt="Meghna">
-							<!-- /member photo -->
-
-							<!-- member social profile -->
-							<div class="mask">
-								<ul class="clearfix">
-									<li><a href="#"><i class="tf-ion-social-facebook"></i></a></li>
-									<li><a href="#"><i class="tf-ion-social-twitter"></i></a></li>
-									<li><a href="#"><i
-											class="tf-ion-social-google-outline"></i></a></li>
-									<li><a href="#"><i class="tf-ion-social-dribbble"></i></a></li>
-								</ul>
-							</div>
-							<!-- /member social profile -->
-						</div>
-
-						<!-- member name & designation -->
-						<div class="member-content">
-							<h3>David Gauthier</h3>
-							<span>Head Of Management</span>
-						</div>
-						<!-- /member name & designation -->
-
-					</div>
-				</div>
-				<!-- end team member -->
-				
-				<!-- team member -->
-				<div class="col-md-3 col-sm-6 ">
-					<div class="team-member text-center">
-						<div class="member-photo">
-							<!-- member photo -->
-							<img class="img-fluid" src="images/team/member-3.jpg"
-								alt="Meghna">
-							<!-- /member photo -->
-
-							<!-- member social profile -->
-							<div class="mask">
-								<ul class="clearfix">
-									<li><a href="#"><i class="tf-ion-social-facebook"></i></a></li>
-									<li><a href="#"><i class="tf-ion-social-twitter"></i></a></li>
-									<li><a href="#"><i
-											class="tf-ion-social-google-outline"></i></a></li>
-									<li><a href="#"><i class="tf-ion-social-dribbble"></i></a></li>
-								</ul>
-							</div>
-							<!-- /member social profile -->
-						</div>
-
-						<!-- member name & designation -->
-						<div class="member-content">
-							<h3>David Gauthier</h3>
-							<span>Head Of Management</span>
-						</div>
-						<!-- /member name & designation -->
-
-					</div>
-				</div>
-				<!-- end team member -->
+				</c:forEach>
 			</div>
 			<!-- End row -->
 		</div>

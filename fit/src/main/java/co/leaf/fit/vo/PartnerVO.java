@@ -20,6 +20,62 @@ public class PartnerVO {
 	
 	private String regName;
 	
+	private String proName;
+	private String proDesc;
+	private String proSince;
+	private String proPrice;
+	private String proPhoto;
+	
+	public String getProPhoto() {
+		return proPhoto;
+	}
+
+	public void setProPhoto(String proPhoto) {
+		this.proPhoto = proPhoto;
+	}
+
+	private String insName;
+	
+
+	public String getProName() {
+		return proName;
+	}
+
+	public void setProName(String proName) {
+		this.proName = proName;
+	}
+
+	public String getProDesc() {
+		return proDesc;
+	}
+
+	public void setProDesc(String proDesc) {
+		this.proDesc = proDesc;
+	}
+
+	public String getProSince() {
+		return proSince;
+	}
+
+	public void setProSince(String proSince) {
+		this.proSince = proSince;
+	}
+
+	public String getProPrice() {
+		return proPrice;
+	}
+
+	public void setProPrice(String proPrice) {
+		this.proPrice = proPrice;
+	}
+
+	public String getInsName() {
+		return insName;
+	}
+
+	public void setInsName(String insName) {
+		this.insName = insName;
+	}
 
 	public String getRegName() {
 		return regName;

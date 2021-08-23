@@ -15,6 +15,7 @@ import co.leaf.fit.api.command.JusoPopup;
 import co.leaf.fit.api.command.NaverMap;
 import co.leaf.fit.category.command.CatSelectList;
 import co.leaf.fit.common.Command;
+import co.leaf.fit.history.command.HisDelete;
 import co.leaf.fit.history.command.HisInsert;
 import co.leaf.fit.history.command.HisInsertForm;
 import co.leaf.fit.history.command.HisTest;
@@ -109,6 +110,7 @@ public class FrontController extends HttpServlet {
 		map.put("/hisInsertForm.do", new HisInsertForm());
 		map.put("/hisInsert.do", new HisInsert());
 		map.put("/mypageHistory.do", new MypageHistory());
+		map.put("/hisDelete.do", new HisDelete());
 		
 		// instructor page
 		map.put("/insSelectList.do", new InsSelectList());

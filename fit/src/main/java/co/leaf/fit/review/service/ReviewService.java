@@ -37,4 +37,9 @@ public class ReviewService implements ReviewMapper {
 		return map.revDelete(vo);
 	}
 
+	@Override
+	public List<ReviewVO> revSelectPar(ReviewVO vo) {
+		return map.revSelectPar(vo);
+	}
+
 }

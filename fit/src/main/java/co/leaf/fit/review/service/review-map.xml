@@ -5,6 +5,7 @@
 
 	<resultMap type="ReviewVO" id="ReviewMap">
 		<id property="revProName" column="pro_name" />
+		<id property="revProPhoto" column="pro_photo" />
 		<id property="revId" column="rev_id" />
 		<id property="revProId" column="rev_proid" />
 		<id property="revScore" column="rev_score" />
@@ -29,6 +30,16 @@
 		FROM fit_program a
 		JOIN fit_review b ON a.pro_id = b.rev_proid
 		WHERE rev_id = #{revId}
+	</select>
+	
+	<select id="revSelectPar" resultMap="ReviewMap">
+		select p.*, r.* 
+		from fit_program p 
+		left outer join fit_partner pa
+		on p.pro_parid = pa.par_id
+		left outer join fit_review r
+		on p.pro_id = r.rev_proid
+		where pa.par_id = 1 and p.pro_id = 1
 	</select>
 
 	<insert id="revInsert" parameterType="ReviewVO">

@@ -13,16 +13,16 @@ public class ProDetail implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
-		ProgramSerivce dao = new ProgramSerivce();
-		TimetableService dao2 = new TimetableService();
-		ProgramVO vo = new ProgramVO();
-		TimetableVO vo2 = new TimetableVO();
+		ProgramSerivce proDao = new ProgramSerivce();
+		TimetableService timDao = new TimetableService();
+		ProgramVO proVO = new ProgramVO();
+		TimetableVO timVO = new TimetableVO();
 		
-		vo.setProId(Integer.parseInt(request.getParameter("proId")));
-		vo2.setTimProId(Integer.parseInt(request.getParameter("proId")));
+		proVO.setProId(Integer.parseInt(request.getParameter("proId")));
+		timVO.setTimProId(Integer.parseInt(request.getParameter("proId")));
 		
-		request.setAttribute("detailList", dao.proSelect(vo));
-		request.setAttribute("timetable", dao2.timSelect(vo2));
+		request.setAttribute("detailList", proDao.proSelect(proVO));
+		request.setAttribute("timetable", timDao.timSelect(timVO));
 		
 		return "program/programDetail";
 	}

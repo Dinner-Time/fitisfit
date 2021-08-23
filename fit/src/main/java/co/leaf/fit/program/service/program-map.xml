@@ -110,6 +110,11 @@
 		#{proId}
 	</select>
 
+	<select id="proSimpleSelect" resultType="ProgramVO">
+		select * from fit_program
+		where pro_id = #{proId}
+	</select>
+
 	<delete id="proReqProcess" parameterType="ProgramVO">
 		delete from fit_program
 		where pro_id = #{proOriId}
@@ -173,6 +178,12 @@
 			where
 			pro_id = #{proId}
 		</if>
+	</update>
+
+	<update id="proUpdatePhoto" parameterType="ProgramVO">
+		update fit_program
+		set pro_photo = #{proPhoto}
+		where pro_id = #{proId}	
 	</update>
 
 	<delete id="proDelete" parameterType="ProgramVO">

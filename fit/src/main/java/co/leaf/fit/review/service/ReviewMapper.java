@@ -10,6 +10,8 @@ public interface ReviewMapper {
 	List<ReviewVO> revSelectList();
 	// 한건 조회
 	ReviewVO revSelect(ReviewVO vo);
+	//파트너가 조회
+	List<ReviewVO> revSelectPar(ReviewVO vo);
 	// 입력
 	int revInsert(ReviewVO vo);
 	// 수정

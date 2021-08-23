@@ -40,8 +40,9 @@
 					<!-- 프로그램 사진과 이름을 카드형식으로 -->
 					<div class="card">
 					  <div class="card-body">
-					  	<img class="card-img-top" src="images/program/GymProgram1.jpg" alt="Card image">
-					  	<p>(프로그램명) ${list.proName}</p>
+					  	<img class="card-img-top" src=${list[0].revProPhoto } alt="Card image">
+					  	<p>${list[0].revProName }</p>
+					  	<p></p>
 					  </div>
 					</div>
 				</div>
@@ -53,6 +54,7 @@
 						  <c:forEach var="review" items="${list}">
 						    <li class="list-group-item">
 						    <!-- 별 모양은 자바스크립트로 구현.. -->
+						    	
 						    	<h5 class="card-title">${review.revScore}</h5>
 						    	<h6 class="card-subtitle mb-2 text-muted">${review.revDate} · ${review.revWriter}</h6>
 						    	<hr>

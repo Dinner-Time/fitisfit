@@ -5,28 +5,28 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="description"
-	content="Bingo One page parallax responsive HTML Template ">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="description" content="Bingo One page parallax responsive HTML Template ">
 
-<meta name="author" content="Themefisher.com">
+	<meta name="author" content="Themefisher.com">
 
-<title>Partner My Page | Fit is Fit</title>
+	<title>Partner My Page | Fit is Fit</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
-<link rel="stylesheet" href="plugins/themefisher-font/style.css">
-<link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="plugins/lightbox2/dist/css/lightbox.min.css">
-<link rel="stylesheet" href="plugins/animate/animate.css">
-<link rel="stylesheet" href="plugins/slick/slick.css">
-<link rel="stylesheet" href="css/style.css">
-<style type="text/css">
-.rounded-circle {
-	border-radius: 50% !important;
-}
-</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+	<link rel="stylesheet" href="plugins/themefisher-font/style.css">
+	<link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="plugins/lightbox2/dist/css/lightbox.min.css">
+	<link rel="stylesheet" href="plugins/animate/animate.css">
+	<link rel="stylesheet" href="plugins/slick/slick.css">
+	<link rel="stylesheet" href="css/style.css">
+	<style type="text/css">
+		.rounded-circle {
+			border-radius: 50% !important;
+		}
+	</style>
 </head>
 
 <body id="body">
@@ -50,11 +50,11 @@
 				</div>
 				<div class="col-md-4" align="center">
 					<div class="card" style="width: 300px">
-						<img class="card-img-top img-thumbnail"
-							src="images/partner/${partner.parPhoto }" alt="partner image"
-							style="width: 100%">
+						<img class="card-img-top img-thumbnail" src="images/partner/${partner.parPhoto }"
+							alt="partner image" style="width: 100%">
 						<div class="card-body" align="right">
-							<form id="photoFrm" name="photoFrm" action="parUpdatePhoto.do" method="post" enctype="multipart/form-data">
+							<form id="photoFrm" name="photoFrm" action="parUpdatePhoto.do" method="post"
+								enctype="multipart/form-data">
 								<input type="file" id="parPhoto" name="parPhoto">
 								<button type="submit" class="btn btn-primary">등록</button>
 							</form>
@@ -63,38 +63,46 @@
 					<br>
 				</div>
 				<div class="col-md-8">
-					<table class="table">
-						<tr>
-							<th width=240px; height=70px;>이름</th>
-							<td>${partner.parName }</td>
-						</tr>
-						<tr>
-							<th height=70px;>이메일</th>
-							<td>${partner.parEmail }</td>
-						</tr>
-						<tr>
-							<th height=70px;>비밀번호</th>
-							<td>${partner.parPassword }</td>
-						</tr>
-						<tr>
-							<th height=70px;>지역</th>
-							<td>${partner.regName }</td>
-						</tr>
-						<tr>
-							<th height=70px;>주소</th>
-							<td>${partner.parAddress }</td>
-						</tr>
-						<tr>
-							<th height=70px;>전화번호</th>
-							<td>${partner.parPhone }</td>
-						</tr>
-						<tr>
-							<th height=70px;>소개</th>
-							<td>${partner.parIntro }</td>
-						</tr>
-					</table>
+					<form id="modRequest" action="parModRequest.do" method="get">
+						<input type="hidden" id="parRegId" name="parRegId" value="${partner.parRegId}">
+						<table class="table">
+							<tr>
+								<th width=240px; height=70px;>이름</th>
+								<td><input type="text" class="form-control" name="parName" value="${partner.parName }"
+										readonly required></td>
+							</tr>
+							<tr>
+								<th height=70px;>이메일</th>
+								<td><input type="text" class="form-control" value="${partner.parEmail }"
+										disabled required></td>
+							</tr>
+							<tr>
+								<th height=70px;>지역</th>
+								<td><input type="text" class="form-control" id="regName" value="${partner.regName }"
+										disabled required></td>
+							</tr>
+							<tr>
+								<th height=70px;>주소</th>
+								<td class="d-flex justify-content-end">
+									<input type="text" class="form-control" id="roadFullAddr" name="roadFullAddr"
+										value="${partner.parAddress }" required readonly>
+									<input id="jusoBtn" type="button" class="btn btn-primary ml-2" onClick="goPopup();" value="검색" />
+								</td>
+							</tr>
+							<tr>
+								<th height=70px;>전화번호</th>
+								<td><input type="text" class="form-control" name="parPhone" value="${partner.parPhone }"
+										readonly required></td>
+							</tr>
+							<tr>
+								<th height=70px;>소개</th>
+								<td><input type="text" class="form-control" name="parIntro" value="${partner.parIntro }"
+										readonly required></td>
+							</tr>
+						</table>
+					</form>
 					<div class="card-body" align="right">
-						<a href="#" class="btn btn-primary">수정</a>
+						<button id="modBtn" class="btn btn-primary">수정</button>
 					</div>
 				</div>
 			</div>
@@ -103,51 +111,6 @@
 		<!-- End container -->
 	</section>
 	<!-- End section -->
-
-	<!-- Modal -->
-	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-		aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">비밀번호 변경</h5>
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<form id="frm" name="frm" action="memUpdatePassword.do"
-					method="post">
-					<div class="modal-body">
-						<div class="form-group">
-							현재 비밀번호 : <input type="password" placeholder="Your Password"
-								class="form-control" name="password" id="password">
-						</div>
-						<div class="border"
-							style="width: 100%; background-color: lightgray;"></div>
-						<div class="form-group">
-							새 비밀번호 : <input type="password" placeholder="Your Password"
-								class="form-control" name="newMemPassword" id="newMemPassword"
-								onkeyup="checkPwd()">
-						</div>
-						<div class="form-group">
-							비밀번호 확인 : <input type="password" placeholder="Your Password"
-								class="form-control" name="newMemPasswordConfirm"
-								id="newMemPasswordConfirm" onkeyup="checkPwd()">
-						</div>
-						<div id="checkNewPwd">동일한 암호를 입력하세요.</div>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary"
-							data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary" onclick="pwdCheck()">Save
-							changes</button>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-
 
 	<jsp:include page="/WEB-INF/views/home/footer.jsp" />
 
@@ -167,35 +130,68 @@
 	<script src="js/script.js"></script>
 
 	<script type="text/javascript">
-		function checkPwd() {
-			var f1 = document.forms[0];
-			console.log(f1);
-			var pw1 = f1.newMemPassword.value;
-			var pw2 = f1.newMemPasswordConfirm.value;
-			if (pw1 != pw2) {
-				document.getElementById('checkNewPwd').style.color = "red";
-				document.getElementById('checkNewPwd').innerHTML = "암호가 일치하지 않습니다.";
+		regIdVal();
+		
+		function goPopup() {
+			// 호출된 페이지(jusoPopup.do)에서 실제 주소검색URL(https://www.juso.go.kr/addrlink/addrLinkUrl.do)를 호출하게 됩니다.
+			var pop = window.open("jusoPopup.do", "pop",
+				"width=570,height=420, scrollbars=yes, resizable=yes");
+		}
+
+		function jusoCallBack(roadFullAddr) {
+			$('#roadFullAddr').val(roadFullAddr);
+			$('#regName').val(roadFullAddr.substr(0,2));
+			regIdVal();
+		}
+
+		let modBtn = $('#modBtn');
+		let jusoBtn = $('#jusoBtn');
+		let inputs = $('table').find('input');
+
+		$(jusoBtn).hide();
+
+		$(modBtn).click(function () {
+			if ($(modBtn).text() == '수정') {
+				$(inputs).prop('readonly', false);
+				$(jusoBtn).show();
+				$(modBtn).text('승인 요청');
 			} else {
-				document.getElementById('checkNewPwd').style.color = "black";
-				document.getElementById('checkNewPwd').innerHTML = "암호가 확인 되었습니다.";
+				if (confirm('관리자에게 정보 수정을 요청하시겠습니까?')) {
+					$('#modRequest').submit();
+				} else {
+					window.location.reload();
+				}
+			}
+		});
+
+		function regIdVal(){
+			switch ($('#regName').val()){
+				case '서울': $('#parRegId').val(1); break;
+				case '인천': $('#parRegId').val(2); break;
+				case '대전': $('#parRegId').val(3); break;
+				case '대구': $('#parRegId').val(4); break;
+				case '울산': $('#parRegId').val(5); break;
+				case '부산': $('#parRegId').val(6); break;
+				case '광주': $('#parRegId').val(7); break;
+				case '경기': $('#parRegId').val(8); break;
+				case '강원': $('#parRegId').val(9); break;
+				case '충청': $('#parRegId').val(10); break;
+				case '경상': $('#parRegId').val(11); break;
+				case '전라': $('#parRegId').val(12); break;
+				case '제주': $('#parRegId').val(13); break;
 			}
 		}
-		function pwdCheck() {
-			var f1 = document.forms[0];
-			console.log(f1);
-			var pw1 = f1.newMemPassword.value;
-			var pw2 = f1.newMemPasswordConfirm.value;
-			var pw3 = '<c:out value="${session.parPassword}"/>';
-			var pw4 = f1.password.value;
-			console.log(pw3);
-			if (pw1 != pw2 || pw3 != pw4) {
-				alert('비밀번호가 일치하지 않습니다.');
-			} else {
-				alert('수정 완');
-				frm.submit();
-			}
+
+		if("<c:out value='${reqSuccess}'/>" == "success"){
+			alert('승인 요청이 완료되었습니다!');
 		}
+		if("<c:out value='${reqFail}' />" == 'fail'){
+			alert('수정 요청이 실패하였습니다.')
+		}
+
+		
 	</script>
 
 </body>
+
 </html>

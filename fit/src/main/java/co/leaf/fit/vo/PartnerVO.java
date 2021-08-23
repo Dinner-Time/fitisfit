@@ -20,11 +20,32 @@ public class PartnerVO {
 	
 	private String regName;
 	
+	private String proId;
 	private String proName;
 	private String proDesc;
 	private String proSince;
 	private String proPrice;
 	private String proPhoto;
+	
+	private String insId;
+	private String insName;
+
+	public String getInsId() {
+		return insId;
+	}
+
+	public void setInsId(String insId) {
+		this.insId = insId;
+	}
+	
+	public String getProId() {
+		return proId;
+	}
+
+	public void setProId(String proId) {
+		this.proId = proId;
+	}
+
 	
 	public String getProPhoto() {
 		return proPhoto;
@@ -33,9 +54,6 @@ public class PartnerVO {
 	public void setProPhoto(String proPhoto) {
 		this.proPhoto = proPhoto;
 	}
-
-	private String insName;
-	
 
 	public String getProName() {
 		return proName;

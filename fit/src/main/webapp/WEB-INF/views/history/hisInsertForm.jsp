@@ -75,7 +75,7 @@ p {
 								<h4 align="center">결제 정보</h4>
 							</div>
 							<div class="card-body" align="left">
-								<p>프로그램 ID (세션에서 받아오기)</p> 
+								<p>프로그램 명 (세션에서 받아오기)</p> 
 								<input type="number" class="form-control" id="hisProId" name="hisProId"><br>
 								<p>기간 (일)</p> 
 								<input type="number" class="form-control" value="30" id="hisPeriod" name="hisPeriod"><br>
@@ -83,7 +83,7 @@ p {
 								<input type="number" class="form-control" value="109000" id="hisPaid" name="hisPaid"><br>
 							</div>
 							<div class="card-footer">
-								<button type="button" class="btn btn-outline-primary">취 소</button>
+								<button type="button" class="btn btn-outline-primary" onclick="cancel()">취 소</button>
 								&nbsp;&nbsp;&nbsp;
 								<button type="button" class="btn btn-primary" onclick="payment()">결제하기</button>
 							</div>
@@ -105,6 +105,11 @@ p {
 	function payment() {
 		alert("결제가 완료되었습니다.");
 		frm.submit();
+	}
+	
+	function cancel() {
+		alert("결제를 취소하시겠습니까?");
+		  history.go(-1);
 	}
 </script>
 </html>

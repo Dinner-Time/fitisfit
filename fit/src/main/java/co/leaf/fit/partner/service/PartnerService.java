@@ -58,4 +58,14 @@ public class PartnerService implements PartnerMapper {
 		return map.parAdmWaitList();
 	}
 
+	@Override
+	public List<PartnerVO> parSelectPro(PartnerVO vo) {
+		return map.parSelectPro(vo);
+	}
+
+	@Override
+	public List<PartnerVO> parSelectIns(PartnerVO vo) {
+		return map.parSelectIns(vo);
+	}
+
 }

@@ -15,8 +15,12 @@ public class MemPartnerSelect implements Command {
 		PartnerVO vo = new PartnerVO();
 		
 		vo.setParId(Integer.parseInt(request.getParameter("parId")));
-		dao.parSelect(vo);
 		
+		vo = dao.parSelect(vo);
+		
+		request.setAttribute("partner", vo);
+		request.setAttribute("proList", dao.parSelectPro(vo));
+		request.setAttribute("insList", dao.parSelectIns(vo));
 		return "partner/memPartnerSelect";
 	}
 

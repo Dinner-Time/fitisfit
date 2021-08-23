@@ -50,15 +50,14 @@ public class ProgramAdd implements Command {
 			vo.setProSale2(Integer.valueOf(multipartRequest.getParameter("proSale2")));
 			vo.setProSale3(Integer.valueOf(multipartRequest.getParameter("proSale3")));
 			vo.setProMaxPeople(Integer.valueOf(multipartRequest.getParameter("proMaxPeople")));
-			vo.setInsId(Integer.valueOf(multipartRequest.getParameter("proInsId")));
+			vo.setProInsId(Integer.valueOf(multipartRequest.getParameter("proInsId")));
 			vo.setProName(multipartRequest.getParameter("proName"));
 			dao.proInsertReq(vo);
-			
+			request.setAttribute("reqConfirm", "confirm");
 		} catch (IOException e) {
 			e.printStackTrace();
+			return "main.do";
 		}
-		
-		
 		return "program/proParSimpleList";
 	}
 

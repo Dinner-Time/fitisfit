@@ -29,6 +29,7 @@ public class PartnerVO {
 	
 	private String insId;
 	private String insName;
+	private String insPhoto;
 
 	public String getInsId() {
 		return insId;
@@ -207,6 +208,14 @@ public class PartnerVO {
 
 	public void setParOriId(int parOriId) {
 		this.parOriId = parOriId;
+	}
+
+	public String getInsPhoto() {
+		return insPhoto;
+	}
+
+	public void setInsPhoto(String insPhoto) {
+		this.insPhoto = insPhoto;
 	}
 	
 }

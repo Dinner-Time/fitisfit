@@ -63,7 +63,7 @@
 					<br>
 				</div>
 				<div class="col-md-8">
-					<form id="modRequest" action="parModRequest.do" method="get">
+					<form id="modRequest" action="parModRequest.do" method="post">
 						<input type="hidden" id="parRegId" name="parRegId" value="${partner.parRegId}">
 						<table class="table">
 							<tr>

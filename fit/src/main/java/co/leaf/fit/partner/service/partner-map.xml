@@ -105,7 +105,7 @@
 	</select>
 
 	<select id="parSelectIns" resultType="PartnerVO">
-		select ins.ins_id, ins.ins_name from
+		select ins.ins_id, ins.ins_name, ins.ins_photo from
 		fit_instructor ins inner join fit_partner pa on (ins.ins_parid =
 		pa.par_id) where pa.par_id = #{parId}
 	</select>

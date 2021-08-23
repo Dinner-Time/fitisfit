@@ -137,7 +137,7 @@
 		      <a class="nav-link" href="parSelect.do">파트너정보</a>
 		    </li>
 		    <li class="slideLi nav-item">
-		      <a class="nav-link" href="insListPartner.do">강사관리</a>
+		      <a class="nav-link" href="insSelectList.do">강사관리</a>
 		    </li>
 		    <li class="slideLi nav-item">
 		      <a class="nav-link" href="proParSimpleList.do">프로그램관리</a>

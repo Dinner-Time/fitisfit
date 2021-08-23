@@ -22,7 +22,7 @@ public class MemDelete implements Command {
 		dao.memDelete(vo);
 		session.invalidate();
 		
-		return "home/main";
+		return "main.do";
 	}
 
 }

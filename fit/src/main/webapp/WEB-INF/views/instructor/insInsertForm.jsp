@@ -74,12 +74,12 @@
 
 							<div class="form-group">
 								<input type="text" placeholder="인스타그램" class="form-control"
-									name="insInsta" id="insInsta" required="required">
+									name="insInsta" id="insInsta">
 							</div>
 
 							<div class="form-group">
 								<input type="text" placeholder="카카오톡" class="form-control"
-									name="insKakao" id="insKakao" required="required">
+									name="insKakao" id="insKakao">
 							</div>
 
 							<div class="form-group">

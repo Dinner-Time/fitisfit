@@ -1,6 +1,5 @@
 package co.leaf.fit.timetable.service;
 
-
 import co.leaf.fit.vo.TimetableVO;
 
 public interface TimetableMapper {

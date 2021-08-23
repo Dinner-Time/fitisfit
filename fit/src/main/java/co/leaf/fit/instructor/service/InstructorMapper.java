@@ -9,6 +9,8 @@ public interface InstructorMapper {
 	//전체조회
 	List<InstructorVO> insSelectList(InstructorVO vo);	
 	
+	List<InstructorVO> insListPartner(InstructorVO vo);	
+	
 	//한건
 	InstructorVO insSelect(InstructorVO vo);	
 	

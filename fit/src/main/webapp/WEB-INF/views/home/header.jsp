@@ -21,13 +21,11 @@
 		$("#memberPage").click(function() {
 			$(".memSlideMenu").slideToggle(400);
 		})
-	})
-	$(document).ready(function() {
+
 		$("#partnerPage").click(function() {
 			$(".parSlideMenu").slideToggle(400);
 		})
-	})
-	$(document).ready(function() {
+
 		$("#adminPage").click(function() {
 			$(".admSlideMenu").slideToggle(400);
 		})
@@ -139,10 +137,10 @@
 		      <a class="nav-link" href="parSelect.do">파트너정보</a>
 		    </li>
 		    <li class="slideLi nav-item">
-		      <a class="nav-link" href="#">강사관리</a>
+		      <a class="nav-link" href="insListPartner.do">강사관리</a>
 		    </li>
 		    <li class="slideLi nav-item">
-		      <a class="nav-link" href="#">프로그램관리</a>
+		      <a class="nav-link" href="proParSimpleList.do">프로그램관리</a>
 		    </li>
 		    <li class="slideLi nav-item">
 		      <a class="nav-link" href="#">후기관리</a>

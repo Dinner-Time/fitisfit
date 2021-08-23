@@ -23,6 +23,7 @@ import co.leaf.fit.instructor.command.InsDelete;
 import co.leaf.fit.instructor.command.InsInfo;
 import co.leaf.fit.instructor.command.InsInsert;
 import co.leaf.fit.instructor.command.InsInsertForm;
+import co.leaf.fit.instructor.command.InsListPartner;
 import co.leaf.fit.instructor.command.InsSelect;
 import co.leaf.fit.instructor.command.InsSelectList;
 import co.leaf.fit.instructor.command.InsUpdate;
@@ -50,6 +51,7 @@ import co.leaf.fit.partner.command.ParTest;
 import co.leaf.fit.program.command.MemberEnroll;
 import co.leaf.fit.program.command.ProDetail;
 import co.leaf.fit.program.command.ProList;
+import co.leaf.fit.program.command.ProParSimpleList;
 import co.leaf.fit.program.command.ProgramAdd;
 import co.leaf.fit.program.command.ProgramAddForm;
 import co.leaf.fit.program.command.SelectedPrograms;
@@ -102,6 +104,7 @@ public class FrontController extends HttpServlet {
 		
 		// instructor page
 		map.put("/insSelectList.do", new InsSelectList());
+		map.put("/insListPartner.do", new InsListPartner());
 		map.put("/insSelect.do", new InsSelect());
 		map.put("/insInsertForm.do", new InsInsertForm());
 		map.put("/insInsert.do", new InsInsert());
@@ -128,6 +131,7 @@ public class FrontController extends HttpServlet {
 		map.put("/parInsert.do", new ParInsert());
 		map.put("/parSelect.do", new ParSelect());
 		map.put("/memPartnerSelect.do", new MemPartnerSelect());
+		map.put("/proParSimpleList.do", new ProParSimpleList());
 		
 		// program page
 		map.put("/proList.do", new ProList()); // 프로그램 전체 리스트

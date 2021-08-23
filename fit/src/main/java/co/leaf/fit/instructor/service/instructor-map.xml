@@ -21,6 +21,10 @@
 		on a.ins_id = b.pro_insid
 		where a.ins_parid = #{insParId}
 	</select>
+	
+	<select id="insListPartner" resultType="InstructorVO">
+		select * from fit_instructor where ins_parid = #{insParId}
+	</select>
 
 	<select id="insSelect" resultType="InstructorVO">
 		select * from fit_instructor where ins_id = #{insId}

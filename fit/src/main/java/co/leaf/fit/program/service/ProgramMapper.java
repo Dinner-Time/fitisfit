@@ -8,6 +8,7 @@ public interface ProgramMapper {
 	List<ProgramVO> proRegSimpleList(ProgramVO vo);
 	List<ProgramVO> proCatSimpleList(ProgramVO vo);
 	List<ProgramVO> proParSimpleList(ProgramVO vo);
+	List<ProgramVO> proAdmWaitList();
 	
 	List<ProgramVO> proSelectList();
 	List<ProgramVO> proSelect(ProgramVO vo);
@@ -16,4 +17,7 @@ public interface ProgramMapper {
 	int proUpdate(ProgramVO vo);
 	int proMemberEnroll(ProgramVO vo);
 	int proDelete(ProgramVO vo);
+	
+	int proReqProcess(ProgramVO vo);
+	int proReqDone(ProgramVO vo);
 }

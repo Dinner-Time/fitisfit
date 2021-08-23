@@ -134,7 +134,7 @@
 		let proId = $(form).find('#proId');
 
 		console.log(error);
-		if(error == 'error'){
+		if (error == 'error') {
 			alert('이미 추가된 프로그램입니다.');
 		}
 
@@ -142,12 +142,12 @@
 			formSubmit('programDetailUser.do', $(this).attr('data-id'))
 		});
 		$('.custom-del').click(function () {
-			if(confirm('정말 삭제하시겠습니까?')){
+			if (confirm('정말 삭제하시겠습니까?')) {
 				formSubmit('wisDelete.do', $(this).attr('data-id'));
 			}
 		});
 
-		function formSubmit(action, value){
+		function formSubmit(action, value) {
 			$(form).attr('action', action);
 			$(proId).val(value);
 			$(form).submit();

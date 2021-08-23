@@ -41,16 +41,27 @@ import co.leaf.fit.member.command.MemTest;
 import co.leaf.fit.member.command.MemUpdatePassword;
 import co.leaf.fit.member.command.MemberSelect;
 import co.leaf.fit.partner.command.MemPartnerSelect;
+
+
+import co.leaf.fit.partner.command.ParAdmWaitList;
+
 import co.leaf.fit.partner.command.ParInsert;
 import co.leaf.fit.partner.command.ParInsertForm;
+import co.leaf.fit.partner.command.ParReqConfirm;
 import co.leaf.fit.partner.command.ParSelect;
 import co.leaf.fit.partner.command.ParTest;
 import co.leaf.fit.program.command.MemberEnroll;
+import co.leaf.fit.program.command.ProAdmWaitList;
 import co.leaf.fit.program.command.ProDetail;
 import co.leaf.fit.program.command.ProList;
 import co.leaf.fit.program.command.ProParSimpleList;
 import co.leaf.fit.program.command.ProgramAdd;
 import co.leaf.fit.program.command.ProgramAddForm;
+
+
+import co.leaf.fit.program.command.ProReqConfirm;
+import co.leaf.fit.program.command.SelectedPrograms;
+
 import co.leaf.fit.program.command.programDetailUser;
 import co.leaf.fit.region.command.RegSelectList;
 import co.leaf.fit.review.command.RevInsert;
@@ -130,12 +141,17 @@ public class FrontController extends HttpServlet {
 		map.put("/memPartnerSelect.do", new MemPartnerSelect());
 		map.put("/proParSimpleList.do", new ProParSimpleList());
 		
+		map.put("/parAdmWaitList.do", new ParAdmWaitList());
+		map.put("/parReqConfirm.do", new ParReqConfirm());
+		
 		// program page
 		map.put("/proList.do", new ProList()); // 프로그램 전체 리스트
 		map.put("/proDetail.do", new ProDetail()); // 프로그램 상세보기 
 		map.put("/memberEnroll.do", new MemberEnroll()); // 결제 완료 이후 등록
 		map.put("/programAddForm.do", new ProgramAddForm()); // 프로그램 추가 페이지
 		map.put("/programAdd.do", new ProgramAdd()); // 프로그램 추가 기능
+		map.put("/proAdmWaitList.do", new ProAdmWaitList());
+		map.put("/proReqConfirm.do", new ProReqConfirm());
 		
 		map.put("/programDetailUser.do", new programDetailUser());	
 		map.put("/hisInsertForm.do", new HisInsertForm());

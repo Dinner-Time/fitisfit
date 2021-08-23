@@ -12,7 +12,7 @@ public class ReviewVO {
 	private Date revDate;
 	
 	private String revProName;
-	
+	private String revProPhoto;
 	
 	public ReviewVO() {	}
 	
@@ -57,6 +57,14 @@ public class ReviewVO {
 	}
 	public void setRevProName(String revProName) {
 		this.revProName = revProName;
+	}
+
+	public String getRevProPhoto() {
+		return revProPhoto;
+	}
+
+	public void setRevProPhoto(String revProPhoto) {
+		this.revProPhoto = revProPhoto;
 	}
 	
 }

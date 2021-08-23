@@ -28,6 +28,10 @@
 		p.par_subdate, p.par_state, p.author from fit_partner p inner join
 		fit_region r on p.par_regid = r.reg_id where par_id = #{parId}
 	</select>
+	
+	<select id="parAdmWaitList" resultType="PartnerVO">
+		select * from fit_partner where par_oriid is not null
+	</select>
 
 	<insert id="parInsert" parameterType="PartnerVO">
 		insert into fit_partner (par_id, par_email, par_password, par_name,
@@ -36,24 +40,36 @@
 		#{parRegId}, #{parAddress}, #{parPhone}, #{parIntro}, #{parPhoto},
 		#{parSubDate})
 	</insert>
-
-	<insert id="parUpdateBefore" parameterType="PartnerVO">
-		insert into
-		fit_partner (par_id, par_email, par_password, par_name, par_regid,
-		par_address, par_phone, par_intro, par_photo, par_subdate, par_state)
-		values (FIT_PAR_SEQ.nextval, #{parEmail}, #{parPassword}, #{parName},
-		#{parRegId}, #{parAddress}, #{parPhone}, #{parIntro}, #{parPhoto},
-		#{parSubDate}, 'M')
-	</insert>
-
-	<delete id="parUpdateAfter" parameterType="PartnerVO">
-		delete from fit_partner where par_email = #{parEmail} and par_state = 'Y'
+	
+	<delete id="parReqProcess" parameterType="PartnerVO">
+		delete from fit_partner
+		where par_id = #{parOriId}
 	</delete>
 
-	<update id="parUpdate" parameterType="PartnerVO">
-		update fit_partner set par_state = 'Y' where par_email = #{par_email} and
-		par_state = 'M'
+	<update id="parReqDone" parameterType="PartnerVO">
+		update fit_partner
+		set
+		par_id = #{parOriId}, par_state = 'Y', par_oriid = null where par_id
+		= #{parId}
 	</update>
+
+	<insert id="parUpdateReq" parameterType="PartnerVO">
+		insert into fit_partner
+		values
+		(FIT_PAR_SEQ.nextval,
+		#{parEmail},
+		#{parPassword},
+		#{parName},
+		#{parRegId},
+		#{parAddress},
+		#{parPhone},
+		#{parIntro},
+		#{parPhoto},
+		#{parSubDate},
+		'M',
+		'P',
+		#{parOriId})
+	</insert>
 
 	<delete id="parDelete" parameterType="PartnerVO">
 		delete from fit_partner where par_email = #{parEmail}
@@ -61,7 +77,7 @@
 
 	<select id="parLogin" resultType="PartnerVO">
 		select * from fit_partner where
-		par_email = #{parEmail} and par_password = #{parPassword}
+		par_email = #{parEmail} and par_password = #{parPassword} and par_state = 'Y'
 	</select>
 
 </mapper>

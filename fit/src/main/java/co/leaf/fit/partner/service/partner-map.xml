@@ -62,18 +62,18 @@
 	<insert id="parUpdateReq" parameterType="PartnerVO">
 		insert into fit_partner
 		values
-		(FIT_PAR_SEQ.nextval,
+		(FIT_PAR_SEQ.nextval, 
 		#{parEmail},
 		#{parPassword},
-		#{parName},
-		#{parRegId},
-		#{parAddress},
-		#{parPhone},
+		#{parName}, 
+		#{parRegId}, 
+		#{parAddress}, 
+		#{parPhone}, 
 		#{parIntro},
 		#{parPhoto},
-		#{parSubDate},
-		'M',
-		'P',
+		#{parSubDate}, 
+		'M', 
+		#{author},
 		#{parOriId})
 	</insert>
 

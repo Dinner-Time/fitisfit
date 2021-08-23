@@ -28,7 +28,7 @@ public class CatSelectList implements Command {
 		
 		request.setAttribute("regList", regDao.regSelectList());
 		request.setAttribute("proList", proDao.proCatSimpleList(proVO));
-		request.setAttribute("catName", catDao.catSelect(catVO).getCatName());
+		request.setAttribute("category", catDao.catSelect(catVO));
 		
 		return "category/catSelectList";
 	}

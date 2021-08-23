@@ -29,7 +29,7 @@ public class RegSelectList implements Command {
 		
 		request.setAttribute("catList", catDao.catSelectList());
 		request.setAttribute("proList", proDao.proRegSimpleList(proVO));
-		request.setAttribute("regName", regDao.regSelect(regVO).getRegName());
+		request.setAttribute("region", regDao.regSelect(regVO));
 		
 		return "region/regSelectList";
 	}

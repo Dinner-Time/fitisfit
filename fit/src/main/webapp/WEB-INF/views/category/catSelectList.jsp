@@ -58,7 +58,7 @@
 		}
 
 		.custom-title {
-			background-image: url('images/region/Seoul.jpg');
+			
 			background-size: cover;
 			background-position: center;
 			height: 40vh;
@@ -86,8 +86,9 @@
 		<div class="container-fluid">
 			<!-- title(카테고리 이름) -->
 			<div class="row">
-				<div class="col-12 custom-title d-flex align-items-center justify-content-center">
-					<h1>${catName}</h1>
+				<div class="col-12 custom-title d-flex align-items-center justify-content-center"
+						style="background-image: url('images/category/${category.catPhoto}');">
+					<h1>${category.catName}</h1>
 				</div>
 				<div style="height: calc(50vh - 150px);"></div>
 			</div>

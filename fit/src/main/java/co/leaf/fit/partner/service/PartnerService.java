@@ -67,6 +67,7 @@ public class PartnerService implements PartnerMapper {
 	@Override
 	public List<PartnerVO> parSelectIns(PartnerVO vo) {
 		return map.parSelectIns(vo);
+	}
 
 	public int parUpdatePhoto(PartnerVO vo) {
 		return map.parUpdatePhoto(vo);

@@ -17,30 +17,44 @@
 		<result column="par_state" property="parState" />
 		<result column="par_author" property="author" />
 		<result column="reg_name" property="regName" />
+		<result column="pro_name" property="proName" />
+		<result column="pro_desc" property="proDesc" />
+		<result column="pro_since" property="proSince" />
+		<result column="pro_price" property="proPrice" />
+		<result column="ins_name" property="insName" />
 	</resultMap>
 
 	<select id="parSelectList" resultType="PartnerVO">
-		select * from fit_partner order by par_subdate desc
+		select * from fit_partner
+		order by par_subdate desc
 	</select>
 
 	<select id="parSelect" resultType="PartnerVO">
-		select p.par_id, p.par_email, p.par_password, p.par_name, r.reg_name, p.par_address, p.par_phone, p.par_intro, p.par_photo,
-		p.par_subdate, p.par_state, p.author from fit_partner p inner join
-		fit_region r on p.par_regid = r.reg_id where par_id = #{parId}
+		select p.par_id, p.par_email,
+		p.par_password, p.par_name, r.reg_name, p.par_address, p.par_phone,
+		p.par_intro, p.par_photo,
+		p.par_subdate, p.par_state, p.author from
+		fit_partner p inner join
+		fit_region r on p.par_regid = r.reg_id where
+		par_id = #{parId}
 	</select>
-	
+
 	<select id="parAdmWaitList" resultType="PartnerVO">
-		select * from fit_partner where par_oriid is not null
+		select * from fit_partner
+		where par_oriid is not null
 	</select>
 
 	<insert id="parInsert" parameterType="PartnerVO">
-		insert into fit_partner (par_id, par_email, par_password, par_name,
-		par_regid, par_address, par_phone, par_intro, par_photo, par_subdate)
-		values (FIT_PAR_SEQ.nextval, #{parEmail}, #{parPassword}, #{parName},
+		insert into fit_partner
+		(par_id, par_email, par_password, par_name,
+		par_regid, par_address,
+		par_phone, par_intro, par_photo, par_subdate)
+		values
+		(FIT_PAR_SEQ.nextval, #{parEmail}, #{parPassword}, #{parName},
 		#{parRegId}, #{parAddress}, #{parPhone}, #{parIntro}, #{parPhoto},
 		#{parSubDate})
 	</insert>
-	
+
 	<delete id="parReqProcess" parameterType="PartnerVO">
 		delete from fit_partner
 		where par_id = #{parOriId}
@@ -50,13 +64,8 @@
 		update fit_partner
 		set
 		par_id = #{parOriId}, par_state = 'Y', par_oriid = null where par_id
-		= #{parId}
-	</update>
-
-	<update id="parUpdatePhoto" parameterType="PartnerVO">
-		update fit_partner
-		set par_photo = #{parPhoto}
-		where par_email = #{parEmail} 
+		=
+		#{parId}
 	</update>
 
 	<insert id="parUpdateReq" parameterType="PartnerVO">
@@ -78,12 +87,27 @@
 	</insert>
 
 	<delete id="parDelete" parameterType="PartnerVO">
-		delete from fit_partner where par_email = #{parEmail}
+		delete from fit_partner
+		where par_email = #{parEmail}
 	</delete>
 
 	<select id="parLogin" resultType="PartnerVO">
 		select * from fit_partner where
-		par_email = #{parEmail} and par_password = #{parPassword} and par_state = 'Y'
+		par_email = #{parEmail} and par_password = #{parPassword} and
+		par_state = 'Y'
+	</select>
+
+	<select id="parSelectPro" resultType="PartnerVO">
+		select pr.pro_name,
+		pr.pro_id, pr.pro_desc, pr.pro_since, pr.pro_price, pr.pro_photo from fit_program
+		pr inner join fit_partner pa on (pr.pro_parid = pa.par_id) where
+		pa.par_id = #{parId}
+	</select>
+
+	<select id="parSelectIns" resultType="PartnerVO">
+		select ins.ins_id, ins.ins_name from
+		fit_instructor ins inner join fit_partner pa on (ins.ins_parid =
+		pa.par_id) where pa.par_id = #{parId}
 	</select>
 
 </mapper>

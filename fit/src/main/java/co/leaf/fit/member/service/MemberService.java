@@ -47,4 +47,9 @@ public class MemberService implements MemberMapper{
 		return map.memLogin(vo);
 	}
 
+	@Override
+	public int memUpdatePhoto(MemberVO vo) {
+		return map.memUpdatePhoto(vo);
+	}
+
 }

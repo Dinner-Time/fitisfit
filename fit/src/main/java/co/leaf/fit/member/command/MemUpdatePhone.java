@@ -9,22 +9,21 @@ import co.leaf.fit.member.service.MemberMapper;
 import co.leaf.fit.member.service.MemberService;
 import co.leaf.fit.vo.MemberVO;
 
-public class MemberSelect implements Command {
+public class MemUpdatePhone implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		MemberMapper dao = new MemberService();
 		MemberVO vo = new MemberVO();
-		
 		HttpSession session = request.getSession();
-		
-		vo = (MemberVO)session.getAttribute("session");
-		
-		vo = dao.memSelect(vo);
-		
-		request.setAttribute("member", vo);
-		
-		return "member/myPageMemInfo";
+
+		vo = (MemberVO) session.getAttribute("session");
+
+		vo.setMemPhone(request.getParameter("memPhone"));
+		System.out.println(request.getParameter("memPhone"));
+		dao.memUpdatePhone(vo);
+
+		return "/memSelect.do";
 	}
 
 }

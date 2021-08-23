@@ -17,8 +17,9 @@
 	<select id="insSelectList" parameterType="InstructorVO"
 		resultMap="InstructorVO">
 		select a.*, b.pro_name
-		from fit_instructor a inner join fit_program b
+		from fit_instructor a left outer join fit_program b
 		on a.ins_id = b.pro_insid
+		where a.ins_parid = #{insParId}
 	</select>
 
 	<select id="insSelect" resultType="InstructorVO">
@@ -35,8 +36,6 @@
 
 	<update id="insUpdate" parameterType="InstructorVO">
 		update fit_instructor set
-		ins_photo = #{insPhoto},
-		ins_name = #{insName},
 		ins_phone = #{insPhone},
 		ins_insta = #{insInsta},
 		ins_kakao = #{insKakao},

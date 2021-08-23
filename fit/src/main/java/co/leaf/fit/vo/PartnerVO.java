@@ -16,6 +16,7 @@ public class PartnerVO {
 	private Date parSubDate;
 	private String parState;
 	private String author;
+	private int parOriId;
 	
 	private String regName;
 	
@@ -124,6 +125,14 @@ public class PartnerVO {
 
 	public void setAuthor(String author) {
 		this.author = author;
+	}
+
+	public int getParOriId() {
+		return parOriId;
+	}
+
+	public void setParOriId(int parOriId) {
+		this.parOriId = parOriId;
 	}
 	
 }

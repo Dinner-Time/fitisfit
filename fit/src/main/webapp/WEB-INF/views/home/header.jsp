@@ -116,10 +116,10 @@
 		      <a class="nav-link" href="#">회원관리</a>
 		    </li>
 		    <li class="slideLi nav-item">
-		      <a class="nav-link" href="#">파트너관리</a>
+		      <a class="nav-link" href="parAdmWaitList.do">파트너관리</a>
 		    </li>
 		    <li class="slideLi nav-item">
-		      <a class="nav-link" href="#">프로그램관리</a>
+		      <a class="nav-link" href="proAdmWaitList.do">프로그램관리</a>
 		    </li>
 		    <li class="slideLi nav-item">
 		      <a class="nav-link" href="revSelectListByAdm.do">후기관리</a>

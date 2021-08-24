@@ -47,7 +47,7 @@ public class HisInsert implements Command {
 		
 		request.setAttribute("message", message);
 		
-		return "member/myPageHistory";
+		return "mypageHistory.do";
 	}
 
 }

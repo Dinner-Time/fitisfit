@@ -73,7 +73,7 @@ h3, h5, p {
 						</div>
 						<div>
 							<button type="submit" class="btn btn-primary">후기작성</button>
-							<button type="button" class="btn btn-outline-danger" onclick="delConfirm(${history.hisId})">수강취소</button>
+							<button type="button" class="btn btn-outline-danger" onclick="delConfirm(${history.hisId}, ${history.hisProId })">수강취소</button>
 							<br><br>
 						</div>
 					</div>
@@ -119,7 +119,7 @@ h3, h5, p {
 			}
 		}
 		
-		function delConfirm(hisId) {
+		function delConfirm(hisId, hisProId) {
 			var result = confirm('정말로 수강취소하시겠습니까?');
 			if (result) {
 				var form = document.createElement('form');
@@ -127,16 +127,24 @@ h3, h5, p {
 				form.setAttribute('action', 'hisDelete.do');
 				document.charset = "utf-8";
 				
-				var hidden = document.createElement('input');
+				let hidden = document.createElement('input');
 				hidden.setAttribute('type','hidden');
 				hidden.setAttribute('name','hisId');
 				hidden.setAttribute('value', hisId);
+				
+				let hidden2 = document.createElement('input');
+				hidden2.setAttribute('type','hidden');
+				hidden2.setAttribute('name','hisProId');
+				hidden2.setAttribute('value', hisProId); 
 					
 				form.appendChild(hidden);
+				form.appendChild(hidden2);
 				document.body.appendChild(form);
 				form.submit();
+				
+			console.log(hidden);
+			console.log(hidden2);
 			}
-
 		}
 	</script>
 </body>

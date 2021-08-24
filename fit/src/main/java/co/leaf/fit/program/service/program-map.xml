@@ -190,6 +190,13 @@
 		pro_photo = #{proPhoto}
 		where pro_id = #{proId}
 	</update>
+	
+	<update id="proEnrollCancel" parameterType="ProgramVO">
+		update fit_program
+		set
+		pro_people = pro_people - 1
+		where pro_id = ${proId}
+	</update>
 
 	<delete id="proDelete" parameterType="ProgramVO">
 		delete from fit_program

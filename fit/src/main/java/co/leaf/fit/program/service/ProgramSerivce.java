@@ -81,6 +81,11 @@ public class ProgramSerivce implements ProgramMapper{
 	public ProgramVO proSimpleSelect(ProgramVO vo) {
 		return map.proSimpleSelect(vo);
 	}
+
+	@Override
+	public int proEnrollCancel(ProgramVO vo) {
+		return map.proEnrollCancel(vo);
+	}
 	
 	
 }

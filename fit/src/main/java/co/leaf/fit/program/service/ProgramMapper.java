@@ -23,4 +23,6 @@ public interface ProgramMapper {
 	
 	int proReqProcess(ProgramVO vo);
 	int proReqDone(ProgramVO vo);
+	
+	int proEnrollCancel(ProgramVO vo);
 }

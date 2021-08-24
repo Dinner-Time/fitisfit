@@ -113,7 +113,7 @@
 					<article class="col-lg-3 col-md-4 col-sm-6 col-12" data-catId="${pro.proCatId}">
 						<div class="post-item">
 							<div class="media-wrapper">
-								<img src="${pro.proPhoto }" alt="Program Photo" class="img-fluid">
+								<img src="images/program/${pro.proPhoto }" alt="Program Photo" class="img-fluid">
 							</div>
 							<div class="content">
 								<h3>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -83,8 +84,13 @@ p {
 											<td>${detailList[0].proSince}</td>
 										</tr>
 										<tr>
-											<th>기간 (일)</th>
-											<td>${detailList[0].proPeriod}</td>
+											<th>기간 (월)</th>
+											<c:if test="${detailList[0].proPeriod == 0}">
+												<td>상설</td>
+											</c:if>
+											<c:if test="${detailList[0].proPeriod != 0}">
+												<td>${detailList[0].proPeriod}</td>
+											</c:if>
 										</tr>
 										<tr>
 											<th>결제금액 (원)</th>

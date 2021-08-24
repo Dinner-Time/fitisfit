@@ -3,12 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
 <html>
-<!--<![endif]-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="description"
@@ -16,29 +11,15 @@
 
 <meta name="author" content="Themefisher.com">
 
-<title>Bingo | Responsive Multipurpose Parallax HTML5 Template</title>
+<title>회원 관리 | Fit is Fit</title>
 
-<!-- Mobile Specific Meta
-  ================================================== -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- Favicon -->
 <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
-
-<!-- CSS
-  ================================================== -->
-<!-- Themefisher Icon font -->
 <link rel="stylesheet" href="plugins/themefisher-font/style.css">
-<!-- bootstrap.min css -->
 <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-<!-- Lightbox.min css -->
-<link rel="stylesheet"
-	href="plugins/lightbox2/dist/css/lightbox.min.css">
-<!-- animation css -->
+<link rel="stylesheet" href="plugins/lightbox2/dist/css/lightbox.min.css">
 <link rel="stylesheet" href="plugins/animate/animate.css">
-<!-- Slick Carousel -->
 <link rel="stylesheet" href="plugins/slick/slick.css">
-<!-- Main Stylesheet -->
 <link rel="stylesheet" href="css/style.css">
 <style type="text/css">
 .rounded-circle {
@@ -50,22 +31,13 @@
 <body id="body">
 	<jsp:include page="/WEB-INF/views/home/header.jsp" />
 
-	<!--
-  Start Preloader
-  ==================================== -->
 	<div id="preloader">
 		<div class='preloader'>
 			<span></span> <span></span> <span></span> <span></span> <span></span>
 			<span></span>
 		</div>
 	</div>
-	<!--
-  End Preloader
-  ==================================== -->
 
-	<!--
-Start About Section
-==================================== -->
 	<section class="about" id="about">
 		<div class="container">
 			<div class="row">
@@ -77,7 +49,7 @@ Start About Section
 				</div>
 				<div class="col-md-4" align="center">
 					<div class="card" style="width: 300px">
-						<img class="card-img-top" src="images/team/${member.memPhoto }.jpg"
+						<img class="card-img-top" src="images/member/${member.memPhoto}"
 							alt="Card image" style="width: 100%">
 						<div class="card-body" align="center">
 							${member.memName }

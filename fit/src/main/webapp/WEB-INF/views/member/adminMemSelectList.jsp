@@ -11,7 +11,7 @@
 <meta name="author" content="Themefisher.com">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Member Select List By Admin</title>
+<title>회원 관리 | Fit is Fit</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
@@ -67,15 +67,15 @@
 			<!-- /section title -->
 		</div>
 		<div class="col-8">
-			<table class="table">
+			<table class="table" style="background-color: #F3F1F5;">
 				<tbody>
 					<tr style="cursor: pointer;">
 						<td align="center">이름</td>
-						<td><input type="text" id="memName" name="memName"></td>
+						<td><input type="text" id="memName" name="memName" class="form-control" style="width:250px;"></td>
 					</tr>
 					<tr style="cursor: pointer; border-bottom: 1px solid lightgray;">
 						<td align="center">이메일</td>
-						<td><input type="text" id="memEmail" name="memEmail"></td>
+						<td><input type="text" id="memEmail" name="memEmail" class="form-control" style="width:250px;"></td>
 					</tr>
 				</tbody>
 			</table>
@@ -86,7 +86,7 @@
 	<br>
 	<div align="center">
 		<div class="col-8">
-			<table id="memTable" class="table table-hover">
+			<table id="memTable" class="table table-hover" style="background-color: #F3F1F5;">
 				<thead>
 					<tr align="center">
 						<th scope="col">가입일</th>

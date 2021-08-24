@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -8,22 +7,14 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>피트다 피트!!</title>
+	<title>${region.regName} 프로그램 | Fit is Fit</title>
 
-	<!-- CSS ================================================== -->
-	<!-- Favicon -->
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
-	<!-- Themefisher Icon font -->
 	<link rel="stylesheet" href="plugins/themefisher-font/style.css">
-	<!-- bootstrap.min css -->
 	<link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-	<!-- Lightbox.min css -->
 	<link rel="stylesheet" href="plugins/lightbox2/dist/css/lightbox.min.css">
-	<!-- animation css -->
 	<link rel="stylesheet" href="plugins/animate/animate.css">
-	<!-- Slick Carousel -->
 	<link rel="stylesheet" href="plugins/slick/slick.css">
-	<!-- Main Stylesheet -->
 	<link rel="stylesheet" href="css/style.css">
 
 	<!-- 폰트 시작 -->
@@ -37,9 +28,9 @@
 	<style type="text/css">
 		.custom-btn {
 			letter-spacing: 1px;
-			border-radius: 40px;
+			border-radius: 10px;
 			width: 100%;
-			height: 80px;
+			height: 60px;
 		}
 
 		.custom-border {
@@ -51,6 +42,7 @@
 		}
 
 		h1 {
+			font-size: 70px;
 			font-family: 'Gowun Dodum', sans-serif;
 			color: white;
 			text-shadow: 5px 5px 5px black;
@@ -64,6 +56,13 @@
 			position: absolute;
 			top: 10vh;
 			left: 0;
+		}
+		.custom-p {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			width: 200px;
+			height: 20px;
 		}
 
 	</style>
@@ -101,7 +100,7 @@
 					<div class="row">
 						<c:forEach var="category" items="${catList }" varStatus="status">
 							<div class="col-xl-2 col-lg-3 col-md-4 col-6" style="margin-bottom: 5px;">
-								<button class="btn custom-btn" style="font-size: 24px;"
+								<button class="btn custom-btn" style="font-size: 20px; background-color: #0275d8;"
 									onclick="showPrograms(${status.count})">${category.catName }</button>
 							</div>
 						</c:forEach>
@@ -111,17 +110,15 @@
 			<div id="programs" class="row">
 				<c:forEach var="pro" items="${proList }">
 					<article class="col-lg-3 col-md-4 col-sm-6 col-12" data-catId="${pro.proCatId}">
-						<div class="post-item">
+						<div class="post-item pro-submit" data-proId="${pro.proId}" style="cursor: pointer;">
 							<div class="media-wrapper">
 								<img src="images/program/${pro.proPhoto }" alt="Program Photo" class="img-fluid">
 							</div>
 							<div class="content">
-								<h3>
-									<a href="#">${pro.proName }</a>
-								</h3>
-								<p>${pro.proDesc }</p>
+								<h3>${pro.proName }</h3>
+								<p class="custom-p">${pro.proDesc }</p>
 								<p>${pro.proSince } ~ ${pro.proPeriod }개월</p>
-								<a class="custom-btn pro-submit" data-proId="${pro.proId}" style="cursor: pointer;">${pro.proPrice*(100 -
+								<a class="custom-btn">${pro.proPrice*(100 -
 									pro.proSale3)*0.01}&#8361부터</a>
 							</div>
 						</div>
@@ -141,27 +138,17 @@
 		<input type="hidden" name="proId">
 	</form>
 
-	<!-- 자바 스크립트 -->
-	<!-- Main jQuery -->
 	<script src="plugins/jquery/jquery.min.js"></script>
-	<!-- Form Validation -->
 	<script src="plugins/form-validation/jquery.form.js"></script>
 	<script src="plugins/form-validation/jquery.validate.min.js"></script>
-	<!-- Bootstrap4 -->
 	<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-	<!-- Parallax -->
 	<script src="plugins/parallax/jquery.parallax-1.1.3.js"></script>
-	<!-- lightbox -->
 	<script src="plugins/lightbox2/dist/js/lightbox.min.js"></script>
-	<!-- Owl Carousel -->
 	<script src="plugins/slick/slick.min.js"></script>
-	<!-- filter -->
 	<script src="plugins/filterizr/jquery.filterizr.min.js"></script>
-	<!-- Smooth Scroll js -->
 	<script src="plugins/smooth-scroll/smooth-scroll.min.js"></script>
-	<!-- Custom js -->
 	<script src="js/script.js"></script>
-	<!-- Custom for this Page -->
+
 	<script type="text/javascript">
 		let programs = $('#programs');
 		// 선택한 카테고리에 해당하는 프로그램만 보여주는 함수

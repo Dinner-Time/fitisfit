@@ -9,22 +9,14 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   <title>피트다 피트!!</title>
+   <title>${category.catName} | Fit is Fit</title>
 
-   <!-- CSS ================================================== -->
-   <!-- Favicon -->
    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
-   <!-- Themefisher Icon font -->
    <link rel="stylesheet" href="plugins/themefisher-font/style.css">
-   <!-- bootstrap.min css -->
    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-   <!-- Lightbox.min css -->
    <link rel="stylesheet" href="plugins/lightbox2/dist/css/lightbox.min.css">
-   <!-- animation css -->
    <link rel="stylesheet" href="plugins/animate/animate.css">
-   <!-- Slick Carousel -->
    <link rel="stylesheet" href="plugins/slick/slick.css">
-   <!-- Main Stylesheet -->
    <link rel="stylesheet" href="css/style.css">
 
    <!-- 폰트 시작 -->
@@ -38,9 +30,9 @@
    <style type="text/css">
 		.custom-btn {
 			letter-spacing: 1px;
-			border-radius: 40px;
+			border-radius: 10px;
 			width: 100%;
-			height: 80px;
+			height: 60px;
 		}
 
 		.custom-border {
@@ -54,17 +46,24 @@
 		h1 {
 			font-family: 'Gowun Dodum', sans-serif;
 			color: white;
+			
 			text-shadow: 5px 5px 5px black;
 		}
 
 		.custom-title {
-			
 			background-size: cover;
 			background-position: center;
 			height: 40vh;
 			position: absolute;
 			top: 10vh;
 			left: 0;
+		}
+		.custom-p {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			width: 200px;
+			height: 20px;
 		}
 
 	</style>
@@ -102,7 +101,7 @@
 					<div class="row">
 						<c:forEach var="region" items="${regList }" varStatus="status">
 							<div class="col-xl-2 col-lg-3 col-md-4 col-6" style="margin-bottom: 5px;">
-								<button class="btn custom-btn" style="font-size: 24px;"
+								<button class="btn custom-btn" style="font-size: 20px; background-color: #0275d8;"
 									onclick="showPrograms(${status.count})">${region.regName }</button>
 							</div>
 						</c:forEach>
@@ -112,18 +111,15 @@
 			<div id="programs" class="row">
 				<c:forEach var="pro" items="${proList }">
 					<article class="col-lg-3 col-md-4 col-sm-6 col-12" data-regId="${pro.parRegId}">
-						<div class="post-item">
+						<div class="post-item pro-submit" data-proId="${pro.proId}" style="cursor: pointer;">
 							<div class="media-wrapper">
 								<img src="images/program/${pro.proPhoto }" alt="Program Photo" class="img-fluid">
 							</div>
 							<div class="content">
-								<h3>
-									<a href="#">${pro.proName }</a>
-								</h3>
-								<p>${pro.proDesc }</p>
+								<h3>${pro.proName }</h3>
+								<p class="custom-p">${pro.proDesc }</p>
 								<p>${pro.proSince } ~ ${pro.proPeriod }개월</p>
-								<a class="custom-btn pro-submit" data-proId="${pro.proId}" style="cursor: pointer;">${pro.proPrice*(100 -
-									pro.proSale3)*0.01}&#8361부터</a>
+								<a class="custom-btn">${pro.proPrice*(100 - pro.proSale3)*0.01}&#8361부터</a>
 							</div>
 						</div>
 					</article>

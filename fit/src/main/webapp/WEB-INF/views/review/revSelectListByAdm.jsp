@@ -9,19 +9,12 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport"
 		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-	<title>피트다 피트!!</title>
-	<!-- CSS ================================================== -->
-	<!-- Themefisher Icon font -->
+	<title>후기 목록 | Fit is Fit</title>
 	<link rel="stylesheet" href="plugins/themefisher-font/style.css">
-	<!-- bootstrap.min css -->
 	<link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-	<!-- Lightbox.min css -->
 	<link rel="stylesheet" href="plugins/lightbox2/dist/css/lightbox.min.css">
-	<!-- animation css -->
 	<link rel="stylesheet" href="plugins/animate/animate.css">
-	<!-- Slick Carousel -->
 	<link rel="stylesheet" href="plugins/slick/slick.css">
-	<!-- Main Stylesheet -->
 	<link rel="stylesheet" href="css/style.css">
 
 	<style type="text/css">

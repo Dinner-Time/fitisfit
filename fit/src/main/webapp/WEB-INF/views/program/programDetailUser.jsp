@@ -68,7 +68,7 @@
             </div>
             <br />
             <div class="card">
-              <img class="img-fluid w-100" src="${detailList[0].proPhoto }" alt="post-image">
+              <img class="img-fluid w-100" src="images/program/${detailList[0].proPhoto }" alt="post-image">
             </div>
             <!-- Post Content -->
             <div class="post-content">

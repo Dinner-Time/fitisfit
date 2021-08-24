@@ -109,6 +109,13 @@
 		fit_instructor ins inner join fit_partner pa on (ins.ins_parid =
 		pa.par_id) where pa.par_id = #{parId}
 	</select>
+	
+	<update id="parUpdatePhoto" parameterType="PartnerVO">
+		update fit_partner
+		set par_photo = #{parPhoto}
+		where par_email = #{parEmail} 
+		and par_id = #{parId}
+	</update>
 
 
 </mapper>
